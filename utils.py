@@ -91,20 +91,38 @@ def get_timestamp():
 
 def print_header(text, char='='):
     """Print formatted header"""
-    print(f"\n{char * 60}")
-    print(f"{text.center(60)}")
-    print(f"{char * 60}\n")
+    try:
+        print(f"\n{char * 60}")
+        print(f"{text.center(60)}")
+        print(f"{char * 60}\n")
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        # Fallback for Windows console encoding issues
+        print(f"\n{'=' * 60}")
+        print(f"{text.center(60)}")
+        print(f"{'=' * 60}\n")
 
 
 def print_progress(current, total, prefix='Progress'):
     """Print progress bar"""
     bar_length = 40
     filled_length = int(bar_length * current // total)
-    bar = '█' * filled_length + '-' * (bar_length - filled_length)
+    try:
+        # Use Unicode block character
+        bar = '█' * filled_length + '-' * (bar_length - filled_length)
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        # Fallback to ASCII character for Windows console
+        bar = '#' * filled_length + '-' * (bar_length - filled_length)
+
     percent = f"{100 * (current / float(total)):.1f}"
-    print(f'\r{prefix}: |{bar}| {percent}% Complete', end='\r')
-    if current == total:
-        print()
+    try:
+        print(f'\r{prefix}: |{bar}| {percent}% Complete', end='\r')
+        if current == total:
+            print()
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        # Fallback for encoding issues
+        print(f'\r{prefix}: {percent}% Complete', end='\r')
+        if current == total:
+            print()
 
 
 class Colors:
@@ -122,4 +140,8 @@ class Colors:
 
 def print_colored(text, color=Colors.OKGREEN):
     """Print colored text"""
-    print(f"{color}{text}{Colors.ENDC}")
+    try:
+        print(f"{color}{text}{Colors.ENDC}")
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        # Fallback: print without colors for Windows console encoding issues
+        print(text)

@@ -20,7 +20,10 @@ def check_api_key():
     api_key = os.getenv('ALPHA_VANTAGE_API_KEY')
 
     if not api_key or api_key == 'your_api_key_here':
-        print_colored("\nERROR: Alpha Vantage API key not configured!", Colors.FAIL)
+        try:
+            print_colored("\nERROR: Alpha Vantage API key not configured!", Colors.FAIL)
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            print("\nERROR: Alpha Vantage API key not configured!")
         print("\nPlease follow these steps:")
         print("1. Copy .env.example to .env")
         print("2. Edit .env and add your Alpha Vantage API key")
@@ -34,7 +37,10 @@ def check_api_key():
 def display_welcome():
     """Display welcome message and configuration"""
     print_header("FUND LEADER TRACKER", "=")
-    print_colored("Financial Research Tool - Industry Leader Identification\n", Colors.OKCYAN)
+    try:
+        print_colored("Financial Research Tool - Industry Leader Identification\n", Colors.OKCYAN)
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        print("Financial Research Tool - Industry Leader Identification\n")
 
     print("Configuration:")
     print(f"  API Key: {os.getenv('ALPHA_VANTAGE_API_KEY', 'NOT SET')[:8]}...")
@@ -62,7 +68,10 @@ def run_analysis(config, api_key):
         results = analyzer.analyze_all_sectors()
 
         if not results:
-            print_colored("\nNo results generated", Colors.WARNING)
+            try:
+                print_colored("\nNo results generated", Colors.WARNING)
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                print("\nNo results generated")
             return False
 
         # Export results
@@ -88,8 +97,12 @@ def run_analysis(config, api_key):
 
         # Display summary
         print_header("Analysis Summary")
-        print_colored(f"Sectors analyzed: {summary['sectors_analyzed']}", Colors.OKGREEN)
-        print_colored(f"Leaders identified: {summary['total_leaders']} (1 per sector)", Colors.OKGREEN)
+        try:
+            print_colored(f"Sectors analyzed: {summary['sectors_analyzed']}", Colors.OKGREEN)
+            print_colored(f"Leaders identified: {summary['total_leaders']} (1 per sector)", Colors.OKGREEN)
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            print(f"Sectors analyzed: {summary['sectors_analyzed']}")
+            print(f"Leaders identified: {summary['total_leaders']} (1 per sector)")
 
         print("\nTop Leader by Sector:")
         for sector_name, data in results.items():
@@ -97,7 +110,10 @@ def run_analysis(config, api_key):
             if leader:
                 print(f"  {sector_name:<25} -> {leader['symbol']:<8} ({leader['name'][:30]})")
 
-        print_colored("\nAnalysis completed successfully!", Colors.OKGREEN)
+        try:
+            print_colored("\nAnalysis completed successfully!", Colors.OKGREEN)
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            print("\nAnalysis completed successfully!")
         print("\nResults saved to:")
         print(f"  - CSV: output/leaders.csv")
         print(f"  - JSON: output/leaders.json")
@@ -108,11 +124,17 @@ def run_analysis(config, api_key):
         return True
 
     except KeyboardInterrupt:
-        print_colored("\n\nAnalysis interrupted by user", Colors.WARNING)
+        try:
+            print_colored("\n\nAnalysis interrupted by user", Colors.WARNING)
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            print("\n\nAnalysis interrupted by user")
         return False
     except Exception as e:
         logger.error(f"Analysis failed: {e}", exc_info=True)
-        print_colored(f"\nAnalysis failed: {str(e)}", Colors.FAIL)
+        try:
+            print_colored(f"\nAnalysis failed: {str(e)}", Colors.FAIL)
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            print(f"\nAnalysis failed: {str(e)}")
 
         # Send error alert if email is configured
         if config.get('email_alerts', {}).get('enabled', False):
@@ -158,11 +180,17 @@ def main():
             print_usage()
             sys.exit(0)
         elif command == 'test':
-            print_colored("Running API connectivity test...", Colors.OKBLUE)
+            try:
+                print_colored("Running API connectivity test...", Colors.OKBLUE)
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                print("Running API connectivity test...")
             test_api_connection(api_key)
             sys.exit(0)
         else:
-            print_colored(f"Unknown command: {command}", Colors.FAIL)
+            try:
+                print_colored(f"Unknown command: {command}", Colors.FAIL)
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                print(f"Unknown command: {command}")
             print_usage()
             sys.exit(1)
 
@@ -210,21 +238,36 @@ def test_api_connection(api_key):
         data = response.json()
 
         if 'Global Quote' in data:
-            print_colored("[OK] API connection successful!", Colors.OKGREEN)
+            try:
+                print_colored("[OK] API connection successful!", Colors.OKGREEN)
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                print("[OK] API connection successful!")
             print(f"  Sample quote retrieved for IBM")
             print(f"  Price: {data['Global Quote'].get('05. price', 'N/A')}")
         elif 'Information' in data:
-            print_colored("[WAIT] API rate limit reached", Colors.WARNING)
+            try:
+                print_colored("[WAIT] API rate limit reached", Colors.WARNING)
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                print("[WAIT] API rate limit reached")
             print(f"  {data['Information']}")
         elif 'Error Message' in data:
-            print_colored("[ERROR] API error", Colors.FAIL)
+            try:
+                print_colored("[ERROR] API error", Colors.FAIL)
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                print("[ERROR] API error")
             print(f"  {data['Error Message']}")
         else:
-            print_colored("[?] Unexpected response", Colors.WARNING)
+            try:
+                print_colored("[?] Unexpected response", Colors.WARNING)
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                print("[?] Unexpected response")
             print(f"  {data}")
 
     except Exception as e:
-        print_colored(f"[ERROR] Connection failed: {str(e)}", Colors.FAIL)
+        try:
+            print_colored(f"[ERROR] Connection failed: {str(e)}", Colors.FAIL)
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            print(f"[ERROR] Connection failed: {str(e)}")
 
 
 if __name__ == '__main__':

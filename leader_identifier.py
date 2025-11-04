@@ -129,7 +129,10 @@ class LeaderIdentifier:
         print_header(f"Top Leader in {sector_name}")
 
         if not leaders:
-            print_colored("No leaders identified for this sector.", Colors.WARNING)
+            try:
+                print_colored("No leaders identified for this sector.", Colors.WARNING)
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                print("No leaders identified for this sector.")
             return
 
         # Get only the #1 leader

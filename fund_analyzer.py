@@ -53,7 +53,10 @@ class FundAnalyzer:
             dict: Analysis results for all sectors
         """
         print_header("Fund Leader Tracker - Starting Analysis")
-        print_colored(f"Analyzing {len(self.sectors)} sectors...\n", Colors.OKBLUE)
+        try:
+            print_colored(f"Analyzing {len(self.sectors)} sectors...\n", Colors.OKBLUE)
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            print(f"Analyzing {len(self.sectors)} sectors...\n")
 
         # Get previous leaders for change detection
         previous_leaders = self.db.get_latest_leaders_by_sector()
@@ -68,14 +71,22 @@ class FundAnalyzer:
             sector_name = sector_config['name']
             keywords = sector_config['keywords']
 
-            print_colored(f"\n[{i}/{total_sectors}] Analyzing: {sector_name}", Colors.HEADER)
-            print(f"Keywords: {', '.join(keywords)}")
+            try:
+                print_colored(f"\n[{i}/{total_sectors}] Analyzing: {sector_name}", Colors.HEADER)
+                print(f"Keywords: {', '.join(keywords)}")
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                # Fallback for Windows console encoding issues
+                print(f"\n[{i}/{total_sectors}] Analyzing: {sector_name}")
+                print(f"Keywords: {', '.join(keywords)}")
 
             try:
                 # Step 1: Find relevant funds
                 fund_symbols = self._find_sector_funds(keywords)
                 if not fund_symbols:
-                    print_colored(f"No funds found for {sector_name}", Colors.WARNING)
+                    try:
+                        print_colored(f"No funds found for {sector_name}", Colors.WARNING)
+                    except (UnicodeEncodeError, UnicodeDecodeError):
+                        print(f"No funds found for {sector_name}")
                     continue
 
                 print(f"Found {len(fund_symbols)} funds: {', '.join(fund_symbols)}")
@@ -85,7 +96,10 @@ class FundAnalyzer:
                 holdings_by_fund = self.fetcher.batch_fetch_holdings(fund_symbols)
 
                 if not holdings_by_fund:
-                    print_colored(f"No holdings data retrieved for {sector_name}", Colors.WARNING)
+                    try:
+                        print_colored(f"No holdings data retrieved for {sector_name}", Colors.WARNING)
+                    except (UnicodeEncodeError, UnicodeDecodeError):
+                        print(f"No holdings data retrieved for {sector_name}")
                     continue
 
                 # Step 3: Identify leaders
@@ -118,14 +132,20 @@ class FundAnalyzer:
                         }
                         self.leadership_changes.append(change)
                         logger.info(f"Leadership change detected in {sector_name}: {prev_leader['symbol']} -> {current_leader['symbol']}")
-                        print_colored(f"  [CHANGE] Leader changed from {prev_leader['symbol']} to {current_leader['symbol']}", Colors.WARNING)
+                        try:
+                            print_colored(f"  [CHANGE] Leader changed from {prev_leader['symbol']} to {current_leader['symbol']}", Colors.WARNING)
+                        except (UnicodeEncodeError, UnicodeDecodeError):
+                            print(f"  [CHANGE] Leader changed from {prev_leader['symbol']} to {current_leader['symbol']}")
 
                 # Display results (only #1 leader)
                 self.identifier.print_leaders_summary(leaders, sector_name, top_n=1)
 
             except Exception as e:
                 logger.error(f"Error analyzing {sector_name}: {e}")
-                print_colored(f"Error analyzing {sector_name}: {str(e)}", Colors.FAIL)
+                try:
+                    print_colored(f"Error analyzing {sector_name}: {str(e)}", Colors.FAIL)
+                except (UnicodeEncodeError, UnicodeDecodeError):
+                    print(f"Error analyzing {sector_name}: {str(e)}")
                 continue
 
         # Save analysis run metadata
@@ -138,21 +158,32 @@ class FundAnalyzer:
         )
 
         print_header("Analysis Complete")
-        print_colored(f"Total sectors analyzed: {len(self.results)}", Colors.OKGREEN)
-        print_colored(f"Total funds analyzed: {total_funds_analyzed}", Colors.OKGREEN)
-        print_colored(f"Total leaders identified: {total_leaders_found}", Colors.OKGREEN)
+        try:
+            print_colored(f"Total sectors analyzed: {len(self.results)}", Colors.OKGREEN)
+            print_colored(f"Total funds analyzed: {total_funds_analyzed}", Colors.OKGREEN)
+            print_colored(f"Total leaders identified: {total_leaders_found}", Colors.OKGREEN)
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            print(f"Total sectors analyzed: {len(self.results)}")
+            print(f"Total funds analyzed: {total_funds_analyzed}")
+            print(f"Total leaders identified: {total_leaders_found}")
 
         # Display leadership changes summary
         if self.leadership_changes:
             print_header("Leadership Changes Detected")
-            print_colored(f"{len(self.leadership_changes)} leadership change(s) detected:\n", Colors.WARNING)
+            try:
+                print_colored(f"{len(self.leadership_changes)} leadership change(s) detected:\n", Colors.WARNING)
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                print(f"{len(self.leadership_changes)} leadership change(s) detected:\n")
             for change in self.leadership_changes:
                 print(f"  {change['sector']}:")
                 print(f"    Old Leader: {change['old_symbol']} ({change['old_name']})")
                 print(f"    New Leader: {change['new_symbol']} ({change['new_name']})")
                 print()
         else:
-            print_colored("\nNo leadership changes detected.", Colors.OKGREEN)
+            try:
+                print_colored("\nNo leadership changes detected.", Colors.OKGREEN)
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                print("\nNo leadership changes detected.")
 
         return self.results
 
@@ -221,7 +252,10 @@ class FundAnalyzer:
         output_config = self.config.get('output', {})
 
         if not self.results:
-            print_colored("No results to export", Colors.WARNING)
+            try:
+                print_colored("No results to export", Colors.WARNING)
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                print("No results to export")
             return
 
         try:
@@ -233,11 +267,17 @@ class FundAnalyzer:
             if output_config.get('save_to_json', True):
                 self._export_to_json(output_config.get('json_path', 'output/leaders.json'))
 
-            print_colored("\nResults exported successfully!", Colors.OKGREEN)
+            try:
+                print_colored("\nResults exported successfully!", Colors.OKGREEN)
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                print("\nResults exported successfully!")
 
         except Exception as e:
             logger.error(f"Error exporting results: {e}")
-            print_colored(f"Error exporting results: {str(e)}", Colors.FAIL)
+            try:
+                print_colored(f"Error exporting results: {str(e)}", Colors.FAIL)
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                print(f"Error exporting results: {str(e)}")
 
     def _export_to_csv(self, filepath):
         """Export results to CSV file - ONE leader per sector"""

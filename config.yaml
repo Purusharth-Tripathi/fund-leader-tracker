@@ -34,7 +34,7 @@ sectors:
 # Analysis Parameters
 analysis:
   top_funds_per_sector: 5
-  min_holding_threshold: 1.0  # Minimum % of portfolio
+  min_holding_threshold: 0.01  # Minimum % of portfolio (as decimal: 0.01 = 1%)
   performance_period: "3year"  # 1year, 3year, 5year
 
 # API Rate Limits
