@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# Environment Variables (IMPORTANT - keeps API keys private)
+.env
+
+# Logs
+logs/
+*.log
+
+# Database (we'll handle this separately)
+# Uncomment if you don't want to share database:
+# data/fund_leaders.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Output files (optional - uncomment if you don't want to share)
+# output/
+# *.csv
+# *.json
+
+# Temporary files
+*.tmp
+*.bak

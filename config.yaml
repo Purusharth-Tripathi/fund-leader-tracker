@@ -1,0 +1,59 @@
+# Fund Leader Tracker Configuration
+
+sectors:
+  - name: "Aerospace & Defense"
+    keywords: ["aerospace", "defense", "aviation", "military"]
+
+  - name: "Renewable Energy"
+    keywords: ["solar", "wind", "renewable", "clean energy", "green energy"]
+
+  - name: "Healthcare & Biotech"
+    keywords: ["healthcare", "biotech", "pharmaceutical", "medical", "health"]
+
+  - name: "Automotive"
+    keywords: ["automotive", "automobile", "electric vehicle", "EV", "car"]
+
+  - name: "Precious Metals"
+    keywords: ["gold", "silver", "platinum", "precious metals", "mining"]
+
+  - name: "Consumer Staples"
+    keywords: ["consumer staples", "food", "beverage", "household", "retail"]
+
+  - name: "Tech & AI"
+    keywords: ["technology", "artificial intelligence", "AI", "software", "cloud"]
+
+  - name: "Financial Services"
+    keywords: ["financial", "banking", "insurance", "fintech", "asset management"]
+
+  - name: "Infrastructure"
+    keywords: ["infrastructure", "construction", "utilities", "industrial"]
+
+  - name: "Real Estate"
+    keywords: ["real estate", "REIT", "property", "residential", "commercial"]
+
+# Analysis Parameters
+analysis:
+  top_funds_per_sector: 5
+  min_holding_threshold: 1.0  # Minimum % of portfolio
+  performance_period: "3year"  # 1year, 3year, 5year
+
+# API Rate Limits
+api:
+  requests_per_minute: 5
+  requests_per_day: 25  # Free tier limit
+  retry_attempts: 3
+  retry_delay: 2  # seconds
+
+# Output Settings
+output:
+  save_to_csv: true
+  save_to_json: true
+  csv_path: "output/leaders.csv"
+  json_path: "output/leaders.json"
+
+# Email Alert Settings
+email_alerts:
+  enabled: false
+  send_on_completion: false  # Send email after every analysis
+  send_on_change_only: true  # Send email ONLY when leadership changes detected
+  include_top_n_leaders: 10
