@@ -67,23 +67,29 @@ class LeaderIdentifier:
                     company_stats[symbol]['name'] = name
 
         # Calculate average weights and create leader list
+        # NEW CRITERIA: Stock must be held by at least 3 funds (60% minimum consensus)
+        min_funds_required = 3
+
         leaders = []
         for symbol, stats in company_stats.items():
             avg_weight = stats['total_weight'] / stats['times_held']
 
-            leaders.append({
-                'symbol': symbol,
-                'name': stats['name'],
-                'times_held': stats['times_held'],
-                'total_weight': stats['total_weight'],
-                'avg_weight': avg_weight,
-                'prevalence': (stats['times_held'] / total_funds) * 100
-            })
+            # Only include stocks held by at least 3 funds
+            if stats['times_held'] >= min_funds_required:
+                leaders.append({
+                    'symbol': symbol,
+                    'name': stats['name'],
+                    'times_held': stats['times_held'],
+                    'total_weight': stats['total_weight'],
+                    'avg_weight': avg_weight,
+                    'prevalence': (stats['times_held'] / total_funds) * 100
+                })
 
-        # Sort by times held (descending), then by average weight (descending)
-        leaders.sort(key=lambda x: (x['times_held'], x['avg_weight']), reverse=True)
+        # Sort by average weight (descending) - highest conviction wins
+        # Stocks already filtered to have at least 3 funds holding them
+        leaders.sort(key=lambda x: x['avg_weight'], reverse=True)
 
-        logger.info(f"Identified {len(leaders)} potential leaders in {sector_name}")
+        logger.info(f"Identified {len(leaders)} leaders in {sector_name} (held by >=3 funds)")
         return leaders
 
     def get_top_leaders(self, leaders, n=10):
