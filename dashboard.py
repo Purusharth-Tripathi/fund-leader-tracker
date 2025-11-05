@@ -53,7 +53,7 @@ def load_data():
     db_path = os.getenv('DATABASE_PATH', 'data/fund_leaders.db')
 
     if not os.path.exists(db_path):
-        return None, None, None, None
+        return None, None, None, None, None
 
     conn = sqlite3.connect(db_path)
 
@@ -115,9 +115,21 @@ def load_data():
     sectors_query = "SELECT name, keywords FROM sectors ORDER BY name"
     sectors = pd.read_sql_query(sectors_query, conn)
 
+    # Load funds by sector
+    funds_query = """
+        SELECT
+            s.name as sector,
+            f.symbol as fund_symbol,
+            f.name as fund_name
+        FROM funds f
+        JOIN sectors s ON f.sector_id = s.id
+        ORDER BY s.name, f.symbol
+    """
+    funds = pd.read_sql_query(funds_query, conn)
+
     conn.close()
 
-    return current_leaders, all_leaders, analysis_runs, sectors
+    return current_leaders, all_leaders, analysis_runs, sectors, funds
 
 
 def detect_changes(all_leaders_df):
@@ -172,7 +184,7 @@ def main():
     st.markdown("---")
 
     # Load data
-    current_leaders, all_leaders, analysis_runs, sectors = load_data()
+    current_leaders, all_leaders, analysis_runs, sectors, funds = load_data()
 
     if current_leaders is None or len(current_leaders) == 0:
         st.warning("⚠️ No data available. Please run an analysis first.")
@@ -335,6 +347,29 @@ def main():
                 st.metric("Avg Weight", f"{row['avg_weight']:.2f}%")
             with col3:
                 st.metric("Times Held", f"{row['times_held']}/5")
+
+        # Funds analyzed per sector
+        st.subheader("📁 Funds Analyzed by Sector")
+        st.caption("The 5 ETFs/funds analyzed for each sector")
+
+        if funds is not None and len(funds) > 0:
+            # Filter funds based on selected sectors
+            filtered_funds = funds[funds['sector'].isin(selected_sectors)]
+
+            # Group by sector and display
+            for sector in selected_sectors:
+                sector_funds = filtered_funds[filtered_funds['sector'] == sector]
+                if len(sector_funds) > 0:
+                    with st.expander(f"**{sector}** ({len(sector_funds)} funds)", expanded=False):
+                        # Create columns for fund display
+                        fund_cols = st.columns(min(5, len(sector_funds)))
+                        for i, (_, fund) in enumerate(sector_funds.iterrows()):
+                            with fund_cols[i % 5]:
+                                st.markdown(f"**{fund['fund_symbol']}**")
+                                if fund['fund_name'] and fund['fund_name'] != fund['fund_symbol']:
+                                    st.caption(fund['fund_name'][:30])
+        else:
+            st.info("No fund data available")
 
     with tab2:
         st.header("Historical Trends")
