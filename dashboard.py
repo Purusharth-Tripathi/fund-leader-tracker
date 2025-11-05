@@ -126,7 +126,7 @@ def detect_changes(all_leaders_df):
         return pd.DataFrame()
 
     # Convert dates
-    all_leaders_df['date'] = pd.to_datetime(all_leaders_df['analysis_date'])
+    all_leaders_df['date'] = pd.to_datetime(all_leaders_df['analysis_date'], errors='coerce')
 
     # Get unique dates
     dates = sorted(all_leaders_df['date'].unique(), reverse=True)
@@ -190,7 +190,8 @@ def main():
     # Date filter
     st.sidebar.subheader("📅 Date Range")
     if all_leaders is not None and len(all_leaders) > 0:
-        all_leaders['date'] = pd.to_datetime(all_leaders['analysis_date'])
+        all_leaders['date'] = pd.to_datetime(all_leaders['analysis_date'], errors='coerce')
+        all_leaders = all_leaders.dropna(subset=['date'])  # Remove rows with invalid dates
         min_date = all_leaders['date'].min().date()
         max_date = all_leaders['date'].max().date()
 
@@ -341,7 +342,8 @@ def main():
         if all_leaders is not None and len(all_leaders) > 1:
             # Prepare trend data
             trend_data = all_leaders.copy()
-            trend_data['date'] = pd.to_datetime(trend_data['analysis_date'])
+            trend_data['date'] = pd.to_datetime(trend_data['analysis_date'], errors='coerce')
+            trend_data = trend_data.dropna(subset=['date'])  # Remove rows with invalid dates
 
             # Filter by selected sectors
             trend_data = trend_data[trend_data['sector'].isin(selected_sectors)]
@@ -408,7 +410,8 @@ def main():
             # Analysis frequency chart
             if len(analysis_runs) > 1:
                 runs_df = analysis_runs.copy()
-                runs_df['date'] = pd.to_datetime(runs_df['run_date'])
+                runs_df['date'] = pd.to_datetime(runs_df['run_date'], errors='coerce')
+                runs_df = runs_df.dropna(subset=['date'])  # Remove any rows where date parsing failed
                 runs_df = runs_df.sort_values('date')
 
                 fig = px.line(
