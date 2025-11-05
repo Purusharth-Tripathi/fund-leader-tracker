@@ -48,26 +48,44 @@ class FundAnalyzer:
     def analyze_all_sectors(self):
         """
         Run analysis for all configured sectors
+        Uses alternating-day schedule to work within API quota limits (25 requests/day)
+        - Odd days: First 5 sectors
+        - Even days: Last 5 sectors
 
         Returns:
             dict: Analysis results for all sectors
         """
+        from datetime import datetime
+
+        # Determine which sectors to analyze based on day of month
+        day_of_month = datetime.now().day
+        is_odd_day = day_of_month % 2 == 1
+
+        if is_odd_day:
+            sectors_to_analyze = self.sectors[:5]  # First 5 sectors
+            schedule_msg = "ODD DAY - Analyzing first 5 sectors"
+        else:
+            sectors_to_analyze = self.sectors[5:]  # Last 5 sectors
+            schedule_msg = "EVEN DAY - Analyzing last 5 sectors"
+
         print_header("Fund Leader Tracker - Starting Analysis")
         try:
-            print_colored(f"Analyzing {len(self.sectors)} sectors...\n", Colors.OKBLUE)
+            print_colored(f"{schedule_msg}\n", Colors.OKBLUE)
+            print_colored(f"Analyzing {len(sectors_to_analyze)} of {len(self.sectors)} sectors (API quota: 25 requests/day)\n", Colors.OKBLUE)
         except (UnicodeEncodeError, UnicodeDecodeError):
-            print(f"Analyzing {len(self.sectors)} sectors...\n")
+            print(f"{schedule_msg}\n")
+            print(f"Analyzing {len(sectors_to_analyze)} of {len(self.sectors)} sectors (API quota: 25 requests/day)\n")
 
         # Get previous leaders for change detection
         previous_leaders = self.db.get_latest_leaders_by_sector()
         if previous_leaders:
             logger.info(f"Retrieved {len(previous_leaders)} previous leaders for comparison")
 
-        total_sectors = len(self.sectors)
+        total_sectors = len(sectors_to_analyze)
         total_funds_analyzed = 0
         total_leaders_found = 0
 
-        for i, sector_config in enumerate(self.sectors, 1):
+        for i, sector_config in enumerate(sectors_to_analyze, 1):
             sector_name = sector_config['name']
             keywords = sector_config['keywords']
 
