@@ -18,7 +18,33 @@ echo Date/Time: %date% %time% >> %LOGFILE%
 echo ================================================== >> %LOGFILE%
 echo. >> %LOGFILE%
 
-python main.py >> %LOGFILE% 2>&1
+C:\Users\ptripathi22\AppData\Local\Microsoft\WindowsApps\python.exe main.py >> %LOGFILE% 2>&1
+
+REM Check if analysis was successful
+if %ERRORLEVEL% EQU 0 (
+    echo. >> %LOGFILE%
+    echo ================================================== >> %LOGFILE%
+    echo Syncing results to GitHub... >> %LOGFILE%
+    echo ================================================== >> %LOGFILE%
+
+    REM Configure git to use stored credentials
+    git config --global credential.helper store
+
+    REM Add updated files
+    git add data/fund_leaders.db output/leaders.csv output/leaders.json >> %LOGFILE% 2>&1
+
+    REM Commit with timestamp
+    git commit -m "Auto-update: Analysis run %date% %time%" >> %LOGFILE% 2>&1
+
+    REM Push to GitHub
+    git push origin main >> %LOGFILE% 2>&1
+
+    if %ERRORLEVEL% EQU 0 (
+        echo GitHub sync successful! >> %LOGFILE%
+    ) else (
+        echo WARNING: GitHub sync failed >> %LOGFILE%
+    )
+)
 
 REM Log completion
 echo. >> %LOGFILE%
