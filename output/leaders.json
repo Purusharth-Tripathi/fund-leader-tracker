@@ -1,65 +1,92 @@
 {
-  "Aerospace & Defense": {
+  "Consumer Staples": {
     "funds_analyzed": [
-      "XAR",
-      "ITA",
-      "PPA"
+      "XLP",
+      "KXI",
+      "IYK",
+      "MOO",
+      "VDC"
     ],
-    "top_leader": null,
-    "total_holdings_analyzed": 145
-  },
-  "Renewable Energy": {
-    "funds_analyzed": [
-      "QCLN",
-      "ICLN",
-      "RAYS",
-      "TAN",
-      "PBW"
-    ],
-    "top_leader": null,
-    "total_holdings_analyzed": 317
-  },
-  "Healthcare & Biotech": {
-    "funds_analyzed": [
-      "BBH",
-      "XLV",
-      "IHI",
-      "XBI",
-      "VHT"
-    ],
-    "top_leader": null,
-    "total_holdings_analyzed": 680
-  },
-  "Automotive": {
-    "funds_analyzed": [
-      "CARZ",
-      "IDRV",
-      "XLV",
-      "IBB",
-      "XBI"
-    ],
-    "top_leader": null,
-    "total_holdings_analyzed": 639
-  },
-  "Precious Metals": {
-    "funds_analyzed": [
-      "GLD",
-      "IAU",
-      "SILJ",
-      "GDX",
-      "GDXJ"
-    ],
-    "top_leader": null,
-    "total_holdings_analyzed": 222
+    "top_leader": {
+      "symbol": "WMT",
+      "name": "Unknown",
+      "times_held": 3,
+      "total_weight": 0.3544,
+      "avg_weight": 0.11813333333333333,
+      "prevalence": 60.0
+    },
+    "total_holdings_analyzed": 382
   },
   "Tech & AI": {
     "funds_analyzed": [
-      "XLK",
-      "QTEC",
-      "SKYY",
-      "VGT"
+      "AIQ",
+      "XLP",
+      "IGV",
+      "VGT",
+      "XLK"
     ],
-    "top_leader": null,
-    "total_holdings_analyzed": 118
+    "top_leader": {
+      "symbol": "NVDA",
+      "name": "Unknown",
+      "times_held": 3,
+      "total_weight": 0.34199999999999997,
+      "avg_weight": 0.11399999999999999,
+      "prevalence": 60.0
+    },
+    "total_holdings_analyzed": 639
+  },
+  "Financial Services": {
+    "funds_analyzed": [
+      "KRE",
+      "TPAY",
+      "FINX",
+      "VFH",
+      "IAI"
+    ],
+    "top_leader": {
+      "symbol": "n/a",
+      "name": "Unknown",
+      "times_held": 7,
+      "total_weight": 0.16140000000000002,
+      "avg_weight": 0.02305714285714286,
+      "prevalence": 175.0
+    },
+    "total_holdings_analyzed": 666
+  },
+  "Infrastructure": {
+    "funds_analyzed": [
+      "IYJ",
+      "FIDU",
+      "IGF",
+      "PAVE",
+      "XLI"
+    ],
+    "top_leader": {
+      "symbol": "GE",
+      "name": "Unknown",
+      "times_held": 3,
+      "total_weight": 0.16399999999999998,
+      "avg_weight": 0.05466666666666666,
+      "prevalence": 60.0
+    },
+    "total_holdings_analyzed": 847
+  },
+  "Real Estate": {
+    "funds_analyzed": [
+      "RWR",
+      "IYR",
+      "VNQ",
+      "ICF",
+      "ITB"
+    ],
+    "top_leader": {
+      "symbol": "WELL",
+      "name": "Unknown",
+      "times_held": 4,
+      "total_weight": 0.34049999999999997,
+      "avg_weight": 0.08512499999999999,
+      "prevalence": 80.0
+    },
+    "total_holdings_analyzed": 413
   }
 }
