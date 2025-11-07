@@ -57,7 +57,9 @@ class LeaderIdentifier:
                 name = holding.get('name', 'Unknown')
                 weight = holding.get('weight', 0)
 
-                if not symbol or weight < self.min_holding_threshold:
+                # Filter out invalid or placeholder symbols
+                invalid_symbols = ['n/a', 'N/A', 'Unknown', 'UNKNOWN', '', None]
+                if not symbol or symbol in invalid_symbols or weight < self.min_holding_threshold:
                     continue
 
                 company_stats[symbol]['times_held'] += 1
