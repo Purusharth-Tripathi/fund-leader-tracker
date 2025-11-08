@@ -1,92 +1,92 @@
 {
   "Consumer Staples": {
     "funds_analyzed": [
+      "VDC",
+      "PBJ",
       "XLP",
-      "KXI",
-      "IYK",
-      "MOO",
-      "VDC"
+      "XRT",
+      "RTH"
     ],
     "top_leader": {
       "symbol": "WMT",
       "name": "Unknown",
-      "times_held": 3,
-      "total_weight": 0.3544,
-      "avg_weight": 0.11813333333333333,
-      "prevalence": 60.0
+      "times_held": 4,
+      "total_weight": 0.3628,
+      "avg_weight": 0.0907,
+      "prevalence": 80.0
     },
-    "total_holdings_analyzed": 382
+    "total_holdings_analyzed": 286
   },
   "Tech & AI": {
     "funds_analyzed": [
-      "AIQ",
-      "XLP",
-      "IGV",
+      "IRBO",
+      "SKYY",
+      "VDC",
       "VGT",
-      "XLK"
+      "IGM"
     ],
     "top_leader": {
-      "symbol": "NVDA",
+      "symbol": "MSFT",
       "name": "Unknown",
       "times_held": 3,
-      "total_weight": 0.34199999999999997,
-      "avg_weight": 0.11399999999999999,
-      "prevalence": 60.0
+      "total_weight": 0.2513,
+      "avg_weight": 0.08376666666666667,
+      "prevalence": 75.0
     },
-    "total_holdings_analyzed": 639
+    "total_holdings_analyzed": 737
   },
   "Financial Services": {
     "funds_analyzed": [
-      "KRE",
       "TPAY",
+      "IPAY",
+      "PFI",
       "FINX",
-      "VFH",
-      "IAI"
+      "XLF"
     ],
     "top_leader": {
-      "symbol": "n/a",
+      "symbol": "MA",
       "name": "Unknown",
-      "times_held": 7,
-      "total_weight": 0.16140000000000002,
-      "avg_weight": 0.02305714285714286,
-      "prevalence": 175.0
+      "times_held": 3,
+      "total_weight": 0.1722,
+      "avg_weight": 0.0574,
+      "prevalence": 75.0
     },
-    "total_holdings_analyzed": 666
+    "total_holdings_analyzed": 232
   },
   "Infrastructure": {
     "funds_analyzed": [
+      "XLI",
+      "NFRA",
       "IYJ",
-      "FIDU",
-      "IGF",
-      "PAVE",
-      "XLI"
+      "VPU",
+      "IDU"
     ],
     "top_leader": {
-      "symbol": "GE",
+      "symbol": "NEE",
       "name": "Unknown",
       "times_held": 3,
-      "total_weight": 0.16399999999999998,
-      "avg_weight": 0.05466666666666666,
+      "total_weight": 0.23399999999999999,
+      "avg_weight": 0.078,
       "prevalence": 60.0
     },
-    "total_holdings_analyzed": 847
+    "total_holdings_analyzed": 610
   },
   "Real Estate": {
     "funds_analyzed": [
-      "RWR",
-      "IYR",
       "VNQ",
-      "ICF",
-      "ITB"
+      "REZ",
+      "RWR",
+      "XLRE",
+      "ICF"
     ],
     "top_leader": {
       "symbol": "WELL",
       "name": "Unknown",
-      "times_held": 4,
-      "total_weight": 0.34049999999999997,
-      "avg_weight": 0.08512499999999999,
-      "prevalence": 80.0
+      "times_held": 5,
+      "total_weight": 0.5861000000000001,
+      "avg_weight": 0.11722000000000002,
+      "prevalence": 100.0
     },
-    "total_holdings_analyzed": 413
+    "total_holdings_analyzed": 376
   }
 }
