@@ -76,6 +76,39 @@ class HoldingsFetcher:
             logger.error(f"Unexpected error fetching profile for {symbol}: {e}")
             return None
 
+    def get_company_name(self, symbol):
+        """
+        Get company name for a stock symbol using OVERVIEW endpoint
+
+        Args:
+            symbol: Stock symbol
+
+        Returns:
+            str: Company name or symbol if not found
+        """
+        try:
+            params = {
+                'function': 'OVERVIEW',
+                'symbol': symbol,
+                'apikey': self.api_key
+            }
+
+            response = requests.get(
+                self.base_url,
+                params=params,
+                timeout=10,
+                verify=self.verify_ssl
+            )
+            data = response.json()
+
+            # Get company name from overview
+            company_name = data.get('Name', symbol)
+            return company_name if company_name else symbol
+
+        except Exception as e:
+            logger.debug(f"Could not fetch name for {symbol}: {e}")
+            return symbol
+
     def get_fund_holdings(self, symbol):
         """
         Get fund top holdings
@@ -99,9 +132,17 @@ class HoldingsFetcher:
             # Extract holdings from profile if available
             if 'holdings' in profile:
                 for holding in profile['holdings']:
+                    stock_symbol = holding.get('symbol', 'N/A')
+                    company_name = holding.get('name', 'Unknown')
+
+                    # If name is Unknown, try to fetch it
+                    if company_name == 'Unknown' and stock_symbol not in ['N/A', 'n/a', '']:
+                        company_name = self.get_company_name(stock_symbol)
+                        time.sleep(self.request_delay)  # Rate limiting
+
                     holdings.append({
-                        'symbol': holding.get('symbol', 'N/A'),
-                        'name': holding.get('name', 'Unknown'),
+                        'symbol': stock_symbol,
+                        'name': company_name,
                         'weight': float(holding.get('weight', 0))
                     })
             else:
