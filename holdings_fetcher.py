@@ -6,9 +6,21 @@ import requests
 import time
 import logging
 import os
+import json
 from utils import print_progress
 
 logger = logging.getLogger(__name__)
+
+# Load cached company names
+COMPANY_NAMES_CACHE = {}
+try:
+    cache_file = os.path.join(os.path.dirname(__file__), 'company_names.json')
+    if os.path.exists(cache_file):
+        with open(cache_file, 'r') as f:
+            COMPANY_NAMES_CACHE = json.load(f)
+        logger.info(f"Loaded {len(COMPANY_NAMES_CACHE)} company names from cache")
+except Exception as e:
+    logger.warning(f"Could not load company names cache: {e}")
 
 
 class HoldingsFetcher:
@@ -78,7 +90,8 @@ class HoldingsFetcher:
 
     def get_company_name(self, symbol):
         """
-        Get company name for a stock symbol using OVERVIEW endpoint
+        Get company name for a stock symbol
+        First checks cache, then falls back to API if needed
 
         Args:
             symbol: Stock symbol
@@ -86,6 +99,18 @@ class HoldingsFetcher:
         Returns:
             str: Company name or symbol if not found
         """
+        # Check cache first
+        if symbol in COMPANY_NAMES_CACHE:
+            return COMPANY_NAMES_CACHE[symbol]
+
+        # Only use API for critical lookups (disabled by default to save quota)
+        # To enable API lookups, set use_api_lookup = True
+        use_api_lookup = False
+
+        if not use_api_lookup:
+            return symbol  # Return symbol as-is if not in cache
+
+        # API lookup (only if enabled)
         try:
             params = {
                 'function': 'OVERVIEW',
@@ -135,10 +160,9 @@ class HoldingsFetcher:
                     stock_symbol = holding.get('symbol', 'N/A')
                     company_name = holding.get('name', 'Unknown')
 
-                    # If name is Unknown, try to fetch it
+                    # If name is Unknown, try to fetch it from cache
                     if company_name == 'Unknown' and stock_symbol not in ['N/A', 'n/a', '']:
                         company_name = self.get_company_name(stock_symbol)
-                        time.sleep(self.request_delay)  # Rate limiting
 
                     holdings.append({
                         'symbol': stock_symbol,
