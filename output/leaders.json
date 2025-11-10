@@ -1,92 +1,78 @@
 {
   "Consumer Staples": {
     "funds_analyzed": [
-      "VDC",
-      "PBJ",
-      "XLP",
       "XRT",
-      "RTH"
+      "RTH",
+      "KXI",
+      "MOO",
+      "VDC"
     ],
     "top_leader": {
       "symbol": "WMT",
-      "name": "Unknown",
+      "name": "Walmart Inc",
       "times_held": 4,
-      "total_weight": 0.3628,
-      "avg_weight": 0.0907,
+      "total_weight": 0.3526,
+      "avg_weight": 0.08815,
       "prevalence": 80.0
     },
-    "total_holdings_analyzed": 286
+    "total_holdings_analyzed": 382
   },
   "Tech & AI": {
     "funds_analyzed": [
-      "IRBO",
-      "SKYY",
-      "VDC",
       "VGT",
-      "IGM"
+      "SKYY",
+      "XLK",
+      "RTH",
+      "QTEC"
     ],
     "top_leader": {
-      "symbol": "MSFT",
-      "name": "Unknown",
+      "symbol": "NVDA",
+      "name": "NVIDIA Corporation",
       "times_held": 3,
-      "total_weight": 0.2513,
-      "avg_weight": 0.08376666666666667,
-      "prevalence": 75.0
+      "total_weight": 0.34740000000000004,
+      "avg_weight": 0.11580000000000001,
+      "prevalence": 60.0
     },
-    "total_holdings_analyzed": 737
+    "total_holdings_analyzed": 489
   },
   "Financial Services": {
     "funds_analyzed": [
-      "TPAY",
-      "IPAY",
-      "PFI",
+      "KIE",
       "FINX",
-      "XLF"
+      "PFI",
+      "XLF",
+      "TPAY"
     ],
-    "top_leader": {
-      "symbol": "MA",
-      "name": "Unknown",
-      "times_held": 3,
-      "total_weight": 0.1722,
-      "avg_weight": 0.0574,
-      "prevalence": 75.0
-    },
-    "total_holdings_analyzed": 232
+    "top_leader": null,
+    "total_holdings_analyzed": 243
   },
   "Infrastructure": {
     "funds_analyzed": [
-      "XLI",
-      "NFRA",
-      "IYJ",
-      "VPU",
-      "IDU"
+      "IFRA",
+      "IDU",
+      "XHB",
+      "VIS",
+      "VPU"
     ],
-    "top_leader": {
-      "symbol": "NEE",
-      "name": "Unknown",
-      "times_held": 3,
-      "total_weight": 0.23399999999999999,
-      "avg_weight": 0.078,
-      "prevalence": 60.0
-    },
-    "total_holdings_analyzed": 610
+    "top_leader": null,
+    "total_holdings_analyzed": 703
   },
   "Real Estate": {
     "funds_analyzed": [
-      "VNQ",
-      "REZ",
-      "RWR",
+      "IYR",
       "XLRE",
-      "ICF"
+      "ICF",
+      "SCHH",
+      "ITB"
     ],
     "top_leader": {
       "symbol": "WELL",
-      "name": "Unknown",
-      "times_held": 5,
-      "total_weight": 0.5861000000000001,
-      "avg_weight": 0.11722000000000002,
-      "prevalence": 100.0
+      "name": "Welltower Inc",
+      "times_held": 4,
+      "total_weight": 0.37970000000000004,
+      "avg_weight": 0.09492500000000001,
+      "prevalence": 80.0
     },
-    "total_holdings_analyzed": 376
+    "total_holdings_analyzed": 307
   }
 }
