@@ -2,66 +2,73 @@
   "Consumer Staples": {
     "funds_analyzed": [
       "XRT",
-      "RTH",
-      "KXI",
-      "MOO",
-      "VDC"
+      "VDC",
+      "FSTA",
+      "IYK",
+      "MOO"
     ],
     "top_leader": {
-      "symbol": "WMT",
-      "name": "Walmart Inc",
-      "times_held": 4,
-      "total_weight": 0.3526,
-      "avg_weight": 0.08815,
-      "prevalence": 80.0
+      "symbol": "PG",
+      "name": "Procter & Gamble Company",
+      "times_held": 3,
+      "total_weight": 0.3651,
+      "avg_weight": 0.12169999999999999,
+      "prevalence": 60.0
     },
-    "total_holdings_analyzed": 382
+    "total_holdings_analyzed": 403
   },
   "Tech & AI": {
     "funds_analyzed": [
+      "ROBO",
       "VGT",
-      "SKYY",
-      "XLK",
-      "RTH",
-      "QTEC"
+      "XRT",
+      "THNQ",
+      "VDC"
     ],
     "top_leader": {
       "symbol": "NVDA",
       "name": "NVIDIA Corporation",
       "times_held": 3,
-      "total_weight": 0.34740000000000004,
-      "avg_weight": 0.11580000000000001,
+      "total_weight": 0.20689999999999997,
+      "avg_weight": 0.06896666666666666,
       "prevalence": 60.0
     },
-    "total_holdings_analyzed": 489
+    "total_holdings_analyzed": 611
   },
   "Financial Services": {
     "funds_analyzed": [
-      "KIE",
-      "FINX",
-      "PFI",
-      "XLF",
-      "TPAY"
+      "IAK",
+      "KCE",
+      "TPAY",
+      "KRE",
+      "XLF"
     ],
     "top_leader": null,
-    "total_holdings_analyzed": 243
+    "total_holdings_analyzed": 350
   },
   "Infrastructure": {
     "funds_analyzed": [
-      "IFRA",
-      "IDU",
-      "XHB",
-      "VIS",
-      "VPU"
+      "VPU",
+      "XLI",
+      "PAVE",
+      "FIDU",
+      "IGF"
     ],
-    "top_leader": null,
-    "total_holdings_analyzed": 703
+    "top_leader": {
+      "symbol": "SRE",
+      "name": "SRE",
+      "times_held": 3,
+      "total_weight": 0.0878,
+      "avg_weight": 0.029266666666666667,
+      "prevalence": 60.0
+    },
+    "total_holdings_analyzed": 717
   },
   "Real Estate": {
     "funds_analyzed": [
-      "IYR",
-      "XLRE",
+      "REZ",
       "ICF",
+      "XLRE",
       "SCHH",
       "ITB"
     ],
@@ -69,10 +76,10 @@
       "symbol": "WELL",
       "name": "Welltower Inc",
       "times_held": 4,
-      "total_weight": 0.37970000000000004,
-      "avg_weight": 0.09492500000000001,
+      "total_weight": 0.5411,
+      "avg_weight": 0.135275,
       "prevalence": 80.0
     },
-    "total_holdings_analyzed": 307
+    "total_holdings_analyzed": 286
   }
 }
