@@ -1,85 +1,92 @@
 {
-  "Consumer Staples": {
+  "Aerospace & Defense": {
     "funds_analyzed": [
-      "XRT",
-      "VDC",
-      "FSTA",
-      "IYK",
-      "MOO"
+      "DFEN",
+      "XAR",
+      "PPA",
+      "SOAR",
+      "ITA"
     ],
     "top_leader": {
-      "symbol": "PG",
-      "name": "Procter & Gamble Company",
-      "times_held": 3,
-      "total_weight": 0.3651,
-      "avg_weight": 0.12169999999999999,
-      "prevalence": 60.0
-    },
-    "total_holdings_analyzed": 403
-  },
-  "Tech & AI": {
-    "funds_analyzed": [
-      "ROBO",
-      "VGT",
-      "XRT",
-      "THNQ",
-      "VDC"
-    ],
-    "top_leader": {
-      "symbol": "NVDA",
-      "name": "NVIDIA Corporation",
-      "times_held": 3,
-      "total_weight": 0.20689999999999997,
-      "avg_weight": 0.06896666666666666,
-      "prevalence": 60.0
-    },
-    "total_holdings_analyzed": 611
-  },
-  "Financial Services": {
-    "funds_analyzed": [
-      "IAK",
-      "KCE",
-      "TPAY",
-      "KRE",
-      "XLF"
-    ],
-    "top_leader": null,
-    "total_holdings_analyzed": 350
-  },
-  "Infrastructure": {
-    "funds_analyzed": [
-      "VPU",
-      "XLI",
-      "PAVE",
-      "FIDU",
-      "IGF"
-    ],
-    "top_leader": {
-      "symbol": "SRE",
-      "name": "SRE",
-      "times_held": 3,
-      "total_weight": 0.0878,
-      "avg_weight": 0.029266666666666667,
-      "prevalence": 60.0
-    },
-    "total_holdings_analyzed": 717
-  },
-  "Real Estate": {
-    "funds_analyzed": [
-      "REZ",
-      "ICF",
-      "XLRE",
-      "SCHH",
-      "ITB"
-    ],
-    "top_leader": {
-      "symbol": "WELL",
-      "name": "Welltower Inc",
+      "symbol": "GE",
+      "name": "General Electric Company",
       "times_held": 4,
-      "total_weight": 0.5411,
-      "avg_weight": 0.135275,
+      "total_weight": 0.4716,
+      "avg_weight": 0.1179,
+      "prevalence": 100.0
+    },
+    "total_holdings_analyzed": 191
+  },
+  "Renewable Energy": {
+    "funds_analyzed": [
+      "ICLN",
+      "QCLN",
+      "TAN",
+      "FAN",
+      "PBW"
+    ],
+    "top_leader": {
+      "symbol": "FSLR",
+      "name": "First Solar Inc",
+      "times_held": 4,
+      "total_weight": 0.27890000000000004,
+      "avg_weight": 0.06972500000000001,
       "prevalence": 80.0
     },
-    "total_holdings_analyzed": 286
+    "total_holdings_analyzed": 368
+  },
+  "Healthcare & Biotech": {
+    "funds_analyzed": [
+      "VHT",
+      "IHI",
+      "BBH",
+      "XLV",
+      "XBI"
+    ],
+    "top_leader": {
+      "symbol": "ABT",
+      "name": "Abbott Laboratories",
+      "times_held": 3,
+      "total_weight": 0.2743,
+      "avg_weight": 0.09143333333333332,
+      "prevalence": 60.0
+    },
+    "total_holdings_analyzed": 677
+  },
+  "Automotive": {
+    "funds_analyzed": [
+      "KARS",
+      "XLP",
+      "VHT",
+      "FSTA",
+      "KXI"
+    ],
+    "top_leader": {
+      "symbol": "WMT",
+      "name": "Walmart Inc",
+      "times_held": 3,
+      "total_weight": 0.35650000000000004,
+      "avg_weight": 0.11883333333333335,
+      "prevalence": 60.0
+    },
+    "total_holdings_analyzed": 721
+  },
+  "Precious Metals": {
+    "funds_analyzed": [
+      "GLDM",
+      "SILJ",
+      "XME",
+      "GLD",
+      "RING"
+    ],
+    "top_leader": {
+      "symbol": "CDE",
+      "name": "Coeur Mining Inc",
+      "times_held": 3,
+      "total_weight": 0.18910000000000002,
+      "avg_weight": 0.06303333333333334,
+      "prevalence": 100.0
+    },
+    "total_holdings_analyzed": 159
   }
 }
