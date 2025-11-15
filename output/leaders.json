@@ -1,78 +1,85 @@
 {
-  "Consumer Staples": {
+  "Aerospace & Defense": {
     "funds_analyzed": [
-      "VDC",
-      "PBJ",
-      "XRT",
-      "IYK",
-      "RTH"
+      "JETS",
+      "SOAR",
+      "XAR",
+      "PPA",
+      "XTN"
     ],
     "top_leader": {
-      "symbol": "WMT",
-      "name": "Walmart Inc",
+      "symbol": "BA",
+      "name": "Boeing Company",
       "times_held": 3,
-      "total_weight": 0.249,
-      "avg_weight": 0.083,
-      "prevalence": 60.0
+      "total_weight": 0.1177,
+      "avg_weight": 0.039233333333333335,
+      "prevalence": 75.0
     },
-    "total_holdings_analyzed": 305
+    "total_holdings_analyzed": 203
   },
-  "Tech & AI": {
+  "Renewable Energy": {
     "funds_analyzed": [
-      "SKYY",
-      "BOTZ",
-      "VDC",
-      "XRT",
-      "IGM"
-    ],
-    "top_leader": null,
-    "total_holdings_analyzed": 594
-  },
-  "Financial Services": {
-    "funds_analyzed": [
-      "TPAY",
-      "PFI",
-      "KBE",
-      "KCE",
-      "IAK"
-    ],
-    "top_leader": null,
-    "total_holdings_analyzed": 271
-  },
-  "Infrastructure": {
-    "funds_analyzed": [
-      "NFRA",
-      "IFRA",
-      "XLU",
-      "VPU",
-      "IDU"
+      "FAN",
+      "RAYS",
+      "TAN",
+      "ICLN",
+      "QCLN"
     ],
     "top_leader": {
-      "symbol": "NEE",
-      "name": "NextEra Energy Inc",
-      "times_held": 4,
-      "total_weight": 0.357,
-      "avg_weight": 0.08925,
-      "prevalence": 80.0
+      "symbol": "FSLR",
+      "name": "First Solar Inc",
+      "times_held": 3,
+      "total_weight": 0.2584,
+      "avg_weight": 0.08613333333333334,
+      "prevalence": 75.0
     },
-    "total_holdings_analyzed": 516
+    "total_holdings_analyzed": 303
   },
-  "Real Estate": {
+  "Healthcare & Biotech": {
     "funds_analyzed": [
-      "RWR",
-      "ICF",
-      "SCHH",
-      "VNQ",
-      "IYR"
+      "XBI",
+      "BBH",
+      "XLV",
+      "IBB",
+      "VHT"
     ],
     "top_leader": {
-      "symbol": "WELL",
-      "name": "Welltower Inc",
+      "symbol": "GILD",
+      "name": "Gilead Sciences Inc",
       "times_held": 5,
-      "total_weight": 0.44430000000000003,
-      "avg_weight": 0.08886000000000001,
+      "total_weight": 0.2751,
+      "avg_weight": 0.05502,
       "prevalence": 100.0
     },
-    "total_holdings_analyzed": 487
+    "total_holdings_analyzed": 877
+  },
+  "Automotive": {
+    "funds_analyzed": [
+      "FSTA",
+      "PBJ",
+      "KARS",
+      "XBI",
+      "DRIV"
+    ],
+    "top_leader": null,
+    "total_holdings_analyzed": 412
+  },
+  "Precious Metals": {
+    "funds_analyzed": [
+      "GDXJ",
+      "PICK",
+      "GDX",
+      "SIL",
+      "RING"
+    ],
+    "top_leader": {
+      "symbol": "CDE",
+      "name": "Coeur Mining Inc",
+      "times_held": 4,
+      "total_weight": 0.20720000000000002,
+      "avg_weight": 0.051800000000000006,
+      "prevalence": 80.0
+    },
+    "total_holdings_analyzed": 556
   }
 }
