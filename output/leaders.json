@@ -1,85 +1,85 @@
 {
-  "Aerospace & Defense": {
+  "Consumer Staples": {
     "funds_analyzed": [
-      "JETS",
-      "SOAR",
-      "XAR",
-      "PPA",
-      "XTN"
-    ],
-    "top_leader": {
-      "symbol": "BA",
-      "name": "Boeing Company",
-      "times_held": 3,
-      "total_weight": 0.1177,
-      "avg_weight": 0.039233333333333335,
-      "prevalence": 75.0
-    },
-    "total_holdings_analyzed": 203
-  },
-  "Renewable Energy": {
-    "funds_analyzed": [
-      "FAN",
-      "RAYS",
-      "TAN",
-      "ICLN",
-      "QCLN"
-    ],
-    "top_leader": {
-      "symbol": "FSLR",
-      "name": "First Solar Inc",
-      "times_held": 3,
-      "total_weight": 0.2584,
-      "avg_weight": 0.08613333333333334,
-      "prevalence": 75.0
-    },
-    "total_holdings_analyzed": 303
-  },
-  "Healthcare & Biotech": {
-    "funds_analyzed": [
-      "XBI",
-      "BBH",
-      "XLV",
-      "IBB",
-      "VHT"
-    ],
-    "top_leader": {
-      "symbol": "GILD",
-      "name": "Gilead Sciences Inc",
-      "times_held": 5,
-      "total_weight": 0.2751,
-      "avg_weight": 0.05502,
-      "prevalence": 100.0
-    },
-    "total_holdings_analyzed": 877
-  },
-  "Automotive": {
-    "funds_analyzed": [
-      "FSTA",
+      "RTH",
       "PBJ",
-      "KARS",
-      "XBI",
-      "DRIV"
+      "XRT",
+      "KXI",
+      "IYK"
+    ],
+    "top_leader": {
+      "symbol": "WMT",
+      "name": "Walmart Inc",
+      "times_held": 3,
+      "total_weight": 0.2115,
+      "avg_weight": 0.0705,
+      "prevalence": 60.0
+    },
+    "total_holdings_analyzed": 309
+  },
+  "Tech & AI": {
+    "funds_analyzed": [
+      "IRBO",
+      "RTH",
+      "BOTZ",
+      "CLOU",
+      "VDC"
     ],
     "top_leader": null,
-    "total_holdings_analyzed": 412
+    "total_holdings_analyzed": 227
   },
-  "Precious Metals": {
+  "Financial Services": {
     "funds_analyzed": [
-      "GDXJ",
-      "PICK",
-      "GDX",
-      "SIL",
-      "RING"
+      "FINX",
+      "ARKF",
+      "VFH",
+      "KRE",
+      "KCE"
     ],
     "top_leader": {
-      "symbol": "CDE",
-      "name": "Coeur Mining Inc",
+      "symbol": "COIN",
+      "name": "Coinbase Global Inc",
+      "times_held": 3,
+      "total_weight": 0.1569,
+      "avg_weight": 0.052300000000000006,
+      "prevalence": 60.0
+    },
+    "total_holdings_analyzed": 697
+  },
+  "Infrastructure": {
+    "funds_analyzed": [
+      "IYJ",
+      "VIS",
+      "XLU",
+      "FIDU",
+      "XLI"
+    ],
+    "top_leader": {
+      "symbol": "GE",
+      "name": "General Electric Company",
       "times_held": 4,
-      "total_weight": 0.20720000000000002,
-      "avg_weight": 0.051800000000000006,
+      "total_weight": 0.2185,
+      "avg_weight": 0.054625,
       "prevalence": 80.0
     },
-    "total_holdings_analyzed": 556
+    "total_holdings_analyzed": 990
+  },
+  "Real Estate": {
+    "funds_analyzed": [
+      "IYR",
+      "SCHH",
+      "ICF",
+      "REZ",
+      "XLRE"
+    ],
+    "top_leader": {
+      "symbol": "WELL",
+      "name": "Welltower Inc",
+      "times_held": 5,
+      "total_weight": 0.6389,
+      "avg_weight": 0.12778,
+      "prevalence": 100.0
+    },
+    "total_holdings_analyzed": 302
   }
 }
