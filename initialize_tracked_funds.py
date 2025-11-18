@@ -132,7 +132,7 @@ def initialize_sector_funds(config, api_key, sector_config, db):
                 rank=rank
             )
 
-        print_colored(f"\n✓ Saved top 5 funds for {sector_name}", Colors.OKGREEN)
+        print_colored(f"\n[OK] Saved top 5 funds for {sector_name}", Colors.OKGREEN)
         return True
 
     except Exception as e:
@@ -188,10 +188,10 @@ def main():
     # Summary
     print("\n" + "="*60)
     print_header("Initialization Complete")
-    print_colored(f"✓ Successfully initialized: {successful} sectors", Colors.OKGREEN)
+    print_colored(f"[OK] Successfully initialized: {successful} sectors", Colors.OKGREEN)
 
     if failed > 0:
-        print_colored(f"✗ Failed: {failed} sectors", Colors.FAIL)
+        print_colored(f"[ERROR] Failed: {failed} sectors", Colors.FAIL)
 
     print("\nThe static fund list has been saved to the database.")
     print("Daily monitoring will now track only these specific funds.")
