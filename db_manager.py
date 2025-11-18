@@ -109,11 +109,24 @@ class DatabaseManager:
             created_at TEXT DEFAULT CURRENT_TIMESTAMP
         );
 
+        -- Tracked Funds table (STATIC list of top 5 funds per sector)
+        CREATE TABLE IF NOT EXISTS tracked_funds (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            sector_name TEXT NOT NULL,
+            fund_symbol TEXT NOT NULL,
+            fund_name TEXT,
+            performance_3year REAL,
+            rank_in_sector INTEGER,
+            initialized_at TEXT DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(sector_name, fund_symbol)
+        );
+
         -- Create indexes for better performance
         CREATE INDEX IF NOT EXISTS idx_funds_sector ON funds(sector_id);
         CREATE INDEX IF NOT EXISTS idx_holdings_fund ON holdings(fund_id);
         CREATE INDEX IF NOT EXISTS idx_holdings_symbol ON holdings(company_symbol);
         CREATE INDEX IF NOT EXISTS idx_leaders_sector ON industry_leaders(sector_id);
+        CREATE INDEX IF NOT EXISTS idx_tracked_funds_sector ON tracked_funds(sector_name);
         """
 
         try:
@@ -314,4 +327,69 @@ class DatabaseManager:
             return deleted
         except sqlite3.Error as e:
             logger.error(f"Error clearing old data: {e}")
+            return 0
+
+    def save_tracked_fund(self, sector_name, fund_symbol, fund_name, performance_3year, rank):
+        """Save a tracked fund (static list) for a sector"""
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute("""
+                INSERT INTO tracked_funds (sector_name, fund_symbol, fund_name, performance_3year, rank_in_sector)
+                VALUES (?, ?, ?, ?, ?)
+                ON CONFLICT(sector_name, fund_symbol) DO UPDATE SET
+                    fund_name = excluded.fund_name,
+                    performance_3year = excluded.performance_3year,
+                    rank_in_sector = excluded.rank_in_sector
+            """, (sector_name, fund_symbol, fund_name, performance_3year, rank))
+            self.conn.commit()
+            return cursor.lastrowid
+        except sqlite3.Error as e:
+            logger.error(f"Error saving tracked fund {fund_symbol} for {sector_name}: {e}")
+            return None
+
+    def get_tracked_funds(self, sector_name):
+        """Get the static list of tracked funds for a sector"""
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute("""
+                SELECT fund_symbol, fund_name, performance_3year, rank_in_sector, initialized_at
+                FROM tracked_funds
+                WHERE sector_name = ?
+                ORDER BY rank_in_sector ASC
+            """, (sector_name,))
+            results = cursor.fetchall()
+            return [dict(row) for row in results]
+        except sqlite3.Error as e:
+            logger.error(f"Error retrieving tracked funds for {sector_name}: {e}")
+            return []
+
+    def has_tracked_funds(self, sector_name):
+        """Check if tracked funds exist for a sector"""
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute("""
+                SELECT COUNT(*) as count
+                FROM tracked_funds
+                WHERE sector_name = ?
+            """, (sector_name,))
+            result = cursor.fetchone()
+            return result['count'] > 0
+        except sqlite3.Error as e:
+            logger.error(f"Error checking tracked funds for {sector_name}: {e}")
+            return False
+
+    def clear_tracked_funds(self, sector_name=None):
+        """Clear tracked funds (for re-initialization)"""
+        try:
+            cursor = self.conn.cursor()
+            if sector_name:
+                cursor.execute("DELETE FROM tracked_funds WHERE sector_name = ?", (sector_name,))
+                logger.info(f"Cleared tracked funds for {sector_name}")
+            else:
+                cursor.execute("DELETE FROM tracked_funds")
+                logger.info("Cleared all tracked funds")
+            self.conn.commit()
+            return cursor.rowcount
+        except sqlite3.Error as e:
+            logger.error(f"Error clearing tracked funds: {e}")
             return 0

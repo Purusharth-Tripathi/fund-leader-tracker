@@ -98,8 +98,8 @@ class FundAnalyzer:
                 print(f"Keywords: {', '.join(keywords)}")
 
             try:
-                # Step 1: Find relevant funds
-                fund_symbols = self._find_sector_funds(keywords)
+                # Step 1: Find relevant funds (uses STATIC list from database)
+                fund_symbols = self._find_sector_funds(keywords, sector_name)
                 if not fund_symbols:
                     try:
                         print_colored(f"No funds found for {sector_name}", Colors.WARNING)
@@ -205,16 +205,38 @@ class FundAnalyzer:
 
         return self.results
 
-    def _find_sector_funds(self, keywords):
+    def _find_sector_funds(self, keywords, sector_name):
         """
-        Find funds for a specific sector based on keywords
+        Find funds for a specific sector
+
+        IMPORTANT: Uses STATIC tracked funds from database (set during initialization)
+        This ensures the same funds are monitored daily without re-evaluation
 
         Args:
-            keywords: List of sector keywords
+            keywords: List of sector keywords (fallback only)
+            sector_name: Name of the sector
 
         Returns:
-            list: List of fund symbols
+            list: List of fund symbols (static from database)
         """
+        # PRIORITY 1: Use static tracked funds from database
+        if self.db.has_tracked_funds(sector_name):
+            tracked = self.db.get_tracked_funds(sector_name)
+            fund_symbols = [f['fund_symbol'] for f in tracked]
+            logger.info(f"Using {len(fund_symbols)} STATIC tracked funds for {sector_name}")
+            return fund_symbols
+
+        # FALLBACK: If no tracked funds, warn and use dynamic search
+        # (User should run initialization script first)
+        logger.warning(f"No tracked funds found for {sector_name}! Using dynamic search as fallback.")
+        logger.warning("Run 'python initialize_tracked_funds.py' to set up static fund tracking.")
+
+        try:
+            print_colored(f"  ⚠ WARNING: No static funds configured for {sector_name}", Colors.WARNING)
+            print_colored(f"  Using dynamic search (not recommended for production)", Colors.WARNING)
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            print(f"  WARNING: No static funds configured for {sector_name}")
+
         top_n = self.analysis_config.get('top_funds_per_sector', 5)
         fund_symbols = self.fetcher.search_funds_by_keywords(keywords)
         return fund_symbols[:top_n]
