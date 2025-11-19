@@ -53,7 +53,7 @@ output:
 
 # Email Alert Settings
 email_alerts:
-  enabled: false
+  enabled: true
   send_on_completion: false  # Send email after every analysis
   send_on_change_only: true  # Send email ONLY when leadership changes detected
   include_top_n_leaders: 10
