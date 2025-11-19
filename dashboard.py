@@ -115,15 +115,15 @@ def load_data():
     sectors_query = "SELECT name, keywords FROM sectors ORDER BY name"
     sectors = pd.read_sql_query(sectors_query, conn)
 
-    # Load funds by sector
+    # Load funds by sector (using current tracked funds)
     funds_query = """
         SELECT
-            s.name as sector,
-            f.symbol as fund_symbol,
-            f.name as fund_name
-        FROM funds f
-        JOIN sectors s ON f.sector_id = s.id
-        ORDER BY s.name, f.symbol
+            sector_name as sector,
+            fund_symbol,
+            fund_name,
+            rank_in_sector
+        FROM tracked_funds
+        ORDER BY sector_name, rank_in_sector
     """
     funds = pd.read_sql_query(funds_query, conn)
 
