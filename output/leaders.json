@@ -1,92 +1,85 @@
 {
   "Aerospace & Defense": {
     "funds_analyzed": [
-      "XTN",
-      "JETS",
-      "SOAR",
+      "SHLD",
+      "DFEN",
       "ITA",
-      "PPA"
+      "PPA",
+      "XAR"
     ],
     "top_leader": {
-      "symbol": "BA",
-      "name": "Boeing Company",
-      "times_held": 3,
-      "total_weight": 0.16010000000000002,
-      "avg_weight": 0.05336666666666667,
-      "prevalence": 75.0
+      "symbol": "GE",
+      "name": "General Electric Company",
+      "times_held": 4,
+      "total_weight": 0.48860000000000003,
+      "avg_weight": 0.12215000000000001,
+      "prevalence": 80.0
     },
-    "total_holdings_analyzed": 206
+    "total_holdings_analyzed": 236
   },
   "Renewable Energy": {
     "funds_analyzed": [
-      "FAN",
+      "ICLN",
       "PBW",
-      "RAYS",
       "TAN",
-      "QCLN"
+      "QCLN",
+      "CNRG"
     ],
     "top_leader": {
-      "symbol": "FSLR",
-      "name": "First Solar Inc",
-      "times_held": 3,
-      "total_weight": 0.2069,
-      "avg_weight": 0.06896666666666666,
-      "prevalence": 75.0
+      "symbol": "BE",
+      "name": "BE",
+      "times_held": 4,
+      "total_weight": 0.2851,
+      "avg_weight": 0.071275,
+      "prevalence": 80.0
     },
-    "total_holdings_analyzed": 207
+    "total_holdings_analyzed": 346
   },
   "Healthcare & Biotech": {
     "funds_analyzed": [
       "VHT",
       "XBI",
-      "BBH",
       "XLV",
-      "IBB"
+      "IBB",
+      "IXJ"
     ],
     "top_leader": {
-      "symbol": "AMGN",
-      "name": "Amgen Inc",
-      "times_held": 5,
-      "total_weight": 0.2832,
-      "avg_weight": 0.05664,
-      "prevalence": 100.0
+      "symbol": "LLY",
+      "name": "Eli Lilly and Company",
+      "times_held": 3,
+      "total_weight": 0.3436,
+      "avg_weight": 0.11453333333333333,
+      "prevalence": 60.0
     },
-    "total_holdings_analyzed": 835
+    "total_holdings_analyzed": 940
   },
   "Automotive": {
     "funds_analyzed": [
-      "VCR",
-      "IDRV",
-      "VHT",
       "KARS",
-      "XLP"
+      "IDRV",
+      "DRIV",
+      "LIT",
+      "CARZ"
     ],
     "top_leader": {
       "symbol": "TSLA",
       "name": "Tesla Inc",
-      "times_held": 3,
-      "total_weight": 0.27649999999999997,
-      "avg_weight": 0.09216666666666666,
-      "prevalence": 60.0
+      "times_held": 5,
+      "total_weight": 0.2182,
+      "avg_weight": 0.04364,
+      "prevalence": 100.0
     },
-    "total_holdings_analyzed": 845
+    "total_holdings_analyzed": 377
   },
   "Precious Metals": {
     "funds_analyzed": [
+      "SLV",
+      "IAU",
+      "SIL",
       "PICK",
-      "GDXJ",
-      "RING",
-      "GDX",
       "GLD"
     ],
-    "top_leader": {
-      "symbol": "CDE",
-      "name": "Coeur Mining Inc",
-      "times_held": 3,
-      "total_weight": 0.10969999999999999,
-      "avg_weight": 0.036566666666666664,
-      "prevalence": 75.0
-    },
-    "total_holdings_analyzed": 513
+    "top_leader": null,
+    "total_holdings_analyzed": 324
   }
 }
