@@ -167,7 +167,7 @@ class HoldingsFetcher:
                     holdings.append({
                         'symbol': stock_symbol,
                         'name': company_name,
-                        'weight': float(holding.get('weight', 0))
+                        'weight': float(holding.get('weight', 0)) * 100  # Convert decimal to percentage
                     })
             else:
                 logger.warning(f"No holdings data found for {symbol}")
