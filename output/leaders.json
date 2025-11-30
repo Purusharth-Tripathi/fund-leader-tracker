@@ -8,14 +8,14 @@
       "IYK"
     ],
     "top_leader": {
-      "symbol": "PG",
-      "name": "Procter & Gamble Company",
-      "times_held": 3,
-      "total_weight": 29.509999999999998,
-      "avg_weight": 9.836666666666666,
-      "prevalence": 100.0
+      "symbol": "WMT",
+      "name": "Walmart Inc",
+      "times_held": 4,
+      "total_weight": 49.879999999999995,
+      "avg_weight": 12.469999999999999,
+      "prevalence": 80.0
     },
-    "total_holdings_analyzed": 283
+    "total_holdings_analyzed": 428
   },
   "Tech & AI": {
     "funds_analyzed": [
@@ -29,8 +29,8 @@
       "symbol": "NVDA",
       "name": "NVIDIA Corporation",
       "times_held": 5,
-      "total_weight": 62.8,
-      "avg_weight": 12.559999999999999,
+      "total_weight": 62.06,
+      "avg_weight": 12.412,
       "prevalence": 100.0
     },
     "total_holdings_analyzed": 686
@@ -47,11 +47,11 @@
       "symbol": "BRK-B",
       "name": "Berkshire Hathaway Inc Class B",
       "times_held": 3,
-      "total_weight": 28.36,
-      "avg_weight": 9.453333333333333,
+      "total_weight": 28.24,
+      "avg_weight": 9.413333333333332,
       "prevalence": 60.0
     },
-    "total_holdings_analyzed": 1087
+    "total_holdings_analyzed": 1048
   },
   "Infrastructure": {
     "funds_analyzed": [
@@ -82,11 +82,11 @@
     "top_leader": {
       "symbol": "WELL",
       "name": "Welltower Inc",
-      "times_held": 4,
-      "total_weight": 34.86,
-      "avg_weight": 8.715,
+      "times_held": 5,
+      "total_weight": 45.19,
+      "avg_weight": 9.038,
       "prevalence": 100.0
     },
-    "total_holdings_analyzed": 683
+    "total_holdings_analyzed": 748
   }
 }
