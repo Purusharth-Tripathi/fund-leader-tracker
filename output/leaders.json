@@ -1,20 +1,85 @@
 {
-  "Real Estate": {
+  "Aerospace & Defense": {
     "funds_analyzed": [
-      "SCHH",
-      "VNQ",
-      "REET",
-      "XLRE",
-      "IYR"
+      "SHLD",
+      "DFEN",
+      "ITA",
+      "PPA",
+      "XAR"
     ],
     "top_leader": {
-      "symbol": "WELL",
-      "name": "Welltower Inc",
+      "symbol": "GE",
+      "name": "General Electric Company",
+      "times_held": 4,
+      "total_weight": 47.21,
+      "avg_weight": 11.8025,
+      "prevalence": 80.0
+    },
+    "total_holdings_analyzed": 240
+  },
+  "Renewable Energy": {
+    "funds_analyzed": [
+      "ICLN",
+      "PBW",
+      "TAN",
+      "QCLN",
+      "CNRG"
+    ],
+    "top_leader": {
+      "symbol": "FSLR",
+      "name": "First Solar Inc",
       "times_held": 5,
-      "total_weight": 45.68,
-      "avg_weight": 9.136,
+      "total_weight": 33.769999999999996,
+      "avg_weight": 6.754,
       "prevalence": 100.0
     },
-    "total_holdings_analyzed": 742
+    "total_holdings_analyzed": 344
+  },
+  "Healthcare & Biotech": {
+    "funds_analyzed": [
+      "VHT",
+      "XBI",
+      "XLV",
+      "IBB",
+      "IXJ"
+    ],
+    "top_leader": {
+      "symbol": "LLY",
+      "name": "Eli Lilly and Company",
+      "times_held": 3,
+      "total_weight": 37.49,
+      "avg_weight": 12.496666666666668,
+      "prevalence": 60.0
+    },
+    "total_holdings_analyzed": 1003
+  },
+  "Automotive": {
+    "funds_analyzed": [
+      "KARS",
+      "IDRV",
+      "DRIV",
+      "LIT",
+      "CARZ"
+    ],
+    "top_leader": {
+      "symbol": "TSLA",
+      "name": "Tesla Inc",
+      "times_held": 5,
+      "total_weight": 20.56,
+      "avg_weight": 4.112,
+      "prevalence": 100.0
+    },
+    "total_holdings_analyzed": 374
+  },
+  "Precious Metals": {
+    "funds_analyzed": [
+      "SLV",
+      "IAU",
+      "SIL",
+      "PICK",
+      "GLD"
+    ],
+    "top_leader": null,
+    "total_holdings_analyzed": 281
   }
 }
