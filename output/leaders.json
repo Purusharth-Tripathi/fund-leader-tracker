@@ -1,85 +1,92 @@
 {
-  "Aerospace & Defense": {
+  "Consumer Staples": {
     "funds_analyzed": [
-      "SHLD",
-      "DFEN",
-      "ITA",
-      "PPA",
-      "XAR"
+      "XLP",
+      "VDC",
+      "FSTA",
+      "KXI",
+      "IYK"
     ],
     "top_leader": {
-      "symbol": "GE",
-      "name": "General Electric Company",
+      "symbol": "WMT",
+      "name": "Walmart Inc",
       "times_held": 4,
-      "total_weight": 48.47,
-      "avg_weight": 12.1175,
-      "prevalence": 100.0
+      "total_weight": 52.28,
+      "avg_weight": 13.07,
+      "prevalence": 80.0
     },
-    "total_holdings_analyzed": 188
+    "total_holdings_analyzed": 417
   },
-  "Renewable Energy": {
+  "Tech & AI": {
     "funds_analyzed": [
-      "ICLN",
-      "PBW",
-      "TAN",
-      "QCLN",
-      "CNRG"
+      "QQQ",
+      "IYW",
+      "XLK",
+      "VGT",
+      "AIQ"
     ],
     "top_leader": {
-      "symbol": "FSLR",
-      "name": "First Solar Inc",
+      "symbol": "NVDA",
+      "name": "NVIDIA Corporation",
       "times_held": 5,
-      "total_weight": 32.82,
-      "avg_weight": 6.564,
+      "total_weight": 60.690000000000005,
+      "avg_weight": 12.138000000000002,
       "prevalence": 100.0
     },
-    "total_holdings_analyzed": 346
+    "total_holdings_analyzed": 738
   },
-  "Healthcare & Biotech": {
+  "Financial Services": {
     "funds_analyzed": [
-      "VHT",
-      "XBI",
-      "XLV",
-      "IBB",
-      "IXJ"
+      "XLF",
+      "VFH",
+      "KBE",
+      "KRE",
+      "FNCL"
     ],
     "top_leader": {
-      "symbol": "LLY",
-      "name": "Eli Lilly and Company",
+      "symbol": "BRK-B",
+      "name": "Berkshire Hathaway Inc Class B",
       "times_held": 3,
-      "total_weight": 38.2,
-      "avg_weight": 12.733333333333334,
+      "total_weight": 27.380000000000003,
+      "avg_weight": 9.126666666666667,
       "prevalence": 60.0
     },
-    "total_holdings_analyzed": 1002
+    "total_holdings_analyzed": 1061
   },
-  "Automotive": {
+  "Infrastructure": {
     "funds_analyzed": [
-      "KARS",
-      "IDRV",
-      "DRIV",
-      "LIT",
-      "CARZ"
+      "NFRA",
+      "PAVE",
+      "IFRA",
+      "IGF",
+      "ITB"
     ],
     "top_leader": {
-      "symbol": "TSLA",
-      "name": "Tesla Inc",
+      "symbol": "NEE",
+      "name": "NextEra Energy Inc",
+      "times_held": 3,
+      "total_weight": 8.219999999999999,
+      "avg_weight": 2.7399999999999998,
+      "prevalence": 60.0
+    },
+    "total_holdings_analyzed": 607
+  },
+  "Real Estate": {
+    "funds_analyzed": [
+      "SCHH",
+      "VNQ",
+      "REET",
+      "XLRE",
+      "IYR"
+    ],
+    "top_leader": {
+      "symbol": "WELL",
+      "name": "Welltower Inc",
       "times_held": 5,
-      "total_weight": 21.049999999999997,
-      "avg_weight": 4.209999999999999,
+      "total_weight": 45.11,
+      "avg_weight": 9.022,
       "prevalence": 100.0
     },
-    "total_holdings_analyzed": 375
-  },
-  "Precious Metals": {
-    "funds_analyzed": [
-      "SLV",
-      "IAU",
-      "SIL",
-      "PICK",
-      "GLD"
-    ],
-    "top_leader": null,
-    "total_holdings_analyzed": 286
+    "total_holdings_analyzed": 761
   }
 }
