@@ -1,85 +1,56 @@
 {
-  "Aerospace & Defense": {
+  "Financial Services": {
     "funds_analyzed": [
-      "SHLD",
-      "DFEN",
-      "ITA",
-      "PPA",
-      "XAR"
+      "XLF",
+      "VFH",
+      "KBE",
+      "KRE",
+      "FNCL"
     ],
     "top_leader": {
-      "symbol": "GE",
-      "name": "General Electric Company",
-      "times_held": 4,
-      "total_weight": 48.88,
-      "avg_weight": 12.22,
-      "prevalence": 80.0
-    },
-    "total_holdings_analyzed": 248
-  },
-  "Renewable Energy": {
-    "funds_analyzed": [
-      "ICLN",
-      "PBW",
-      "TAN",
-      "QCLN",
-      "CNRG"
-    ],
-    "top_leader": {
-      "symbol": "FSLR",
-      "name": "First Solar Inc",
-      "times_held": 5,
-      "total_weight": 31.25,
-      "avg_weight": 6.25,
-      "prevalence": 100.0
-    },
-    "total_holdings_analyzed": 345
-  },
-  "Healthcare & Biotech": {
-    "funds_analyzed": [
-      "VHT",
-      "XBI",
-      "XLV",
-      "IBB",
-      "IXJ"
-    ],
-    "top_leader": {
-      "symbol": "LLY",
-      "name": "Eli Lilly and Company",
+      "symbol": "BRK-B",
+      "name": "Berkshire Hathaway Inc Class B",
       "times_held": 3,
-      "total_weight": 37.53,
-      "avg_weight": 12.51,
+      "total_weight": 26.89,
+      "avg_weight": 8.963333333333333,
       "prevalence": 60.0
     },
-    "total_holdings_analyzed": 1044
+    "total_holdings_analyzed": 1139
   },
-  "Automotive": {
+  "Infrastructure": {
     "funds_analyzed": [
-      "KARS",
-      "IDRV",
-      "DRIV",
-      "LIT",
-      "CARZ"
+      "NFRA",
+      "PAVE",
+      "IFRA",
+      "IGF",
+      "ITB"
     ],
     "top_leader": {
-      "symbol": "TSLA",
-      "name": "Tesla Inc",
+      "symbol": "NEE",
+      "name": "NextEra Energy Inc",
+      "times_held": 3,
+      "total_weight": 8.309999999999999,
+      "avg_weight": 2.7699999999999996,
+      "prevalence": 60.0
+    },
+    "total_holdings_analyzed": 613
+  },
+  "Real Estate": {
+    "funds_analyzed": [
+      "SCHH",
+      "VNQ",
+      "REET",
+      "XLRE",
+      "IYR"
+    ],
+    "top_leader": {
+      "symbol": "WELL",
+      "name": "Welltower Inc",
       "times_held": 5,
-      "total_weight": 20.15,
-      "avg_weight": 4.029999999999999,
+      "total_weight": 44.09,
+      "avg_weight": 8.818000000000001,
       "prevalence": 100.0
     },
-    "total_holdings_analyzed": 392
-  },
-  "Precious Metals": {
-    "funds_analyzed": [
-      "SLV",
-      "IAU",
-      "SIL",
-      "PICK",
-      "GLD"
-    ],
-    "top_leader": null,
-    "total_holdings_analyzed": 286
+    "total_holdings_analyzed": 766
   }
 }
