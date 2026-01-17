@@ -1,56 +1,85 @@
 {
-  "Financial Services": {
+  "Aerospace & Defense": {
     "funds_analyzed": [
-      "XLF",
-      "VFH",
-      "KBE",
-      "KRE",
-      "FNCL"
+      "SHLD",
+      "DFEN",
+      "ITA",
+      "PPA",
+      "XAR"
     ],
     "top_leader": {
-      "symbol": "BRK-B",
-      "name": "Berkshire Hathaway Inc Class B",
-      "times_held": 3,
-      "total_weight": 26.89,
-      "avg_weight": 8.963333333333333,
-      "prevalence": 60.0
+      "symbol": "GE",
+      "name": "General Electric Company",
+      "times_held": 4,
+      "total_weight": 48.88,
+      "avg_weight": 12.22,
+      "prevalence": 80.0
     },
-    "total_holdings_analyzed": 1139
+    "total_holdings_analyzed": 248
   },
-  "Infrastructure": {
+  "Renewable Energy": {
     "funds_analyzed": [
-      "NFRA",
-      "PAVE",
-      "IFRA",
-      "IGF",
-      "ITB"
+      "ICLN",
+      "PBW",
+      "TAN",
+      "QCLN",
+      "CNRG"
     ],
     "top_leader": {
-      "symbol": "NEE",
-      "name": "NextEra Energy Inc",
-      "times_held": 3,
-      "total_weight": 8.309999999999999,
-      "avg_weight": 2.7699999999999996,
-      "prevalence": 60.0
-    },
-    "total_holdings_analyzed": 613
-  },
-  "Real Estate": {
-    "funds_analyzed": [
-      "SCHH",
-      "VNQ",
-      "REET",
-      "XLRE",
-      "IYR"
-    ],
-    "top_leader": {
-      "symbol": "WELL",
-      "name": "Welltower Inc",
+      "symbol": "FSLR",
+      "name": "First Solar Inc",
       "times_held": 5,
-      "total_weight": 44.09,
-      "avg_weight": 8.818000000000001,
+      "total_weight": 31.25,
+      "avg_weight": 6.25,
       "prevalence": 100.0
     },
-    "total_holdings_analyzed": 766
+    "total_holdings_analyzed": 345
+  },
+  "Healthcare & Biotech": {
+    "funds_analyzed": [
+      "VHT",
+      "XBI",
+      "XLV",
+      "IBB",
+      "IXJ"
+    ],
+    "top_leader": {
+      "symbol": "LLY",
+      "name": "Eli Lilly and Company",
+      "times_held": 3,
+      "total_weight": 37.53,
+      "avg_weight": 12.51,
+      "prevalence": 60.0
+    },
+    "total_holdings_analyzed": 1044
+  },
+  "Automotive": {
+    "funds_analyzed": [
+      "KARS",
+      "IDRV",
+      "DRIV",
+      "LIT",
+      "CARZ"
+    ],
+    "top_leader": {
+      "symbol": "TSLA",
+      "name": "Tesla Inc",
+      "times_held": 5,
+      "total_weight": 20.15,
+      "avg_weight": 4.029999999999999,
+      "prevalence": 100.0
+    },
+    "total_holdings_analyzed": 392
+  },
+  "Precious Metals": {
+    "funds_analyzed": [
+      "SLV",
+      "IAU",
+      "SIL",
+      "PICK",
+      "GLD"
+    ],
+    "top_leader": null,
+    "total_holdings_analyzed": 286
   }
 }
