@@ -11,11 +11,11 @@
       "symbol": "GE",
       "name": "General Electric Company",
       "times_held": 4,
-      "total_weight": 48.88,
-      "avg_weight": 12.22,
+      "total_weight": 45.37,
+      "avg_weight": 11.3425,
       "prevalence": 80.0
     },
-    "total_holdings_analyzed": 248
+    "total_holdings_analyzed": 249
   },
   "Renewable Energy": {
     "funds_analyzed": [
@@ -29,11 +29,11 @@
       "symbol": "FSLR",
       "name": "First Solar Inc",
       "times_held": 5,
-      "total_weight": 31.25,
-      "avg_weight": 6.25,
+      "total_weight": 29.24,
+      "avg_weight": 5.848,
       "prevalence": 100.0
     },
-    "total_holdings_analyzed": 345
+    "total_holdings_analyzed": 326
   },
   "Healthcare & Biotech": {
     "funds_analyzed": [
@@ -47,11 +47,11 @@
       "symbol": "LLY",
       "name": "Eli Lilly and Company",
       "times_held": 3,
-      "total_weight": 37.53,
-      "avg_weight": 12.51,
+      "total_weight": 37.83,
+      "avg_weight": 12.61,
       "prevalence": 60.0
     },
-    "total_holdings_analyzed": 1044
+    "total_holdings_analyzed": 1000
   },
   "Automotive": {
     "funds_analyzed": [
@@ -65,8 +65,8 @@
       "symbol": "TSLA",
       "name": "Tesla Inc",
       "times_held": 5,
-      "total_weight": 20.15,
-      "avg_weight": 4.029999999999999,
+      "total_weight": 19.53,
+      "avg_weight": 3.906,
       "prevalence": 100.0
     },
     "total_holdings_analyzed": 392
@@ -80,6 +80,6 @@
       "GLD"
     ],
     "top_leader": null,
-    "total_holdings_analyzed": 286
+    "total_holdings_analyzed": 324
   }
 }
