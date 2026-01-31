@@ -1,85 +1,20 @@
 {
-  "Consumer Staples": {
+  "Aerospace & Defense": {
     "funds_analyzed": [
-      "XLP",
-      "VDC",
-      "FSTA",
-      "KXI",
-      "IYK"
-    ],
-    "top_leader": null,
-    "total_holdings_analyzed": 175
-  },
-  "Tech & AI": {
-    "funds_analyzed": [
-      "QQQ",
-      "IYW",
-      "XLK",
-      "VGT",
-      "AIQ"
+      "SHLD",
+      "DFEN",
+      "ITA",
+      "PPA",
+      "XAR"
     ],
     "top_leader": {
-      "symbol": "NVDA",
-      "name": "NVIDIA Corporation",
-      "times_held": 5,
-      "total_weight": 60.10999999999999,
-      "avg_weight": 12.021999999999998,
+      "symbol": "RTX",
+      "name": "Raytheon Technologies Corporation",
+      "times_held": 3,
+      "total_weight": 33.45,
+      "avg_weight": 11.15,
       "prevalence": 100.0
     },
-    "total_holdings_analyzed": 737
-  },
-  "Financial Services": {
-    "funds_analyzed": [
-      "XLF",
-      "VFH",
-      "KBE",
-      "KRE",
-      "FNCL"
-    ],
-    "top_leader": {
-      "symbol": "BRK-B",
-      "name": "Berkshire Hathaway Inc Class B",
-      "times_held": 3,
-      "total_weight": 27.02,
-      "avg_weight": 9.006666666666666,
-      "prevalence": 60.0
-    },
-    "total_holdings_analyzed": 1099
-  },
-  "Infrastructure": {
-    "funds_analyzed": [
-      "NFRA",
-      "PAVE",
-      "IFRA",
-      "IGF",
-      "ITB"
-    ],
-    "top_leader": {
-      "symbol": "NEE",
-      "name": "NextEra Energy Inc",
-      "times_held": 3,
-      "total_weight": 8.129999999999999,
-      "avg_weight": 2.7099999999999995,
-      "prevalence": 60.0
-    },
-    "total_holdings_analyzed": 609
-  },
-  "Real Estate": {
-    "funds_analyzed": [
-      "SCHH",
-      "VNQ",
-      "REET",
-      "XLRE",
-      "IYR"
-    ],
-    "top_leader": {
-      "symbol": "WELL",
-      "name": "Welltower Inc",
-      "times_held": 5,
-      "total_weight": 43.14,
-      "avg_weight": 8.628,
-      "prevalence": 100.0
-    },
-    "total_holdings_analyzed": 743
+    "total_holdings_analyzed": 146
   }
 }
