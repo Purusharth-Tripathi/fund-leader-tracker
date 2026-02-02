@@ -1,20 +1,31 @@
 {
-  "Aerospace & Defense": {
+  "Infrastructure": {
     "funds_analyzed": [
-      "SHLD",
-      "DFEN",
-      "ITA",
-      "PPA",
-      "XAR"
+      "NFRA",
+      "PAVE",
+      "IFRA",
+      "IGF",
+      "ITB"
+    ],
+    "top_leader": null,
+    "total_holdings_analyzed": 49
+  },
+  "Real Estate": {
+    "funds_analyzed": [
+      "SCHH",
+      "VNQ",
+      "REET",
+      "XLRE",
+      "IYR"
     ],
     "top_leader": {
-      "symbol": "RTX",
-      "name": "Raytheon Technologies Corporation",
-      "times_held": 3,
-      "total_weight": 33.45,
-      "avg_weight": 11.15,
+      "symbol": "WELL",
+      "name": "Welltower Inc",
+      "times_held": 5,
+      "total_weight": 42.95,
+      "avg_weight": 8.59,
       "prevalence": 100.0
     },
-    "total_holdings_analyzed": 146
+    "total_holdings_analyzed": 703
   }
 }
