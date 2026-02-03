@@ -1,31 +1,85 @@
 {
-  "Infrastructure": {
+  "Aerospace & Defense": {
     "funds_analyzed": [
-      "NFRA",
-      "PAVE",
-      "IFRA",
-      "IGF",
-      "ITB"
-    ],
-    "top_leader": null,
-    "total_holdings_analyzed": 49
-  },
-  "Real Estate": {
-    "funds_analyzed": [
-      "SCHH",
-      "VNQ",
-      "REET",
-      "XLRE",
-      "IYR"
+      "SHLD",
+      "DFEN",
+      "ITA",
+      "PPA",
+      "XAR"
     ],
     "top_leader": {
-      "symbol": "WELL",
-      "name": "Welltower Inc",
-      "times_held": 5,
-      "total_weight": 42.95,
-      "avg_weight": 8.59,
+      "symbol": "GE",
+      "name": "General Electric Company",
+      "times_held": 4,
+      "total_weight": 44.36000000000001,
+      "avg_weight": 11.090000000000002,
+      "prevalence": 80.0
+    },
+    "total_holdings_analyzed": 249
+  },
+  "Renewable Energy": {
+    "funds_analyzed": [
+      "ICLN",
+      "PBW",
+      "TAN",
+      "QCLN",
+      "CNRG"
+    ],
+    "top_leader": {
+      "symbol": "BE",
+      "name": "BE",
+      "times_held": 3,
+      "total_weight": 20.57,
+      "avg_weight": 6.8566666666666665,
+      "prevalence": 75.0
+    },
+    "total_holdings_analyzed": 262
+  },
+  "Healthcare & Biotech": {
+    "funds_analyzed": [
+      "VHT",
+      "XBI",
+      "XLV",
+      "IBB",
+      "IXJ"
+    ],
+    "top_leader": {
+      "symbol": "LLY",
+      "name": "Eli Lilly and Company",
+      "times_held": 3,
+      "total_weight": 37.57,
+      "avg_weight": 12.523333333333333,
+      "prevalence": 60.0
+    },
+    "total_holdings_analyzed": 998
+  },
+  "Automotive": {
+    "funds_analyzed": [
+      "KARS",
+      "IDRV",
+      "DRIV",
+      "LIT",
+      "CARZ"
+    ],
+    "top_leader": {
+      "symbol": "TSLA",
+      "name": "Tesla Inc",
+      "times_held": 4,
+      "total_weight": 15.2,
+      "avg_weight": 3.8,
       "prevalence": 100.0
     },
-    "total_holdings_analyzed": 703
+    "total_holdings_analyzed": 309
+  },
+  "Precious Metals": {
+    "funds_analyzed": [
+      "SLV",
+      "IAU",
+      "SIL",
+      "PICK",
+      "GLD"
+    ],
+    "top_leader": null,
+    "total_holdings_analyzed": 324
   }
 }
