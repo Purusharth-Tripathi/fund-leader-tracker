@@ -1,92 +1,31 @@
 {
-  "Consumer Staples": {
+  "Automotive": {
     "funds_analyzed": [
-      "XLP",
-      "VDC",
-      "FSTA",
-      "KXI",
-      "IYK"
+      "KARS",
+      "IDRV",
+      "DRIV",
+      "LIT",
+      "CARZ"
     ],
     "top_leader": {
-      "symbol": "WMT",
-      "name": "Walmart Inc",
-      "times_held": 4,
-      "total_weight": 50.699999999999996,
-      "avg_weight": 12.674999999999999,
-      "prevalence": 80.0
-    },
-    "total_holdings_analyzed": 422
-  },
-  "Tech & AI": {
-    "funds_analyzed": [
-      "QQQ",
-      "IYW",
-      "XLK",
-      "VGT",
-      "AIQ"
-    ],
-    "top_leader": {
-      "symbol": "NVDA",
-      "name": "NVIDIA Corporation",
-      "times_held": 5,
-      "total_weight": 60.489999999999995,
-      "avg_weight": 12.097999999999999,
+      "symbol": "TSLA",
+      "name": "Tesla Inc",
+      "times_held": 3,
+      "total_weight": 10.3,
+      "avg_weight": 3.4333333333333336,
       "prevalence": 100.0
     },
-    "total_holdings_analyzed": 697
+    "total_holdings_analyzed": 225
   },
-  "Financial Services": {
+  "Precious Metals": {
     "funds_analyzed": [
-      "XLF",
-      "VFH",
-      "KBE",
-      "KRE",
-      "FNCL"
+      "SLV",
+      "IAU",
+      "SIL",
+      "PICK",
+      "GLD"
     ],
-    "top_leader": {
-      "symbol": "BRK-B",
-      "name": "Berkshire Hathaway Inc Class B",
-      "times_held": 3,
-      "total_weight": 26.65,
-      "avg_weight": 8.883333333333333,
-      "prevalence": 60.0
-    },
-    "total_holdings_analyzed": 1059
-  },
-  "Infrastructure": {
-    "funds_analyzed": [
-      "NFRA",
-      "PAVE",
-      "IFRA",
-      "IGF",
-      "ITB"
-    ],
-    "top_leader": {
-      "symbol": "NEE",
-      "name": "NextEra Energy Inc",
-      "times_held": 3,
-      "total_weight": 8.129999999999999,
-      "avg_weight": 2.7099999999999995,
-      "prevalence": 60.0
-    },
-    "total_holdings_analyzed": 609
-  },
-  "Real Estate": {
-    "funds_analyzed": [
-      "SCHH",
-      "VNQ",
-      "REET",
-      "XLRE",
-      "IYR"
-    ],
-    "top_leader": {
-      "symbol": "WELL",
-      "name": "Welltower Inc",
-      "times_held": 5,
-      "total_weight": 42.95,
-      "avg_weight": 8.59,
-      "prevalence": 100.0
-    },
-    "total_holdings_analyzed": 703
+    "top_leader": null,
+    "total_holdings_analyzed": 291
   }
 }
