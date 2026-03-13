@@ -50,7 +50,9 @@ st.markdown("""
 @st.cache_data(ttl=300)  # Cache for 5 minutes
 def load_data():
     """Load data from SQLite database"""
-    db_path = os.getenv('DATABASE_PATH', 'data/fund_leaders.db')
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    default_db = os.path.join(script_dir, 'data', 'fund_leaders.db')
+    db_path = os.getenv('DATABASE_PATH', default_db)
 
     if not os.path.exists(db_path):
         return None, None, None, None, None
@@ -254,7 +256,7 @@ def main():
         )
 
     with col4:
-        last_update = current_leaders['analysis_date'].iloc[0] if len(current_leaders) > 0 else "Never"
+        last_update = current_leaders['analysis_date'].max() if len(current_leaders) > 0 else "Never"
         st.metric(
             label="Last Analysis",
             value=last_update
@@ -552,9 +554,8 @@ def main():
     st.caption("Fund Leader Tracker Dashboard | Data updates daily | Powered by Streamlit & Alpha Vantage")
 
 
-if __name__ == "__main__":
-    # Load environment
-    from utils import load_env
-    load_env()
+from utils import load_env
+load_env()
 
+if __name__ == "__main__":
     main()

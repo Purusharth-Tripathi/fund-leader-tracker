@@ -17,6 +17,6 @@ REM Set the working directory to the script's location
 cd /d "%~dp0"
 
 REM Launch Streamlit dashboard
-streamlit run dashboard.py
+python -m streamlit run dashboard.py
 
 pause
