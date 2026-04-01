@@ -7,7 +7,79 @@
       "PPA",
       "XAR"
     ],
+    "top_leader": {
+      "symbol": "GE",
+      "name": "General Electric Company",
+      "times_held": 4,
+      "total_weight": 43.42,
+      "avg_weight": 10.855,
+      "prevalence": 80.0
+    },
+    "total_holdings_analyzed": 251
+  },
+  "Renewable Energy": {
+    "funds_analyzed": [
+      "ICLN",
+      "PBW",
+      "TAN",
+      "QCLN",
+      "CNRG"
+    ],
+    "top_leader": {
+      "symbol": "BE",
+      "name": "BE",
+      "times_held": 4,
+      "total_weight": 29.86,
+      "avg_weight": 7.465,
+      "prevalence": 80.0
+    },
+    "total_holdings_analyzed": 322
+  },
+  "Healthcare & Biotech": {
+    "funds_analyzed": [
+      "VHT",
+      "XBI",
+      "XLV",
+      "IBB",
+      "IXJ"
+    ],
+    "top_leader": {
+      "symbol": "LLY",
+      "name": "Eli Lilly and Company",
+      "times_held": 3,
+      "total_weight": 36.18,
+      "avg_weight": 12.06,
+      "prevalence": 60.0
+    },
+    "total_holdings_analyzed": 1017
+  },
+  "Automotive": {
+    "funds_analyzed": [
+      "KARS",
+      "IDRV",
+      "DRIV",
+      "LIT",
+      "CARZ"
+    ],
+    "top_leader": {
+      "symbol": "ALB",
+      "name": "ALB",
+      "times_held": 5,
+      "total_weight": 19.23,
+      "avg_weight": 3.846,
+      "prevalence": 100.0
+    },
+    "total_holdings_analyzed": 384
+  },
+  "Precious Metals": {
+    "funds_analyzed": [
+      "SLV",
+      "IAU",
+      "SIL",
+      "PICK",
+      "GLD"
+    ],
     "top_leader": null,
-    "total_holdings_analyzed": 52
+    "total_holdings_analyzed": 324
   }
 }
