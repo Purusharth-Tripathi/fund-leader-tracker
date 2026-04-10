@@ -31,6 +31,9 @@ class FundAnalyzer:
             retry_delay=api_config.get('retry_delay', 5),
             cache_directory=api_config.get('cache_directory', 'data/cache'),
             cache_ttl_hours=api_config.get('holdings_cache_ttl_hours', 168),
+            holdings_provider_order=api_config.get('holdings_provider_order'),
+            fmp_api_key=api_config.get('fmp_api_key') or None,
+            fmp_base_url=api_config.get('fmp_base_url', 'https://financialmodelingprep.com'),
         )
         self.identifier = LeaderIdentifier(
             min_holding_threshold=self.analysis_config.get('min_holding_threshold', 1.0),

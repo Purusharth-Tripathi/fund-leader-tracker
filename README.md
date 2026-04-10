@@ -26,7 +26,7 @@ For each configured sector, the planner:
 - **Confirmation:** consecutive review confirmations required before switching
 - **Override:** significant-change rule can unlock an earlier switch
 - **Fallback:** sector ETF if no valid stock leader exists
-- **Data resilience:** uses local holdings cache when Alpha Vantage is unavailable or rate-limited
+- **Data resilience:** prefers Financial Modeling Prep (FMP) for ETF holdings, then falls back through cache and Alpha Vantage
 
 See `docs/STRATEGY_SPEC.md` for the canonical strategy definition.
 
@@ -46,7 +46,18 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Set `ALPHA_VANTAGE_API_KEY` in `.env`.
+Set `FMP_API_KEY` in `.env` for the preferred ETF holdings feed.
+
+Optionally also set `ALPHA_VANTAGE_API_KEY` as a fallback provider for holdings/performance data when FMP is unavailable.
+
+The holdings provider order is configured in `config.yaml` as:
+
+```yaml
+api:
+  holdings_provider_order: ["fmp", "cache", "alpha_vantage"]
+```
+
+Change that only if you want a different degradation path.
 
 ### 3) Validate local setup
 
@@ -89,10 +100,10 @@ python main.py latest
 - `fund_analyzer.py` - sector review orchestration and export flow
 - `strategy_engine.py` - confirmation/stateful recommendation logic
 - `manual_report.py` - advisory/manual-trading report generation
-- `holdings_fetcher.py` - Alpha Vantage holdings fetch + stale-safe cache
+- `holdings_fetcher.py` - FMP-first ETF holdings fetcher with cache + Alpha Vantage fallback
 - `db_manager.py` - SQLite schema and persisted run/strategy state
 - `docs/STRATEGY_SPEC.md` - actual in-repo strategy spec
 
 ## Production caveat
 
-Alpha Vantage is acceptable for prototyping and light personal workflow use, but not ideal for institutional production. The code now degrades more safely via cached holdings, yet a better data provider is still the right next upgrade.
+FMP is now the preferred ETF holdings source, with local cache and Alpha Vantage fallback to keep weekly reviews usable when one provider is unavailable or rate-limited. You still need to supply your own API keys for live data.

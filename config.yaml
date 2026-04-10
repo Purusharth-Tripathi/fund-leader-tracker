@@ -63,6 +63,8 @@ api:
   verify_ssl: true
   cache_directory: "data/cache"
   holdings_cache_ttl_hours: 168
+  holdings_provider_order: ["fmp", "cache", "alpha_vantage"]
+  fmp_base_url: "https://financialmodelingprep.com"
 
 output:
   database_path: "data/fund_leaders.db"

@@ -7,12 +7,21 @@ from strategy_engine import parse_review_date
 from utils import Colors, ensure_directories, load_config, load_env, print_colored, print_header, setup_logging
 
 
-def check_api_key():
-    api_key = os.getenv('ALPHA_VANTAGE_API_KEY')
-    if not api_key or api_key == 'your_api_key_here':
-        print_colored('Warning: Alpha Vantage API key not configured. Cached data only mode may still work.', Colors.WARNING)
-        return False
-    return True
+def check_api_keys():
+    alpha_vantage_key = os.getenv('ALPHA_VANTAGE_API_KEY')
+    fmp_key = os.getenv('FMP_API_KEY')
+    has_alpha_vantage = bool(alpha_vantage_key and alpha_vantage_key != 'your_api_key_here')
+    has_fmp = bool(fmp_key and fmp_key != 'your_api_key_here')
+
+    if has_fmp:
+        print_colored('FMP ETF holdings provider configured.', Colors.OKGREEN)
+    else:
+        print_colored('Warning: FMP_API_KEY not configured. Holdings flow will fall back to cache/Alpha Vantage.', Colors.WARNING)
+
+    if not has_alpha_vantage:
+        print_colored('Warning: Alpha Vantage API key not configured. Cached/FMP-only mode may still work.', Colors.WARNING)
+
+    return has_fmp or has_alpha_vantage
 
 
 def display_welcome(config):
@@ -61,6 +70,11 @@ def run_doctor(config):
     }
     for name, status in checks.items():
         print(f"[{'OK' if status else 'FAIL'}] {name}")
+
+    provider_order = config.get('api', {}).get('holdings_provider_order', ['fmp', 'cache', 'alpha_vantage'])
+    print(f"[INFO] holdings provider order: {provider_order}")
+    print(f"[INFO] FMP_API_KEY configured: {'yes' if os.getenv('FMP_API_KEY') not in (None, '', 'your_api_key_here') else 'no'}")
+    print(f"[INFO] ALPHA_VANTAGE_API_KEY configured: {'yes' if os.getenv('ALPHA_VANTAGE_API_KEY') not in (None, '', 'your_api_key_here') else 'no'}")
     return all(checks.values())
 
 
@@ -96,7 +110,7 @@ def main():
     config = load_config()
     setup_logging(os.getenv('LOG_FILE', 'logs/fund_tracker.log'), os.getenv('LOG_LEVEL', 'INFO'))
     display_welcome(config)
-    check_api_key()
+    check_api_keys()
 
     if len(sys.argv) > 1:
         command = sys.argv[1].lower()
