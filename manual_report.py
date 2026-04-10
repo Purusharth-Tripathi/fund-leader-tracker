@@ -31,6 +31,16 @@ def render_manual_report(run_payload: Dict[str, Any]) -> str:
             lines.append(f"Previous position: {sector['previous_symbol']} ({sector.get('previous_kind')})")
         lines.append(f"Reason: {sector['action_reason']}")
         lines.append(f"Data status: {sector['data_status']}")
+        freshness = sector.get('sector_freshness') or {}
+        lines.append(
+            f"Sector freshness: {freshness.get('freshness', 'unknown')} | coverage {freshness.get('coverage_ratio', 'n/a')} | avg age hours {freshness.get('avg_age_hours')}"
+        )
+        lines.append('ETF snapshot freshness:')
+        evidence = sector.get('evidence') or {}
+        for etf_meta in (evidence.get('etf_freshness') or {}).values():
+            lines.append(
+                f"  - {etf_meta.get('symbol')}: status={etf_meta.get('data_status')} freshness={etf_meta.get('freshness')} age_days={etf_meta.get('age_days')} source={etf_meta.get('source')}"
+            )
         lines.append('')
 
     trades = portfolio.get('actionable_trades', [])

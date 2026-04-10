@@ -1,13 +1,15 @@
 # ETF Sector Leadership Planner
 
-Advisory-only investment planning workflow for tracking sector leadership through ETF holdings and producing manual trading recommendations.
+Advisory-only investment planning workflow for tracking sector leadership through ETF holdings snapshots and producing manual trading recommendations.
 
 ## What this system does
 
-For each configured sector, the planner:
+For each of the configured 10 sectors, the planner:
 
-- tracks a curated set of sector/thematic ETFs
-- analyzes the underlying holdings to infer the strongest stock leader
+- tracks a curated set of 5 sector/thematic ETFs
+- refreshes ETF holdings snapshots on a staged 5-sector / 5-sector alternating-day cycle
+- reviews all 10 sectors weekly using the latest stored holdings snapshots first
+- analyzes underlying holdings to infer the strongest stock leader
 - requires confirmation before switching away from the current leader
 - only acts on the monthly window unless a significant-change override applies
 - falls back to a sector ETF when no stock leader qualifies
@@ -21,12 +23,16 @@ For each configured sector, the planner:
 
 ## Core operating model
 
+- **Universe:** 10 sectors total, 5 tracked ETFs per sector
+- **Snapshot refresh:** alternating-day batches of 5 sectors / 5 sectors
+- **API budget fit:** 25 calls/day = 5 sectors × 5 ETFs
 - **Review cadence:** weekly
 - **Action cadence:** monthly
 - **Confirmation:** consecutive review confirmations required before switching
 - **Override:** significant-change rule can unlock an earlier switch
 - **Fallback:** sector ETF if no valid stock leader exists
-- **Data resilience:** prefers Financial Modeling Prep (FMP) for ETF holdings, then falls back through cache and Alpha Vantage
+- **Review mode:** cache-first; strategy review does not require live ETF calls
+- **Freshness reporting:** explicit per ETF and per sector in reports/output
 
 See `docs/STRATEGY_SPEC.md` for the canonical strategy definition.
 
@@ -35,7 +41,7 @@ See `docs/STRATEGY_SPEC.md` for the canonical strategy definition.
 ### 1) Create environment
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
@@ -57,33 +63,64 @@ api:
   holdings_provider_order: ["fmp", "cache", "alpha_vantage"]
 ```
 
-Change that only if you want a different degradation path.
-
 ### 3) Validate local setup
 
 ```bash
-python main.py doctor
+python3 main.py doctor
 ```
 
 ### 4) Initialize the tracked ETF universe
 
 ```bash
-python initialize_tracked_funds.py --force
+python3 initialize_tracked_funds.py --force
 ```
 
-### 5) Run a review
+### 5) Refresh holdings snapshots
 
 ```bash
-python main.py
+python3 main.py refresh
+# or explicit batch/date
+python3 main.py refresh 2026-04-10 batch_a
+python3 main.py refresh 2026-04-11 batch_b
+```
+
+By default the planner chooses `batch_a` on even ordinal dates and `batch_b` on odd ordinal dates.
+
+### 6) Run a weekly review
+
+```bash
+python3 main.py review
 # or
-python main.py review 2026-04-10
+python3 main.py review 2026-04-10
 ```
 
-### 6) Inspect the latest saved run
+This review is cache-first and evaluates all 10 sectors from the latest stored holdings snapshots.
+
+### 7) Inspect the latest saved run
 
 ```bash
-python main.py latest
+python3 main.py latest
 ```
+
+## Operating cadence
+
+Recommended routine:
+
+1. Run `python3 main.py refresh` daily.
+2. Let the alternating schedule refresh 5 sectors each day.
+3. Run `python3 main.py review` weekly.
+4. Only action `initiate`/`switch` recommendations manually during the monthly window unless a significant-change override applies.
+
+## Freshness semantics
+
+Each ETF snapshot now reports:
+
+- `data_status`: `live`, `fresh_cache`, `stale_cache`, `cache_miss`, etc.
+- `cached_at`
+- `age_hours` / `age_days`
+- `freshness`: `fresh`, `stale`, `very_stale`, or `unknown`
+
+Each sector review also reports aggregate freshness and stale coverage so stale inputs are visible before any manual decision.
 
 ## Key outputs
 
@@ -92,18 +129,19 @@ python main.py latest
 - `output/reports/manual_review_*.txt`
 - `output/reports/manual_review_*.json`
 - SQLite state in `data/fund_leaders.db`
+- ETF holdings cache under `data/cache/`
 
 ## Key files
 
-- `config.yaml` - sector, cadence, fallback, confirmation, and threshold config
+- `config.yaml` - sector, cadence, fallback, confirmation, thresholds, and refresh batches
 - `initialize_tracked_funds.py` - ranks and stores the ETF universe per sector
-- `fund_analyzer.py` - sector review orchestration and export flow
+- `fund_analyzer.py` - refresh/review orchestration and export flow
 - `strategy_engine.py` - confirmation/stateful recommendation logic
 - `manual_report.py` - advisory/manual-trading report generation
-- `holdings_fetcher.py` - FMP-first ETF holdings fetcher with cache + Alpha Vantage fallback
+- `holdings_fetcher.py` - FMP-first ETF holdings fetcher with cache + Alpha Vantage fallback and freshness metadata
 - `db_manager.py` - SQLite schema and persisted run/strategy state
 - `docs/STRATEGY_SPEC.md` - actual in-repo strategy spec
 
 ## Production caveat
 
-FMP is now the preferred ETF holdings source, with local cache and Alpha Vantage fallback to keep weekly reviews usable when one provider is unavailable or rate-limited. You still need to supply your own API keys for live data.
+The free-tier-safe model assumes you refresh holdings snapshots in staged batches and review from cache. If you skip refreshes for too long, the review will still run, but freshness reporting will show stale or missing inputs explicitly.

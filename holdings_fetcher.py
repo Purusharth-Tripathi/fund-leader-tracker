@@ -27,6 +27,7 @@ class HoldingsFetcher:
     """Fetch ETF holdings with provider fallback and stale-safe disk cache."""
 
     DEFAULT_PROVIDER_ORDER = ('fmp', 'cache', 'alpha_vantage')
+    STALE_AFTER_HOURS_MULTIPLIER = 2
 
     def __init__(
         self,
@@ -134,13 +135,62 @@ class HoldingsFetcher:
         with open(self._cache_path(symbol), 'w', encoding='utf-8') as handle:
             json.dump(payload, handle, indent=2)
 
-    def _build_cache_result(self, cached: Dict, status: str) -> Dict:
+    def _coerce_timestamp(self, value: Optional[str]) -> Optional[datetime]:
+        if not value:
+            return None
+        try:
+            return datetime.fromisoformat(value)
+        except (TypeError, ValueError):
+            logger.warning('Invalid timestamp value: %s', value)
+            return None
+
+    def _freshness_label(self, age_hours: Optional[float]) -> str:
+        if age_hours is None:
+            return 'unknown'
+        if age_hours <= self.cache_ttl_hours:
+            return 'fresh'
+        if age_hours <= self.cache_ttl_hours * self.STALE_AFTER_HOURS_MULTIPLIER:
+            return 'stale'
+        return 'very_stale'
+
+    def _build_freshness_metadata(self, symbol: str, cached_at: Optional[str], data_status: str, source: str, holdings_count: int) -> Dict:
+        cached_dt = self._coerce_timestamp(cached_at)
+        age_hours = None
+        age_days = None
+        if cached_dt:
+            age_seconds = max((datetime.utcnow() - cached_dt).total_seconds(), 0)
+            age_hours = round(age_seconds / 3600, 2)
+            age_days = round(age_hours / 24, 2)
         return {
+            'symbol': symbol,
+            'source': source,
+            'data_status': data_status,
+            'cached_at': cached_at,
+            'age_hours': age_hours,
+            'age_days': age_days,
+            'freshness': self._freshness_label(age_hours),
+            'ttl_hours': self.cache_ttl_hours,
+            'holdings_count': holdings_count,
+        }
+
+    def _attach_freshness(self, symbol: str, result: Dict) -> Dict:
+        payload = dict(result)
+        payload['freshness'] = self._build_freshness_metadata(
+            symbol=symbol,
+            cached_at=payload.get('cached_at'),
+            data_status=payload.get('data_status', 'unavailable'),
+            source=payload.get('source', 'none'),
+            holdings_count=len(payload.get('holdings', []) or []),
+        )
+        return payload
+
+    def _build_cache_result(self, symbol: str, cached: Dict, status: str) -> Dict:
+        return self._attach_freshness(symbol, {
             'holdings': cached.get('holdings', []),
             'data_status': status,
             'cached_at': cached.get('cached_at'),
             'source': cached.get('source', 'cache'),
-        }
+        })
 
     def _get_cached_holdings_result(self, symbol: str, require_fresh: bool) -> Optional[Dict]:
         cached = self._read_cached_holdings(symbol)
@@ -155,7 +205,7 @@ class HoldingsFetcher:
         is_fresh = datetime.utcnow() - cached_at <= timedelta(hours=self.cache_ttl_hours)
         if require_fresh and not is_fresh:
             return None
-        return self._build_cache_result(cached, 'fresh_cache' if is_fresh else 'stale_cache')
+        return self._build_cache_result(symbol, cached, 'fresh_cache' if is_fresh else 'stale_cache')
 
     def _parse_fmp_weight(self, holding: Dict) -> float:
         raw_weight = holding.get('weightPercentage')
@@ -207,13 +257,14 @@ class HoldingsFetcher:
                 continue
             holdings = self._parse_fmp_holdings(symbol, payload)
             if holdings:
+                cached_at = datetime.utcnow().isoformat()
                 self._write_cached_holdings(symbol, holdings, source='fmp_etf_holdings')
-                return {
+                return self._attach_freshness(symbol, {
                     'holdings': holdings,
                     'data_status': 'live',
-                    'cached_at': datetime.utcnow().isoformat(),
+                    'cached_at': cached_at,
                     'source': 'fmp_etf_holdings',
-                }
+                })
         return None
 
     def _fetch_alpha_vantage_holdings(self, symbol: str) -> Optional[Dict]:
@@ -243,18 +294,23 @@ class HoldingsFetcher:
             logger.error(f'Error parsing holdings for {symbol}: {e}')
 
         if holdings:
+            cached_at = datetime.utcnow().isoformat()
             self._write_cached_holdings(symbol, holdings, source='alpha_vantage_etf_profile')
-            return {
+            return self._attach_freshness(symbol, {
                 'holdings': holdings,
                 'data_status': 'live',
-                'cached_at': datetime.utcnow().isoformat(),
+                'cached_at': cached_at,
                 'source': 'alpha_vantage_etf_profile',
-            }
+            })
         return None
 
-    def get_fund_holdings(self, symbol):
+    def get_fund_holdings(self, symbol, mode: str = 'auto'):
+        normalized_mode = (mode or 'auto').strip().lower()
         stale_cache_result = None
-        for provider in self.holdings_provider_order:
+        providers = self.holdings_provider_order
+        if normalized_mode == 'cache_only':
+            providers = tuple(provider for provider in self.holdings_provider_order if provider == 'cache') or ('cache',)
+        for provider in providers:
             if provider == 'cache':
                 cache_result = self._get_cached_holdings_result(symbol, require_fresh=False)
                 if cache_result:
@@ -274,7 +330,8 @@ class HoldingsFetcher:
 
         if stale_cache_result:
             return stale_cache_result
-        return {'holdings': [], 'data_status': 'unavailable', 'cached_at': None, 'source': 'none'}
+        unavailable_status = 'cache_miss' if normalized_mode == 'cache_only' else 'unavailable'
+        return self._attach_freshness(symbol, {'holdings': [], 'data_status': unavailable_status, 'cached_at': None, 'source': 'none'})
 
     def get_quote(self, symbol):
         data = self._request({'function': 'GLOBAL_QUOTE', 'symbol': symbol})
@@ -303,19 +360,15 @@ class HoldingsFetcher:
                 deduped.append(symbol)
         return deduped
 
-    def batch_fetch_holdings(self, fund_symbols: List[str]):
+    def batch_fetch_holdings(self, fund_symbols: List[str], mode: str = 'auto'):
         all_holdings = {}
         statuses = {}
         total = len(fund_symbols)
         for i, symbol in enumerate(fund_symbols, 1):
             print_progress(i, total, f'Fetching holdings for {symbol}')
-            result = self.get_fund_holdings(symbol)
+            result = self.get_fund_holdings(symbol, mode=mode)
             holdings = result.get('holdings', [])
-            statuses[symbol] = {
-                'data_status': result.get('data_status', 'unavailable'),
-                'cached_at': result.get('cached_at'),
-                'source': result.get('source'),
-            }
+            statuses[symbol] = result.get('freshness', {})
             if holdings:
                 all_holdings[symbol] = holdings
             if i < total and self.request_delay and result.get('data_status') == 'live':

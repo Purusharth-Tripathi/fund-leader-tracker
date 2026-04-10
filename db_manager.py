@@ -119,6 +119,7 @@ class DatabaseManager:
                 last_action TEXT,
                 last_action_reason TEXT,
                 data_status TEXT,
+                sector_freshness_json TEXT,
                 evidence_json TEXT,
                 created_at TEXT DEFAULT CURRENT_TIMESTAMP
             );
@@ -156,6 +157,11 @@ class DatabaseManager:
         leader_columns = {row['name'] for row in cursor.fetchall()}
         if 'prevalence' not in leader_columns:
             self.conn.execute('ALTER TABLE industry_leaders ADD COLUMN prevalence REAL')
+
+        cursor.execute('PRAGMA table_info(sector_strategy_state)')
+        strategy_columns = {row['name'] for row in cursor.fetchall()}
+        if 'sector_freshness_json' not in strategy_columns:
+            self.conn.execute('ALTER TABLE sector_strategy_state ADD COLUMN sector_freshness_json TEXT')
 
         self.conn.commit()
 
@@ -310,6 +316,8 @@ class DatabaseManager:
         data = dict(row)
         if data.get('evidence_json'):
             data['evidence'] = json.loads(data['evidence_json'])
+        if data.get('sector_freshness_json'):
+            data['sector_freshness'] = json.loads(data['sector_freshness_json'])
         return data
 
     def save_sector_strategy_state(self, decision: Dict[str, Any], review_date: str):
@@ -319,8 +327,8 @@ class DatabaseManager:
             INSERT INTO sector_strategy_state (
                 sector_name, review_date, active_symbol, active_name, active_kind, active_avg_weight,
                 active_prevalence, pending_symbol, pending_name, pending_confirmations, status,
-                last_action, last_action_reason, data_status, evidence_json
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                last_action, last_action_reason, data_status, sector_freshness_json, evidence_json
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 decision['sector'],
@@ -337,6 +345,7 @@ class DatabaseManager:
                 decision.get('action'),
                 decision.get('action_reason'),
                 decision.get('data_status'),
+                json.dumps(decision.get('sector_freshness', {})),
                 json.dumps(decision.get('evidence', {})),
             ),
         )

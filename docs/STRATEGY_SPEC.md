@@ -2,9 +2,9 @@
 
 ## Objective
 
-This repository is now designed as an **advisory/manual-trading sector rotation planner**.
+This repository is an **advisory/manual-trading sector rotation planner**.
 
-The system reviews a curated list of sector ETFs, inspects their underlying holdings, and recommends one position per sector:
+The system reviews a curated list of sector ETFs, inspects their stored holdings snapshots, and recommends one position per sector:
 
 - the **confirmed stock leader** within that sector, or
 - the configured **sector ETF fallback** when no stock leader meets the rules.
@@ -13,28 +13,54 @@ It does **not** place live orders.
 
 ## Operating model
 
+### Universe and budget
+
+- **10 sectors total**
+- **5 tracked ETFs per sector**
+- **25 API calls/day budget target**
+- therefore the refresh workflow is split into **2 alternating batches of 5 sectors each**
+
 ### Cadence
 
-- **Review cadence:** weekly
+- **Holdings snapshot refresh:** daily, alternating `batch_a` / `batch_b`
+- **Strategy review:** weekly, cache-first across all 10 sectors
 - **Action cadence:** monthly
 - **Override:** if a significant change occurs, a confirmed switch may be actioned before month-end
 
-### Decision rules
+## Refresh vs review
+
+### Refresh holdings snapshots
+
+Purpose: update local ETF holdings cache only.
+
+- refreshes 5 sectors per day
+- refreshes up to 25 ETF snapshots per run
+- uses provider order from config (`fmp`, then `cache`, then `alpha_vantage` by default)
+- stores holdings snapshots to local cache for later review
+
+### Review strategy
+
+Purpose: evaluate all sectors from the latest stored snapshots.
+
+- reviews all 10 sectors every run
+- should primarily use cached holdings snapshots
+- does **not** require live ETF calls to produce a review
+- exposes stale or missing data instead of silently hiding it
+
+## Decision rules
 
 For each sector:
 
-1. Rank and track a curated ETF set.
-2. Pull ETF holdings using Alpha Vantage when available.
-3. Reuse cached holdings when the API is rate-limited or unavailable.
-4. Aggregate company exposure across tracked ETFs.
-5. Treat a company as a valid leader candidate only if it meets config thresholds:
+1. Use the latest stored ETF holdings snapshots.
+2. Aggregate company exposure across tracked ETFs.
+3. Treat a company as a valid leader candidate only if it meets config thresholds:
    - minimum funds holding it
    - minimum prevalence across tracked ETFs
    - minimum average portfolio weight
-6. Compare the current candidate with the previously active recommendation.
-7. If the candidate changes, require confirmation across multiple reviews before switching.
-8. Only switch on the monthly action window unless the move qualifies as a significant change.
-9. If no valid stock leader exists, recommend the sector ETF fallback instead.
+4. Compare the current candidate with the previously active recommendation.
+5. If the candidate changes, require confirmation across multiple reviews before switching.
+6. Only switch on the monthly action window unless the move qualifies as a significant change.
+7. If no valid stock leader exists, recommend the sector ETF fallback instead.
 
 ## Confirmation logic
 
@@ -58,38 +84,35 @@ Default significant change triggers:
 - equal-weight target across covered sectors
 - outputs are **manual trade suggestions**, not execution instructions
 
+## Freshness and stale-data behavior
+
+Each ETF snapshot carries explicit metadata:
+
+- `data_status`
+- `cached_at`
+- `age_hours` / `age_days`
+- `freshness`
+- `source`
+
+Each sector review also carries aggregate freshness:
+
+- sector freshness label
+- ETF coverage ratio
+- average snapshot age
+- stale ETF count
+- cache-miss ETF count
+
+The planner is allowed to review from stale cache, but stale inputs must remain visible in output and reports.
+
 ## Persistence
 
-Each run stores:
+Each review run stores:
 
-- current top leader evidence
+- top leader evidence
 - per-sector active recommendation
 - pending switch candidate and confirmation count
+- sector freshness metadata
 - run summary and portfolio plan
 - manual review report paths
 
 This lets the planner compare the current review with prior state across runs.
-
-## Alpha Vantage / stale-safe behavior
-
-Alpha Vantage free-tier limits are restrictive.
-
-To keep the workflow usable:
-
-- ETF holdings responses are cached on disk under `data/cache/`
-- fresh cache is reused before hitting the API again
-- stale cache is used as a fallback if live calls fail
-- outputs explicitly label data status (`live`, `fresh_cache`, `stale_cache`, etc.)
-
-## Future IBKR-ready manual workflow
-
-This repo intentionally stops at **recommendation + report generation**.
-
-A future manual-to-IBKR bridge could add:
-
-1. broker account mapping for each sector sleeve
-2. pre-trade compliance checks
-3. order ticket export for manual upload/review
-4. optional human-approved order staging via IBKR APIs
-
-That future workflow should remain gated by an explicit manual approval step.

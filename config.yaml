@@ -54,6 +54,22 @@ strategy:
     "Infrastructure": { symbol: "PAVE", name: "Global X U.S. Infrastructure Development ETF" }
     "Real Estate": { symbol: "VNQ", name: "Vanguard Real Estate ETF" }
 
+refresh:
+  alternating_schedule: "batch_a on even ordinal dates, batch_b on odd ordinal dates"
+  sector_batches:
+    batch_a:
+      - "Aerospace & Defense"
+      - "Renewable Energy"
+      - "Healthcare & Biotech"
+      - "Automotive"
+      - "Precious Metals"
+    batch_b:
+      - "Consumer Staples"
+      - "Tech & AI"
+      - "Financial Services"
+      - "Infrastructure"
+      - "Real Estate"
+
 api:
   requests_per_minute: 5
   requests_per_day: 25

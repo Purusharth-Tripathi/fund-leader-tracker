@@ -29,6 +29,7 @@ class SectorDecision:
     significant_change: bool
     rebalance_due: bool
     data_status: str
+    sector_freshness: Dict[str, Any]
     evidence: Dict[str, Any]
 
     def as_dict(self) -> Dict[str, Any]:
@@ -55,6 +56,7 @@ class SectorDecision:
             'significant_change': self.significant_change,
             'rebalance_due': self.rebalance_due,
             'data_status': self.data_status,
+            'sector_freshness': self.sector_freshness,
             'evidence': self.evidence,
         }
 
@@ -79,8 +81,10 @@ class StrategyEngine:
         fallback: Dict[str, str],
         previous_state: Optional[Dict[str, Any]],
         data_status: str,
+        sector_freshness: Optional[Dict[str, Any]] = None,
     ) -> SectorDecision:
         previous_state = previous_state or {}
+        sector_freshness = sector_freshness or {}
         previous_symbol = previous_state.get('active_symbol')
         previous_name = previous_state.get('active_name')
         previous_kind = previous_state.get('active_kind')
@@ -92,6 +96,12 @@ class StrategyEngine:
         rebalance_due = review_date.day <= self.monthly_action_day
         fallback_symbol = fallback.get('symbol') or 'UNKNOWN'
         fallback_name = fallback.get('name') or fallback_symbol
+
+        common = {
+            'confirmation_required': self.confirmation_reviews,
+            'data_status': data_status,
+            'sector_freshness': sector_freshness,
+        }
 
         if candidate is None:
             return SectorDecision(
@@ -113,11 +123,10 @@ class StrategyEngine:
                 pending_symbol=None,
                 pending_name=None,
                 pending_confirmations=0,
-                confirmation_required=self.confirmation_reviews,
                 significant_change=self.allow_invalid_override and previous_kind == 'stock',
                 rebalance_due=rebalance_due,
-                data_status=data_status,
                 evidence={'leaders_considered': leaders[:5], 'selected_mode': 'fallback'},
+                **common,
             )
 
         candidate_symbol = candidate['symbol']
@@ -146,11 +155,10 @@ class StrategyEngine:
                 pending_symbol=None,
                 pending_name=None,
                 pending_confirmations=0,
-                confirmation_required=self.confirmation_reviews,
                 significant_change=False,
                 rebalance_due=True,
-                data_status=data_status,
                 evidence={'leaders_considered': leaders[:5], 'selected_mode': 'new_position'},
+                **common,
             )
 
         if previous_symbol == candidate_symbol:
@@ -173,11 +181,10 @@ class StrategyEngine:
                 pending_symbol=None,
                 pending_name=None,
                 pending_confirmations=0,
-                confirmation_required=self.confirmation_reviews,
                 significant_change=False,
                 rebalance_due=rebalance_due,
-                data_status=data_status,
                 evidence={'leaders_considered': leaders[:5], 'selected_mode': 'keep_active'},
+                **common,
             )
 
         if pending_symbol == candidate_symbol:
@@ -211,11 +218,10 @@ class StrategyEngine:
                 pending_symbol=None,
                 pending_name=None,
                 pending_confirmations=0,
-                confirmation_required=self.confirmation_reviews,
                 significant_change=significant_change,
                 rebalance_due=rebalance_due,
-                data_status=data_status,
                 evidence={'leaders_considered': leaders[:5], 'selected_mode': 'confirmed_switch'},
+                **common,
             )
 
         return SectorDecision(
@@ -237,11 +243,10 @@ class StrategyEngine:
             pending_symbol=pending_symbol,
             pending_name=pending_name,
             pending_confirmations=pending_confirmations,
-            confirmation_required=self.confirmation_reviews,
             significant_change=significant_change,
             rebalance_due=rebalance_due,
-            data_status=data_status,
             evidence={'leaders_considered': leaders[:5], 'selected_mode': 'pending_confirmation'},
+            **common,
         )
 
     def build_portfolio_plan(self, sector_decisions: List[Any]) -> Dict[str, Any]:

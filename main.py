@@ -27,6 +27,7 @@ def check_api_keys():
 def display_welcome(config):
     print_header('ETF SECTOR LEADERSHIP PLANNER', '=')
     print('Advisory-only workflow: weekly review, monthly action, confirmed switches, ETF fallback.')
+    print('Operating model: refresh holdings snapshots separately, then run cache-first strategy review.')
     print(f"Database: {config.get('output', {}).get('database_path', 'data/fund_leaders.db')}")
     print(f"Report directory: {config.get('output', {}).get('report_directory', 'output/reports')}")
     print()
@@ -35,7 +36,7 @@ def display_welcome(config):
 def run_analysis(config, review_date=None):
     api_key = os.getenv('ALPHA_VANTAGE_API_KEY', '')
     analyzer = FundAnalyzer(config, api_key, review_date=review_date)
-    results = analyzer.analyze_all_sectors()
+    results = analyzer.analyze_all_sectors(fetch_mode='cache_only')
     if not results:
         print_colored('No results generated', Colors.WARNING)
         return False
@@ -50,13 +51,42 @@ def run_analysis(config, review_date=None):
     print(f"Leaders identified: {summary['total_leaders']}")
     print(f"Switches proposed: {summary['switches']}")
     print(f"ETF fallback sectors: {summary['fallbacks']}")
+    print(f"Stale sectors: {summary.get('stale_sectors', 0)}")
+    print(f"Cache-miss sectors: {summary.get('cache_miss_sectors', 0)}")
     print(f"Actionable trades: {portfolio['actionable_sector_count']}")
     for decision in payload['sectors']:
-        print(f"  {decision['sector']:<25} -> {decision['target_symbol']:<8} ({decision['target_kind']}, {decision['action']})")
+        freshness = (decision.get('sector_freshness') or {}).get('freshness', 'unknown')
+        print(
+            f"  {decision['sector']:<25} -> {decision['target_symbol']:<8} "
+            f"({decision['target_kind']}, {decision['action']}, freshness={freshness})"
+        )
     if analyzer.report_paths:
         print('\nManual reports:')
         for label, path in analyzer.report_paths.items():
             print(f'  {label}: {path}')
+    return True
+
+
+def run_refresh(config, review_date=None, batch_name=None):
+    api_key = os.getenv('ALPHA_VANTAGE_API_KEY', '')
+    analyzer = FundAnalyzer(config, api_key, review_date=review_date)
+    result = analyzer.refresh_holdings_snapshots(batch_name=batch_name)
+    sectors = result.get('sectors', [])
+    if not sectors:
+        print_colored('No snapshot refresh work completed.', Colors.WARNING)
+        return False
+
+    print_header('Snapshot Refresh Summary')
+    print(f"Batch: {result.get('batch')}")
+    print(f"Review date: {result.get('review_date')}")
+    print(f"Sector count: {len(sectors)}")
+    print(f"API daily budget: {result['api_budget']['requests_per_day']} calls")
+    for sector in sectors:
+        freshness = sector.get('sector_freshness') or {}
+        print(
+            f"  {sector['sector']:<25} -> funds={sector.get('refreshed_funds', 0)} "
+            f"live={sector.get('live_fetches', 0)} freshness={freshness.get('freshness', 'unknown')}"
+        )
     return True
 
 
@@ -67,24 +97,29 @@ def run_doctor(config):
         'fund_universe.yaml present': os.path.exists('fund_universe.yaml'),
         'output directory writable': os.access('output', os.W_OK),
         'data directory writable': os.access('data', os.W_OK),
+        '10 sectors configured': len(config.get('sectors', [])) == 10,
     }
     for name, status in checks.items():
         print(f"[{'OK' if status else 'FAIL'}] {name}")
 
     provider_order = config.get('api', {}).get('holdings_provider_order', ['fmp', 'cache', 'alpha_vantage'])
+    refresh_batches = config.get('refresh', {}).get('sector_batches', {})
     print(f"[INFO] holdings provider order: {provider_order}")
     print(f"[INFO] FMP_API_KEY configured: {'yes' if os.getenv('FMP_API_KEY') not in (None, '', 'your_api_key_here') else 'no'}")
     print(f"[INFO] ALPHA_VANTAGE_API_KEY configured: {'yes' if os.getenv('ALPHA_VANTAGE_API_KEY') not in (None, '', 'your_api_key_here') else 'no'}")
+    print(f"[INFO] refresh batches: {refresh_batches}")
     return all(checks.values())
 
 
 def print_usage():
     print('Usage:')
-    print('  python main.py                        Run weekly/manual review using today as review date')
-    print('  python main.py review [YYYY-MM-DD]    Run review for a specific review date')
-    print('  python main.py doctor                 Validate local setup')
-    print('  python main.py latest                 Show latest saved strategy run')
-    print('  python initialize_tracked_funds.py [--force]')
+    print('  python3 main.py                             Run cache-first strategy review using today as review date')
+    print('  python3 main.py review [YYYY-MM-DD]         Run cache-first review for a specific review date')
+    print('  python3 main.py refresh [YYYY-MM-DD] [batch_a|batch_b]')
+    print('                                             Refresh holdings snapshots for the alternating 5-sector batch')
+    print('  python3 main.py doctor                      Validate local setup')
+    print('  python3 main.py latest                      Show latest saved strategy run')
+    print('  python3 initialize_tracked_funds.py [--force]')
 
 
 def show_latest_run(config):
@@ -124,6 +159,14 @@ def main():
         if command == 'review':
             review_date = parse_review_date(sys.argv[2] if len(sys.argv) > 2 else None)
             sys.exit(0 if run_analysis(config, review_date=review_date) else 1)
+        if command == 'refresh':
+            review_date = parse_review_date(sys.argv[2] if len(sys.argv) > 2 and sys.argv[2] not in {'batch_a', 'batch_b'} else None)
+            batch_name = None
+            if len(sys.argv) > 2 and sys.argv[2] in {'batch_a', 'batch_b'}:
+                batch_name = sys.argv[2]
+            elif len(sys.argv) > 3:
+                batch_name = sys.argv[3]
+            sys.exit(0 if run_refresh(config, review_date=review_date, batch_name=batch_name) else 1)
         print_colored(f'Unknown command: {command}', Colors.FAIL)
         print_usage()
         sys.exit(1)

@@ -1,7 +1,7 @@
 """Core analysis engine for Fund Leader Tracker."""
 import logging
 from datetime import datetime
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 from db_manager import DatabaseManager
 from holdings_fetcher import HoldingsFetcher
@@ -20,6 +20,7 @@ class FundAnalyzer:
         self.sectors = config.get('sectors', [])
         self.analysis_config = config.get('analysis', {})
         self.strategy_config = config.get('strategy', {})
+        self.refresh_config = config.get('refresh', {})
         self.review_date = review_date or datetime.now().date()
 
         api_config = config.get('api', {})
@@ -46,7 +47,55 @@ class FundAnalyzer:
         self.sector_decisions: List[Dict[str, Any]] = []
         self.report_paths: Dict[str, str] = {}
 
-    def analyze_all_sectors(self):
+    def refresh_holdings_snapshots(self, batch_name: Optional[str] = None):
+        print_header('ETF Holdings Snapshot Refresh')
+        selected = self._resolve_refresh_batch(batch_name=batch_name)
+        if not selected:
+            print_colored('No sectors selected for refresh.', Colors.WARNING)
+            return {'batch': None, 'sectors': []}
+
+        refreshed = []
+        for index, sector_config in enumerate(selected, 1):
+            sector_name = sector_config['name']
+            keywords = sector_config.get('keywords', [])
+            try:
+                print_colored(f'\n[{index}/{len(selected)}] Refreshing: {sector_name}', Colors.HEADER)
+                fund_rows = self.db.get_tracked_funds(sector_name)
+                fund_symbols = [fund['fund_symbol'] for fund in fund_rows]
+                if not fund_symbols and self.analysis_config.get('allow_uninitialized_sector_fallback', False):
+                    fund_symbols = self.fetcher.search_funds_by_keywords(keywords, sector_name=sector_name)[: self.analysis_config.get('top_funds_per_sector', 5)]
+                if not fund_symbols:
+                    print_colored(f'No tracked funds found for {sector_name}', Colors.WARNING)
+                    refreshed.append({'sector': sector_name, 'refreshed_funds': 0, 'status': 'no_tracked_funds'})
+                    continue
+
+                print(f"Tracked ETFs: {', '.join(fund_symbols)}")
+                holdings_by_fund, holding_status = self.fetcher.batch_fetch_holdings(fund_symbols, mode='auto')
+                self._save_sector_results(sector_name, keywords, fund_rows, holdings_by_fund, leaders=[])
+                refreshed.append({
+                    'sector': sector_name,
+                    'refreshed_funds': len(fund_symbols),
+                    'live_fetches': sum(1 for meta in holding_status.values() if meta.get('data_status') == 'live'),
+                    'etf_freshness': holding_status,
+                    'sector_freshness': self._summarize_sector_freshness(holding_status),
+                    'status': 'ok',
+                })
+            except Exception as exc:
+                logger.exception('Error refreshing %s: %s', sector_name, exc)
+                print_colored(f'Error refreshing {sector_name}: {exc}', Colors.FAIL)
+                refreshed.append({'sector': sector_name, 'refreshed_funds': 0, 'status': 'error', 'error': str(exc)})
+
+        return {
+            'batch': self._resolve_refresh_batch_name(batch_name),
+            'review_date': self.review_date.isoformat(),
+            'sectors': refreshed,
+            'api_budget': {
+                'requests_per_day': self.config.get('api', {}).get('requests_per_day', 25),
+                'tracked_etfs_per_sector': self.analysis_config.get('top_funds_per_sector', 5),
+            },
+        }
+
+    def analyze_all_sectors(self, fetch_mode: str = 'cache_only'):
         print_header('ETF Sector Leadership Review')
         total_funds_analyzed = 0
         total_leaders_found = 0
@@ -65,19 +114,22 @@ class FundAnalyzer:
                     continue
 
                 print(f"Tracked ETFs: {', '.join(fund_symbols)}")
-                holdings_by_fund, holding_status = self.fetcher.batch_fetch_holdings(fund_symbols)
+                holdings_by_fund, holding_status = self.fetcher.batch_fetch_holdings(fund_symbols, mode=fetch_mode)
                 leaders = self.identifier.analyze_holdings(holdings_by_fund, sector_name) if holdings_by_fund else []
                 fallback = self._resolve_sector_fallback(sector_config, fund_rows, fund_symbols)
                 previous_state = self.db.get_latest_strategy_state(sector_name)
-                sector_data_status = self._aggregate_sector_data_status(holding_status)
+                sector_freshness = self._summarize_sector_freshness(holding_status)
                 decision = self.strategy_engine.evaluate_sector(
                     sector_name=sector_name,
                     review_date=self.review_date,
                     leaders=leaders,
                     fallback=fallback,
                     previous_state=previous_state,
-                    data_status=sector_data_status,
+                    data_status=sector_freshness['data_status'],
+                    sector_freshness=sector_freshness,
                 )
+                decision.evidence['etf_freshness'] = holding_status
+                decision.evidence['fetch_mode'] = fetch_mode
 
                 total_funds_analyzed += len(fund_symbols)
                 total_leaders_found += len(leaders)
@@ -90,9 +142,14 @@ class FundAnalyzer:
                     'leaders': leaders[: self.analysis_config.get('export_top_n_leaders', 10)],
                     'decision': decision.as_dict(),
                     'holdings_count': sum(len(h) for h in holdings_by_fund.values()),
+                    'etf_freshness': holding_status,
+                    'sector_freshness': sector_freshness,
                 }
                 self.identifier.print_leaders_summary(leaders, sector_name, top_n=1)
-                print(f"Recommendation: {decision.target_symbol} ({decision.target_kind}) | action={decision.action} | status={decision.review_status}")
+                print(
+                    f"Recommendation: {decision.target_symbol} ({decision.target_kind}) | action={decision.action} | "
+                    f"status={decision.review_status} | freshness={sector_freshness['freshness']}"
+                )
             except Exception as exc:
                 logger.exception('Error analyzing %s: %s', sector_name, exc)
                 print_colored(f'Error analyzing {sector_name}: {exc}', Colors.FAIL)
@@ -102,7 +159,7 @@ class FundAnalyzer:
             funds_analyzed=total_funds_analyzed,
             leaders_found=total_leaders_found,
             status='completed',
-            notes='ETF-only sector leadership strategy review',
+            notes=f'ETF-only sector leadership strategy review ({fetch_mode})',
         )
         return self.results
 
@@ -118,17 +175,68 @@ class FundAnalyzer:
             return {'symbol': fund_symbols[0], 'name': fund_symbols[0]}
         return {'symbol': 'CASH', 'name': 'Cash / no allocation'}
 
-    def _aggregate_sector_data_status(self, holding_status):
+    def _summarize_sector_freshness(self, holding_status):
         statuses = [meta.get('data_status') for meta in holding_status.values() if meta]
+        freshness_values = [meta.get('freshness') for meta in holding_status.values() if meta]
+        ages = [meta.get('age_hours') for meta in holding_status.values() if meta.get('age_hours') is not None]
         if not statuses:
-            return 'unavailable'
-        if any(status == 'live' for status in statuses):
-            return 'live_or_mixed'
-        if all(status == 'fresh_cache' for status in statuses):
-            return 'fresh_cache'
-        if any(status == 'stale_cache' for status in statuses):
-            return 'stale_cache'
-        return statuses[0]
+            return {
+                'data_status': 'unavailable',
+                'freshness': 'unknown',
+                'coverage_ratio': '0/0',
+                'avg_age_hours': None,
+                'stale_etfs': 0,
+                'live_etfs': 0,
+                'cache_miss_etfs': 0,
+            }
+
+        if any(status == 'cache_miss' for status in statuses):
+            aggregate_status = 'cache_miss'
+        elif any(status == 'stale_cache' for status in statuses):
+            aggregate_status = 'stale_cache'
+        elif all(status == 'fresh_cache' for status in statuses):
+            aggregate_status = 'fresh_cache'
+        elif any(status == 'live' for status in statuses):
+            aggregate_status = 'live_or_mixed'
+        else:
+            aggregate_status = statuses[0]
+
+        if 'very_stale' in freshness_values:
+            freshness = 'very_stale'
+        elif 'stale' in freshness_values:
+            freshness = 'stale'
+        elif all(value == 'fresh' for value in freshness_values if value):
+            freshness = 'fresh'
+        else:
+            freshness = 'mixed'
+
+        return {
+            'data_status': aggregate_status,
+            'freshness': freshness,
+            'coverage_ratio': f"{sum(1 for meta in holding_status.values() if meta.get('holdings_count', 0) > 0)}/{len(holding_status)}",
+            'avg_age_hours': round(sum(ages) / len(ages), 2) if ages else None,
+            'stale_etfs': sum(1 for meta in holding_status.values() if meta.get('freshness') in {'stale', 'very_stale'}),
+            'live_etfs': sum(1 for meta in holding_status.values() if meta.get('data_status') == 'live'),
+            'cache_miss_etfs': sum(1 for meta in holding_status.values() if meta.get('data_status') == 'cache_miss'),
+        }
+
+    def _resolve_refresh_batch_name(self, batch_name: Optional[str] = None) -> str:
+        if batch_name:
+            return batch_name.strip().lower()
+        day_index = self.review_date.toordinal() % 2
+        return 'batch_a' if day_index == 0 else 'batch_b'
+
+    def _resolve_refresh_batch(self, batch_name: Optional[str] = None):
+        batches = self.refresh_config.get('sector_batches', {})
+        normalized = self._resolve_refresh_batch_name(batch_name)
+        sector_names = batches.get(normalized)
+        if sector_names:
+            order = {name: idx for idx, name in enumerate(sector_names)}
+            selected = [sector for sector in self.sectors if sector['name'] in order]
+            return sorted(selected, key=lambda sector: order[sector['name']])
+
+        midpoint = len(self.sectors) // 2
+        return self.sectors[:midpoint] if normalized == 'batch_a' else self.sectors[midpoint:]
 
     def _save_sector_results(self, sector_name, keywords, fund_rows, holdings_by_fund, leaders):
         self.db.save_sector(sector_name, keywords)
@@ -178,10 +286,11 @@ class FundAnalyzer:
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         with open(filepath, 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
-            writer.writerow(['Sector', 'Top Leader', 'Leader Name', 'Recommendation', 'Recommendation Type', 'Action', 'Status'])
+            writer.writerow(['Sector', 'Top Leader', 'Leader Name', 'Recommendation', 'Recommendation Type', 'Action', 'Status', 'Sector Freshness', 'Data Status'])
             for sector_name, data in self.results.items():
                 leader = data.get('top_leader') or {}
                 decision = data.get('decision') or {}
+                sector_freshness = data.get('sector_freshness') or {}
                 writer.writerow([
                     sector_name,
                     leader.get('symbol'),
@@ -190,6 +299,8 @@ class FundAnalyzer:
                     decision.get('target_kind'),
                     decision.get('action'),
                     decision.get('review_status'),
+                    sector_freshness.get('freshness'),
+                    sector_freshness.get('data_status'),
                 ])
 
     def _export_to_json(self, filepath):
@@ -209,17 +320,22 @@ class FundAnalyzer:
             'summary': summary,
             'portfolio_plan': portfolio_plan,
             'sectors': self.sector_decisions,
+            'results': self.results,
             'report_paths': self.report_paths,
         }
 
     def get_summary(self):
         leaders_found = sum(1 for data in self.results.values() if data.get('top_leader'))
+        stale_sectors = sum(1 for data in self.results.values() if (data.get('sector_freshness') or {}).get('freshness') in {'stale', 'very_stale'})
+        cache_miss_sectors = sum(1 for data in self.results.values() if (data.get('sector_freshness') or {}).get('data_status') == 'cache_miss')
         return {
             'sectors_analyzed': len(self.results),
             'total_leaders': leaders_found,
             'recommendations_generated': len(self.sector_decisions),
             'switches': sum(1 for d in self.sector_decisions if d.get('action') == 'switch'),
             'fallbacks': sum(1 for d in self.sector_decisions if d.get('target_kind') == 'sector_etf'),
+            'stale_sectors': stale_sectors,
+            'cache_miss_sectors': cache_miss_sectors,
         }
 
     def get_leadership_changes(self):
