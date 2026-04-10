@@ -1,55 +1,53 @@
-"""Fund Leader Tracker main entry point."""
+"""ETF sector leadership planner main entry point."""
 import os
 import sys
-import logging
 
-from email_alerts import EmailAlerts
 from fund_analyzer import FundAnalyzer
+from strategy_engine import parse_review_date
 from utils import Colors, ensure_directories, load_config, load_env, print_colored, print_header, setup_logging
-
-logger = logging.getLogger(__name__)
 
 
 def check_api_key():
     api_key = os.getenv('ALPHA_VANTAGE_API_KEY')
     if not api_key or api_key == 'your_api_key_here':
-        print_colored('ERROR: Alpha Vantage API key not configured.', Colors.FAIL)
-        print('Copy .env.example to .env and set ALPHA_VANTAGE_API_KEY before live analysis.')
+        print_colored('Warning: Alpha Vantage API key not configured. Cached data only mode may still work.', Colors.WARNING)
         return False
     return True
 
 
 def display_welcome(config):
-    print_header('FUND LEADER TRACKER', '=')
-    print('Production-oriented fund leadership tracker')
+    print_header('ETF SECTOR LEADERSHIP PLANNER', '=')
+    print('Advisory-only workflow: weekly review, monthly action, confirmed switches, ETF fallback.')
     print(f"Database: {config.get('output', {}).get('database_path', 'data/fund_leaders.db')}")
-    print(f"Tracked funds required: {not config.get('analysis', {}).get('allow_uninitialized_sector_fallback', False)}")
+    print(f"Report directory: {config.get('output', {}).get('report_directory', 'output/reports')}")
     print()
 
 
-def run_analysis(config, api_key):
-    analyzer = FundAnalyzer(config, api_key)
+def run_analysis(config, review_date=None):
+    api_key = os.getenv('ALPHA_VANTAGE_API_KEY', '')
+    analyzer = FundAnalyzer(config, api_key, review_date=review_date)
     results = analyzer.analyze_all_sectors()
     if not results:
         print_colored('No results generated', Colors.WARNING)
         return False
 
     analyzer.export_results()
-    summary = analyzer.get_summary()
-    email_config = config.get('email_alerts', {})
-    send_email = email_config.get('send_on_completion', False) or (
-        email_config.get('send_on_change_only', True) and summary.get('has_changes', False)
-    )
-    if send_email:
-        EmailAlerts(config).send_analysis_complete(results, summary, analyzer.get_leadership_changes())
+    payload = analyzer.build_run_payload()
+    summary = payload['summary']
+    portfolio = payload['portfolio_plan']
 
-    print_header('Analysis Summary')
+    print_header('Manual Review Summary')
     print(f"Sectors analyzed: {summary['sectors_analyzed']}")
     print(f"Leaders identified: {summary['total_leaders']}")
-    for sector_name, data in results.items():
-        leader = data.get('top_leader')
-        if leader:
-            print(f"  {sector_name:<25} -> {leader['symbol']:<8} ({leader['name'][:30]})")
+    print(f"Switches proposed: {summary['switches']}")
+    print(f"ETF fallback sectors: {summary['fallbacks']}")
+    print(f"Actionable trades: {portfolio['actionable_sector_count']}")
+    for decision in payload['sectors']:
+        print(f"  {decision['sector']:<25} -> {decision['target_symbol']:<8} ({decision['target_kind']}, {decision['action']})")
+    if analyzer.report_paths:
+        print('\nManual reports:')
+        for label, path in analyzer.report_paths.items():
+            print(f'  {label}: {path}')
     return True
 
 
@@ -58,32 +56,38 @@ def run_doctor(config):
     checks = {
         'config.yaml present': os.path.exists('config.yaml'),
         'fund_universe.yaml present': os.path.exists('fund_universe.yaml'),
-        '.env present': os.path.exists('.env'),
         'output directory writable': os.access('output', os.W_OK),
         'data directory writable': os.access('data', os.W_OK),
     }
     for name, status in checks.items():
-        print(f"[{ 'OK' if status else 'FAIL' }] {name}")
+        print(f"[{'OK' if status else 'FAIL'}] {name}")
     return all(checks.values())
 
 
 def print_usage():
     print('Usage:')
-    print('  python main.py             Run full analysis')
-    print('  python main.py test        Test Alpha Vantage connectivity')
-    print('  python main.py doctor      Validate local setup')
+    print('  python main.py                        Run weekly/manual review using today as review date')
+    print('  python main.py review [YYYY-MM-DD]    Run review for a specific review date')
+    print('  python main.py doctor                 Validate local setup')
+    print('  python main.py latest                 Show latest saved strategy run')
     print('  python initialize_tracked_funds.py [--force]')
 
 
-def test_api_connection(api_key):
-    from holdings_fetcher import HoldingsFetcher
-    fetcher = HoldingsFetcher(api_key=api_key)
-    quote = fetcher.get_quote('IBM')
-    if quote:
-        print_colored('[OK] API connection successful', Colors.OKGREEN)
-        print(f"IBM price: {quote.get('05. price', 'N/A')}")
-    else:
-        print_colored('[FAIL] API connectivity failed or rate-limited', Colors.FAIL)
+def show_latest_run(config):
+    from db_manager import DatabaseManager
+
+    db = DatabaseManager(config.get('output', {}).get('database_path', 'data/fund_leaders.db'))
+    latest = db.get_latest_strategy_run()
+    if not latest:
+        print('No strategy runs saved yet.')
+        return 1
+    print_header('Latest Strategy Run')
+    print(f"Review date: {latest['review_date']}")
+    print(f"Timestamp: {latest['run_timestamp']}")
+    print(f"Report text: {latest.get('report_text_path')}")
+    print(f"Report json: {latest.get('report_json_path')}")
+    print(f"Summary: {latest.get('summary')}")
+    return 0
 
 
 def main():
@@ -92,6 +96,7 @@ def main():
     config = load_config()
     setup_logging(os.getenv('LOG_FILE', 'logs/fund_tracker.log'), os.getenv('LOG_LEVEL', 'INFO'))
     display_welcome(config)
+    check_api_key()
 
     if len(sys.argv) > 1:
         command = sys.argv[1].lower()
@@ -100,19 +105,16 @@ def main():
             sys.exit(0)
         if command == 'doctor':
             sys.exit(0 if run_doctor(config) else 1)
-        if command == 'test':
-            if not check_api_key():
-                sys.exit(1)
-            test_api_connection(os.getenv('ALPHA_VANTAGE_API_KEY'))
-            sys.exit(0)
+        if command == 'latest':
+            sys.exit(show_latest_run(config))
+        if command == 'review':
+            review_date = parse_review_date(sys.argv[2] if len(sys.argv) > 2 else None)
+            sys.exit(0 if run_analysis(config, review_date=review_date) else 1)
         print_colored(f'Unknown command: {command}', Colors.FAIL)
         print_usage()
         sys.exit(1)
 
-    if not check_api_key():
-        sys.exit(1)
-
-    success = run_analysis(config, os.getenv('ALPHA_VANTAGE_API_KEY'))
+    success = run_analysis(config, review_date=parse_review_date(None))
     sys.exit(0 if success else 1)
 
 

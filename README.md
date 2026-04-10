@@ -1,36 +1,34 @@
-# Fund Leader Tracker
+# ETF Sector Leadership Planner
 
-Production-oriented research workflow for identifying sector leaders from the top holdings of curated thematic and sector ETFs.
+Advisory-only investment planning workflow for tracking sector leadership through ETF holdings and producing manual trading recommendations.
 
-## What changed
+## What this system does
 
-This repo no longer relies on fake keyword-to-fund mappings or hash-based simulated performance.
+For each configured sector, the planner:
 
-Instead it now uses:
-- a versioned **curated fund universe** in `fund_universe.yaml`
-- provider-based fund ranking in `data_providers.py`
-- live 3-year annualized return calculation via Alpha Vantage monthly adjusted data when available
-- deterministic manifest fallback scores when live ranking data is unavailable or rate-limited
-- tracked-fund initialization stored in SQLite before daily analysis
+- tracks a curated set of sector/thematic ETFs
+- analyzes the underlying holdings to infer the strongest stock leader
+- requires confirmation before switching away from the current leader
+- only acts on the monthly window unless a significant-change override applies
+- falls back to a sector ETF when no stock leader qualifies
+- exports a manual review report and suggested buy/sell list
 
-That makes the current implementation production-credible even though it still uses Alpha Vantage as the live data source and still needs a stronger institutional data provider for full production deployment.
+## What it does not do
 
-## Current architecture
+- no live broker execution
+- no automatic order placement
+- no claim of fully institutional data quality
 
-1. `initialize_tracked_funds.py`
-   - ranks each sector's curated candidate fund universe
-   - stores the top tracked funds in SQLite
-   - prefers live 3Y annualized returns from Alpha Vantage
-   - falls back to manifest-defined ranking metadata if needed
+## Core operating model
 
-2. `main.py`
-   - loads tracked funds from SQLite
-   - fetches ETF holdings for those funds
-   - identifies the most commonly/high-conviction company leader per sector
-   - stores results and exports CSV/JSON
+- **Review cadence:** weekly
+- **Action cadence:** monthly
+- **Confirmation:** consecutive review confirmations required before switching
+- **Override:** significant-change rule can unlock an earlier switch
+- **Fallback:** sector ETF if no valid stock leader exists
+- **Data resilience:** uses local holdings cache when Alpha Vantage is unavailable or rate-limited
 
-3. `dashboard.py`
-   - reads SQLite and shows current/historical leaders
+See `docs/STRATEGY_SPEC.md` for the canonical strategy definition.
 
 ## Quick start
 
@@ -56,44 +54,45 @@ Set `ALPHA_VANTAGE_API_KEY` in `.env`.
 python main.py doctor
 ```
 
-### 4) Initialize tracked funds
+### 4) Initialize the tracked ETF universe
 
 ```bash
 python initialize_tracked_funds.py --force
 ```
 
-### 5) Run analysis
+### 5) Run a review
 
 ```bash
 python main.py
+# or
+python main.py review 2026-04-10
 ```
 
-### 6) Launch dashboard
+### 6) Inspect the latest saved run
 
 ```bash
-streamlit run dashboard.py
+python main.py latest
 ```
 
-## Important operating notes
+## Key outputs
 
-- `initialize_tracked_funds.py` should be rerun whenever you want to refresh the tracked fund list.
-- `main.py` assumes tracked funds already exist unless `allow_uninitialized_sector_fallback` is enabled in `config.yaml`.
-- Alpha Vantage free-tier limits are restrictive. For true production deployment, replace the performance/holdings providers with institutional-grade data sources.
+- `output/leaders.csv`
+- `output/leaders.json`
+- `output/reports/manual_review_*.txt`
+- `output/reports/manual_review_*.json`
+- SQLite state in `data/fund_leaders.db`
 
-## Repo guide
+## Key files
 
-- `data_providers.py` - ranking providers and curated-universe loader
-- `fund_universe.yaml` - explicit sector fund candidates
-- `initialize_tracked_funds.py` - tracked-fund bootstrap job
-- `holdings_fetcher.py` - holdings and quote retrieval
-- `fund_analyzer.py` - analysis orchestration
-- `db_manager.py` - SQLite schema and migrations
-- `docs/PRODUCTION_ROADMAP.md` - next implementation phases
+- `config.yaml` - sector, cadence, fallback, confirmation, and threshold config
+- `initialize_tracked_funds.py` - ranks and stores the ETF universe per sector
+- `fund_analyzer.py` - sector review orchestration and export flow
+- `strategy_engine.py` - confirmation/stateful recommendation logic
+- `manual_report.py` - advisory/manual-trading report generation
+- `holdings_fetcher.py` - Alpha Vantage holdings fetch + stale-safe cache
+- `db_manager.py` - SQLite schema and persisted run/strategy state
+- `docs/STRATEGY_SPEC.md` - actual in-repo strategy spec
 
-## Documentation
+## Production caveat
 
-- `docs/PRODUCTION_ROADMAP.md`
-- `QUICK_START.md`
-- `DEPLOYMENT_GUIDE.md`
-- `DASHBOARD_GUIDE.md`
-- `SCHEDULING_GUIDE.md`
+Alpha Vantage is acceptable for prototyping and light personal workflow use, but not ideal for institutional production. The code now degrades more safely via cached holdings, yet a better data provider is still the right next upgrade.

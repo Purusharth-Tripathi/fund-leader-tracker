@@ -1,4 +1,4 @@
-# Fund Leader Tracker Configuration
+# ETF Sector Leadership Planner Configuration
 
 sectors:
   - name: "Aerospace & Defense"
@@ -29,6 +29,31 @@ analysis:
   export_top_n_leaders: 10
   allow_uninitialized_sector_fallback: false
 
+strategy:
+  review_cadence: "weekly"
+  action_cadence: "monthly"
+  monthly_action_day: 5
+  confirmation_reviews_required: 2
+  leader_rules:
+    min_times_held: 3
+    min_prevalence_pct: 60.0
+    min_avg_weight_pct: 1.0
+  significant_change:
+    score_gap_pct: 1.5
+    prevalence_gap_pct: 20.0
+    allow_invalid_current_override: true
+  sector_fallbacks:
+    "Aerospace & Defense": { symbol: "ITA", name: "iShares U.S. Aerospace & Defense ETF" }
+    "Renewable Energy": { symbol: "ICLN", name: "iShares Global Clean Energy ETF" }
+    "Healthcare & Biotech": { symbol: "XLV", name: "Health Care Select Sector SPDR Fund" }
+    "Automotive": { symbol: "DRIV", name: "Global X Autonomous & Electric Vehicles ETF" }
+    "Precious Metals": { symbol: "GLD", name: "SPDR Gold Shares" }
+    "Consumer Staples": { symbol: "XLP", name: "Consumer Staples Select Sector SPDR Fund" }
+    "Tech & AI": { symbol: "XLK", name: "Technology Select Sector SPDR Fund" }
+    "Financial Services": { symbol: "XLF", name: "Financial Select Sector SPDR Fund" }
+    "Infrastructure": { symbol: "PAVE", name: "Global X U.S. Infrastructure Development ETF" }
+    "Real Estate": { symbol: "VNQ", name: "Vanguard Real Estate ETF" }
+
 api:
   requests_per_minute: 5
   requests_per_day: 25
@@ -36,6 +61,8 @@ api:
   retry_delay: 5
   timeout_seconds: 20
   verify_ssl: true
+  cache_directory: "data/cache"
+  holdings_cache_ttl_hours: 168
 
 output:
   database_path: "data/fund_leaders.db"
@@ -43,9 +70,10 @@ output:
   save_to_json: true
   csv_path: "output/leaders.csv"
   json_path: "output/leaders.json"
+  report_directory: "output/reports"
 
 email_alerts:
   enabled: false
   send_on_completion: false
-  send_on_change_only: true
+  send_on_change_only: false
   include_top_n_leaders: 10
