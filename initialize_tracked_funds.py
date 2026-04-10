@@ -1,204 +1,106 @@
-"""
-Initialize Tracked Funds - ONE-TIME SETUP
-Identifies the top 5 funds per sector based on 3-year performance
-and saves them to the database for daily monitoring
-"""
-import sys
-import os
+"""Initialize tracked funds using a curated manifest and provider-based ranking."""
 import logging
-from utils import load_config, load_env, setup_logging, print_header, print_colored, Colors
-from holdings_fetcher import HoldingsFetcher
+import os
+import sys
+
+from data_providers import AlphaVantageClient, AlphaVantagePerformanceProvider, FundSelectionService, FundUniverseRepository
 from db_manager import DatabaseManager
+from utils import Colors, load_config, load_env, print_colored, print_header, setup_logging
 
 logger = logging.getLogger(__name__)
 
 
-def get_fund_3year_performance(fetcher, symbol):
-    """
-    Get 3-year performance for a fund
+def build_selection_service(config, api_key):
+    api_config = config.get('api', {})
+    repo = FundUniverseRepository(os.path.join(os.path.dirname(__file__), 'fund_universe.yaml'))
+    performance_provider = None
 
-    Note: This is a simplified implementation. In production, you would:
-    1. Use a proper fund data API with historical performance data
-    2. Calculate annualized 3-year returns
-    3. Consider risk-adjusted metrics like Sharpe ratio
+    if api_key and api_key != 'your_api_key_here':
+        client = AlphaVantageClient(
+            api_key=api_key,
+            timeout=api_config.get('timeout_seconds', 20),
+            verify_ssl=api_config.get('verify_ssl', True),
+            retry_attempts=api_config.get('retry_attempts', 3),
+            retry_delay=api_config.get('retry_delay', 5),
+        )
+        performance_provider = AlphaVantagePerformanceProvider(client)
 
-    Args:
-        fetcher: HoldingsFetcher instance
-        symbol: Fund symbol
-
-    Returns:
-        float: 3-year performance % (simulated for now)
-    """
-    # IMPORTANT: This is a placeholder implementation
-    # In a real system, you would fetch actual 3-year performance data from:
-    # - Alpha Vantage TIME_SERIES_MONTHLY endpoint
-    # - A dedicated fund data API (e.g., Morningstar, Bloomberg)
-    # - Calculate: ((current_price / price_3years_ago) - 1) * 100
-
-    # For now, we'll use a simulated approach based on the fund's current data
-    # and assign reasonable performance values
-
-    # Get basic fund info to verify it exists
-    profile = fetcher.get_etf_profile(symbol)
-    if not profile:
-        logger.warning(f"Could not fetch profile for {symbol}, assigning default performance")
-        return 0.0
-
-    # Simulated 3-year performance (in production, replace with actual API call)
-    # Using a hash-based approach to get consistent but varied values
-    import hashlib
-    hash_value = int(hashlib.md5(symbol.encode()).hexdigest(), 16)
-    simulated_performance = 15.0 + (hash_value % 50)  # Range: 15% to 65%
-
-    logger.info(f"{symbol}: Simulated 3-year performance = {simulated_performance:.2f}%")
-    return simulated_performance
+    return FundSelectionService(repo, performance_provider)
 
 
-def initialize_sector_funds(config, api_key, sector_config, db):
-    """
-    Initialize tracked funds for a specific sector
-
-    Args:
-        config: Configuration dictionary
-        api_key: Alpha Vantage API key
-        sector_config: Sector configuration
-        db: DatabaseManager instance
-
-    Returns:
-        bool: Success status
-    """
+def initialize_sector_funds(config, selection_service, sector_config, db, force=False):
     sector_name = sector_config['name']
-    keywords = sector_config['keywords']
+    top_n = config.get('analysis', {}).get('top_funds_per_sector', 5)
 
     print_header(f"Initializing: {sector_name}")
-    print(f"Keywords: {', '.join(keywords)}\n")
 
-    # Check if already initialized
-    if db.has_tracked_funds(sector_name):
-        try:
-            response = input(f"Tracked funds already exist for {sector_name}. Re-initialize? (y/N): ")
-            if response.lower() != 'y':
-                print_colored(f"Skipping {sector_name}", Colors.WARNING)
-                return True
-            db.clear_tracked_funds(sector_name)
-            print_colored(f"Cleared existing tracked funds for {sector_name}", Colors.OKBLUE)
-        except (UnicodeEncodeError, UnicodeDecodeError):
-            print(f"Skipping {sector_name} (already initialized)")
-            return True
-
-    try:
-        fetcher = HoldingsFetcher(api_key, requests_per_minute=5, verify_ssl=False)
-
-        # Step 1: Find all candidate funds for this sector
-        all_fund_symbols = fetcher.search_funds_by_keywords(keywords)
-
-        if not all_fund_symbols:
-            print_colored(f"No funds found for {sector_name}", Colors.FAIL)
-            return False
-
-        print(f"Found {len(all_fund_symbols)} candidate funds")
-
-        # Step 2: Get 3-year performance for each fund
-        print("\nFetching 3-year performance data...")
-        fund_performance = []
-
-        for i, symbol in enumerate(all_fund_symbols, 1):
-            print(f"  [{i}/{len(all_fund_symbols)}] Analyzing {symbol}...")
-            perf_3year = get_fund_3year_performance(fetcher, symbol)
-            fund_performance.append({
-                'symbol': symbol,
-                'name': symbol,  # In production, fetch actual fund name
-                'performance_3year': perf_3year
-            })
-
-        # Step 3: Rank funds by 3-year performance (descending)
-        fund_performance.sort(key=lambda x: x['performance_3year'], reverse=True)
-
-        # Step 4: Select top 5 funds
-        top_5_funds = fund_performance[:5]
-
-        print_colored(f"\nTop 5 funds for {sector_name} (by 3-year performance):", Colors.OKGREEN)
-        print(f"{'Rank':<6} {'Symbol':<10} {'3-Year Performance'}")
-        print("-" * 40)
-
-        # Step 5: Save to database
-        for rank, fund in enumerate(top_5_funds, 1):
-            print(f"{rank:<6} {fund['symbol']:<10} {fund['performance_3year']:.2f}%")
-            db.save_tracked_fund(
-                sector_name=sector_name,
-                fund_symbol=fund['symbol'],
-                fund_name=fund['name'],
-                performance_3year=fund['performance_3year'],
-                rank=rank
-            )
-
-        print_colored(f"\n[OK] Saved top 5 funds for {sector_name}", Colors.OKGREEN)
+    if db.has_tracked_funds(sector_name) and not force:
+        print_colored(f"Tracked funds already exist for {sector_name} (use --force to replace)", Colors.WARNING)
         return True
 
-    except Exception as e:
-        logger.error(f"Error initializing {sector_name}: {e}", exc_info=True)
-        print_colored(f"Error initializing {sector_name}: {str(e)}", Colors.FAIL)
+    if force:
+        db.clear_tracked_funds(sector_name)
+
+    ranked = selection_service.rank_sector_funds(sector_name, top_n=top_n)
+    if not ranked:
+        print_colored(f"No curated fund candidates found for {sector_name}", Colors.FAIL)
         return False
+
+    print(f"{'Rank':<6} {'Symbol':<8} {'Score':<10} {'Source':<30} Name")
+    print('-' * 100)
+
+    for rank, fund in enumerate(ranked, 1):
+        print(f"{rank:<6} {fund.symbol:<8} {fund.score_used:<10.2f} {fund.ranking_source:<30} {fund.name}")
+        db.save_tracked_fund(
+            sector_name=sector_name,
+            fund_symbol=fund.symbol,
+            fund_name=fund.name,
+            performance_3year=fund.annualized_return_3y,
+            rank=rank,
+            selection_source=fund.ranking_source,
+            selection_score=fund.score_used,
+        )
+
+    print_colored(f"Saved {len(ranked)} tracked funds for {sector_name}", Colors.OKGREEN)
+    return True
 
 
 def main():
-    """Main entry point for fund initialization"""
-    # Setup
     load_env()
     config = load_config()
+    setup_logging(os.getenv('LOG_FILE', 'logs/fund_tracker.log'), os.getenv('LOG_LEVEL', 'INFO'))
 
-    log_file = os.getenv('LOG_FILE', 'logs/fund_tracker.log')
-    setup_logging(log_file, 'INFO')
+    print_header("FUND LEADER TRACKER - TRACKED FUND INITIALIZATION", "=")
+    print("This command ranks a curated sector fund universe and stores the top tracked funds.\n")
 
-    print_header("FUND LEADER TRACKER - INITIALIZATION", "=")
-    print_colored("One-time setup: Identifying top 5 funds per sector\n", Colors.OKCYAN)
+    force = '--force' in sys.argv
+    api_key = os.getenv('ALPHA_VANTAGE_API_KEY', '')
+    selection_service = build_selection_service(config, api_key)
 
-    # Check API key
-    api_key = os.getenv('ALPHA_VANTAGE_API_KEY')
-    if not api_key or api_key == 'your_api_key_here':
-        print_colored("ERROR: Alpha Vantage API key not configured!", Colors.FAIL)
-        print("\nPlease configure your API key in .env file")
-        sys.exit(1)
-
-    # Initialize database
     db_path = config.get('output', {}).get('database_path', 'data/fund_leaders.db')
     db = DatabaseManager(db_path)
-
     sectors = config.get('sectors', [])
 
-    print(f"Configuration:")
-    print(f"  Total sectors: {len(sectors)}")
-    print(f"  Database: {db_path}")
-    print(f"  API Key: {api_key[:8]}...\n")
-
-    # Initialize each sector
     successful = 0
     failed = 0
-
-    for i, sector_config in enumerate(sectors, 1):
-        print(f"\n{'='*60}")
-        print(f"SECTOR {i}/{len(sectors)}")
-        print(f"{'='*60}")
-
-        if initialize_sector_funds(config, api_key, sector_config, db):
-            successful += 1
-        else:
+    for sector in sectors:
+        try:
+            if initialize_sector_funds(config, selection_service, sector, db, force=force):
+                successful += 1
+            else:
+                failed += 1
+        except Exception as exc:
             failed += 1
+            logger.exception("Failed to initialize %s: %s", sector['name'], exc)
+            print_colored(f"Error initializing {sector['name']}: {exc}", Colors.FAIL)
 
-    # Summary
-    print("\n" + "="*60)
     print_header("Initialization Complete")
-    print_colored(f"[OK] Successfully initialized: {successful} sectors", Colors.OKGREEN)
-
-    if failed > 0:
-        print_colored(f"[ERROR] Failed: {failed} sectors", Colors.FAIL)
-
-    print("\nThe static fund list has been saved to the database.")
-    print("Daily monitoring will now track only these specific funds.")
-    print("\nTo re-initialize (change which funds are tracked), run this script again.")
-    print("Otherwise, use 'python main.py' for daily monitoring.\n")
+    print_colored(f"Successful sectors: {successful}", Colors.OKGREEN)
+    if failed:
+        print_colored(f"Failed sectors: {failed}", Colors.FAIL)
 
     db.close()
+    sys.exit(0 if failed == 0 else 1)
 
 
 if __name__ == '__main__':

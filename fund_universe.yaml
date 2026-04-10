@@ -1,0 +1,76 @@
+version: 1
+as_of: "2026-04-10"
+description: >-
+  Curated sector ETF universe used to avoid placeholder keyword-based fund discovery.
+  Candidates are intentionally explicit and should be reviewed periodically.
+sectors:
+  - name: "Aerospace & Defense"
+    fund_candidates:
+      - { symbol: "ITA", name: "iShares U.S. Aerospace & Defense ETF", category: "ETF", baseline_score: 92, fallback_return_3y: 16.5, rationale: "Liquid sector benchmark." }
+      - { symbol: "XAR", name: "SPDR S&P Aerospace & Defense ETF", category: "ETF", baseline_score: 90, fallback_return_3y: 14.9, rationale: "Equal-weight exposure across defense suppliers." }
+      - { symbol: "PPA", name: "Invesco Aerospace & Defense ETF", category: "ETF", baseline_score: 86, fallback_return_3y: 13.8, rationale: "Alternative diversified defense exposure." }
+      - { symbol: "DFEN", name: "Direxion Daily Aerospace & Defense Bull 3X Shares", category: "ETF", baseline_score: 30, fallback_return_3y: 2.0, rationale: "Leveraged product; lower production suitability but useful candidate reference." }
+      - { symbol: "SHLD", name: "Global X Defense Tech ETF", category: "ETF", baseline_score: 80, fallback_return_3y: 12.4, rationale: "Newer defense-tech thematic exposure." }
+  - name: "Renewable Energy"
+    fund_candidates:
+      - { symbol: "ICLN", name: "iShares Global Clean Energy ETF", category: "ETF", baseline_score: 88, fallback_return_3y: -4.1, rationale: "Flagship clean-energy basket." }
+      - { symbol: "TAN", name: "Invesco Solar ETF", category: "ETF", baseline_score: 84, fallback_return_3y: -7.2, rationale: "Focused solar exposure." }
+      - { symbol: "QCLN", name: "First Trust NASDAQ Clean Edge Green Energy Index Fund", category: "ETF", baseline_score: 82, fallback_return_3y: -2.5, rationale: "Broad clean-energy and EV transition basket." }
+      - { symbol: "PBW", name: "Invesco WilderHill Clean Energy ETF", category: "ETF", baseline_score: 80, fallback_return_3y: -3.8, rationale: "Higher-beta clean-energy exposure." }
+      - { symbol: "FAN", name: "First Trust Global Wind Energy ETF", category: "ETF", baseline_score: 77, fallback_return_3y: 1.1, rationale: "Wind-focused diversification." }
+  - name: "Healthcare & Biotech"
+    fund_candidates:
+      - { symbol: "XLV", name: "Health Care Select Sector SPDR Fund", category: "ETF", baseline_score: 93, fallback_return_3y: 8.9, rationale: "Large-cap US healthcare benchmark." }
+      - { symbol: "VHT", name: "Vanguard Health Care ETF", category: "ETF", baseline_score: 91, fallback_return_3y: 9.1, rationale: "Broad diversified healthcare exposure." }
+      - { symbol: "IBB", name: "iShares Biotechnology ETF", category: "ETF", baseline_score: 85, fallback_return_3y: 2.4, rationale: "Biotech-specific exposure." }
+      - { symbol: "XBI", name: "SPDR S&P Biotech ETF", category: "ETF", baseline_score: 82, fallback_return_3y: -1.2, rationale: "Equal-weight biotech exposure." }
+      - { symbol: "IHI", name: "iShares U.S. Medical Devices ETF", category: "ETF", baseline_score: 83, fallback_return_3y: 7.7, rationale: "Medical devices complement pharma/biotech funds." }
+  - name: "Automotive"
+    fund_candidates:
+      - { symbol: "CARZ", name: "First Trust S-Network Future Vehicles & Technology ETF", category: "ETF", baseline_score: 82, fallback_return_3y: 7.5, rationale: "Direct automotive and mobility theme." }
+      - { symbol: "DRIV", name: "Global X Autonomous & Electric Vehicles ETF", category: "ETF", baseline_score: 89, fallback_return_3y: 12.0, rationale: "EV and autonomous driving exposure." }
+      - { symbol: "IDRV", name: "iShares Self-Driving EV and Tech ETF", category: "ETF", baseline_score: 86, fallback_return_3y: 11.3, rationale: "Large-cap EV and vehicle tech exposure." }
+      - { symbol: "KARS", name: "KraneShares Electric Vehicles & Future Mobility ETF", category: "ETF", baseline_score: 76, fallback_return_3y: 3.1, rationale: "Global EV supply chain exposure." }
+      - { symbol: "LIT", name: "Global X Lithium & Battery Tech ETF", category: "ETF", baseline_score: 73, fallback_return_3y: 5.0, rationale: "Battery ecosystem proxy for EV industry leadership." }
+  - name: "Precious Metals"
+    fund_candidates:
+      - { symbol: "GLD", name: "SPDR Gold Shares", category: "ETF", baseline_score: 93, fallback_return_3y: 14.2, rationale: "Most liquid gold proxy." }
+      - { symbol: "IAU", name: "iShares Gold Trust", category: "ETF", baseline_score: 90, fallback_return_3y: 14.0, rationale: "Alternative gold benchmark." }
+      - { symbol: "GDX", name: "VanEck Gold Miners ETF", category: "ETF", baseline_score: 86, fallback_return_3y: 10.4, rationale: "Mining-equity exposure." }
+      - { symbol: "GDXJ", name: "VanEck Junior Gold Miners ETF", category: "ETF", baseline_score: 79, fallback_return_3y: 7.0, rationale: "Higher-beta junior miner exposure." }
+      - { symbol: "SLV", name: "iShares Silver Trust", category: "ETF", baseline_score: 81, fallback_return_3y: 8.2, rationale: "Silver exposure for broader precious-metals mix." }
+  - name: "Consumer Staples"
+    fund_candidates:
+      - { symbol: "XLP", name: "Consumer Staples Select Sector SPDR Fund", category: "ETF", baseline_score: 93, fallback_return_3y: 6.8, rationale: "US consumer staples benchmark." }
+      - { symbol: "VDC", name: "Vanguard Consumer Staples ETF", category: "ETF", baseline_score: 91, fallback_return_3y: 6.5, rationale: "Broad staples exposure." }
+      - { symbol: "FSTA", name: "Fidelity MSCI Consumer Staples Index ETF", category: "ETF", baseline_score: 86, fallback_return_3y: 6.4, rationale: "Low-cost staples tracker." }
+      - { symbol: "IYK", name: "iShares U.S. Consumer Staples ETF", category: "ETF", baseline_score: 84, fallback_return_3y: 6.1, rationale: "Alternative large-cap staples basket." }
+      - { symbol: "KXI", name: "iShares Global Consumer Staples ETF", category: "ETF", baseline_score: 80, fallback_return_3y: 5.8, rationale: "Adds global staples diversification." }
+  - name: "Tech & AI"
+    fund_candidates:
+      - { symbol: "XLK", name: "Technology Select Sector SPDR Fund", category: "ETF", baseline_score: 94, fallback_return_3y: 20.5, rationale: "Large-cap technology benchmark." }
+      - { symbol: "VGT", name: "Vanguard Information Technology ETF", category: "ETF", baseline_score: 93, fallback_return_3y: 21.1, rationale: "Broad US technology exposure." }
+      - { symbol: "AIQ", name: "Global X Artificial Intelligence & Technology ETF", category: "ETF", baseline_score: 86, fallback_return_3y: 15.4, rationale: "Explicit AI thematic coverage." }
+      - { symbol: "BOTZ", name: "Global X Robotics & Artificial Intelligence ETF", category: "ETF", baseline_score: 85, fallback_return_3y: 13.7, rationale: "Robotics and industrial AI exposure." }
+      - { symbol: "SKYY", name: "First Trust Cloud Computing ETF", category: "ETF", baseline_score: 88, fallback_return_3y: 16.0, rationale: "Cloud infrastructure proxy for AI stack." }
+  - name: "Financial Services"
+    fund_candidates:
+      - { symbol: "XLF", name: "Financial Select Sector SPDR Fund", category: "ETF", baseline_score: 94, fallback_return_3y: 12.1, rationale: "Large-cap financials benchmark." }
+      - { symbol: "VFH", name: "Vanguard Financials ETF", category: "ETF", baseline_score: 91, fallback_return_3y: 11.8, rationale: "Broad financials exposure." }
+      - { symbol: "KRE", name: "SPDR S&P Regional Banking ETF", category: "ETF", baseline_score: 76, fallback_return_3y: 3.4, rationale: "Regional banking sensitivity." }
+      - { symbol: "KBE", name: "SPDR S&P Bank ETF", category: "ETF", baseline_score: 79, fallback_return_3y: 4.2, rationale: "Banking-focused exposure." }
+      - { symbol: "FINX", name: "Global X FinTech ETF", category: "ETF", baseline_score: 75, fallback_return_3y: 6.0, rationale: "Adds fintech thematic exposure." }
+  - name: "Infrastructure"
+    fund_candidates:
+      - { symbol: "PAVE", name: "Global X U.S. Infrastructure Development ETF", category: "ETF", baseline_score: 92, fallback_return_3y: 14.3, rationale: "US infrastructure benchmark." }
+      - { symbol: "IGF", name: "iShares Global Infrastructure ETF", category: "ETF", baseline_score: 89, fallback_return_3y: 9.6, rationale: "Global infrastructure exposure." }
+      - { symbol: "IFRA", name: "iShares U.S. Infrastructure ETF", category: "ETF", baseline_score: 88, fallback_return_3y: 13.1, rationale: "US domestic infrastructure basket." }
+      - { symbol: "NFRA", name: "FlexShares STOXX Global Broad Infrastructure Index Fund", category: "ETF", baseline_score: 82, fallback_return_3y: 8.9, rationale: "Alternative diversified infrastructure basket." }
+      - { symbol: "PKB", name: "Invesco Building & Construction ETF", category: "ETF", baseline_score: 81, fallback_return_3y: 10.2, rationale: "Construction-heavy infrastructure proxy." }
+  - name: "Real Estate"
+    fund_candidates:
+      - { symbol: "VNQ", name: "Vanguard Real Estate ETF", category: "ETF", baseline_score: 93, fallback_return_3y: 4.9, rationale: "US REIT benchmark." }
+      - { symbol: "IYR", name: "iShares U.S. Real Estate ETF", category: "ETF", baseline_score: 90, fallback_return_3y: 4.7, rationale: "Alternative US REIT benchmark." }
+      - { symbol: "XLRE", name: "Real Estate Select Sector SPDR Fund", category: "ETF", baseline_score: 88, fallback_return_3y: 4.4, rationale: "US real estate sector benchmark." }
+      - { symbol: "SCHH", name: "Schwab U.S. REIT ETF", category: "ETF", baseline_score: 86, fallback_return_3y: 4.6, rationale: "Low-cost REIT exposure." }
+      - { symbol: "RWR", name: "SPDR Dow Jones REIT ETF", category: "ETF", baseline_score: 82, fallback_return_3y: 4.3, rationale: "Alternative REIT basket." }
