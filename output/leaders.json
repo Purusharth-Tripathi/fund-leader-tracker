@@ -1,85 +1,13 @@
 {
-  "Aerospace & Defense": {
+  "Consumer Staples": {
     "funds_analyzed": [
-      "SHLD",
-      "DFEN",
-      "ITA",
-      "PPA",
-      "XAR"
-    ],
-    "top_leader": {
-      "symbol": "GE",
-      "name": "General Electric Company",
-      "times_held": 4,
-      "total_weight": 43.43,
-      "avg_weight": 10.8575,
-      "prevalence": 80.0
-    },
-    "total_holdings_analyzed": 251
-  },
-  "Renewable Energy": {
-    "funds_analyzed": [
-      "ICLN",
-      "PBW",
-      "TAN",
-      "QCLN",
-      "CNRG"
-    ],
-    "top_leader": {
-      "symbol": "BE",
-      "name": "BE",
-      "times_held": 4,
-      "total_weight": 28.54,
-      "avg_weight": 7.135,
-      "prevalence": 80.0
-    },
-    "total_holdings_analyzed": 327
-  },
-  "Healthcare & Biotech": {
-    "funds_analyzed": [
-      "VHT",
-      "XBI",
-      "XLV",
-      "IBB",
-      "IXJ"
-    ],
-    "top_leader": {
-      "symbol": "LLY",
-      "name": "Eli Lilly and Company",
-      "times_held": 3,
-      "total_weight": 36.31999999999999,
-      "avg_weight": 12.106666666666664,
-      "prevalence": 60.0
-    },
-    "total_holdings_analyzed": 1021
-  },
-  "Automotive": {
-    "funds_analyzed": [
-      "KARS",
-      "IDRV",
-      "DRIV",
-      "LIT",
-      "CARZ"
-    ],
-    "top_leader": {
-      "symbol": "ALB",
-      "name": "ALB",
-      "times_held": 5,
-      "total_weight": 19.51,
-      "avg_weight": 3.902,
-      "prevalence": 100.0
-    },
-    "total_holdings_analyzed": 387
-  },
-  "Precious Metals": {
-    "funds_analyzed": [
-      "SLV",
-      "IAU",
-      "SIL",
-      "PICK",
-      "GLD"
+      "XLP",
+      "VDC",
+      "FSTA",
+      "KXI",
+      "IYK"
     ],
     "top_leader": null,
-    "total_holdings_analyzed": 334
+    "total_holdings_analyzed": 38
   }
 }
