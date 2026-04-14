@@ -26,7 +26,7 @@ except Exception as e:
 class HoldingsFetcher:
     """Fetch ETF holdings with provider fallback and stale-safe disk cache."""
 
-    DEFAULT_PROVIDER_ORDER = ('fmp', 'cache', 'alpha_vantage')
+    DEFAULT_PROVIDER_ORDER = ('cache', 'alpha_vantage')
     STALE_AFTER_HOURS_MULTIPLIER = 2
 
     def __init__(
@@ -39,8 +39,6 @@ class HoldingsFetcher:
         cache_directory='data/cache',
         cache_ttl_hours=168,
         holdings_provider_order: Optional[Sequence[str]] = None,
-        fmp_api_key: Optional[str] = None,
-        fmp_base_url: str = 'https://financialmodelingprep.com',
     ):
         self.api_key = api_key
         self.base_url = 'https://www.alphavantage.co/query'
@@ -53,8 +51,8 @@ class HoldingsFetcher:
         self.cache_directory = cache_directory
         self.cache_ttl_hours = cache_ttl_hours
         self.holdings_provider_order = self._normalize_provider_order(holdings_provider_order)
-        self.fmp_api_key = fmp_api_key or os.getenv('FMP_API_KEY', '')
-        self.fmp_base_url = fmp_base_url.rstrip('/')
+        self.alpha_vantage_quota_exhausted = False
+        self.last_rate_limit_note: Optional[str] = None
         os.makedirs(self.cache_directory, exist_ok=True)
 
     def _normalize_provider_order(self, provider_order: Optional[Sequence[str]]) -> Tuple[str, ...]:
@@ -73,31 +71,14 @@ class HoldingsFetcher:
                 data = response.json()
                 if 'Error Message' in data or 'Information' in data or 'Note' in data:
                     logger.warning('API non-data response for %s: %s', params, data)
+                    note = data.get('Information') or data.get('Note') or data.get('Error Message')
+                    if note and 'rate limit' in str(note).lower():
+                        self.alpha_vantage_quota_exhausted = True
+                        self.last_rate_limit_note = str(note)
                     return None
                 return data
             except requests.exceptions.RequestException as exc:
                 logger.warning('Request failed for %s on attempt %s/%s: %s', params, attempt, self.retry_attempts, exc)
-                if attempt == self.retry_attempts:
-                    return None
-                time.sleep(self.retry_delay)
-        return None
-
-    def _fmp_request(self, path: str, params: Optional[Dict[str, str]] = None, timeout: int = 20):
-        if not self.fmp_api_key:
-            return None
-        request_params = {**(params or {}), 'apikey': self.fmp_api_key}
-        url = f'{self.fmp_base_url}{path}'
-        for attempt in range(1, self.retry_attempts + 1):
-            try:
-                response = requests.get(url, params=request_params, timeout=timeout, verify=self.verify_ssl)
-                response.raise_for_status()
-                data = response.json()
-                if isinstance(data, dict) and any(key in data for key in ('Error Message', 'Information', 'Note', 'error')):
-                    logger.warning('FMP non-data response for %s %s: %s', path, params, data)
-                    return None
-                return data
-            except requests.exceptions.RequestException as exc:
-                logger.warning('FMP request failed for %s on attempt %s/%s: %s', path, attempt, self.retry_attempts, exc)
                 if attempt == self.retry_attempts:
                     return None
                 time.sleep(self.retry_delay)
@@ -207,66 +188,6 @@ class HoldingsFetcher:
             return None
         return self._build_cache_result(symbol, cached, 'fresh_cache' if is_fresh else 'stale_cache')
 
-    def _parse_fmp_weight(self, holding: Dict) -> float:
-        raw_weight = holding.get('weightPercentage')
-        if raw_weight is None:
-            raw_weight = holding.get('weight')
-        if raw_weight is None:
-            raw_weight = holding.get('holdingPercent')
-        value = float(raw_weight or 0)
-        return value * 100 if value <= 1 else value
-
-    def _parse_fmp_holdings(self, symbol: str, payload) -> List[Dict]:
-        rows = payload if isinstance(payload, list) else payload.get('holdings', []) if isinstance(payload, dict) else []
-        holdings = []
-        for holding in rows:
-            if not isinstance(holding, dict):
-                continue
-            stock_symbol = holding.get('asset') or holding.get('symbol') or holding.get('holdingSymbol') or 'N/A'
-            company_name = holding.get('name') or holding.get('holdingName') or self.get_company_name(stock_symbol)
-            try:
-                parsed = {
-                    'symbol': stock_symbol,
-                    'name': company_name,
-                    'weight': self._parse_fmp_weight(holding),
-                }
-                shares = holding.get('sharesNumber') or holding.get('shares') or holding.get('share')
-                if shares not in (None, ''):
-                    try:
-                        parsed['shares'] = int(float(shares))
-                    except (TypeError, ValueError):
-                        pass
-                holdings.append(parsed)
-            except (TypeError, ValueError) as exc:
-                logger.warning('Error parsing FMP holding for %s: %s | %s', symbol, exc, holding)
-        return holdings
-
-    def _fetch_fmp_holdings(self, symbol: str) -> Optional[Dict]:
-        if not self.fmp_api_key:
-            logger.info('Skipping FMP holdings for %s because FMP_API_KEY is not configured', symbol)
-            return None
-
-        candidate_requests = [
-            ('/api/v3/etf-holder/{symbol}', {}),
-            ('/stable/etf-holder', {'symbol': symbol}),
-        ]
-        for path_template, params in candidate_requests:
-            path = path_template.format(symbol=symbol)
-            payload = self._fmp_request(path, params=params)
-            if not payload:
-                continue
-            holdings = self._parse_fmp_holdings(symbol, payload)
-            if holdings:
-                cached_at = datetime.utcnow().isoformat()
-                self._write_cached_holdings(symbol, holdings, source='fmp_etf_holdings')
-                return self._attach_freshness(symbol, {
-                    'holdings': holdings,
-                    'data_status': 'live',
-                    'cached_at': cached_at,
-                    'source': 'fmp_etf_holdings',
-                })
-        return None
-
     def _fetch_alpha_vantage_holdings(self, symbol: str) -> Optional[Dict]:
         if not self.api_key or self.api_key == 'your_api_key_here':
             logger.info('Skipping Alpha Vantage holdings for %s because ALPHA_VANTAGE_API_KEY is not configured', symbol)
@@ -318,9 +239,7 @@ class HoldingsFetcher:
                         return cache_result
                     stale_cache_result = stale_cache_result or cache_result
                 continue
-            if provider == 'fmp':
-                result = self._fetch_fmp_holdings(symbol)
-            elif provider in {'alpha_vantage', 'alphavantage', 'av'}:
+            if provider in {'alpha_vantage', 'alphavantage', 'av'}:
                 result = self._fetch_alpha_vantage_holdings(symbol)
             else:
                 logger.warning('Unknown holdings provider configured: %s', provider)
@@ -364,6 +283,8 @@ class HoldingsFetcher:
         all_holdings = {}
         statuses = {}
         total = len(fund_symbols)
+        self.alpha_vantage_quota_exhausted = False
+        self.last_rate_limit_note = None
         for i, symbol in enumerate(fund_symbols, 1):
             print_progress(i, total, f'Fetching holdings for {symbol}')
             result = self.get_fund_holdings(symbol, mode=mode)
@@ -371,6 +292,9 @@ class HoldingsFetcher:
             statuses[symbol] = result.get('freshness', {})
             if holdings:
                 all_holdings[symbol] = holdings
+            if self.alpha_vantage_quota_exhausted:
+                logger.warning('Stopping holdings batch early after Alpha Vantage quota exhaustion on %s', symbol)
+                break
             if i < total and self.request_delay and result.get('data_status') == 'live':
                 time.sleep(self.request_delay)
         return all_holdings, statuses

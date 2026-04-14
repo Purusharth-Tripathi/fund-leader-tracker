@@ -1,37 +1,74 @@
-# ETF Sector Leadership Planner Configuration
-
 sectors:
-  - name: "Aerospace & Defense"
-    keywords: ["aerospace", "defense", "aviation", "military"]
-  - name: "Renewable Energy"
-    keywords: ["solar", "wind", "renewable", "clean energy", "green energy"]
-  - name: "Healthcare & Biotech"
-    keywords: ["healthcare", "biotech", "pharmaceutical", "medical", "health"]
-  - name: "Automotive"
-    keywords: ["automotive", "automobile", "electric vehicle", "EV", "car"]
-  - name: "Precious Metals"
-    keywords: ["gold", "silver", "platinum", "precious metals", "mining"]
-  - name: "Consumer Staples"
-    keywords: ["consumer staples", "food", "beverage", "household", "retail"]
-  - name: "Tech & AI"
-    keywords: ["technology", "artificial intelligence", "AI", "software", "cloud"]
-  - name: "Financial Services"
-    keywords: ["financial", "banking", "insurance", "fintech", "asset management"]
-  - name: "Infrastructure"
-    keywords: ["infrastructure", "construction", "utilities", "industrial"]
-  - name: "Real Estate"
-    keywords: ["real estate", "REIT", "property", "residential", "commercial"]
-
+- name: Aerospace & Defense
+  keywords:
+  - aerospace
+  - defense
+  - aviation
+  - military
+- name: Renewable Energy
+  keywords:
+  - solar
+  - wind
+  - renewable
+  - clean energy
+  - green energy
+- name: Healthcare & Biotech
+  keywords:
+  - healthcare
+  - biotech
+  - pharmaceutical
+  - medical
+  - health
+- name: Automotive
+  keywords:
+  - automotive
+  - automobile
+  - electric vehicle
+  - EV
+  - car
+- name: Consumer Staples
+  keywords:
+  - consumer staples
+  - food
+  - beverage
+  - household
+  - retail
+- name: Tech & AI
+  keywords:
+  - technology
+  - artificial intelligence
+  - AI
+  - software
+  - cloud
+- name: Financial Services
+  keywords:
+  - financial
+  - banking
+  - insurance
+  - fintech
+  - asset management
+- name: Infrastructure
+  keywords:
+  - infrastructure
+  - construction
+  - utilities
+  - industrial
+- name: Real Estate
+  keywords:
+  - real estate
+  - REIT
+  - property
+  - residential
+  - commercial
 analysis:
   top_funds_per_sector: 5
   min_holding_threshold: 1.0
-  performance_period: "3year"
+  performance_period: 3year
   export_top_n_leaders: 10
   allow_uninitialized_sector_fallback: false
-
 strategy:
-  review_cadence: "weekly"
-  action_cadence: "monthly"
+  review_cadence: weekly
+  action_cadence: monthly
   monthly_action_day: 5
   confirmation_reviews_required: 2
   leader_rules:
@@ -43,33 +80,49 @@ strategy:
     prevalence_gap_pct: 20.0
     allow_invalid_current_override: true
   sector_fallbacks:
-    "Aerospace & Defense": { symbol: "ITA", name: "iShares U.S. Aerospace & Defense ETF" }
-    "Renewable Energy": { symbol: "ICLN", name: "iShares Global Clean Energy ETF" }
-    "Healthcare & Biotech": { symbol: "XLV", name: "Health Care Select Sector SPDR Fund" }
-    "Automotive": { symbol: "DRIV", name: "Global X Autonomous & Electric Vehicles ETF" }
-    "Precious Metals": { symbol: "GLD", name: "SPDR Gold Shares" }
-    "Consumer Staples": { symbol: "XLP", name: "Consumer Staples Select Sector SPDR Fund" }
-    "Tech & AI": { symbol: "XLK", name: "Technology Select Sector SPDR Fund" }
-    "Financial Services": { symbol: "XLF", name: "Financial Select Sector SPDR Fund" }
-    "Infrastructure": { symbol: "PAVE", name: "Global X U.S. Infrastructure Development ETF" }
-    "Real Estate": { symbol: "VNQ", name: "Vanguard Real Estate ETF" }
-
+    Aerospace & Defense:
+      symbol: ITA
+      name: iShares U.S. Aerospace & Defense ETF
+    Renewable Energy:
+      symbol: ICLN
+      name: iShares Global Clean Energy ETF
+    Healthcare & Biotech:
+      symbol: XLV
+      name: Health Care Select Sector SPDR Fund
+    Automotive:
+      symbol: DRIV
+      name: Global X Autonomous & Electric Vehicles ETF
+    Consumer Staples:
+      symbol: XLP
+      name: Consumer Staples Select Sector SPDR Fund
+    Tech & AI:
+      symbol: XLK
+      name: Technology Select Sector SPDR Fund
+    Financial Services:
+      symbol: XLF
+      name: Financial Select Sector SPDR Fund
+    Infrastructure:
+      symbol: PAVE
+      name: Global X U.S. Infrastructure Development ETF
+    Real Estate:
+      symbol: VNQ
+      name: Vanguard Real Estate ETF
 refresh:
-  alternating_schedule: "batch_a on even ordinal dates, batch_b on odd ordinal dates"
+  alternating_schedule: batch_a (5 sectors) on even ordinal dates, batch_b (4 sectors)
+    on odd ordinal dates; Precious Metals excluded from live refresh/review and treated
+    as strategic gold allocation
   sector_batches:
     batch_a:
-      - "Aerospace & Defense"
-      - "Renewable Energy"
-      - "Healthcare & Biotech"
-      - "Automotive"
-      - "Precious Metals"
+    - Aerospace & Defense
+    - Renewable Energy
+    - Healthcare & Biotech
+    - Automotive
+    - Consumer Staples
     batch_b:
-      - "Consumer Staples"
-      - "Tech & AI"
-      - "Financial Services"
-      - "Infrastructure"
-      - "Real Estate"
-
+    - Tech & AI
+    - Financial Services
+    - Infrastructure
+    - Real Estate
 api:
   requests_per_minute: 5
   requests_per_day: 25
@@ -77,19 +130,18 @@ api:
   retry_delay: 5
   timeout_seconds: 20
   verify_ssl: true
-  cache_directory: "data/cache"
+  cache_directory: data/cache
   holdings_cache_ttl_hours: 168
-  holdings_provider_order: ["fmp", "cache", "alpha_vantage"]
-  fmp_base_url: "https://financialmodelingprep.com"
-
+  holdings_provider_order:
+  - cache
+  - alpha_vantage
 output:
-  database_path: "data/fund_leaders.db"
+  database_path: data/fund_leaders.db
   save_to_csv: true
   save_to_json: true
-  csv_path: "output/leaders.csv"
-  json_path: "output/leaders.json"
-  report_directory: "output/reports"
-
+  csv_path: output/leaders.csv
+  json_path: output/leaders.json
+  report_directory: output/reports
 email_alerts:
   enabled: false
   send_on_completion: false

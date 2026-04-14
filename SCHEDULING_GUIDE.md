@@ -1,6 +1,6 @@
 # Fund Leader Tracker - Refresh & Review Scheduling Guide
 
-This planner now uses a **staged refresh + cache-first review** operating model so it behaves cleanly under the Alpha Vantage free tier.
+This planner now uses a **staged refresh + cache-first review** operating model with Alpha Vantage as the only live holdings source, so it behaves cleanly under the Alpha Vantage free tier.
 
 ## Core schedule
 
@@ -102,7 +102,8 @@ The staged model avoids that:
 
 ## Operational advice
 
-- Prefer `FMP_API_KEY` when available; it remains the first live holdings provider.
-- Keep `ALPHA_VANTAGE_API_KEY` configured as fallback only.
+- Use `ALPHA_VANTAGE_API_KEY` as the live holdings provider.
+- Keep the alternating daily refresh cadence so the 25-call/day budget is not exhausted.
+- If Alpha Vantage quota is exhausted mid-refresh, the run should stop early and leave the remaining ETFs for the next reset instead of grinding through the rest of the batch.
 - If you skip refreshes, the review will still run, but stale or missing sectors will be flagged explicitly.
 - Do not treat the output as auto-trading instructions; the workflow is advisory/manual only.

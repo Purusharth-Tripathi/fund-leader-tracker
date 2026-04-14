@@ -33,8 +33,6 @@ class FundAnalyzer:
             cache_directory=api_config.get('cache_directory', 'data/cache'),
             cache_ttl_hours=api_config.get('holdings_cache_ttl_hours', 168),
             holdings_provider_order=api_config.get('holdings_provider_order'),
-            fmp_api_key=api_config.get('fmp_api_key') or None,
-            fmp_base_url=api_config.get('fmp_base_url', 'https://financialmodelingprep.com'),
         )
         self.identifier = LeaderIdentifier(
             min_holding_threshold=self.analysis_config.get('min_holding_threshold', 1.0),
@@ -72,14 +70,21 @@ class FundAnalyzer:
                 print(f"Tracked ETFs: {', '.join(fund_symbols)}")
                 holdings_by_fund, holding_status = self.fetcher.batch_fetch_holdings(fund_symbols, mode='auto')
                 self._save_sector_results(sector_name, keywords, fund_rows, holdings_by_fund, leaders=[])
+                quota_exhausted = self.fetcher.alpha_vantage_quota_exhausted
                 refreshed.append({
                     'sector': sector_name,
-                    'refreshed_funds': len(fund_symbols),
+                    'refreshed_funds': len(holding_status),
+                    'requested_funds': len(fund_symbols),
                     'live_fetches': sum(1 for meta in holding_status.values() if meta.get('data_status') == 'live'),
                     'etf_freshness': holding_status,
                     'sector_freshness': self._summarize_sector_freshness(holding_status),
-                    'status': 'ok',
+                    'status': 'partial_quota_stop' if quota_exhausted else 'ok',
+                    'quota_exhausted': quota_exhausted,
+                    'quota_note': self.fetcher.last_rate_limit_note,
                 })
+                if quota_exhausted:
+                    print_colored('Alpha Vantage quota exhausted. Stopping refresh early to preserve the remaining batch for after reset.', Colors.WARNING)
+                    break
             except Exception as exc:
                 logger.exception('Error refreshing %s: %s', sector_name, exc)
                 print_colored(f'Error refreshing {sector_name}: {exc}', Colors.FAIL)

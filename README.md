@@ -25,7 +25,7 @@ For each of the configured 10 sectors, the planner:
 
 - **Universe:** 10 sectors total, 5 tracked ETFs per sector
 - **Snapshot refresh:** alternating-day batches of 5 sectors / 5 sectors
-- **API budget fit:** 25 calls/day = 5 sectors × 5 ETFs
+- **API budget fit:** 25 calls/day = 5 sectors × 5 ETFs via Alpha Vantage
 - **Review cadence:** weekly
 - **Action cadence:** monthly
 - **Confirmation:** consecutive review confirmations required before switching
@@ -52,15 +52,13 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Set `FMP_API_KEY` in `.env` for the preferred ETF holdings feed.
+Set `ALPHA_VANTAGE_API_KEY` in `.env` for ETF holdings/performance data.
 
-Optionally also set `ALPHA_VANTAGE_API_KEY` as a fallback provider for holdings/performance data when FMP is unavailable.
-
-The holdings provider order is configured in `config.yaml` as:
+The planner refreshes ETF holdings on alternating days and reviews from cache first, using this provider order:
 
 ```yaml
 api:
-  holdings_provider_order: ["fmp", "cache", "alpha_vantage"]
+  holdings_provider_order: ["cache", "alpha_vantage"]
 ```
 
 ### 3) Validate local setup
@@ -138,7 +136,7 @@ Each sector review also reports aggregate freshness and stale coverage so stale 
 - `fund_analyzer.py` - refresh/review orchestration and export flow
 - `strategy_engine.py` - confirmation/stateful recommendation logic
 - `manual_report.py` - advisory/manual-trading report generation
-- `holdings_fetcher.py` - FMP-first ETF holdings fetcher with cache + Alpha Vantage fallback and freshness metadata
+- `holdings_fetcher.py` - cache-first ETF holdings fetcher with Alpha Vantage live fallback and freshness metadata
 - `db_manager.py` - SQLite schema and persisted run/strategy state
 - `docs/STRATEGY_SPEC.md` - actual in-repo strategy spec
 

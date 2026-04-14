@@ -11,6 +11,8 @@ cp .env.example .env
 
 Set `ALPHA_VANTAGE_API_KEY` in `.env`.
 
+The planner now uses Alpha Vantage as the only live holdings source, with cache-first weekly reviews and alternating daily ETF refresh coverage.
+
 ## First-time bootstrap
 
 ```bash

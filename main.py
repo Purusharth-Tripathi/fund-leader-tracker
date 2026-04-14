@@ -9,19 +9,14 @@ from utils import Colors, ensure_directories, load_config, load_env, print_color
 
 def check_api_keys():
     alpha_vantage_key = os.getenv('ALPHA_VANTAGE_API_KEY')
-    fmp_key = os.getenv('FMP_API_KEY')
     has_alpha_vantage = bool(alpha_vantage_key and alpha_vantage_key != 'your_api_key_here')
-    has_fmp = bool(fmp_key and fmp_key != 'your_api_key_here')
 
-    if has_fmp:
-        print_colored('FMP ETF holdings provider configured.', Colors.OKGREEN)
+    if has_alpha_vantage:
+        print_colored('Alpha Vantage ETF holdings/performance provider configured.', Colors.OKGREEN)
     else:
-        print_colored('Warning: FMP_API_KEY not configured. Holdings flow will fall back to cache/Alpha Vantage.', Colors.WARNING)
+        print_colored('Warning: Alpha Vantage API key not configured. Holdings refresh will be cache-only.', Colors.WARNING)
 
-    if not has_alpha_vantage:
-        print_colored('Warning: Alpha Vantage API key not configured. Cached/FMP-only mode may still work.', Colors.WARNING)
-
-    return has_fmp or has_alpha_vantage
+    return has_alpha_vantage
 
 
 def display_welcome(config):
@@ -83,10 +78,14 @@ def run_refresh(config, review_date=None, batch_name=None):
     print(f"API daily budget: {result['api_budget']['requests_per_day']} calls")
     for sector in sectors:
         freshness = sector.get('sector_freshness') or {}
+        requested = sector.get('requested_funds', sector.get('refreshed_funds', 0))
+        status = sector.get('status', 'ok')
         print(
-            f"  {sector['sector']:<25} -> funds={sector.get('refreshed_funds', 0)} "
-            f"live={sector.get('live_fetches', 0)} freshness={freshness.get('freshness', 'unknown')}"
+            f"  {sector['sector']:<25} -> funds={sector.get('refreshed_funds', 0)}/{requested} "
+            f"live={sector.get('live_fetches', 0)} freshness={freshness.get('freshness', 'unknown')} status={status}"
         )
+        if sector.get('quota_exhausted') and sector.get('quota_note'):
+            print(f"    quota: {sector['quota_note']}")
     return True
 
 
@@ -102,10 +101,9 @@ def run_doctor(config):
     for name, status in checks.items():
         print(f"[{'OK' if status else 'FAIL'}] {name}")
 
-    provider_order = config.get('api', {}).get('holdings_provider_order', ['fmp', 'cache', 'alpha_vantage'])
+    provider_order = config.get('api', {}).get('holdings_provider_order', ['cache', 'alpha_vantage'])
     refresh_batches = config.get('refresh', {}).get('sector_batches', {})
     print(f"[INFO] holdings provider order: {provider_order}")
-    print(f"[INFO] FMP_API_KEY configured: {'yes' if os.getenv('FMP_API_KEY') not in (None, '', 'your_api_key_here') else 'no'}")
     print(f"[INFO] ALPHA_VANTAGE_API_KEY configured: {'yes' if os.getenv('ALPHA_VANTAGE_API_KEY') not in (None, '', 'your_api_key_here') else 'no'}")
     print(f"[INFO] refresh batches: {refresh_batches}")
     return all(checks.values())

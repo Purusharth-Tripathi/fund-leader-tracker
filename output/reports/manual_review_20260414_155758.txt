@@ -1,0 +1,157 @@
+ETF SECTOR LEADERSHIP MANUAL REVIEW
+========================================
+Run timestamp: 2026-04-14T15:57:58.781310
+Review date: 2026-04-14
+Sectors reviewed: 10
+Actionable sectors: 0
+Target sector weight: 10.0%
+
+[Aerospace & Defense]
+Status: pending_confirmation | Action: watch
+Current recommendation: ITA (sector_etf) - iShares U.S. Aerospace & Defense ETF
+Watching candidate: GE | confirmations 1/2
+Previous position: ITA (sector_etf)
+Reason: Candidate leader changed, but confirmation/monthly switch rules are not fully met yet.
+Data status: fresh_cache
+Sector freshness: fresh | coverage 5/5 | avg age hours 0.52
+ETF snapshot freshness:
+  - DFEN: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+  - ITA: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+  - XAR: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+  - PPA: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+  - SHLD: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+
+[Renewable Energy]
+Status: pending_confirmation | Action: watch
+Current recommendation: ICLN (sector_etf) - iShares Global Clean Energy ETF
+Watching candidate: BE | confirmations 1/2
+Previous position: ICLN (sector_etf)
+Reason: Candidate leader changed, but confirmation/monthly switch rules are not fully met yet.
+Data status: fresh_cache
+Sector freshness: fresh | coverage 5/5 | avg age hours 0.5
+ETF snapshot freshness:
+  - FAN: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+  - QCLN: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+  - PBW: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+  - ICLN: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+  - TAN: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+
+[Healthcare & Biotech]
+Status: pending_confirmation | Action: watch
+Current recommendation: XLV (sector_etf) - Health Care Select Sector SPDR Fund
+Watching candidate: ABT | confirmations 1/2
+Previous position: XLV (sector_etf)
+Reason: Candidate leader changed, but confirmation/monthly switch rules are not fully met yet.
+Data status: fresh_cache
+Sector freshness: fresh | coverage 5/5 | avg age hours 0.49
+ETF snapshot freshness:
+  - IBB: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+  - VHT: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+  - IHI: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+  - XLV: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+  - XBI: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+
+[Automotive]
+Status: pending_confirmation | Action: watch
+Current recommendation: DRIV (sector_etf) - Global X Autonomous & Electric Vehicles ETF
+Watching candidate: ALB | confirmations 1/2
+Previous position: DRIV (sector_etf)
+Reason: Candidate leader changed, but confirmation/monthly switch rules are not fully met yet.
+Data status: fresh_cache
+Sector freshness: fresh | coverage 5/5 | avg age hours 0.46
+ETF snapshot freshness:
+  - CARZ: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+  - DRIV: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+  - IDRV: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+  - LIT: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+  - KARS: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+
+[Precious Metals]
+Status: fallback | Action: hold
+Current recommendation: GLD (sector_etf) - SPDR Gold Shares
+Previous position: GLD (sector_etf)
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 1/5 | avg age hours 0.41
+ETF snapshot freshness:
+  - GDX: status=fresh_cache freshness=fresh age_days=0.02 source=alpha_vantage_etf_profile
+  - SLV: status=cache_miss freshness=unknown age_days=None source=none
+  - GLD: status=cache_miss freshness=unknown age_days=None source=none
+  - IAU: status=cache_miss freshness=unknown age_days=None source=none
+  - GDXJ: status=cache_miss freshness=unknown age_days=None source=none
+
+[Consumer Staples]
+Status: fallback | Action: hold
+Current recommendation: XLP (sector_etf) - Consumer Staples Select Sector SPDR Fund
+Previous position: XLP (sector_etf)
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - FSTA: status=cache_miss freshness=unknown age_days=None source=none
+  - XLP: status=cache_miss freshness=unknown age_days=None source=none
+  - VDC: status=cache_miss freshness=unknown age_days=None source=none
+  - IYK: status=cache_miss freshness=unknown age_days=None source=none
+  - KXI: status=cache_miss freshness=unknown age_days=None source=none
+
+[Tech & AI]
+Status: fallback | Action: hold
+Current recommendation: XLK (sector_etf) - Technology Select Sector SPDR Fund
+Previous position: XLK (sector_etf)
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - XLK: status=cache_miss freshness=unknown age_days=None source=none
+  - VGT: status=cache_miss freshness=unknown age_days=None source=none
+  - SKYY: status=cache_miss freshness=unknown age_days=None source=none
+  - AIQ: status=cache_miss freshness=unknown age_days=None source=none
+  - BOTZ: status=cache_miss freshness=unknown age_days=None source=none
+
+[Financial Services]
+Status: fallback | Action: hold
+Current recommendation: XLF (sector_etf) - Financial Select Sector SPDR Fund
+Previous position: XLF (sector_etf)
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - KRE: status=cache_miss freshness=unknown age_days=None source=none
+  - XLF: status=cache_miss freshness=unknown age_days=None source=none
+  - VFH: status=cache_miss freshness=unknown age_days=None source=none
+  - FINX: status=cache_miss freshness=unknown age_days=None source=none
+  - KBE: status=cache_miss freshness=unknown age_days=None source=none
+
+[Infrastructure]
+Status: fallback | Action: hold
+Current recommendation: PAVE (sector_etf) - Global X U.S. Infrastructure Development ETF
+Previous position: PAVE (sector_etf)
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - PKB: status=cache_miss freshness=unknown age_days=None source=none
+  - PAVE: status=cache_miss freshness=unknown age_days=None source=none
+  - IFRA: status=cache_miss freshness=unknown age_days=None source=none
+  - IGF: status=cache_miss freshness=unknown age_days=None source=none
+  - NFRA: status=cache_miss freshness=unknown age_days=None source=none
+
+[Real Estate]
+Status: fallback | Action: hold
+Current recommendation: VNQ (sector_etf) - Vanguard Real Estate ETF
+Previous position: VNQ (sector_etf)
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - RWR: status=cache_miss freshness=unknown age_days=None source=none
+  - IYR: status=cache_miss freshness=unknown age_days=None source=none
+  - VNQ: status=cache_miss freshness=unknown age_days=None source=none
+  - SCHH: status=cache_miss freshness=unknown age_days=None source=none
+  - XLRE: status=cache_miss freshness=unknown age_days=None source=none
+
+MANUAL TRADE LIST
+--------------------
+No trade changes suggested. Continue monitoring.
+
+Advisory only. Review liquidity, taxes, costs, and account suitability before placing any order manually.

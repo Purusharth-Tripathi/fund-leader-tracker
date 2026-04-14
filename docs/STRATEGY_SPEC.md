@@ -35,7 +35,7 @@ Purpose: update local ETF holdings cache only.
 
 - refreshes 5 sectors per day
 - refreshes up to 25 ETF snapshots per run
-- uses provider order from config (`fmp`, then `cache`, then `alpha_vantage` by default)
+- uses provider order from config (`cache`, then `alpha_vantage` by default)
 - stores holdings snapshots to local cache for later review
 
 ### Review strategy
