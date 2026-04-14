@@ -58,9 +58,9 @@ def print_progress(current, total, prefix='Progress'):
     bar_length = 40
     total = max(total, 1)
     filled_length = int(bar_length * current // total)
-    bar = '█' * filled_length + '-' * (bar_length - filled_length)
+    bar = '#' * filled_length + '-' * (bar_length - filled_length)
     percent = f"{100 * (current / float(total)):.1f}"
-    print(f'\r{prefix}: |{bar}| {percent}% Complete', end='\r')
+    print(f'\r{prefix}: |{bar}| {percent}% Complete', end='\r', flush=True)
     if current == total:
         print()
 

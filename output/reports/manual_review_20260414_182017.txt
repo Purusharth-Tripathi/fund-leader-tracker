@@ -1,0 +1,138 @@
+ETF SECTOR LEADERSHIP MANUAL REVIEW
+========================================
+Run timestamp: 2026-04-14T18:20:17.468595
+Review date: 2026-04-14
+Sectors reviewed: 9
+Actionable sectors: 9
+Target sector weight: 11.11%
+
+[Aerospace & Defense]
+Status: active | Action: initiate
+Current recommendation: GE (stock) - General Electric Company
+Reason: No previous allocation recorded; establish the current confirmed leader.
+Data status: fresh_cache
+Sector freshness: fresh | coverage 5/5 | avg age hours 2.91
+ETF snapshot freshness:
+  - SHLD: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+  - DFEN: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+  - ITA: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+  - PPA: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+  - XAR: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+
+[Renewable Energy]
+Status: active | Action: initiate
+Current recommendation: BE (stock) - BE
+Reason: No previous allocation recorded; establish the current confirmed leader.
+Data status: cache_miss
+Sector freshness: mixed | coverage 4/5 | avg age hours 2.89
+ETF snapshot freshness:
+  - ICLN: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+  - PBW: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+  - TAN: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+  - QCLN: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+  - CNRG: status=cache_miss freshness=unknown age_days=None source=none
+
+[Healthcare & Biotech]
+Status: active | Action: initiate
+Current recommendation: ABBV (stock) - AbbVie Inc
+Reason: No previous allocation recorded; establish the current confirmed leader.
+Data status: cache_miss
+Sector freshness: mixed | coverage 4/5 | avg age hours 2.88
+ETF snapshot freshness:
+  - VHT: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+  - XBI: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+  - XLV: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+  - IBB: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+  - IXJ: status=cache_miss freshness=unknown age_days=None source=none
+
+[Automotive]
+Status: active | Action: initiate
+Current recommendation: ALB (stock) - ALB
+Reason: No previous allocation recorded; establish the current confirmed leader.
+Data status: fresh_cache
+Sector freshness: fresh | coverage 5/5 | avg age hours 2.84
+ETF snapshot freshness:
+  - KARS: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+  - IDRV: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+  - DRIV: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+  - LIT: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+  - CARZ: status=fresh_cache freshness=fresh age_days=0.12 source=alpha_vantage_etf_profile
+
+[Consumer Staples]
+Status: fallback | Action: switch
+Current recommendation: XLP (sector_etf) - Consumer Staples Select Sector SPDR Fund
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - XLP: status=cache_miss freshness=unknown age_days=None source=none
+  - VDC: status=cache_miss freshness=unknown age_days=None source=none
+  - FSTA: status=cache_miss freshness=unknown age_days=None source=none
+  - KXI: status=cache_miss freshness=unknown age_days=None source=none
+  - IYK: status=cache_miss freshness=unknown age_days=None source=none
+
+[Tech & AI]
+Status: fallback | Action: switch
+Current recommendation: XLK (sector_etf) - Technology Select Sector SPDR Fund
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - QQQ: status=cache_miss freshness=unknown age_days=None source=none
+  - IYW: status=cache_miss freshness=unknown age_days=None source=none
+  - XLK: status=cache_miss freshness=unknown age_days=None source=none
+  - VGT: status=cache_miss freshness=unknown age_days=None source=none
+  - AIQ: status=cache_miss freshness=unknown age_days=None source=none
+
+[Financial Services]
+Status: fallback | Action: switch
+Current recommendation: XLF (sector_etf) - Financial Select Sector SPDR Fund
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - XLF: status=cache_miss freshness=unknown age_days=None source=none
+  - VFH: status=cache_miss freshness=unknown age_days=None source=none
+  - KBE: status=cache_miss freshness=unknown age_days=None source=none
+  - KRE: status=cache_miss freshness=unknown age_days=None source=none
+  - FNCL: status=cache_miss freshness=unknown age_days=None source=none
+
+[Infrastructure]
+Status: fallback | Action: switch
+Current recommendation: PAVE (sector_etf) - Global X U.S. Infrastructure Development ETF
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - NFRA: status=cache_miss freshness=unknown age_days=None source=none
+  - PAVE: status=cache_miss freshness=unknown age_days=None source=none
+  - IFRA: status=cache_miss freshness=unknown age_days=None source=none
+  - IGF: status=cache_miss freshness=unknown age_days=None source=none
+  - ITB: status=cache_miss freshness=unknown age_days=None source=none
+
+[Real Estate]
+Status: fallback | Action: switch
+Current recommendation: VNQ (sector_etf) - Vanguard Real Estate ETF
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - SCHH: status=cache_miss freshness=unknown age_days=None source=none
+  - VNQ: status=cache_miss freshness=unknown age_days=None source=none
+  - REET: status=cache_miss freshness=unknown age_days=None source=none
+  - XLRE: status=cache_miss freshness=unknown age_days=None source=none
+  - IYR: status=cache_miss freshness=unknown age_days=None source=none
+
+MANUAL TRADE LIST
+--------------------
+ BUY | Aerospace & Defense | GE | target 11.11% | No previous allocation recorded; establish the current confirmed leader.
+ BUY | Renewable Energy | BE | target 11.11% | No previous allocation recorded; establish the current confirmed leader.
+ BUY | Healthcare & Biotech | ABBV | target 11.11% | No previous allocation recorded; establish the current confirmed leader.
+ BUY | Automotive | ALB | target 11.11% | No previous allocation recorded; establish the current confirmed leader.
+ BUY | Consumer Staples | XLP | target 11.11% | No valid stock leader met the rules; use sector ETF fallback.
+ BUY | Tech & AI | XLK | target 11.11% | No valid stock leader met the rules; use sector ETF fallback.
+ BUY | Financial Services | XLF | target 11.11% | No valid stock leader met the rules; use sector ETF fallback.
+ BUY | Infrastructure | PAVE | target 11.11% | No valid stock leader met the rules; use sector ETF fallback.
+ BUY | Real Estate | VNQ | target 11.11% | No valid stock leader met the rules; use sector ETF fallback.
+
+Advisory only. Review liquidity, taxes, costs, and account suitability before placing any order manually.
