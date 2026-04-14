@@ -59,38 +59,70 @@ def load_data():
 
     conn = sqlite3.connect(db_path)
 
+    # Discover which tables are present so we degrade gracefully on older schemas
+    existing_tables = set(
+        pd.read_sql_query(
+            "SELECT name FROM sqlite_master WHERE type='table'", conn
+        )['name'].tolist()
+    )
+
+    def safe_query(sql, fallback_cols):
+        try:
+            return pd.read_sql_query(sql, conn)
+        except Exception:
+            return pd.DataFrame(columns=fallback_cols)
+
     # Latest planner state per sector
-    current_state_query = """
-        SELECT sector_name AS sector, review_date, active_symbol AS symbol, active_name AS company,
-               active_kind, status, data_status, last_action, last_action_reason,
-               evidence_json, sector_freshness_json
-        FROM sector_strategy_state
-        WHERE id IN (SELECT MAX(id) FROM sector_strategy_state GROUP BY sector_name)
-        ORDER BY sector_name
-    """
-    current_state = pd.read_sql_query(current_state_query, conn)
+    if 'sector_strategy_state' in existing_tables:
+        current_state = safe_query("""
+            SELECT sector_name AS sector, review_date, active_symbol AS symbol, active_name AS company,
+                   active_kind, status, data_status, last_action, last_action_reason,
+                   evidence_json, sector_freshness_json
+            FROM sector_strategy_state
+            WHERE id IN (SELECT MAX(id) FROM sector_strategy_state GROUP BY sector_name)
+            ORDER BY sector_name
+        """, ['sector', 'review_date', 'symbol', 'company', 'active_kind',
+              'status', 'data_status', 'last_action', 'last_action_reason',
+              'evidence_json', 'sector_freshness_json'])
+    else:
+        current_state = pd.DataFrame(columns=[
+            'sector', 'review_date', 'symbol', 'company', 'active_kind',
+            'status', 'data_status', 'last_action', 'last_action_reason',
+            'evidence_json', 'sector_freshness_json',
+        ])
 
     # Planner run history
-    strategy_runs_query = """
-        SELECT review_date, run_timestamp, summary_json, portfolio_json,
-               report_text_path, report_json_path
-        FROM strategy_runs
-        ORDER BY run_timestamp DESC
-        LIMIT 30
-    """
-    strategy_runs = pd.read_sql_query(strategy_runs_query, conn)
+    if 'strategy_runs' in existing_tables:
+        strategy_runs = safe_query("""
+            SELECT review_date, run_timestamp, summary_json, portfolio_json,
+                   report_text_path, report_json_path
+            FROM strategy_runs
+            ORDER BY run_timestamp DESC
+            LIMIT 30
+        """, ['review_date', 'run_timestamp', 'summary_json',
+              'portfolio_json', 'report_text_path', 'report_json_path'])
+    else:
+        strategy_runs = pd.DataFrame(columns=[
+            'review_date', 'run_timestamp', 'summary_json',
+            'portfolio_json', 'report_text_path', 'report_json_path',
+        ])
 
     # Sector definitions
-    sectors_query = "SELECT name, keywords FROM sectors ORDER BY name"
-    sectors = pd.read_sql_query(sectors_query, conn)
+    if 'sectors' in existing_tables:
+        sectors = safe_query("SELECT name, keywords FROM sectors ORDER BY name",
+                             ['name', 'keywords'])
+    else:
+        sectors = pd.DataFrame(columns=['name', 'keywords'])
 
     # Tracked funds
-    funds_query = """
-        SELECT sector_name AS sector, fund_symbol, fund_name, rank_in_sector
-        FROM tracked_funds
-        ORDER BY sector_name, rank_in_sector
-    """
-    funds = pd.read_sql_query(funds_query, conn)
+    if 'tracked_funds' in existing_tables:
+        funds = safe_query("""
+            SELECT sector_name AS sector, fund_symbol, fund_name, rank_in_sector
+            FROM tracked_funds
+            ORDER BY sector_name, rank_in_sector
+        """, ['sector', 'fund_symbol', 'fund_name', 'rank_in_sector'])
+    else:
+        funds = pd.DataFrame(columns=['sector', 'fund_symbol', 'fund_name', 'rank_in_sector'])
 
     # Candidate leaders derived from evidence_json -> leaders_considered
     candidate_rows = []
@@ -133,9 +165,17 @@ def main():
     # Load data
     current_state, candidates, strategy_runs, sectors, funds, db_path = load_data()
 
-    if current_state is None or len(current_state) == 0:
-        st.warning("⚠️ No data available. Please run a planner review first.")
-        st.info(f"DB path: {db_path}\nRun planner review to generate data.")
+    if current_state is None:
+        st.warning("⚠️ Database not found. Please run a planner review first.")
+        st.info(f"Expected DB path: {db_path}")
+        return
+
+    if len(current_state) == 0:
+        st.warning("⚠️ No planner data yet. The `sector_strategy_state` table is empty or missing.")
+        st.info(
+            f"DB path: {db_path}\n\n"
+            "Run a planner review (`python run_analysis.py`) to populate the planner tables."
+        )
         return
 
     # Sidebar
