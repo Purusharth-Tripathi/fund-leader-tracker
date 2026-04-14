@@ -49,135 +49,72 @@ st.markdown("""
 
 @st.cache_data(ttl=300)  # Cache for 5 minutes
 def load_data():
-    """Load data from SQLite database"""
+    """Load planner data from SQLite database."""
     script_dir = os.path.dirname(os.path.abspath(__file__))
     default_db = os.path.join(script_dir, 'data', 'fund_leaders.db')
     db_path = os.getenv('DATABASE_PATH', default_db)
 
     if not os.path.exists(db_path):
-        return None, None, None, None, None
+        return None, None, None, None, None, None
 
     conn = sqlite3.connect(db_path)
 
-    # Load current leaders (latest per sector)
-    current_leaders_query = """
-        SELECT
-            s.name as sector,
-            il.company_symbol as symbol,
-            il.company_name as company,
-            il.times_held,
-            il.total_weight,
-            il.avg_weight,
-            il.analysis_date,
-            il.created_at
-        FROM industry_leaders il
-        JOIN sectors s ON il.sector_id = s.id
-        WHERE il.id IN (
-            SELECT MAX(id)
-            FROM industry_leaders
-            GROUP BY sector_id
-        )
-        ORDER BY s.name
+    current_state_query = """
+        SELECT sector_name as sector, review_date, active_symbol as symbol, active_name as company,
+               active_kind, status, data_status, last_action, last_action_reason, evidence_json, sector_freshness_json
+        FROM sector_strategy_state
+        WHERE id IN (SELECT MAX(id) FROM sector_strategy_state GROUP BY sector_name)
+        ORDER BY sector_name
     """
-    current_leaders = pd.read_sql_query(current_leaders_query, conn)
+    current_state = pd.read_sql_query(current_state_query, conn)
 
-    # Load all historical leaders
-    all_leaders_query = """
-        SELECT
-            s.name as sector,
-            il.company_symbol as symbol,
-            il.company_name as company,
-            il.times_held,
-            il.total_weight,
-            il.avg_weight,
-            il.analysis_date,
-            il.created_at
-        FROM industry_leaders il
-        JOIN sectors s ON il.sector_id = s.id
-        ORDER BY il.created_at DESC
-    """
-    all_leaders = pd.read_sql_query(all_leaders_query, conn)
-
-    # Load analysis runs
-    runs_query = """
-        SELECT
-            run_date,
-            sectors_analyzed,
-            funds_analyzed,
-            leaders_found,
-            status,
-            notes
-        FROM analysis_runs
-        ORDER BY run_date DESC
+    strategy_runs_query = """
+        SELECT review_date, run_timestamp, summary_json, portfolio_json, report_text_path, report_json_path
+        FROM strategy_runs
+        ORDER BY run_timestamp DESC
         LIMIT 30
     """
-    analysis_runs = pd.read_sql_query(runs_query, conn)
+    strategy_runs = pd.read_sql_query(strategy_runs_query, conn)
 
-    # Load sectors
     sectors_query = "SELECT name, keywords FROM sectors ORDER BY name"
     sectors = pd.read_sql_query(sectors_query, conn)
 
-    # Load funds by sector (using current tracked funds)
     funds_query = """
-        SELECT
-            sector_name as sector,
-            fund_symbol,
-            fund_name,
-            rank_in_sector
+        SELECT sector_name as sector, fund_symbol, fund_name, rank_in_sector
         FROM tracked_funds
         ORDER BY sector_name, rank_in_sector
     """
     funds = pd.read_sql_query(funds_query, conn)
 
-    conn.close()
-
-    return current_leaders, all_leaders, analysis_runs, sectors, funds
-
-
-def detect_changes(all_leaders_df):
-    """Detect leadership changes between analysis runs"""
-    if all_leaders_df is None or len(all_leaders_df) < 2:
-        return pd.DataFrame()
-
-    # Convert dates
-    all_leaders_df['date'] = pd.to_datetime(all_leaders_df['analysis_date'], errors='coerce')
-
-    # Get unique dates
-    dates = sorted(all_leaders_df['date'].unique(), reverse=True)
-
-    if len(dates) < 2:
-        return pd.DataFrame()
-
-    # Compare latest with previous
-    latest_date = dates[0]
-    previous_date = dates[1]
-
-    latest = all_leaders_df[all_leaders_df['date'] == latest_date]
-    previous = all_leaders_df[all_leaders_df['date'] == previous_date]
-
-    changes = []
-    for sector in latest['sector'].unique():
-        latest_leader = latest[latest['sector'] == sector]['symbol'].iloc[0]
-        prev_leaders = previous[previous['sector'] == sector]
-
-        if len(prev_leaders) > 0:
-            prev_leader = prev_leaders['symbol'].iloc[0]
-            if latest_leader != prev_leader:
-                latest_data = latest[latest['sector'] == sector].iloc[0]
-                prev_data = prev_leaders.iloc[0]
-
-                changes.append({
-                    'sector': sector,
-                    'old_symbol': prev_leader,
-                    'old_company': prev_data['company'],
-                    'new_symbol': latest_leader,
-                    'new_company': latest_data['company'],
-                    'new_times_held': latest_data['times_held'],
-                    'new_avg_weight': latest_data['avg_weight'],
-                    'change_date': latest_date.strftime('%Y-%m-%d')
+    # Planner candidates view derived from evidence_json
+    candidate_rows = []
+    for _, row in current_state.iterrows():
+        try:
+            evidence = __import__('json').loads(row['evidence_json']) if row['evidence_json'] else {}
+            for leader in (evidence.get('leaders_considered') or []):
+                candidate_rows.append({
+                    'sector': row['sector'],
+                    'review_date': row['review_date'],
+                    'symbol': leader.get('symbol'),
+                    'company': leader.get('name'),
+                    'times_held': leader.get('times_held'),
+                    'avg_weight': leader.get('avg_weight'),
+                    'prevalence': leader.get('prevalence'),
+                    'status': row['status'],
+                    'active_symbol': row['symbol'],
                 })
+        except Exception:
+            pass
+    candidates = pd.DataFrame(candidate_rows)
 
-    return pd.DataFrame(changes)
+    conn.close()
+    return current_state, candidates, strategy_runs, sectors, funds, db_path
+
+
+def detect_changes(current_state_df):
+    if current_state_df is None or len(current_state_df) == 0:
+        return pd.DataFrame()
+    return current_state_df[current_state_df['status'].isin(['pending_confirmation'])][['sector','symbol','company','status']].copy()
 
 
 def main():
@@ -186,11 +123,11 @@ def main():
     st.markdown("---")
 
     # Load data
-    current_leaders, all_leaders, analysis_runs, sectors, funds = load_data()
+    current_leaders, all_leaders, analysis_runs, sectors, funds, db_path = load_data()
 
     if current_leaders is None or len(current_leaders) == 0:
         st.warning("⚠️ No data available. Please run an analysis first.")
-        st.info("Run: `python main.py` to generate data")
+        st.info(f"DB path: {db_path}\nRun planner review to generate data.")
         return
 
     # Sidebar
@@ -250,9 +187,9 @@ def main():
         # Detect recent changes
         changes_df = detect_changes(all_leaders)
         st.metric(
-            label="Recent Changes",
+            label="Pending Sectors",
             value=len(changes_df),
-            delta="Leadership shifts"
+            delta="Need confirmation"
         )
 
     with col4:
@@ -266,8 +203,8 @@ def main():
 
     # Leadership Changes Alert
     if len(changes_df) > 0:
-        st.header("🔔 Recent Leadership Changes")
-        st.warning(f"⚠️ {len(changes_df)} sector(s) have new leaders!")
+        st.header("🔔 Pending Confirmation")
+        st.warning(f"⚠️ {len(changes_df)} sector(s) have candidate leaders pending confirmation")
 
         for _, change in changes_df.iterrows():
             col1, col2 = st.columns([1, 3])
@@ -287,58 +224,44 @@ def main():
     tab1, tab2, tab3, tab4 = st.tabs(["📊 Current Leaders", "📈 Trends", "📜 History", "ℹ️ About"])
 
     with tab1:
-        st.header("Current Industry Leaders")
-        st.caption("Top leader in each sector based on fund holdings analysis")
+        st.header("Current Sector Strategy State")
+        st.caption("Planner state by sector: active instrument, status, data freshness, and candidate leaders")
 
-        # Create display dataframe
-        display_df = filtered_leaders.copy()
-        display_df['Prevalence'] = (display_df['times_held'] / 5 * 100).round(1).astype(str) + '%'
-        display_df['Avg Weight'] = display_df['avg_weight'].round(2).astype(str) + '%'
-        display_df = display_df[['sector', 'symbol', 'company', 'times_held', 'Avg Weight', 'Prevalence', 'analysis_date']]
-        display_df.columns = ['Sector', 'Symbol', 'Company', 'Times Held', 'Avg Weight', 'Prevalence', 'Analysis Date']
+        display_df = filtered_leaders[['sector','symbol','company','active_kind','status','data_status','review_date']].copy()
+        display_df.columns = ['Sector', 'Active Symbol', 'Active Name', 'Kind', 'Status', 'Data Status', 'Review Date']
+        st.dataframe(display_df, use_container_width=True, hide_index=True)
 
-        st.dataframe(
-            display_df,
-            use_container_width=True,
-            hide_index=True
-        )
+        st.subheader("Candidate Leaders by Sector")
+        candidate_df = all_leaders[all_leaders['sector'].isin(selected_sectors)] if all_leaders is not None and len(all_leaders) > 0 else pd.DataFrame()
+        if len(candidate_df) > 0:
+            cand = candidate_df[['sector','symbol','company','times_held','avg_weight','prevalence','status']].copy()
+            cand.columns = ['Sector','Candidate Symbol','Candidate Name','Times Held','Avg Weight','Prevalence','Sector Status']
+            st.dataframe(cand, use_container_width=True, hide_index=True)
+        else:
+            st.info('No candidate leaders available yet for the selected sectors.')
 
         # Charts
-        st.subheader("📊 Visualizations")
+        st.subheader("📊 Planner Overview")
 
         col1, col2 = st.columns(2)
 
         with col1:
             # Holdings distribution
-            fig1 = px.bar(
-                filtered_leaders,
-                x='sector',
-                y='times_held',
-                title='Holdings Frequency by Sector',
-                labels={'times_held': 'Times Held (out of 5)', 'sector': 'Sector'},
-                color='times_held',
-                color_continuous_scale='Blues'
-            )
-            fig1.update_layout(xaxis_tickangle=-45, showlegend=False)
+            status_counts = filtered_leaders['status'].value_counts().reset_index()
+            status_counts.columns=['status','count']
+            fig1 = px.bar(status_counts, x='status', y='count', title='Sector Status Counts', color='status')
             st.plotly_chart(fig1, use_container_width=True)
 
         with col2:
             # Average weight
-            fig2 = px.bar(
-                filtered_leaders,
-                x='sector',
-                y='avg_weight',
-                title='Average Portfolio Weight by Sector',
-                labels={'avg_weight': 'Avg Weight (%)', 'sector': 'Sector'},
-                color='avg_weight',
-                color_continuous_scale='Greens'
-            )
-            fig2.update_layout(xaxis_tickangle=-45, showlegend=False)
+            freshness_counts = filtered_leaders['data_status'].value_counts().reset_index()
+            freshness_counts.columns=['data_status','count']
+            fig2 = px.bar(freshness_counts, x='data_status', y='count', title='Data Status Counts', color='data_status')
             st.plotly_chart(fig2, use_container_width=True)
 
         # Top companies
-        st.subheader("🏆 Top Companies")
-        top_companies = filtered_leaders.nlargest(5, 'avg_weight')[['company', 'symbol', 'sector', 'avg_weight', 'times_held']]
+        st.subheader("🏆 Top Candidate Leaders")
+        top_companies = all_leaders.sort_values('avg_weight', ascending=False).head(5) if all_leaders is not None and len(all_leaders) > 0 else pd.DataFrame()
 
         for idx, row in top_companies.iterrows():
             col1, col2, col3 = st.columns([2, 1, 1])
@@ -503,15 +426,15 @@ def main():
         ### 📊 What is Fund Leader Tracker?
 
         Fund Leader Tracker identifies industry leaders by analyzing the holdings of top-performing
-        mutual funds across 10 key sectors. The system tracks which companies are most commonly
+        sector ETFs across the current planner universe. The system tracks which companies are most commonly
         held by institutional investors, providing insights into market sentiment.
 
         ### 🎯 How It Works
 
         1. **Data Collection**: Fetches fund holdings data from Alpha Vantage API
-        2. **Analysis**: Identifies the top 5 funds per sector based on 3-year performance
+        2. **Analysis**: Reviews the curated 5 ETF universe per sector using planner state and cache-aware holdings refresh
         3. **Leader Identification**: Determines which companies appear most frequently in fund portfolios
-        4. **Change Detection**: Compares with previous analysis to detect leadership shifts
+        4. **Planner State**: Tracks pending confirmations, fallbacks, and freshness by sector
         5. **Alerts**: Sends email notifications when sector leaders change
 
         ### 📈 Metrics Explained
