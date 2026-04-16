@@ -1,15 +1,28 @@
 # Fund Leader Tracker - Refresh & Review Scheduling Guide
 
-This planner now uses a **staged refresh + cache-first review** operating model with Alpha Vantage as the only live holdings source, so it behaves cleanly under the Alpha Vantage free tier.
+This planner uses a **staged refresh + hard cache-only review** operating model with Alpha Vantage as the only live holdings source, so it behaves cleanly under the Alpha Vantage free tier.
+
+## Workflow separation
+
+| Workflow             | Command                          | Live Alpha Vantage calls? | Spends daily budget? |
+|----------------------|----------------------------------|---------------------------|----------------------|
+| `refresh`            | `python3 main.py refresh`        | Yes, ETF holdings only    | Yes                  |
+| `review`             | `python3 main.py review`         | **No** (cache-only)       | No                   |
+| `maintenance`        | `python3 initialize_tracked_funds.py` | Yes, performance scoring | Yes (first Sunday)  |
+| `manual_diagnostic`  | `python3 main.py doctor`         | No                        | No                   |
+
+Each workflow is tagged on every Alpha Vantage call in the persistent ledger (`alpha_vantage_usage` table in `data/fund_leaders.db`). The ledger enforces the daily budget across workflows and across process restarts.
 
 ## Core schedule
 
 - **10 sectors total**
 - **5 ETFs tracked per sector**
-- **25 calls/day budget**
-- **Refresh cadence:** daily alternating batches of 5 sectors
-- **Review cadence:** weekly using stored holdings snapshots for all 10 sectors
+- tracked ETFs are selected during maintenance and treated as the static daily monitoring list
+- **25 calls/day budget** (enforced by the persistent ledger)
+- **Refresh cadence:** daily alternating batches of 5 sectors (only workflow that consumes the holdings budget)
+- **Review cadence:** weekly, **hard cache-only** across all sectors
 - **Action cadence:** monthly manual execution window
+- **Maintenance cadence:** **first Sunday of every month** for tracked-ETF maintenance / re-ranking only (gated by default)
 
 ## Commands
 
@@ -32,7 +45,7 @@ python3 main.py refresh 2026-04-11 batch_b
 python3 main.py review
 ```
 
-This review is cache-first and intended to work even when no live calls are made during the review run.
+This review is **hard cache-only**. The analyzer forces `fetch_mode=cache_only` and the ledger blocks any Alpha Vantage call with reason `workflow_disallows_live_calls`. Stale or missing snapshots surface through freshness reporting rather than being papered over with live fetches.
 
 ### Diagnostics
 
@@ -89,6 +102,36 @@ Then manually inspect:
 ### Monthly action window
 
 Manually consider only `initiate` / `switch` trades during the configured monthly action window unless the review marks a significant-change override.
+
+### Monthly maintenance window
+
+Use the **first Sunday of every month** for tracked-ETF maintenance only:
+
+```bash
+python3 initialize_tracked_funds.py --force
+```
+
+The command refuses to run outside this window unless you pass
+`--allow-outside-maintenance`. Use the override only for the first-ever
+bootstrap or an explicit ad-hoc maintenance decision.
+
+During maintenance:
+
+- re-rank / reselect the 5 ETFs per sector only if needed
+- update the stored tracked ETF list
+- avoid running the normal daily refresh/review jobs in parallel with this maintenance work
+- avoid any other Alpha Vantage-consuming validation or diagnostics during this window
+
+### Alpha Vantage usage ledger
+
+All Alpha Vantage call attempts are logged to the `alpha_vantage_usage`
+table in `data/fund_leaders.db` with columns for workflow, function,
+symbol, status (`consumed` / `blocked`), and outcome/reason.
+
+- `refresh` and `review` run summaries include this telemetry:
+  workflow, live-call allowance, calls attempted/successful/failed/blocked,
+  and remaining daily budget.
+- `python3 main.py doctor` reads the ledger but does **not** write to it.
 
 ## Why this model fits the free tier
 

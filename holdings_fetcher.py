@@ -8,7 +8,7 @@ from typing import Dict, List, Optional, Sequence, Tuple
 
 import requests
 
-from data_providers import FundUniverseRepository
+from data_providers import AlphaVantageBudgetLedger, FundUniverseRepository
 from utils import print_progress
 
 logger = logging.getLogger(__name__)
@@ -39,6 +39,7 @@ class HoldingsFetcher:
         cache_directory='data/cache',
         cache_ttl_hours=168,
         holdings_provider_order: Optional[Sequence[str]] = None,
+        ledger: Optional[AlphaVantageBudgetLedger] = None,
     ):
         self.api_key = api_key
         self.base_url = 'https://www.alphavantage.co/query'
@@ -51,6 +52,7 @@ class HoldingsFetcher:
         self.cache_directory = cache_directory
         self.cache_ttl_hours = cache_ttl_hours
         self.holdings_provider_order = self._normalize_provider_order(holdings_provider_order)
+        self.ledger = ledger
         self.alpha_vantage_quota_exhausted = False
         self.last_rate_limit_note: Optional[str] = None
         os.makedirs(self.cache_directory, exist_ok=True)
@@ -64,25 +66,62 @@ class HoldingsFetcher:
         return tuple(normalized or self.DEFAULT_PROVIDER_ORDER)
 
     def _request(self, params: Dict[str, str], timeout: int = 15) -> Optional[Dict]:
-        for attempt in range(1, self.retry_attempts + 1):
-            try:
-                response = requests.get(self.base_url, params={**params, 'apikey': self.api_key}, timeout=timeout, verify=self.verify_ssl)
-                response.raise_for_status()
-                data = response.json()
-                if 'Error Message' in data or 'Information' in data or 'Note' in data:
-                    logger.warning('API non-data response for %s: %s', params, data)
-                    note = data.get('Information') or data.get('Note') or data.get('Error Message')
-                    if note and 'rate limit' in str(note).lower():
-                        self.alpha_vantage_quota_exhausted = True
-                        self.last_rate_limit_note = str(note)
-                    return None
-                return data
-            except requests.exceptions.RequestException as exc:
-                logger.warning('Request failed for %s on attempt %s/%s: %s', params, attempt, self.retry_attempts, exc)
-                if attempt == self.retry_attempts:
-                    return None
-                time.sleep(self.retry_delay)
-        return None
+        function = params.get('function', 'UNKNOWN')
+        symbol = params.get('symbol')
+        if self.ledger is not None:
+            allowed, reason = self.ledger.try_consume(function, symbol=symbol)
+            if not allowed:
+                logger.info(
+                    'Alpha Vantage call blocked by ledger (%s/%s): %s',
+                    function, symbol, reason,
+                )
+                if reason == AlphaVantageBudgetLedger.BLOCK_REASON_DAILY_BUDGET:
+                    self.alpha_vantage_quota_exhausted = True
+                    self.last_rate_limit_note = 'daily budget exhausted (persistent ledger)'
+                elif reason == AlphaVantageBudgetLedger.BLOCK_REASON_RATE_LIMIT:
+                    self.alpha_vantage_quota_exhausted = True
+                return None
+
+        payload: Optional[Dict] = None
+        note: Optional[str] = None
+        rate_limited = False
+        try:
+            for attempt in range(1, self.retry_attempts + 1):
+                try:
+                    response = requests.get(
+                        self.base_url,
+                        params={**params, 'apikey': self.api_key},
+                        timeout=timeout,
+                        verify=self.verify_ssl,
+                    )
+                    response.raise_for_status()
+                    data = response.json()
+                    if 'Error Message' in data or 'Information' in data or 'Note' in data:
+                        logger.warning('API non-data response for %s: %s', params, data)
+                        note = str(
+                            data.get('Information') or data.get('Note') or data.get('Error Message') or ''
+                        )
+                        if note and 'rate limit' in note.lower():
+                            self.alpha_vantage_quota_exhausted = True
+                            self.last_rate_limit_note = note
+                            rate_limited = True
+                        payload = None
+                        break
+                    payload = data
+                    break
+                except requests.exceptions.RequestException as exc:
+                    note = f'request_error: {exc}'
+                    logger.warning('Request failed for %s on attempt %s/%s: %s', params, attempt, self.retry_attempts, exc)
+                    if attempt == self.retry_attempts:
+                        payload = None
+                        break
+                    time.sleep(self.retry_delay)
+            return payload
+        finally:
+            if self.ledger is not None:
+                if rate_limited:
+                    self.ledger.mark_rate_limited(note)
+                self.ledger.record_outcome(success=payload is not None, note=note)
 
     def get_etf_profile(self, symbol):
         return self._request({'function': 'ETF_PROFILE', 'symbol': symbol})
@@ -189,6 +228,12 @@ class HoldingsFetcher:
         return self._build_cache_result(symbol, cached, 'fresh_cache' if is_fresh else 'stale_cache')
 
     def _fetch_alpha_vantage_holdings(self, symbol: str) -> Optional[Dict]:
+        if self.ledger is not None and not self.ledger.live_calls_allowed:
+            logger.info(
+                'Skipping Alpha Vantage holdings for %s because current workflow disallows live calls',
+                symbol,
+            )
+            return None
         if not self.api_key or self.api_key == 'your_api_key_here':
             logger.info('Skipping Alpha Vantage holdings for %s because ALPHA_VANTAGE_API_KEY is not configured', symbol)
             return None
@@ -231,6 +276,12 @@ class HoldingsFetcher:
         providers = self.holdings_provider_order
         if normalized_mode == 'cache_only':
             providers = tuple(provider for provider in self.holdings_provider_order if provider == 'cache') or ('cache',)
+        elif self.ledger is not None and not self.ledger.live_calls_allowed:
+            # Hard safety: even if caller asked for 'auto', a workflow that
+            # forbids live calls must not reach Alpha Vantage. Downgrade the
+            # provider list to cache-only for this call.
+            providers = tuple(provider for provider in self.holdings_provider_order if provider == 'cache') or ('cache',)
+            normalized_mode = 'cache_only'
         for provider in providers:
             if provider == 'cache':
                 cache_result = self._get_cached_holdings_result(symbol, require_fresh=False)

@@ -1,16 +1,40 @@
-"""Initialize tracked funds using a curated manifest and provider-based ranking."""
+"""Initialize tracked funds using a curated manifest and provider-based ranking.
+
+This is the **maintenance** workflow. It is the only path that should
+reshuffle the tracked ETF list and it is expected to run on the first Sunday
+of each month. By default the command refuses to run outside that window so
+that daily refresh/review jobs and monthly maintenance do not both consume
+the same daily Alpha Vantage budget.
+
+Pass ``--allow-outside-maintenance`` to override the gate (e.g. first-ever
+bootstrap, or an explicit ad-hoc maintenance decision).
+"""
 import logging
 import os
 import sys
+from datetime import datetime
 
-from data_providers import AlphaVantageClient, AlphaVantagePerformanceProvider, FundSelectionService, FundUniverseRepository
+from data_providers import (
+    AlphaVantageBudgetLedger,
+    AlphaVantageClient,
+    AlphaVantagePerformanceProvider,
+    FundSelectionService,
+    FundUniverseRepository,
+    WORKFLOW_MAINTENANCE,
+)
 from db_manager import DatabaseManager
 from utils import Colors, load_config, load_env, print_colored, print_header, setup_logging
 
 logger = logging.getLogger(__name__)
 
 
-def build_selection_service(config, api_key):
+def is_first_sunday_of_month(today=None) -> bool:
+    today = today or datetime.now().date()
+    # weekday(): Monday=0 ... Sunday=6. First Sunday is day 1-7.
+    return today.weekday() == 6 and today.day <= 7
+
+
+def build_selection_service(config, api_key, ledger):
     api_config = config.get('api', {})
     repo = FundUniverseRepository(os.path.join(os.path.dirname(__file__), 'fund_universe.yaml'))
     performance_provider = None
@@ -22,6 +46,7 @@ def build_selection_service(config, api_key):
             verify_ssl=api_config.get('verify_ssl', True),
             retry_attempts=api_config.get('retry_attempts', 3),
             retry_delay=api_config.get('retry_delay', 5),
+            ledger=ledger,
         )
         performance_provider = AlphaVantagePerformanceProvider(client)
 
@@ -70,15 +95,61 @@ def main():
     config = load_config()
     setup_logging(os.getenv('LOG_FILE', 'logs/fund_tracker.log'), os.getenv('LOG_LEVEL', 'INFO'))
 
-    print_header("FUND LEADER TRACKER - TRACKED FUND INITIALIZATION", "=")
-    print("This command ranks a curated sector fund universe and stores the top tracked funds.\n")
+    print_header("FUND LEADER TRACKER - TRACKED FUND MAINTENANCE", "=")
+    print("This command ranks a curated sector fund universe and stores the top tracked funds.")
+    print("Maintenance is intended for the first Sunday of each month.\n")
 
     force = '--force' in sys.argv
+    allow_outside = '--allow-outside-maintenance' in sys.argv
+    today = datetime.now().date()
+
+    if not is_first_sunday_of_month(today) and not allow_outside:
+        print_colored(
+            f"Refusing to run maintenance on {today.isoformat()} (weekday={today.strftime('%A')}).",
+            Colors.FAIL,
+        )
+        print_colored(
+            "Tracked-ETF reranking is gated to the first Sunday of each month so it does not",
+            Colors.WARNING,
+        )
+        print_colored(
+            "compete with daily refresh for the Alpha Vantage budget.",
+            Colors.WARNING,
+        )
+        print_colored(
+            "Pass --allow-outside-maintenance to override this gate for bootstrap or ad-hoc maintenance.",
+            Colors.WARNING,
+        )
+        sys.exit(2)
+
+    if allow_outside and not is_first_sunday_of_month(today):
+        print_colored(
+            "WARNING: --allow-outside-maintenance in effect; running tracked-ETF maintenance "
+            "outside the first-Sunday window. Ensure no refresh job runs in parallel.",
+            Colors.WARNING,
+        )
+
     api_key = os.getenv('ALPHA_VANTAGE_API_KEY', '')
-    selection_service = build_selection_service(config, api_key)
+    api_key_present = bool(api_key and api_key != 'your_api_key_here')
 
     db_path = config.get('output', {}).get('database_path', 'data/fund_leaders.db')
     db = DatabaseManager(db_path)
+
+    ledger = AlphaVantageBudgetLedger(
+        db=db,
+        workflow=WORKFLOW_MAINTENANCE,
+        daily_budget=config.get('api', {}).get('requests_per_day', 25),
+        live_calls_allowed=True,
+        api_key_present=api_key_present,
+    )
+    print_colored(
+        f"Workflow: {WORKFLOW_MAINTENANCE} | live AV calls allowed: True | "
+        f"AV budget today: consumed={ledger.consumed_today()}/{ledger.daily_budget} "
+        f"remaining={ledger.remaining_today()}",
+        Colors.OKCYAN,
+    )
+
+    selection_service = build_selection_service(config, api_key, ledger)
     sectors = config.get('sectors', [])
 
     successful = 0
@@ -94,10 +165,26 @@ def main():
             logger.exception("Failed to initialize %s: %s", sector['name'], exc)
             print_colored(f"Error initializing {sector['name']}: {exc}", Colors.FAIL)
 
-    print_header("Initialization Complete")
+    print_header("Maintenance Complete")
     print_colored(f"Successful sectors: {successful}", Colors.OKGREEN)
     if failed:
         print_colored(f"Failed sectors: {failed}", Colors.FAIL)
+
+    summary = ledger.run_summary()
+    print_header('Alpha Vantage Usage (this run)')
+    print(f"Workflow: {summary['workflow']}")
+    print(f"Live calls allowed: {summary['live_calls_allowed']}")
+    print(f"API key configured: {summary['api_key_present']}")
+    print(f"Daily budget: {summary['daily_budget']}")
+    print(f"Consumed today (persistent): {summary['consumed_today']}")
+    print(f"Remaining today (persistent): {summary['remaining_today']}")
+    print(
+        f"This run: attempted={summary['attempted_this_run']} "
+        f"successful={summary['successful_this_run']} "
+        f"failed={summary['failed_this_run']} "
+        f"blocked={summary['blocked_this_run']} "
+        f"rate_limited={summary['rate_limited']}"
+    )
 
     db.close()
     sys.exit(0 if failed == 0 else 1)

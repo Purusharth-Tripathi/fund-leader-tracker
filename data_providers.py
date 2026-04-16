@@ -2,9 +2,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 import logging
 import math
 import time
@@ -13,6 +13,166 @@ import requests
 import yaml
 
 logger = logging.getLogger(__name__)
+
+
+# Canonical workflow identifiers. Anything that touches Alpha Vantage must be
+# tagged with one of these so the persistent ledger can attribute usage.
+WORKFLOW_REFRESH = "refresh"
+WORKFLOW_REVIEW = "review"
+WORKFLOW_MAINTENANCE = "maintenance"
+WORKFLOW_MANUAL_DIAGNOSTIC = "manual_diagnostic"
+WORKFLOW_MANUAL_REPORT = "manual_report"
+
+
+class AlphaVantageBudgetLedger:
+    """Persistent daily quota gate for Alpha Vantage calls.
+
+    The ledger is the single place that says "yes, you may spend one call" or
+    "no, you're blocked". It records every decision to SQLite so the daily
+    budget is enforced across workflows and across process restarts.
+
+    Typical use:
+
+        allowed, reason = ledger.try_consume('ETF_PROFILE', symbol='XLK')
+        if allowed:
+            payload = do_the_http_call()
+            ledger.record_outcome(payload is not None, note='...')
+        else:
+            # call was already recorded as blocked with reason
+            ...
+    """
+
+    BLOCK_REASON_LIVE_DISABLED = "workflow_disallows_live_calls"
+    BLOCK_REASON_NO_API_KEY = "alpha_vantage_api_key_not_configured"
+    BLOCK_REASON_DAILY_BUDGET = "daily_budget_exhausted"
+    BLOCK_REASON_RATE_LIMIT = "rate_limit_signalled_by_provider"
+
+    def __init__(
+        self,
+        db,
+        workflow: str,
+        daily_budget: int,
+        live_calls_allowed: bool,
+        api_key_present: bool = True,
+        today: Optional[date] = None,
+    ):
+        self.db = db
+        self.workflow = workflow
+        self.daily_budget = max(int(daily_budget or 0), 0)
+        self.live_calls_allowed = bool(live_calls_allowed)
+        self.api_key_present = bool(api_key_present)
+        self._today = today or datetime.now().date()
+        self.attempted = 0  # calls dispatched in this process
+        self.blocked = 0    # calls blocked in this process
+        self.successful = 0
+        self.failed = 0
+        self.rate_limited = False
+        self._pending_call: Optional[Tuple[str, Optional[str]]] = None
+
+    @property
+    def today_key(self) -> str:
+        return self._today.isoformat()
+
+    def consumed_today(self) -> int:
+        return self.db.count_alpha_vantage_calls_for_date(self.today_key, status='consumed')
+
+    def remaining_today(self) -> int:
+        if self.daily_budget <= 0:
+            return 0
+        return max(self.daily_budget - self.consumed_today(), 0)
+
+    def try_consume(self, function: str, symbol: Optional[str] = None) -> Tuple[bool, str]:
+        """Reserve one call against the budget.
+
+        On return, if allowed the caller MUST call record_outcome() exactly
+        once. If blocked, the gate has already written the block to the
+        ledger and the caller must not issue the HTTP request.
+        """
+        if self._pending_call is not None:
+            logger.warning(
+                "AlphaVantageBudgetLedger: previous call was not recorded before a new try_consume(%s)",
+                function,
+            )
+            self._pending_call = None
+
+        if not self.live_calls_allowed:
+            self._record_blocked(function, symbol, self.BLOCK_REASON_LIVE_DISABLED)
+            return False, self.BLOCK_REASON_LIVE_DISABLED
+
+        if not self.api_key_present:
+            self._record_blocked(function, symbol, self.BLOCK_REASON_NO_API_KEY)
+            return False, self.BLOCK_REASON_NO_API_KEY
+
+        if self.rate_limited:
+            self._record_blocked(function, symbol, self.BLOCK_REASON_RATE_LIMIT)
+            return False, self.BLOCK_REASON_RATE_LIMIT
+
+        if self.daily_budget and self.consumed_today() >= self.daily_budget:
+            self._record_blocked(function, symbol, self.BLOCK_REASON_DAILY_BUDGET)
+            return False, self.BLOCK_REASON_DAILY_BUDGET
+
+        self._pending_call = (function, symbol)
+        return True, "ok"
+
+    def record_outcome(self, success: bool, note: Optional[str] = None) -> None:
+        if self._pending_call is None:
+            logger.warning("AlphaVantageBudgetLedger.record_outcome() called without a pending try_consume")
+            return
+        function, symbol = self._pending_call
+        self._pending_call = None
+        self.attempted += 1
+        if success:
+            self.successful += 1
+            outcome = "success"
+        else:
+            self.failed += 1
+            outcome = "failure"
+        self.db.record_alpha_vantage_call(
+            call_date=self.today_key,
+            workflow=self.workflow,
+            function=function,
+            symbol=symbol,
+            status="consumed",
+            outcome=outcome,
+            note=note,
+        )
+
+    def mark_rate_limited(self, note: Optional[str] = None) -> None:
+        """Signal that the provider rejected the last call with a rate-limit note.
+
+        Once set, the ledger blocks all further live calls in this process to
+        avoid grinding through a depleted quota window.
+        """
+        self.rate_limited = True
+        if note:
+            logger.warning("Alpha Vantage rate limit reached: %s", note)
+
+    def _record_blocked(self, function: str, symbol: Optional[str], reason: str) -> None:
+        self.blocked += 1
+        self.db.record_alpha_vantage_call(
+            call_date=self.today_key,
+            workflow=self.workflow,
+            function=function,
+            symbol=symbol,
+            status="blocked",
+            outcome=reason,
+            note=None,
+        )
+
+    def run_summary(self) -> Dict[str, Any]:
+        return {
+            "workflow": self.workflow,
+            "live_calls_allowed": self.live_calls_allowed,
+            "api_key_present": self.api_key_present,
+            "daily_budget": self.daily_budget,
+            "consumed_today": self.consumed_today(),
+            "remaining_today": self.remaining_today(),
+            "attempted_this_run": self.attempted,
+            "blocked_this_run": self.blocked,
+            "successful_this_run": self.successful,
+            "failed_this_run": self.failed,
+            "rate_limited": self.rate_limited,
+        }
 
 
 @dataclass
@@ -62,9 +222,23 @@ class FundUniverseRepository:
 
 
 class AlphaVantageClient:
-    """Thin client around Alpha Vantage with conservative retries."""
+    """Thin client around Alpha Vantage with conservative retries.
 
-    def __init__(self, api_key: str, timeout: int = 20, verify_ssl: bool = True, retry_attempts: int = 3, retry_delay: int = 5):
+    When a budget ledger is provided, every live call is gated by
+    ``ledger.try_consume``. The client will not issue the HTTP request if the
+    ledger refuses, which is how per-workflow live-call rules and the daily
+    budget are enforced.
+    """
+
+    def __init__(
+        self,
+        api_key: str,
+        timeout: int = 20,
+        verify_ssl: bool = True,
+        retry_attempts: int = 3,
+        retry_delay: int = 5,
+        ledger: Optional["AlphaVantageBudgetLedger"] = None,
+    ):
         self.api_key = api_key
         self.timeout = timeout
         self.verify_ssl = verify_ssl
@@ -72,23 +246,53 @@ class AlphaVantageClient:
         self.retry_delay = retry_delay
         self.base_url = "https://www.alphavantage.co/query"
         self.session = requests.Session()
+        self.ledger = ledger
 
     def _get(self, params: Dict[str, str]) -> Optional[Dict[str, Any]]:
-        for attempt in range(1, self.retry_attempts + 1):
-            try:
-                response = self.session.get(self.base_url, params={**params, "apikey": self.api_key}, timeout=self.timeout, verify=self.verify_ssl)
-                response.raise_for_status()
-                payload = response.json()
-                if any(key in payload for key in ("Error Message", "Information", "Note")):
-                    logger.warning("Alpha Vantage returned non-data response for %s: %s", params, payload)
-                    return None
-                return payload
-            except requests.RequestException as exc:
-                logger.warning("Alpha Vantage request failed on attempt %s/%s: %s", attempt, self.retry_attempts, exc)
-                if attempt == self.retry_attempts:
-                    return None
-                time.sleep(self.retry_delay)
-        return None
+        function = params.get("function", "UNKNOWN")
+        symbol = params.get("symbol")
+        if self.ledger is not None:
+            allowed, reason = self.ledger.try_consume(function, symbol=symbol)
+            if not allowed:
+                logger.info("Alpha Vantage call blocked by ledger (%s/%s): %s", function, symbol, reason)
+                return None
+
+        payload: Optional[Dict[str, Any]] = None
+        note: Optional[str] = None
+        rate_limited = False
+        try:
+            for attempt in range(1, self.retry_attempts + 1):
+                try:
+                    response = self.session.get(
+                        self.base_url,
+                        params={**params, "apikey": self.api_key},
+                        timeout=self.timeout,
+                        verify=self.verify_ssl,
+                    )
+                    response.raise_for_status()
+                    data = response.json()
+                    if any(key in data for key in ("Error Message", "Information", "Note")):
+                        logger.warning("Alpha Vantage returned non-data response for %s: %s", params, data)
+                        note = str(data.get("Information") or data.get("Note") or data.get("Error Message") or "")
+                        if "rate limit" in note.lower():
+                            rate_limited = True
+                        payload = None
+                        break
+                    payload = data
+                    break
+                except requests.RequestException as exc:
+                    note = f"request_error: {exc}"
+                    logger.warning("Alpha Vantage request failed on attempt %s/%s: %s", attempt, self.retry_attempts, exc)
+                    if attempt == self.retry_attempts:
+                        payload = None
+                        break
+                    time.sleep(self.retry_delay)
+            return payload
+        finally:
+            if self.ledger is not None:
+                if rate_limited:
+                    self.ledger.mark_rate_limited(note)
+                self.ledger.record_outcome(success=payload is not None, note=note)
 
     def get_monthly_adjusted_series(self, symbol: str) -> Optional[Dict[str, Any]]:
         return self._get({"function": "TIME_SERIES_MONTHLY_ADJUSTED", "symbol": symbol})

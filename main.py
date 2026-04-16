@@ -1,7 +1,9 @@
 """ETF sector leadership planner main entry point."""
 import os
 import sys
+from datetime import datetime
 
+from data_providers import WORKFLOW_MANUAL_DIAGNOSTIC, WORKFLOW_REFRESH, WORKFLOW_REVIEW
 from fund_analyzer import FundAnalyzer
 from strategy_engine import parse_review_date
 from utils import Colors, ensure_directories, load_config, load_env, print_colored, print_header, setup_logging
@@ -22,18 +24,47 @@ def check_api_keys():
 def display_welcome(config):
     print_header('ETF SECTOR LEADERSHIP PLANNER', '=')
     print('Advisory-only workflow: weekly review, monthly action, confirmed switches, ETF fallback.')
-    print('Operating model: refresh holdings snapshots separately, then run cache-first strategy review.')
+    print('Operating model: daily refresh may hit Alpha Vantage; weekly review is cache-only.')
     print(f"Database: {config.get('output', {}).get('database_path', 'data/fund_leaders.db')}")
     print(f"Report directory: {config.get('output', {}).get('report_directory', 'output/reports')}")
     print()
 
 
+def _print_usage_banner(workflow: str, ledger_summary: dict):
+    print_colored(
+        f"Workflow: {workflow} | live AV calls allowed: {ledger_summary.get('live_calls_allowed')} | "
+        f"AV budget today: consumed={ledger_summary.get('consumed_today')}/{ledger_summary.get('daily_budget')} "
+        f"remaining={ledger_summary.get('remaining_today')}",
+        Colors.OKCYAN,
+    )
+
+
+def _print_ledger_run_summary(ledger_summary: dict):
+    print_header('Alpha Vantage Usage (this run)')
+    print(f"Workflow: {ledger_summary.get('workflow')}")
+    print(f"Live calls allowed: {ledger_summary.get('live_calls_allowed')}")
+    print(f"API key configured: {ledger_summary.get('api_key_present')}")
+    print(f"Daily budget: {ledger_summary.get('daily_budget')}")
+    print(f"Consumed today (persistent): {ledger_summary.get('consumed_today')}")
+    print(f"Remaining today (persistent): {ledger_summary.get('remaining_today')}")
+    print(
+        f"This run: attempted={ledger_summary.get('attempted_this_run')} "
+        f"successful={ledger_summary.get('successful_this_run')} "
+        f"failed={ledger_summary.get('failed_this_run')} "
+        f"blocked={ledger_summary.get('blocked_this_run')} "
+        f"rate_limited={ledger_summary.get('rate_limited')}"
+    )
+
+
 def run_analysis(config, review_date=None):
     api_key = os.getenv('ALPHA_VANTAGE_API_KEY', '')
-    analyzer = FundAnalyzer(config, api_key, review_date=review_date)
+    analyzer = FundAnalyzer(config, api_key, review_date=review_date, workflow=WORKFLOW_REVIEW)
+    _print_usage_banner(WORKFLOW_REVIEW, analyzer.ledger.run_summary())
+    # Review workflow is hard cache-only. FundAnalyzer enforces this too.
     results = analyzer.analyze_all_sectors(fetch_mode='cache_only')
     if not results:
         print_colored('No results generated', Colors.WARNING)
+        _print_ledger_run_summary(analyzer.ledger.run_summary())
         return False
 
     analyzer.export_results()
@@ -59,19 +90,24 @@ def run_analysis(config, review_date=None):
         print('\nManual reports:')
         for label, path in analyzer.report_paths.items():
             print(f'  {label}: {path}')
+
+    _print_ledger_run_summary(payload['alpha_vantage_usage'])
     return True
 
 
 def run_refresh(config, review_date=None, batch_name=None):
     api_key = os.getenv('ALPHA_VANTAGE_API_KEY', '')
-    analyzer = FundAnalyzer(config, api_key, review_date=review_date)
+    analyzer = FundAnalyzer(config, api_key, review_date=review_date, workflow=WORKFLOW_REFRESH)
+    _print_usage_banner(WORKFLOW_REFRESH, analyzer.ledger.run_summary())
     result = analyzer.refresh_holdings_snapshots(batch_name=batch_name)
     sectors = result.get('sectors', [])
     if not sectors:
         print_colored('No snapshot refresh work completed.', Colors.WARNING)
+        _print_ledger_run_summary(analyzer.ledger.run_summary())
         return False
 
     print_header('Snapshot Refresh Summary')
+    print(f"Workflow: {result.get('workflow')}")
     print(f"Batch: {result.get('batch')}")
     print(f"Review date: {result.get('review_date')}")
     print(f"Sector count: {len(sectors)}")
@@ -86,38 +122,76 @@ def run_refresh(config, review_date=None, batch_name=None):
         )
         if sector.get('quota_exhausted') and sector.get('quota_note'):
             print(f"    quota: {sector['quota_note']}")
+
+    _print_ledger_run_summary(result.get('alpha_vantage_usage') or analyzer.ledger.run_summary())
     return True
 
 
 def run_doctor(config):
+    """Environment diagnostics.
+
+    By default doctor is tagged as ``manual_diagnostic`` workflow with live
+    calls disabled, so it never consumes Alpha Vantage quota. It only reads
+    the persistent ledger to report remaining daily budget.
+    """
+    from data_providers import AlphaVantageBudgetLedger
+    from db_manager import DatabaseManager
+
     print_header('Environment Doctor')
     checks = {
         'config.yaml present': os.path.exists('config.yaml'),
         'fund_universe.yaml present': os.path.exists('fund_universe.yaml'),
         'output directory writable': os.access('output', os.W_OK),
         'data directory writable': os.access('data', os.W_OK),
-        '10 sectors configured': len(config.get('sectors', [])) == 10,
+        'at least 9 sectors configured': len(config.get('sectors', [])) >= 9,
     }
     for name, status in checks.items():
         print(f"[{'OK' if status else 'FAIL'}] {name}")
 
-    provider_order = config.get('api', {}).get('holdings_provider_order', ['cache', 'alpha_vantage'])
+    api_config = config.get('api', {})
+    provider_order = api_config.get('holdings_provider_order', ['cache', 'alpha_vantage'])
     refresh_batches = config.get('refresh', {}).get('sector_batches', {})
+    api_key_configured = os.getenv('ALPHA_VANTAGE_API_KEY') not in (None, '', 'your_api_key_here')
     print(f"[INFO] holdings provider order: {provider_order}")
-    print(f"[INFO] ALPHA_VANTAGE_API_KEY configured: {'yes' if os.getenv('ALPHA_VANTAGE_API_KEY') not in (None, '', 'your_api_key_here') else 'no'}")
+    print(f"[INFO] ALPHA_VANTAGE_API_KEY configured: {'yes' if api_key_configured else 'no'}")
     print(f"[INFO] refresh batches: {refresh_batches}")
+
+    db_path = config.get('output', {}).get('database_path', 'data/fund_leaders.db')
+    db = DatabaseManager(db_path)
+    try:
+        ledger = AlphaVantageBudgetLedger(
+            db=db,
+            workflow=WORKFLOW_MANUAL_DIAGNOSTIC,
+            daily_budget=api_config.get('requests_per_day', 25),
+            live_calls_allowed=False,
+            api_key_present=api_key_configured,
+        )
+        summary = ledger.run_summary()
+        print(
+            f"[INFO] Alpha Vantage persistent ledger: "
+            f"consumed_today={summary['consumed_today']}/{summary['daily_budget']} "
+            f"remaining_today={summary['remaining_today']}"
+        )
+        today = datetime.now().date()
+        is_maintenance_window = today.weekday() == 6 and today.day <= 7
+        print(f"[INFO] Today is first-Sunday maintenance window: {is_maintenance_window}")
+    finally:
+        db.close()
+
+    print_colored('Doctor is cache-only and does not consume Alpha Vantage quota.', Colors.OKGREEN)
     return all(checks.values())
 
 
 def print_usage():
     print('Usage:')
-    print('  python3 main.py                             Run cache-first strategy review using today as review date')
-    print('  python3 main.py review [YYYY-MM-DD]         Run cache-first review for a specific review date')
+    print('  python3 main.py                             Run cache-only strategy review using today as review date')
+    print('  python3 main.py review [YYYY-MM-DD]         Run cache-only review for a specific review date')
     print('  python3 main.py refresh [YYYY-MM-DD] [batch_a|batch_b]')
-    print('                                             Refresh holdings snapshots for the alternating 5-sector batch')
-    print('  python3 main.py doctor                      Validate local setup')
+    print('                                             Refresh holdings snapshots (may consume Alpha Vantage daily budget)')
+    print('  python3 main.py doctor                      Validate local setup (never consumes Alpha Vantage quota)')
     print('  python3 main.py latest                      Show latest saved strategy run')
-    print('  python3 initialize_tracked_funds.py [--force]')
+    print('  python3 initialize_tracked_funds.py [--force] [--allow-outside-maintenance]')
+    print('                                             Maintenance workflow (first Sunday of month by default)')
 
 
 def show_latest_run(config):

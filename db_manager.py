@@ -133,12 +133,24 @@ class DatabaseManager:
                 report_json_path TEXT,
                 created_at TEXT DEFAULT CURRENT_TIMESTAMP
             );
+            CREATE TABLE IF NOT EXISTS alpha_vantage_usage (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                call_date TEXT NOT NULL,
+                call_timestamp TEXT NOT NULL,
+                workflow TEXT,
+                function TEXT,
+                symbol TEXT,
+                status TEXT NOT NULL,
+                outcome TEXT,
+                note TEXT
+            );
             CREATE INDEX IF NOT EXISTS idx_funds_sector ON funds(sector_id);
             CREATE INDEX IF NOT EXISTS idx_holdings_fund ON holdings(fund_id);
             CREATE INDEX IF NOT EXISTS idx_holdings_symbol ON holdings(company_symbol);
             CREATE INDEX IF NOT EXISTS idx_leaders_sector ON industry_leaders(sector_id);
             CREATE INDEX IF NOT EXISTS idx_tracked_funds_sector ON tracked_funds(sector_name);
             CREATE INDEX IF NOT EXISTS idx_strategy_state_sector_date ON sector_strategy_state(sector_name, review_date);
+            CREATE INDEX IF NOT EXISTS idx_av_usage_date_status ON alpha_vantage_usage(call_date, status);
             """
         )
         self.conn.commit()
@@ -381,3 +393,57 @@ class DatabaseManager:
         data['summary'] = json.loads(data.get('summary_json') or '{}')
         data['portfolio'] = json.loads(data.get('portfolio_json') or '{}')
         return data
+
+    def record_alpha_vantage_call(
+        self,
+        call_date: str,
+        workflow: Optional[str],
+        function: Optional[str],
+        symbol: Optional[str],
+        status: str,
+        outcome: Optional[str] = None,
+        note: Optional[str] = None,
+    ) -> int:
+        """Record one Alpha Vantage call attempt.
+
+        status is 'consumed' when the call was dispatched to Alpha Vantage and
+        therefore counts against the daily budget, or 'blocked' when the gate
+        refused to issue the call. outcome is 'success' / 'failure' for
+        consumed calls, and a short reason string for blocked calls.
+        """
+        cursor = self.conn.cursor()
+        cursor.execute(
+            """
+            INSERT INTO alpha_vantage_usage
+                (call_date, call_timestamp, workflow, function, symbol, status, outcome, note)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (call_date, get_timestamp(), workflow, function, symbol, status, outcome, note),
+        )
+        self.conn.commit()
+        return cursor.lastrowid
+
+    def count_alpha_vantage_calls_for_date(self, call_date: str, status: str = 'consumed') -> int:
+        cursor = self.conn.cursor()
+        cursor.execute(
+            'SELECT COUNT(*) AS count FROM alpha_vantage_usage WHERE call_date = ? AND status = ?',
+            (call_date, status),
+        )
+        row = cursor.fetchone()
+        return int(row['count']) if row else 0
+
+    def get_alpha_vantage_usage_summary(self, call_date: str) -> Dict[str, int]:
+        cursor = self.conn.cursor()
+        cursor.execute(
+            """
+            SELECT status, COUNT(*) AS count
+            FROM alpha_vantage_usage
+            WHERE call_date = ?
+            GROUP BY status
+            """,
+            (call_date,),
+        )
+        summary = {'consumed': 0, 'blocked': 0}
+        for row in cursor.fetchall():
+            summary[row['status']] = int(row['count'])
+        return summary

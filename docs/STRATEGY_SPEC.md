@@ -17,15 +17,52 @@ It does **not** place live orders.
 
 - **10 sectors total**
 - **5 tracked ETFs per sector**
+- tracked ETFs are **not** meant to be re-ranked during normal daily operation
+- the tracked ETF list is selected once and then treated as a static monitoring universe until an explicit maintenance refresh is run
 - **25 API calls/day budget target**
 - therefore the refresh workflow is split into **2 alternating batches of 5 sectors each**
 
 ### Cadence
 
 - **Holdings snapshot refresh:** daily, alternating `batch_a` / `batch_b`
-- **Strategy review:** weekly, cache-first across all 10 sectors
+- **Strategy review:** weekly, **hard cache-only** across all 10 sectors
 - **Action cadence:** monthly
+- **Maintenance window:** first Sunday of every month for tracked-ETF maintenance / re-ranking; `initialize_tracked_funds.py` is gated to this window by default
+- during the maintenance window, do **not** run other Alpha Vantage-consuming checks in parallel
 - **Override:** if a significant change occurs, a confirmed switch may be actioned before month-end
+
+### Workflow separation
+
+The planner recognises four workflows. Each one is tagged on every Alpha Vantage call so the persistent daily-budget ledger can attribute usage:
+
+| Workflow             | Live AV calls?   | Consumes daily budget? |
+|----------------------|------------------|------------------------|
+| `refresh`            | Yes (holdings)   | Yes                    |
+| `review`             | **No**           | No                     |
+| `maintenance`        | Yes (performance)| Yes                    |
+| `manual_diagnostic`  | No               | No                     |
+
+The review workflow forces `fetch_mode=cache_only` inside `FundAnalyzer` and the ledger independently refuses any live call with reason `workflow_disallows_live_calls`. This is deliberately redundant so neither configuration drift nor a caller mistake can turn a review into a live burst.
+
+### Alpha Vantage daily budget ledger
+
+Persistent table `alpha_vantage_usage` in `data/fund_leaders.db` records every call attempt:
+
+- `call_date`, `call_timestamp`
+- `workflow`
+- `function` (e.g. `ETF_PROFILE`, `TIME_SERIES_MONTHLY_ADJUSTED`, `GLOBAL_QUOTE`)
+- `symbol`
+- `status`: `consumed` (call dispatched to provider) or `blocked` (refused by the ledger)
+- `outcome`: for `consumed`, `success` or `failure`; for `blocked`, the reason code
+
+Blocked reason codes:
+
+- `workflow_disallows_live_calls`
+- `alpha_vantage_api_key_not_configured`
+- `daily_budget_exhausted`
+- `rate_limit_signalled_by_provider`
+
+The `requests_per_day` value under `api:` in `config.yaml` is the configured daily budget. The ledger enforces it by counting `consumed` rows for today before allowing each call.
 
 ## Refresh vs review
 
@@ -43,8 +80,7 @@ Purpose: update local ETF holdings cache only.
 Purpose: evaluate all sectors from the latest stored snapshots.
 
 - reviews all 10 sectors every run
-- should primarily use cached holdings snapshots
-- does **not** require live ETF calls to produce a review
+- is **hard cache-only** — Alpha Vantage calls are blocked by the ledger
 - exposes stale or missing data instead of silently hiding it
 
 ## Decision rules

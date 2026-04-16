@@ -3,6 +3,11 @@ import logging
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
+from data_providers import (
+    AlphaVantageBudgetLedger,
+    WORKFLOW_REFRESH,
+    WORKFLOW_REVIEW,
+)
 from db_manager import DatabaseManager
 from holdings_fetcher import HoldingsFetcher
 from leader_identifier import LeaderIdentifier
@@ -14,9 +19,10 @@ logger = logging.getLogger(__name__)
 
 
 class FundAnalyzer:
-    def __init__(self, config, api_key, review_date=None):
+    def __init__(self, config, api_key, review_date=None, workflow: str = WORKFLOW_REVIEW):
         self.config = config
         self.api_key = api_key
+        self.workflow = workflow
         self.sectors = config.get('sectors', [])
         self.analysis_config = config.get('analysis', {})
         self.strategy_config = config.get('strategy', {})
@@ -24,6 +30,22 @@ class FundAnalyzer:
         self.review_date = review_date or datetime.now().date()
 
         api_config = config.get('api', {})
+        db_path = config.get('output', {}).get('database_path', 'data/fund_leaders.db')
+        self.db = DatabaseManager(db_path)
+
+        # Only refresh is permitted to issue live Alpha Vantage holdings calls.
+        # Review and everything else must stay within cache, regardless of
+        # provider order or caller arguments.
+        live_calls_allowed = workflow == WORKFLOW_REFRESH
+        api_key_present = bool(api_key and api_key != 'your_api_key_here')
+        self.ledger = AlphaVantageBudgetLedger(
+            db=self.db,
+            workflow=workflow,
+            daily_budget=api_config.get('requests_per_day', 25),
+            live_calls_allowed=live_calls_allowed,
+            api_key_present=api_key_present,
+        )
+
         self.fetcher = HoldingsFetcher(
             api_key=api_key,
             requests_per_minute=api_config.get('requests_per_minute', 5),
@@ -33,13 +55,12 @@ class FundAnalyzer:
             cache_directory=api_config.get('cache_directory', 'data/cache'),
             cache_ttl_hours=api_config.get('holdings_cache_ttl_hours', 168),
             holdings_provider_order=api_config.get('holdings_provider_order'),
+            ledger=self.ledger,
         )
         self.identifier = LeaderIdentifier(
             min_holding_threshold=self.analysis_config.get('min_holding_threshold', 1.0),
             min_funds_required=self.strategy_config.get('leader_rules', {}).get('min_times_held', 3),
         )
-        db_path = config.get('output', {}).get('database_path', 'data/fund_leaders.db')
-        self.db = DatabaseManager(db_path)
         self.strategy_engine = StrategyEngine(self.strategy_config)
         self.results: Dict[str, Dict[str, Any]] = {}
         self.sector_decisions: List[Dict[str, Any]] = []
@@ -93,14 +114,22 @@ class FundAnalyzer:
         return {
             'batch': self._resolve_refresh_batch_name(batch_name),
             'review_date': self.review_date.isoformat(),
+            'workflow': self.workflow,
             'sectors': refreshed,
             'api_budget': {
                 'requests_per_day': self.config.get('api', {}).get('requests_per_day', 25),
                 'tracked_etfs_per_sector': self.analysis_config.get('top_funds_per_sector', 5),
             },
+            'alpha_vantage_usage': self.ledger.run_summary(),
         }
 
     def analyze_all_sectors(self, fetch_mode: str = 'cache_only'):
+        # Review workflow is contractually cache-only. Force the mode here so
+        # no caller or misconfigured provider_order can escalate a review run
+        # into a live Alpha Vantage burst.
+        if self.workflow == WORKFLOW_REVIEW and fetch_mode != 'cache_only':
+            logger.info('Review workflow forces fetch_mode=cache_only (was %s)', fetch_mode)
+            fetch_mode = 'cache_only'
         print_header('ETF Sector Leadership Review')
         total_funds_analyzed = 0
         total_leaders_found = 0
@@ -322,6 +351,8 @@ class FundAnalyzer:
         return {
             'run_timestamp': datetime.now().isoformat(),
             'review_date': self.review_date.isoformat(),
+            'workflow': self.workflow,
+            'alpha_vantage_usage': self.ledger.run_summary(),
             'summary': summary,
             'portfolio_plan': portfolio_plan,
             'sectors': self.sector_decisions,

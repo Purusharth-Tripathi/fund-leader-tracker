@@ -124,6 +124,11 @@ refresh:
     - Infrastructure
     - Real Estate
 api:
+  # Alpha Vantage is used only during the daily refresh workflow for ETF
+  # holdings, and during the monthly maintenance workflow for performance
+  # scoring. The review and manual_diagnostic workflows are cache-only.
+  # requests_per_day is the persistent daily budget enforced by the ledger
+  # in data/fund_leaders.db (table alpha_vantage_usage).
   requests_per_minute: 5
   requests_per_day: 25
   retry_attempts: 3
