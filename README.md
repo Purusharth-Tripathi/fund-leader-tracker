@@ -4,11 +4,11 @@ Advisory-only investment planning workflow for tracking sector leadership throug
 
 ## What this system does
 
-For each of the configured 10 sectors, the planner:
+For each of the configured sectors, the planner:
 
 - tracks a curated set of 5 sector/thematic ETFs
-- refreshes ETF holdings snapshots on a staged 5-sector / 5-sector alternating-day cycle
-- reviews all 10 sectors weekly using the latest stored holdings snapshots first
+- refreshes ETF holdings snapshots on a staged alternating-day cycle (`batch_a` = 5 sectors, `batch_b` = 4 sectors)
+- reviews all configured sectors weekly using the latest stored holdings snapshots first
 - analyzes underlying holdings to infer the strongest stock leader
 - requires confirmation before switching away from the current leader
 - only acts on the monthly window unless a significant-change override applies
@@ -23,9 +23,9 @@ For each of the configured 10 sectors, the planner:
 
 ## Core operating model
 
-- **Universe:** 10 sectors total, 5 tracked ETFs per sector
+- **Universe:** 9 active sectors in `config.yaml`, 5 tracked ETFs per sector
 - **Tracked ETF list:** selected during maintenance, then treated as **static** for daily operations
-- **Snapshot refresh:** alternating-day batches of 5 sectors / 5 sectors (daily refresh is the only workflow that spends Alpha Vantage daily budget for ETF holdings)
+- **Snapshot refresh:** alternating-day batches of 5 sectors (`batch_a`) and 4 sectors (`batch_b`) (daily refresh is the only workflow that spends Alpha Vantage daily budget for ETF holdings)
 - **API budget fit:** 25 calls/day = 5 sectors × 5 ETFs via Alpha Vantage
 - **Review cadence:** weekly, **hard cache-only** (no live Alpha Vantage calls)
 - **Action cadence:** monthly
@@ -126,7 +126,7 @@ python3 main.py latest
 Recommended routine:
 
 1. Run `python3 main.py refresh` daily. This is the only workflow that consumes Alpha Vantage daily budget for ETF holdings.
-2. Let the alternating schedule refresh 5 sectors each day.
+2. Let the alternating schedule refresh the configured batch for the day (`batch_a` = 5 sectors, `batch_b` = 4 sectors).
 3. Run `python3 main.py review` weekly. It is cache-only and does not spend Alpha Vantage budget.
 4. Only action `initiate`/`switch` recommendations manually during the monthly window unless a significant-change override applies.
 5. On the first Sunday of each month, optionally run `python3 initialize_tracked_funds.py --force` for tracked-ETF re-ranking. Do **not** run the daily refresh job in parallel with maintenance.

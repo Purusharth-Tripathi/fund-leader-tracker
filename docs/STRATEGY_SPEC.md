@@ -15,17 +15,17 @@ It does **not** place live orders.
 
 ### Universe and budget
 
-- **10 sectors total**
+- **9 active sectors total** (per current `config.yaml`)
 - **5 tracked ETFs per sector**
 - tracked ETFs are **not** meant to be re-ranked during normal daily operation
 - the tracked ETF list is selected once and then treated as a static monitoring universe until an explicit maintenance refresh is run
 - **25 API calls/day budget target**
-- therefore the refresh workflow is split into **2 alternating batches of 5 sectors each**
+- therefore the refresh workflow is split into **2 alternating batches**: `batch_a` with 5 sectors and `batch_b` with 4 sectors
 
 ### Cadence
 
 - **Holdings snapshot refresh:** daily, alternating `batch_a` / `batch_b`
-- **Strategy review:** weekly, **hard cache-only** across all 10 sectors
+- **Strategy review:** weekly, **hard cache-only** across all 9 active sectors
 - **Action cadence:** monthly
 - **Maintenance window:** first Sunday of every month for tracked-ETF maintenance / re-ranking; `initialize_tracked_funds.py` is gated to this window by default
 - during the maintenance window, do **not** run other Alpha Vantage-consuming checks in parallel
@@ -79,7 +79,7 @@ Purpose: update local ETF holdings cache only.
 
 Purpose: evaluate all sectors from the latest stored snapshots.
 
-- reviews all 10 sectors every run
+- reviews all 9 active sectors every run
 - is **hard cache-only** — Alpha Vantage calls are blocked by the ledger
 - exposes stale or missing data instead of silently hiding it
 

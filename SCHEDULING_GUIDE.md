@@ -15,12 +15,12 @@ Each workflow is tagged on every Alpha Vantage call in the persistent ledger (`a
 
 ## Core schedule
 
-- **10 sectors total**
+- **9 active sectors total** (per current `config.yaml`)
 - **5 ETFs tracked per sector**
 - tracked ETFs are selected during maintenance and treated as the static daily monitoring list
 - **25 calls/day budget** (enforced by the persistent ledger)
-- **Refresh cadence:** daily alternating batches of 5 sectors (only workflow that consumes the holdings budget)
-- **Review cadence:** weekly, **hard cache-only** across all sectors
+- **Refresh cadence:** daily alternating batches of 5 sectors in `batch_a` and 4 sectors in `batch_b` (only workflow that consumes the holdings budget)
+- **Review cadence:** weekly, **hard cache-only** across all configured sectors
 - **Action cadence:** monthly manual execution window
 - **Maintenance cadence:** **first Sunday of every month** for tracked-ETF maintenance / re-ranking only (gated by default)
 
@@ -61,10 +61,9 @@ python3 main.py latest
 - Renewable Energy
 - Healthcare & Biotech
 - Automotive
-- Precious Metals
+- Consumer Staples
 
 `batch_b`
-- Consumer Staples
 - Tech & AI
 - Financial Services
 - Infrastructure
@@ -135,12 +134,12 @@ symbol, status (`consumed` / `blocked`), and outcome/reason.
 
 ## Why this model fits the free tier
 
-A full live review of all 10 sectors would require roughly 50 ETF holdings calls.
+A full live review of all 9 active sectors would require roughly 45 ETF holdings calls.
 
 The staged model avoids that:
 
-- daily refresh updates only **25 ETF snapshots max**
-- weekly review reads from stored cache across **all 10 sectors**
+- daily refresh updates only the configured batch for the day (**up to 25 ETF snapshots** in `batch_a`, **up to 20** in `batch_b`)
+- weekly review reads from stored cache across **all 9 active sectors**
 - stale data remains visible through freshness reporting instead of forcing live fetches
 
 ## Operational advice
