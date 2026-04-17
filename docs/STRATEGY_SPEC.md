@@ -29,6 +29,7 @@ It does **not** place live orders.
 - **Action cadence:** monthly
 - **Maintenance window:** first Sunday of every month for tracked-ETF maintenance / re-ranking; `initialize_tracked_funds.py` is gated to this window by default
 - during the maintenance window, do **not** run other Alpha Vantage-consuming checks in parallel
+- if maintenance is run after refresh has already spent a meaningful part of the daily budget, provider rate limiting may force most sector ranking back to manifest fallback returns rather than live performance scoring
 - **Override:** if a significant change occurs, a confirmed switch may be actioned before month-end
 
 ### Workflow separation

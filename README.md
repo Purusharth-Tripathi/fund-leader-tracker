@@ -94,6 +94,12 @@ with the daily refresh job for Alpha Vantage budget. Use
 `--allow-outside-maintenance` only for the first-ever bootstrap or explicit
 ad-hoc maintenance.
 
+Operational note: if you run maintenance after refresh has already consumed a
+meaningful portion of the daily Alpha Vantage budget, maintenance may hit the
+provider rate limit early and fall back to manifest-based ranking for most
+sectors. Best practice is to run maintenance at the start of a fresh quota day
+and not after the daily refresh has already spent calls.
+
 ### 5) Refresh holdings snapshots
 
 ```bash

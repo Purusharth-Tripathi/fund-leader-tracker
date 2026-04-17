@@ -114,6 +114,13 @@ The command refuses to run outside this window unless you pass
 `--allow-outside-maintenance`. Use the override only for the first-ever
 bootstrap or an explicit ad-hoc maintenance decision.
 
+Operational note: if maintenance runs after refresh has already consumed a
+meaningful part of the day's Alpha Vantage budget, the provider may start
+rate-limiting early and the maintenance ranking can degrade into mostly
+manifest-fallback scoring. For best results, run maintenance at the start of a
+fresh quota day and avoid same-day post-refresh maintenance unless that
+trade-off is acceptable.
+
 During maintenance:
 
 - re-rank / reselect the 5 ETFs per sector only if needed
