@@ -124,10 +124,18 @@ class EmailAlerts:
             body.append(f"{len(changes)} sector(s) have new leaders:\n")
 
             for change in changes:
-                body.append(f"Sector: {change['sector']}")
-                body.append(f"  OLD: {change['old_symbol']} - {change['old_name']}")
-                body.append(f"  NEW: {change['new_symbol']} - {change['new_name']}")
-                body.append(f"       Held by {change['new_times_held']}/5 funds, Avg Weight: {change['new_avg_weight']:.2f}%")
+                previous_symbol = change.get('previous_symbol', 'N/A')
+                previous_name = change.get('previous_name', 'N/A')
+                new_symbol = change.get('target_symbol') or change.get('candidate_symbol') or change.get('new_symbol', 'N/A')
+                new_name = change.get('target_name') or change.get('candidate_name') or change.get('new_name', 'N/A')
+                confirmations = f"{change.get('pending_confirmations', 0)}/{change.get('confirmation_required', 0)}"
+                body.append(f"Sector: {change.get('sector', 'Unknown')}")
+                body.append(f"  OLD: {previous_symbol} - {previous_name}")
+                body.append(f"  NEW: {new_symbol} - {new_name}")
+                if change.get('target_kind'):
+                    body.append(f"  Kind: {change.get('target_kind')} | Action: {change.get('action')} | Status: {change.get('review_status')}")
+                if change.get('action') == 'watch':
+                    body.append(f"  Pending confirmations: {confirmations}")
                 body.append("")
 
             body.append("=" * 60)
