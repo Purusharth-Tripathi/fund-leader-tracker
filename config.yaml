@@ -148,7 +148,7 @@ output:
   json_path: output/leaders.json
   report_directory: output/reports
 email_alerts:
-  enabled: false
-  send_on_completion: false
+  enabled: true
+  send_on_completion: true
   send_on_change_only: false
   include_top_n_leaders: 10

@@ -4,6 +4,7 @@ import sys
 from datetime import datetime
 
 from data_providers import WORKFLOW_MANUAL_DIAGNOSTIC, WORKFLOW_REFRESH, WORKFLOW_REVIEW
+from email_alerts import EmailAlerts
 from fund_analyzer import FundAnalyzer
 from strategy_engine import parse_review_date
 from utils import Colors, ensure_directories, load_config, load_env, print_colored, print_header, setup_logging
@@ -90,6 +91,21 @@ def run_analysis(config, review_date=None):
         print('\nManual reports:')
         for label, path in analyzer.report_paths.items():
             print(f'  {label}: {path}')
+
+    emailer = EmailAlerts(config)
+    changes = analyzer.get_leadership_changes()
+    attachments = list((analyzer.report_paths or {}).values())
+    sent = emailer.send_analysis_complete(
+        results,
+        summary,
+        changes=changes,
+        attachments=attachments,
+        run_payload=payload,
+    )
+    if sent:
+        print_colored('Weekly review email sent successfully.', Colors.OKGREEN)
+    elif emailer.enabled:
+        print_colored('Weekly review email was enabled but not sent. Check config/logs.', Colors.WARNING)
 
     _print_ledger_run_summary(payload['alpha_vantage_usage'])
     return True
