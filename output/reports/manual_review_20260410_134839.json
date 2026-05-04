@@ -1,0 +1,2703 @@
+{
+  "run_timestamp": "2026-04-10T13:48:39.854961",
+  "review_date": "2026-04-10",
+  "summary": {
+    "sectors_analyzed": 10,
+    "total_leaders": 0,
+    "recommendations_generated": 10,
+    "switches": 0,
+    "fallbacks": 10,
+    "stale_sectors": 0,
+    "cache_miss_sectors": 10
+  },
+  "portfolio_plan": {
+    "target_weight_per_sector_pct": 10.0,
+    "actionable_trades": [],
+    "actionable_sector_count": 0
+  },
+  "sectors": [
+    {
+      "sector": "Aerospace & Defense",
+      "action": "hold",
+      "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+      "target_symbol": "ITA",
+      "target_name": "iShares U.S. Aerospace & Defense ETF",
+      "target_kind": "sector_etf",
+      "review_status": "fallback",
+      "candidate_symbol": null,
+      "candidate_name": null,
+      "candidate_score": null,
+      "candidate_prevalence": null,
+      "candidate_avg_weight": null,
+      "previous_symbol": "ITA",
+      "previous_name": "iShares U.S. Aerospace & Defense ETF",
+      "previous_kind": "sector_etf",
+      "pending_symbol": null,
+      "pending_name": null,
+      "pending_confirmations": 0,
+      "confirmation_required": 2,
+      "significant_change": false,
+      "rebalance_due": false,
+      "data_status": "cache_miss",
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      },
+      "evidence": {
+        "leaders_considered": [],
+        "selected_mode": "fallback",
+        "etf_freshness": {
+          "DFEN": {
+            "symbol": "DFEN",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "ITA": {
+            "symbol": "ITA",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "XAR": {
+            "symbol": "XAR",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "PPA": {
+            "symbol": "PPA",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "SHLD": {
+            "symbol": "SHLD",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    },
+    {
+      "sector": "Renewable Energy",
+      "action": "hold",
+      "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+      "target_symbol": "ICLN",
+      "target_name": "iShares Global Clean Energy ETF",
+      "target_kind": "sector_etf",
+      "review_status": "fallback",
+      "candidate_symbol": null,
+      "candidate_name": null,
+      "candidate_score": null,
+      "candidate_prevalence": null,
+      "candidate_avg_weight": null,
+      "previous_symbol": "ICLN",
+      "previous_name": "iShares Global Clean Energy ETF",
+      "previous_kind": "sector_etf",
+      "pending_symbol": null,
+      "pending_name": null,
+      "pending_confirmations": 0,
+      "confirmation_required": 2,
+      "significant_change": false,
+      "rebalance_due": false,
+      "data_status": "cache_miss",
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      },
+      "evidence": {
+        "leaders_considered": [],
+        "selected_mode": "fallback",
+        "etf_freshness": {
+          "FAN": {
+            "symbol": "FAN",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "QCLN": {
+            "symbol": "QCLN",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "PBW": {
+            "symbol": "PBW",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "ICLN": {
+            "symbol": "ICLN",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "TAN": {
+            "symbol": "TAN",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    },
+    {
+      "sector": "Healthcare & Biotech",
+      "action": "hold",
+      "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+      "target_symbol": "XLV",
+      "target_name": "Health Care Select Sector SPDR Fund",
+      "target_kind": "sector_etf",
+      "review_status": "fallback",
+      "candidate_symbol": null,
+      "candidate_name": null,
+      "candidate_score": null,
+      "candidate_prevalence": null,
+      "candidate_avg_weight": null,
+      "previous_symbol": "XLV",
+      "previous_name": "Health Care Select Sector SPDR Fund",
+      "previous_kind": "sector_etf",
+      "pending_symbol": null,
+      "pending_name": null,
+      "pending_confirmations": 0,
+      "confirmation_required": 2,
+      "significant_change": false,
+      "rebalance_due": false,
+      "data_status": "cache_miss",
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      },
+      "evidence": {
+        "leaders_considered": [],
+        "selected_mode": "fallback",
+        "etf_freshness": {
+          "IBB": {
+            "symbol": "IBB",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "VHT": {
+            "symbol": "VHT",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "IHI": {
+            "symbol": "IHI",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "XLV": {
+            "symbol": "XLV",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "XBI": {
+            "symbol": "XBI",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    },
+    {
+      "sector": "Automotive",
+      "action": "hold",
+      "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+      "target_symbol": "DRIV",
+      "target_name": "Global X Autonomous & Electric Vehicles ETF",
+      "target_kind": "sector_etf",
+      "review_status": "fallback",
+      "candidate_symbol": null,
+      "candidate_name": null,
+      "candidate_score": null,
+      "candidate_prevalence": null,
+      "candidate_avg_weight": null,
+      "previous_symbol": "DRIV",
+      "previous_name": "Global X Autonomous & Electric Vehicles ETF",
+      "previous_kind": "sector_etf",
+      "pending_symbol": null,
+      "pending_name": null,
+      "pending_confirmations": 0,
+      "confirmation_required": 2,
+      "significant_change": false,
+      "rebalance_due": false,
+      "data_status": "cache_miss",
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      },
+      "evidence": {
+        "leaders_considered": [],
+        "selected_mode": "fallback",
+        "etf_freshness": {
+          "CARZ": {
+            "symbol": "CARZ",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "DRIV": {
+            "symbol": "DRIV",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "IDRV": {
+            "symbol": "IDRV",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "LIT": {
+            "symbol": "LIT",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "KARS": {
+            "symbol": "KARS",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    },
+    {
+      "sector": "Precious Metals",
+      "action": "hold",
+      "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+      "target_symbol": "GLD",
+      "target_name": "SPDR Gold Shares",
+      "target_kind": "sector_etf",
+      "review_status": "fallback",
+      "candidate_symbol": null,
+      "candidate_name": null,
+      "candidate_score": null,
+      "candidate_prevalence": null,
+      "candidate_avg_weight": null,
+      "previous_symbol": "GLD",
+      "previous_name": "SPDR Gold Shares",
+      "previous_kind": "sector_etf",
+      "pending_symbol": null,
+      "pending_name": null,
+      "pending_confirmations": 0,
+      "confirmation_required": 2,
+      "significant_change": false,
+      "rebalance_due": false,
+      "data_status": "cache_miss",
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      },
+      "evidence": {
+        "leaders_considered": [],
+        "selected_mode": "fallback",
+        "etf_freshness": {
+          "GDX": {
+            "symbol": "GDX",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "SLV": {
+            "symbol": "SLV",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "GLD": {
+            "symbol": "GLD",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "IAU": {
+            "symbol": "IAU",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "GDXJ": {
+            "symbol": "GDXJ",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    },
+    {
+      "sector": "Consumer Staples",
+      "action": "hold",
+      "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+      "target_symbol": "XLP",
+      "target_name": "Consumer Staples Select Sector SPDR Fund",
+      "target_kind": "sector_etf",
+      "review_status": "fallback",
+      "candidate_symbol": null,
+      "candidate_name": null,
+      "candidate_score": null,
+      "candidate_prevalence": null,
+      "candidate_avg_weight": null,
+      "previous_symbol": "XLP",
+      "previous_name": "Consumer Staples Select Sector SPDR Fund",
+      "previous_kind": "sector_etf",
+      "pending_symbol": null,
+      "pending_name": null,
+      "pending_confirmations": 0,
+      "confirmation_required": 2,
+      "significant_change": false,
+      "rebalance_due": false,
+      "data_status": "cache_miss",
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      },
+      "evidence": {
+        "leaders_considered": [],
+        "selected_mode": "fallback",
+        "etf_freshness": {
+          "FSTA": {
+            "symbol": "FSTA",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "XLP": {
+            "symbol": "XLP",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "VDC": {
+            "symbol": "VDC",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "IYK": {
+            "symbol": "IYK",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "KXI": {
+            "symbol": "KXI",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    },
+    {
+      "sector": "Tech & AI",
+      "action": "hold",
+      "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+      "target_symbol": "XLK",
+      "target_name": "Technology Select Sector SPDR Fund",
+      "target_kind": "sector_etf",
+      "review_status": "fallback",
+      "candidate_symbol": null,
+      "candidate_name": null,
+      "candidate_score": null,
+      "candidate_prevalence": null,
+      "candidate_avg_weight": null,
+      "previous_symbol": "XLK",
+      "previous_name": "Technology Select Sector SPDR Fund",
+      "previous_kind": "sector_etf",
+      "pending_symbol": null,
+      "pending_name": null,
+      "pending_confirmations": 0,
+      "confirmation_required": 2,
+      "significant_change": false,
+      "rebalance_due": false,
+      "data_status": "cache_miss",
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      },
+      "evidence": {
+        "leaders_considered": [],
+        "selected_mode": "fallback",
+        "etf_freshness": {
+          "XLK": {
+            "symbol": "XLK",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "VGT": {
+            "symbol": "VGT",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "SKYY": {
+            "symbol": "SKYY",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "AIQ": {
+            "symbol": "AIQ",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "BOTZ": {
+            "symbol": "BOTZ",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    },
+    {
+      "sector": "Financial Services",
+      "action": "hold",
+      "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+      "target_symbol": "XLF",
+      "target_name": "Financial Select Sector SPDR Fund",
+      "target_kind": "sector_etf",
+      "review_status": "fallback",
+      "candidate_symbol": null,
+      "candidate_name": null,
+      "candidate_score": null,
+      "candidate_prevalence": null,
+      "candidate_avg_weight": null,
+      "previous_symbol": "XLF",
+      "previous_name": "Financial Select Sector SPDR Fund",
+      "previous_kind": "sector_etf",
+      "pending_symbol": null,
+      "pending_name": null,
+      "pending_confirmations": 0,
+      "confirmation_required": 2,
+      "significant_change": false,
+      "rebalance_due": false,
+      "data_status": "cache_miss",
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      },
+      "evidence": {
+        "leaders_considered": [],
+        "selected_mode": "fallback",
+        "etf_freshness": {
+          "KRE": {
+            "symbol": "KRE",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "XLF": {
+            "symbol": "XLF",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "VFH": {
+            "symbol": "VFH",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "FINX": {
+            "symbol": "FINX",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "KBE": {
+            "symbol": "KBE",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    },
+    {
+      "sector": "Infrastructure",
+      "action": "hold",
+      "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+      "target_symbol": "PAVE",
+      "target_name": "Global X U.S. Infrastructure Development ETF",
+      "target_kind": "sector_etf",
+      "review_status": "fallback",
+      "candidate_symbol": null,
+      "candidate_name": null,
+      "candidate_score": null,
+      "candidate_prevalence": null,
+      "candidate_avg_weight": null,
+      "previous_symbol": "PAVE",
+      "previous_name": "Global X U.S. Infrastructure Development ETF",
+      "previous_kind": "sector_etf",
+      "pending_symbol": null,
+      "pending_name": null,
+      "pending_confirmations": 0,
+      "confirmation_required": 2,
+      "significant_change": false,
+      "rebalance_due": false,
+      "data_status": "cache_miss",
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      },
+      "evidence": {
+        "leaders_considered": [],
+        "selected_mode": "fallback",
+        "etf_freshness": {
+          "PKB": {
+            "symbol": "PKB",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "PAVE": {
+            "symbol": "PAVE",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "IFRA": {
+            "symbol": "IFRA",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "IGF": {
+            "symbol": "IGF",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "NFRA": {
+            "symbol": "NFRA",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    },
+    {
+      "sector": "Real Estate",
+      "action": "hold",
+      "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+      "target_symbol": "VNQ",
+      "target_name": "Vanguard Real Estate ETF",
+      "target_kind": "sector_etf",
+      "review_status": "fallback",
+      "candidate_symbol": null,
+      "candidate_name": null,
+      "candidate_score": null,
+      "candidate_prevalence": null,
+      "candidate_avg_weight": null,
+      "previous_symbol": "VNQ",
+      "previous_name": "Vanguard Real Estate ETF",
+      "previous_kind": "sector_etf",
+      "pending_symbol": null,
+      "pending_name": null,
+      "pending_confirmations": 0,
+      "confirmation_required": 2,
+      "significant_change": false,
+      "rebalance_due": false,
+      "data_status": "cache_miss",
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      },
+      "evidence": {
+        "leaders_considered": [],
+        "selected_mode": "fallback",
+        "etf_freshness": {
+          "RWR": {
+            "symbol": "RWR",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "IYR": {
+            "symbol": "IYR",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "VNQ": {
+            "symbol": "VNQ",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "SCHH": {
+            "symbol": "SCHH",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "XLRE": {
+            "symbol": "XLRE",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    }
+  ],
+  "results": {
+    "Aerospace & Defense": {
+      "funds": [
+        "DFEN",
+        "ITA",
+        "XAR",
+        "PPA",
+        "SHLD"
+      ],
+      "top_leader": null,
+      "leaders": [],
+      "decision": {
+        "sector": "Aerospace & Defense",
+        "action": "hold",
+        "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+        "target_symbol": "ITA",
+        "target_name": "iShares U.S. Aerospace & Defense ETF",
+        "target_kind": "sector_etf",
+        "review_status": "fallback",
+        "candidate_symbol": null,
+        "candidate_name": null,
+        "candidate_score": null,
+        "candidate_prevalence": null,
+        "candidate_avg_weight": null,
+        "previous_symbol": "ITA",
+        "previous_name": "iShares U.S. Aerospace & Defense ETF",
+        "previous_kind": "sector_etf",
+        "pending_symbol": null,
+        "pending_name": null,
+        "pending_confirmations": 0,
+        "confirmation_required": 2,
+        "significant_change": false,
+        "rebalance_due": false,
+        "data_status": "cache_miss",
+        "sector_freshness": {
+          "data_status": "cache_miss",
+          "freshness": "mixed",
+          "coverage_ratio": "0/5",
+          "avg_age_hours": null,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 5
+        },
+        "evidence": {
+          "leaders_considered": [],
+          "selected_mode": "fallback",
+          "etf_freshness": {
+            "DFEN": {
+              "symbol": "DFEN",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "ITA": {
+              "symbol": "ITA",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "XAR": {
+              "symbol": "XAR",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "PPA": {
+              "symbol": "PPA",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "SHLD": {
+              "symbol": "SHLD",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 0,
+      "etf_freshness": {
+        "DFEN": {
+          "symbol": "DFEN",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "ITA": {
+          "symbol": "ITA",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "XAR": {
+          "symbol": "XAR",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "PPA": {
+          "symbol": "PPA",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "SHLD": {
+          "symbol": "SHLD",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        }
+      },
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      }
+    },
+    "Renewable Energy": {
+      "funds": [
+        "FAN",
+        "QCLN",
+        "PBW",
+        "ICLN",
+        "TAN"
+      ],
+      "top_leader": null,
+      "leaders": [],
+      "decision": {
+        "sector": "Renewable Energy",
+        "action": "hold",
+        "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+        "target_symbol": "ICLN",
+        "target_name": "iShares Global Clean Energy ETF",
+        "target_kind": "sector_etf",
+        "review_status": "fallback",
+        "candidate_symbol": null,
+        "candidate_name": null,
+        "candidate_score": null,
+        "candidate_prevalence": null,
+        "candidate_avg_weight": null,
+        "previous_symbol": "ICLN",
+        "previous_name": "iShares Global Clean Energy ETF",
+        "previous_kind": "sector_etf",
+        "pending_symbol": null,
+        "pending_name": null,
+        "pending_confirmations": 0,
+        "confirmation_required": 2,
+        "significant_change": false,
+        "rebalance_due": false,
+        "data_status": "cache_miss",
+        "sector_freshness": {
+          "data_status": "cache_miss",
+          "freshness": "mixed",
+          "coverage_ratio": "0/5",
+          "avg_age_hours": null,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 5
+        },
+        "evidence": {
+          "leaders_considered": [],
+          "selected_mode": "fallback",
+          "etf_freshness": {
+            "FAN": {
+              "symbol": "FAN",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "QCLN": {
+              "symbol": "QCLN",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "PBW": {
+              "symbol": "PBW",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "ICLN": {
+              "symbol": "ICLN",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "TAN": {
+              "symbol": "TAN",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 0,
+      "etf_freshness": {
+        "FAN": {
+          "symbol": "FAN",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "QCLN": {
+          "symbol": "QCLN",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "PBW": {
+          "symbol": "PBW",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "ICLN": {
+          "symbol": "ICLN",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "TAN": {
+          "symbol": "TAN",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        }
+      },
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      }
+    },
+    "Healthcare & Biotech": {
+      "funds": [
+        "IBB",
+        "VHT",
+        "IHI",
+        "XLV",
+        "XBI"
+      ],
+      "top_leader": null,
+      "leaders": [],
+      "decision": {
+        "sector": "Healthcare & Biotech",
+        "action": "hold",
+        "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+        "target_symbol": "XLV",
+        "target_name": "Health Care Select Sector SPDR Fund",
+        "target_kind": "sector_etf",
+        "review_status": "fallback",
+        "candidate_symbol": null,
+        "candidate_name": null,
+        "candidate_score": null,
+        "candidate_prevalence": null,
+        "candidate_avg_weight": null,
+        "previous_symbol": "XLV",
+        "previous_name": "Health Care Select Sector SPDR Fund",
+        "previous_kind": "sector_etf",
+        "pending_symbol": null,
+        "pending_name": null,
+        "pending_confirmations": 0,
+        "confirmation_required": 2,
+        "significant_change": false,
+        "rebalance_due": false,
+        "data_status": "cache_miss",
+        "sector_freshness": {
+          "data_status": "cache_miss",
+          "freshness": "mixed",
+          "coverage_ratio": "0/5",
+          "avg_age_hours": null,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 5
+        },
+        "evidence": {
+          "leaders_considered": [],
+          "selected_mode": "fallback",
+          "etf_freshness": {
+            "IBB": {
+              "symbol": "IBB",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "VHT": {
+              "symbol": "VHT",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "IHI": {
+              "symbol": "IHI",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "XLV": {
+              "symbol": "XLV",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "XBI": {
+              "symbol": "XBI",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 0,
+      "etf_freshness": {
+        "IBB": {
+          "symbol": "IBB",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "VHT": {
+          "symbol": "VHT",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "IHI": {
+          "symbol": "IHI",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "XLV": {
+          "symbol": "XLV",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "XBI": {
+          "symbol": "XBI",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        }
+      },
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      }
+    },
+    "Automotive": {
+      "funds": [
+        "CARZ",
+        "DRIV",
+        "IDRV",
+        "LIT",
+        "KARS"
+      ],
+      "top_leader": null,
+      "leaders": [],
+      "decision": {
+        "sector": "Automotive",
+        "action": "hold",
+        "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+        "target_symbol": "DRIV",
+        "target_name": "Global X Autonomous & Electric Vehicles ETF",
+        "target_kind": "sector_etf",
+        "review_status": "fallback",
+        "candidate_symbol": null,
+        "candidate_name": null,
+        "candidate_score": null,
+        "candidate_prevalence": null,
+        "candidate_avg_weight": null,
+        "previous_symbol": "DRIV",
+        "previous_name": "Global X Autonomous & Electric Vehicles ETF",
+        "previous_kind": "sector_etf",
+        "pending_symbol": null,
+        "pending_name": null,
+        "pending_confirmations": 0,
+        "confirmation_required": 2,
+        "significant_change": false,
+        "rebalance_due": false,
+        "data_status": "cache_miss",
+        "sector_freshness": {
+          "data_status": "cache_miss",
+          "freshness": "mixed",
+          "coverage_ratio": "0/5",
+          "avg_age_hours": null,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 5
+        },
+        "evidence": {
+          "leaders_considered": [],
+          "selected_mode": "fallback",
+          "etf_freshness": {
+            "CARZ": {
+              "symbol": "CARZ",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "DRIV": {
+              "symbol": "DRIV",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "IDRV": {
+              "symbol": "IDRV",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "LIT": {
+              "symbol": "LIT",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "KARS": {
+              "symbol": "KARS",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 0,
+      "etf_freshness": {
+        "CARZ": {
+          "symbol": "CARZ",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "DRIV": {
+          "symbol": "DRIV",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "IDRV": {
+          "symbol": "IDRV",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "LIT": {
+          "symbol": "LIT",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "KARS": {
+          "symbol": "KARS",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        }
+      },
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      }
+    },
+    "Precious Metals": {
+      "funds": [
+        "GDX",
+        "SLV",
+        "GLD",
+        "IAU",
+        "GDXJ"
+      ],
+      "top_leader": null,
+      "leaders": [],
+      "decision": {
+        "sector": "Precious Metals",
+        "action": "hold",
+        "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+        "target_symbol": "GLD",
+        "target_name": "SPDR Gold Shares",
+        "target_kind": "sector_etf",
+        "review_status": "fallback",
+        "candidate_symbol": null,
+        "candidate_name": null,
+        "candidate_score": null,
+        "candidate_prevalence": null,
+        "candidate_avg_weight": null,
+        "previous_symbol": "GLD",
+        "previous_name": "SPDR Gold Shares",
+        "previous_kind": "sector_etf",
+        "pending_symbol": null,
+        "pending_name": null,
+        "pending_confirmations": 0,
+        "confirmation_required": 2,
+        "significant_change": false,
+        "rebalance_due": false,
+        "data_status": "cache_miss",
+        "sector_freshness": {
+          "data_status": "cache_miss",
+          "freshness": "mixed",
+          "coverage_ratio": "0/5",
+          "avg_age_hours": null,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 5
+        },
+        "evidence": {
+          "leaders_considered": [],
+          "selected_mode": "fallback",
+          "etf_freshness": {
+            "GDX": {
+              "symbol": "GDX",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "SLV": {
+              "symbol": "SLV",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "GLD": {
+              "symbol": "GLD",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "IAU": {
+              "symbol": "IAU",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "GDXJ": {
+              "symbol": "GDXJ",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 0,
+      "etf_freshness": {
+        "GDX": {
+          "symbol": "GDX",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "SLV": {
+          "symbol": "SLV",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "GLD": {
+          "symbol": "GLD",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "IAU": {
+          "symbol": "IAU",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "GDXJ": {
+          "symbol": "GDXJ",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        }
+      },
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      }
+    },
+    "Consumer Staples": {
+      "funds": [
+        "FSTA",
+        "XLP",
+        "VDC",
+        "IYK",
+        "KXI"
+      ],
+      "top_leader": null,
+      "leaders": [],
+      "decision": {
+        "sector": "Consumer Staples",
+        "action": "hold",
+        "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+        "target_symbol": "XLP",
+        "target_name": "Consumer Staples Select Sector SPDR Fund",
+        "target_kind": "sector_etf",
+        "review_status": "fallback",
+        "candidate_symbol": null,
+        "candidate_name": null,
+        "candidate_score": null,
+        "candidate_prevalence": null,
+        "candidate_avg_weight": null,
+        "previous_symbol": "XLP",
+        "previous_name": "Consumer Staples Select Sector SPDR Fund",
+        "previous_kind": "sector_etf",
+        "pending_symbol": null,
+        "pending_name": null,
+        "pending_confirmations": 0,
+        "confirmation_required": 2,
+        "significant_change": false,
+        "rebalance_due": false,
+        "data_status": "cache_miss",
+        "sector_freshness": {
+          "data_status": "cache_miss",
+          "freshness": "mixed",
+          "coverage_ratio": "0/5",
+          "avg_age_hours": null,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 5
+        },
+        "evidence": {
+          "leaders_considered": [],
+          "selected_mode": "fallback",
+          "etf_freshness": {
+            "FSTA": {
+              "symbol": "FSTA",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "XLP": {
+              "symbol": "XLP",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "VDC": {
+              "symbol": "VDC",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "IYK": {
+              "symbol": "IYK",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "KXI": {
+              "symbol": "KXI",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 0,
+      "etf_freshness": {
+        "FSTA": {
+          "symbol": "FSTA",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "XLP": {
+          "symbol": "XLP",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "VDC": {
+          "symbol": "VDC",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "IYK": {
+          "symbol": "IYK",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "KXI": {
+          "symbol": "KXI",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        }
+      },
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      }
+    },
+    "Tech & AI": {
+      "funds": [
+        "XLK",
+        "VGT",
+        "SKYY",
+        "AIQ",
+        "BOTZ"
+      ],
+      "top_leader": null,
+      "leaders": [],
+      "decision": {
+        "sector": "Tech & AI",
+        "action": "hold",
+        "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+        "target_symbol": "XLK",
+        "target_name": "Technology Select Sector SPDR Fund",
+        "target_kind": "sector_etf",
+        "review_status": "fallback",
+        "candidate_symbol": null,
+        "candidate_name": null,
+        "candidate_score": null,
+        "candidate_prevalence": null,
+        "candidate_avg_weight": null,
+        "previous_symbol": "XLK",
+        "previous_name": "Technology Select Sector SPDR Fund",
+        "previous_kind": "sector_etf",
+        "pending_symbol": null,
+        "pending_name": null,
+        "pending_confirmations": 0,
+        "confirmation_required": 2,
+        "significant_change": false,
+        "rebalance_due": false,
+        "data_status": "cache_miss",
+        "sector_freshness": {
+          "data_status": "cache_miss",
+          "freshness": "mixed",
+          "coverage_ratio": "0/5",
+          "avg_age_hours": null,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 5
+        },
+        "evidence": {
+          "leaders_considered": [],
+          "selected_mode": "fallback",
+          "etf_freshness": {
+            "XLK": {
+              "symbol": "XLK",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "VGT": {
+              "symbol": "VGT",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "SKYY": {
+              "symbol": "SKYY",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "AIQ": {
+              "symbol": "AIQ",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "BOTZ": {
+              "symbol": "BOTZ",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 0,
+      "etf_freshness": {
+        "XLK": {
+          "symbol": "XLK",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "VGT": {
+          "symbol": "VGT",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "SKYY": {
+          "symbol": "SKYY",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "AIQ": {
+          "symbol": "AIQ",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "BOTZ": {
+          "symbol": "BOTZ",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        }
+      },
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      }
+    },
+    "Financial Services": {
+      "funds": [
+        "KRE",
+        "XLF",
+        "VFH",
+        "FINX",
+        "KBE"
+      ],
+      "top_leader": null,
+      "leaders": [],
+      "decision": {
+        "sector": "Financial Services",
+        "action": "hold",
+        "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+        "target_symbol": "XLF",
+        "target_name": "Financial Select Sector SPDR Fund",
+        "target_kind": "sector_etf",
+        "review_status": "fallback",
+        "candidate_symbol": null,
+        "candidate_name": null,
+        "candidate_score": null,
+        "candidate_prevalence": null,
+        "candidate_avg_weight": null,
+        "previous_symbol": "XLF",
+        "previous_name": "Financial Select Sector SPDR Fund",
+        "previous_kind": "sector_etf",
+        "pending_symbol": null,
+        "pending_name": null,
+        "pending_confirmations": 0,
+        "confirmation_required": 2,
+        "significant_change": false,
+        "rebalance_due": false,
+        "data_status": "cache_miss",
+        "sector_freshness": {
+          "data_status": "cache_miss",
+          "freshness": "mixed",
+          "coverage_ratio": "0/5",
+          "avg_age_hours": null,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 5
+        },
+        "evidence": {
+          "leaders_considered": [],
+          "selected_mode": "fallback",
+          "etf_freshness": {
+            "KRE": {
+              "symbol": "KRE",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "XLF": {
+              "symbol": "XLF",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "VFH": {
+              "symbol": "VFH",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "FINX": {
+              "symbol": "FINX",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "KBE": {
+              "symbol": "KBE",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 0,
+      "etf_freshness": {
+        "KRE": {
+          "symbol": "KRE",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "XLF": {
+          "symbol": "XLF",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "VFH": {
+          "symbol": "VFH",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "FINX": {
+          "symbol": "FINX",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "KBE": {
+          "symbol": "KBE",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        }
+      },
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      }
+    },
+    "Infrastructure": {
+      "funds": [
+        "PKB",
+        "PAVE",
+        "IFRA",
+        "IGF",
+        "NFRA"
+      ],
+      "top_leader": null,
+      "leaders": [],
+      "decision": {
+        "sector": "Infrastructure",
+        "action": "hold",
+        "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+        "target_symbol": "PAVE",
+        "target_name": "Global X U.S. Infrastructure Development ETF",
+        "target_kind": "sector_etf",
+        "review_status": "fallback",
+        "candidate_symbol": null,
+        "candidate_name": null,
+        "candidate_score": null,
+        "candidate_prevalence": null,
+        "candidate_avg_weight": null,
+        "previous_symbol": "PAVE",
+        "previous_name": "Global X U.S. Infrastructure Development ETF",
+        "previous_kind": "sector_etf",
+        "pending_symbol": null,
+        "pending_name": null,
+        "pending_confirmations": 0,
+        "confirmation_required": 2,
+        "significant_change": false,
+        "rebalance_due": false,
+        "data_status": "cache_miss",
+        "sector_freshness": {
+          "data_status": "cache_miss",
+          "freshness": "mixed",
+          "coverage_ratio": "0/5",
+          "avg_age_hours": null,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 5
+        },
+        "evidence": {
+          "leaders_considered": [],
+          "selected_mode": "fallback",
+          "etf_freshness": {
+            "PKB": {
+              "symbol": "PKB",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "PAVE": {
+              "symbol": "PAVE",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "IFRA": {
+              "symbol": "IFRA",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "IGF": {
+              "symbol": "IGF",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "NFRA": {
+              "symbol": "NFRA",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 0,
+      "etf_freshness": {
+        "PKB": {
+          "symbol": "PKB",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "PAVE": {
+          "symbol": "PAVE",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "IFRA": {
+          "symbol": "IFRA",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "IGF": {
+          "symbol": "IGF",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "NFRA": {
+          "symbol": "NFRA",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        }
+      },
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      }
+    },
+    "Real Estate": {
+      "funds": [
+        "RWR",
+        "IYR",
+        "VNQ",
+        "SCHH",
+        "XLRE"
+      ],
+      "top_leader": null,
+      "leaders": [],
+      "decision": {
+        "sector": "Real Estate",
+        "action": "hold",
+        "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+        "target_symbol": "VNQ",
+        "target_name": "Vanguard Real Estate ETF",
+        "target_kind": "sector_etf",
+        "review_status": "fallback",
+        "candidate_symbol": null,
+        "candidate_name": null,
+        "candidate_score": null,
+        "candidate_prevalence": null,
+        "candidate_avg_weight": null,
+        "previous_symbol": "VNQ",
+        "previous_name": "Vanguard Real Estate ETF",
+        "previous_kind": "sector_etf",
+        "pending_symbol": null,
+        "pending_name": null,
+        "pending_confirmations": 0,
+        "confirmation_required": 2,
+        "significant_change": false,
+        "rebalance_due": false,
+        "data_status": "cache_miss",
+        "sector_freshness": {
+          "data_status": "cache_miss",
+          "freshness": "mixed",
+          "coverage_ratio": "0/5",
+          "avg_age_hours": null,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 5
+        },
+        "evidence": {
+          "leaders_considered": [],
+          "selected_mode": "fallback",
+          "etf_freshness": {
+            "RWR": {
+              "symbol": "RWR",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "IYR": {
+              "symbol": "IYR",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "VNQ": {
+              "symbol": "VNQ",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "SCHH": {
+              "symbol": "SCHH",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "XLRE": {
+              "symbol": "XLRE",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 0,
+      "etf_freshness": {
+        "RWR": {
+          "symbol": "RWR",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "IYR": {
+          "symbol": "IYR",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "VNQ": {
+          "symbol": "VNQ",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "SCHH": {
+          "symbol": "SCHH",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "XLRE": {
+          "symbol": "XLRE",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        }
+      },
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "0/5",
+        "avg_age_hours": null,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 5
+      }
+    }
+  },
+  "report_paths": {}
+}

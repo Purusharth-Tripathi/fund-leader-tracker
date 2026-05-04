@@ -1,0 +1,153 @@
+ETF SECTOR LEADERSHIP MANUAL REVIEW
+========================================
+Run timestamp: 2026-04-10T13:48:39.854961
+Review date: 2026-04-10
+Sectors reviewed: 10
+Actionable sectors: 0
+Target sector weight: 10.0%
+
+[Aerospace & Defense]
+Status: fallback | Action: hold
+Current recommendation: ITA (sector_etf) - iShares U.S. Aerospace & Defense ETF
+Previous position: ITA (sector_etf)
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - DFEN: status=cache_miss freshness=unknown age_days=None source=none
+  - ITA: status=cache_miss freshness=unknown age_days=None source=none
+  - XAR: status=cache_miss freshness=unknown age_days=None source=none
+  - PPA: status=cache_miss freshness=unknown age_days=None source=none
+  - SHLD: status=cache_miss freshness=unknown age_days=None source=none
+
+[Renewable Energy]
+Status: fallback | Action: hold
+Current recommendation: ICLN (sector_etf) - iShares Global Clean Energy ETF
+Previous position: ICLN (sector_etf)
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - FAN: status=cache_miss freshness=unknown age_days=None source=none
+  - QCLN: status=cache_miss freshness=unknown age_days=None source=none
+  - PBW: status=cache_miss freshness=unknown age_days=None source=none
+  - ICLN: status=cache_miss freshness=unknown age_days=None source=none
+  - TAN: status=cache_miss freshness=unknown age_days=None source=none
+
+[Healthcare & Biotech]
+Status: fallback | Action: hold
+Current recommendation: XLV (sector_etf) - Health Care Select Sector SPDR Fund
+Previous position: XLV (sector_etf)
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - IBB: status=cache_miss freshness=unknown age_days=None source=none
+  - VHT: status=cache_miss freshness=unknown age_days=None source=none
+  - IHI: status=cache_miss freshness=unknown age_days=None source=none
+  - XLV: status=cache_miss freshness=unknown age_days=None source=none
+  - XBI: status=cache_miss freshness=unknown age_days=None source=none
+
+[Automotive]
+Status: fallback | Action: hold
+Current recommendation: DRIV (sector_etf) - Global X Autonomous & Electric Vehicles ETF
+Previous position: DRIV (sector_etf)
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - CARZ: status=cache_miss freshness=unknown age_days=None source=none
+  - DRIV: status=cache_miss freshness=unknown age_days=None source=none
+  - IDRV: status=cache_miss freshness=unknown age_days=None source=none
+  - LIT: status=cache_miss freshness=unknown age_days=None source=none
+  - KARS: status=cache_miss freshness=unknown age_days=None source=none
+
+[Precious Metals]
+Status: fallback | Action: hold
+Current recommendation: GLD (sector_etf) - SPDR Gold Shares
+Previous position: GLD (sector_etf)
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - GDX: status=cache_miss freshness=unknown age_days=None source=none
+  - SLV: status=cache_miss freshness=unknown age_days=None source=none
+  - GLD: status=cache_miss freshness=unknown age_days=None source=none
+  - IAU: status=cache_miss freshness=unknown age_days=None source=none
+  - GDXJ: status=cache_miss freshness=unknown age_days=None source=none
+
+[Consumer Staples]
+Status: fallback | Action: hold
+Current recommendation: XLP (sector_etf) - Consumer Staples Select Sector SPDR Fund
+Previous position: XLP (sector_etf)
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - FSTA: status=cache_miss freshness=unknown age_days=None source=none
+  - XLP: status=cache_miss freshness=unknown age_days=None source=none
+  - VDC: status=cache_miss freshness=unknown age_days=None source=none
+  - IYK: status=cache_miss freshness=unknown age_days=None source=none
+  - KXI: status=cache_miss freshness=unknown age_days=None source=none
+
+[Tech & AI]
+Status: fallback | Action: hold
+Current recommendation: XLK (sector_etf) - Technology Select Sector SPDR Fund
+Previous position: XLK (sector_etf)
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - XLK: status=cache_miss freshness=unknown age_days=None source=none
+  - VGT: status=cache_miss freshness=unknown age_days=None source=none
+  - SKYY: status=cache_miss freshness=unknown age_days=None source=none
+  - AIQ: status=cache_miss freshness=unknown age_days=None source=none
+  - BOTZ: status=cache_miss freshness=unknown age_days=None source=none
+
+[Financial Services]
+Status: fallback | Action: hold
+Current recommendation: XLF (sector_etf) - Financial Select Sector SPDR Fund
+Previous position: XLF (sector_etf)
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - KRE: status=cache_miss freshness=unknown age_days=None source=none
+  - XLF: status=cache_miss freshness=unknown age_days=None source=none
+  - VFH: status=cache_miss freshness=unknown age_days=None source=none
+  - FINX: status=cache_miss freshness=unknown age_days=None source=none
+  - KBE: status=cache_miss freshness=unknown age_days=None source=none
+
+[Infrastructure]
+Status: fallback | Action: hold
+Current recommendation: PAVE (sector_etf) - Global X U.S. Infrastructure Development ETF
+Previous position: PAVE (sector_etf)
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - PKB: status=cache_miss freshness=unknown age_days=None source=none
+  - PAVE: status=cache_miss freshness=unknown age_days=None source=none
+  - IFRA: status=cache_miss freshness=unknown age_days=None source=none
+  - IGF: status=cache_miss freshness=unknown age_days=None source=none
+  - NFRA: status=cache_miss freshness=unknown age_days=None source=none
+
+[Real Estate]
+Status: fallback | Action: hold
+Current recommendation: VNQ (sector_etf) - Vanguard Real Estate ETF
+Previous position: VNQ (sector_etf)
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 0/5 | avg age hours None
+ETF snapshot freshness:
+  - RWR: status=cache_miss freshness=unknown age_days=None source=none
+  - IYR: status=cache_miss freshness=unknown age_days=None source=none
+  - VNQ: status=cache_miss freshness=unknown age_days=None source=none
+  - SCHH: status=cache_miss freshness=unknown age_days=None source=none
+  - XLRE: status=cache_miss freshness=unknown age_days=None source=none
+
+MANUAL TRADE LIST
+--------------------
+No trade changes suggested. Continue monitoring.
+
+Advisory only. Review liquidity, taxes, costs, and account suitability before placing any order manually.

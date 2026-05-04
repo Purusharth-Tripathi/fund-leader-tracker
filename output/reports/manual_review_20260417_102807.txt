@@ -1,0 +1,142 @@
+ETF SECTOR LEADERSHIP MANUAL REVIEW
+========================================
+Run timestamp: 2026-04-17T10:28:07.477594
+Review date: 2026-04-17
+Sectors reviewed: 9
+Actionable sectors: 0
+Target sector weight: 11.11%
+
+[Aerospace & Defense]
+Status: active | Action: hold
+Current recommendation: GE (stock) - General Electric Company
+Previous position: GE (stock)
+Reason: Current active leader remains in force.
+Data status: fresh_cache
+Sector freshness: fresh | coverage 5/5 | avg age hours 67.0
+ETF snapshot freshness:
+  - ITA: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+  - XAR: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+  - PPA: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+  - SHLD: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+  - DFEN: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+
+[Renewable Energy]
+Status: active | Action: hold
+Current recommendation: BE (stock) - BE
+Previous position: BE (stock)
+Reason: Current active leader remains in force.
+Data status: fresh_cache
+Sector freshness: fresh | coverage 5/5 | avg age hours 66.99
+ETF snapshot freshness:
+  - FAN: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+  - QCLN: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+  - PBW: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+  - ICLN: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+  - TAN: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+
+[Healthcare & Biotech]
+Status: pending_confirmation | Action: watch
+Current recommendation: ABBV (stock) - AbbVie Inc
+Watching candidate: ABT | confirmations 1/2
+Previous position: ABBV (stock)
+Reason: Candidate leader changed, but confirmation/monthly switch rules are not fully met yet.
+Data status: fresh_cache
+Sector freshness: fresh | coverage 5/5 | avg age hours 66.97
+ETF snapshot freshness:
+  - VHT: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+  - XLV: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+  - IHI: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+  - IBB: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+  - XBI: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+
+[Automotive]
+Status: active | Action: hold
+Current recommendation: ALB (stock) - ALB
+Previous position: ALB (stock)
+Reason: Current active leader remains in force.
+Data status: fresh_cache
+Sector freshness: fresh | coverage 5/5 | avg age hours 66.94
+ETF snapshot freshness:
+  - DRIV: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+  - IDRV: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+  - CARZ: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+  - LIT: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+  - KARS: status=fresh_cache freshness=fresh age_days=2.79 source=alpha_vantage_etf_profile
+
+[Consumer Staples]
+Status: active | Action: hold
+Current recommendation: WMT (stock) - Walmart Inc
+Previous position: WMT (stock)
+Reason: Current active leader remains in force.
+Data status: fresh_cache
+Sector freshness: fresh | coverage 5/5 | avg age hours 26.33
+ETF snapshot freshness:
+  - XLP: status=fresh_cache freshness=fresh age_days=1.1 source=alpha_vantage_etf_profile
+  - VDC: status=fresh_cache freshness=fresh age_days=1.1 source=alpha_vantage_etf_profile
+  - FSTA: status=fresh_cache freshness=fresh age_days=1.1 source=alpha_vantage_etf_profile
+  - IYK: status=fresh_cache freshness=fresh age_days=1.1 source=alpha_vantage_etf_profile
+  - KXI: status=fresh_cache freshness=fresh age_days=1.1 source=alpha_vantage_etf_profile
+
+[Tech & AI]
+Status: active | Action: hold
+Current recommendation: NVDA (stock) - NVIDIA Corporation
+Previous position: NVDA (stock)
+Reason: Current active leader remains in force.
+Data status: cache_miss
+Sector freshness: mixed | coverage 3/5 | avg age hours 16.93
+ETF snapshot freshness:
+  - VGT: status=fresh_cache freshness=fresh age_days=0.01 source=alpha_vantage_etf_profile
+  - XLK: status=fresh_cache freshness=fresh age_days=2.1 source=alpha_vantage_etf_profile
+  - SKYY: status=cache_miss freshness=unknown age_days=None source=none
+  - AIQ: status=fresh_cache freshness=fresh age_days=0.01 source=alpha_vantage_etf_profile
+  - BOTZ: status=cache_miss freshness=unknown age_days=None source=none
+
+[Financial Services]
+Status: pending_confirmation | Action: watch
+Current recommendation: XLF (sector_etf) - Financial Select Sector SPDR Fund
+Watching candidate: JPM | confirmations 1/2
+Previous position: XLF (sector_etf)
+Reason: Candidate leader changed, but confirmation/monthly switch rules are not fully met yet.
+Data status: cache_miss
+Sector freshness: mixed | coverage 4/5 | avg age hours 0.21
+ETF snapshot freshness:
+  - XLF: status=fresh_cache freshness=fresh age_days=0.01 source=alpha_vantage_etf_profile
+  - VFH: status=fresh_cache freshness=fresh age_days=0.01 source=alpha_vantage_etf_profile
+  - FINX: status=cache_miss freshness=unknown age_days=None source=none
+  - KBE: status=fresh_cache freshness=fresh age_days=0.01 source=alpha_vantage_etf_profile
+  - KRE: status=fresh_cache freshness=fresh age_days=0.01 source=alpha_vantage_etf_profile
+
+[Infrastructure]
+Status: fallback | Action: hold
+Current recommendation: PAVE (sector_etf) - Global X U.S. Infrastructure Development ETF
+Previous position: PAVE (sector_etf)
+Reason: No valid stock leader met the rules; use sector ETF fallback.
+Data status: cache_miss
+Sector freshness: mixed | coverage 4/5 | avg age hours 0.18
+ETF snapshot freshness:
+  - PAVE: status=fresh_cache freshness=fresh age_days=0.01 source=alpha_vantage_etf_profile
+  - IFRA: status=fresh_cache freshness=fresh age_days=0.01 source=alpha_vantage_etf_profile
+  - PKB: status=cache_miss freshness=unknown age_days=None source=none
+  - IGF: status=fresh_cache freshness=fresh age_days=0.01 source=alpha_vantage_etf_profile
+  - NFRA: status=fresh_cache freshness=fresh age_days=0.01 source=alpha_vantage_etf_profile
+
+[Real Estate]
+Status: pending_confirmation | Action: watch
+Current recommendation: VNQ (sector_etf) - Vanguard Real Estate ETF
+Watching candidate: WELL | confirmations 1/2
+Previous position: VNQ (sector_etf)
+Reason: Candidate leader changed, but confirmation/monthly switch rules are not fully met yet.
+Data status: cache_miss
+Sector freshness: mixed | coverage 4/5 | avg age hours 0.17
+ETF snapshot freshness:
+  - VNQ: status=fresh_cache freshness=fresh age_days=0.01 source=alpha_vantage_etf_profile
+  - IYR: status=fresh_cache freshness=fresh age_days=0.01 source=alpha_vantage_etf_profile
+  - SCHH: status=fresh_cache freshness=fresh age_days=0.01 source=alpha_vantage_etf_profile
+  - XLRE: status=fresh_cache freshness=fresh age_days=0.01 source=alpha_vantage_etf_profile
+  - RWR: status=cache_miss freshness=unknown age_days=None source=none
+
+MANUAL TRADE LIST
+--------------------
+No trade changes suggested. Continue monitoring.
+
+Advisory only. Review liquidity, taxes, costs, and account suitability before placing any order manually.

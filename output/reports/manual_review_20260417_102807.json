@@ -1,0 +1,3577 @@
+{
+  "run_timestamp": "2026-04-17T10:28:07.477594",
+  "review_date": "2026-04-17",
+  "workflow": "review",
+  "alpha_vantage_usage": {
+    "workflow": "review",
+    "live_calls_allowed": false,
+    "api_key_present": true,
+    "daily_budget": 25,
+    "consumed_today": 19,
+    "remaining_today": 6,
+    "attempted_this_run": 0,
+    "blocked_this_run": 0,
+    "successful_this_run": 0,
+    "failed_this_run": 0,
+    "rate_limited": false
+  },
+  "summary": {
+    "sectors_analyzed": 9,
+    "total_leaders": 8,
+    "recommendations_generated": 9,
+    "switches": 0,
+    "fallbacks": 3,
+    "stale_sectors": 0,
+    "cache_miss_sectors": 4
+  },
+  "portfolio_plan": {
+    "target_weight_per_sector_pct": 11.11,
+    "actionable_trades": [],
+    "actionable_sector_count": 0
+  },
+  "sectors": [
+    {
+      "sector": "Aerospace & Defense",
+      "action": "hold",
+      "action_reason": "Current active leader remains in force.",
+      "target_symbol": "GE",
+      "target_name": "General Electric Company",
+      "target_kind": "stock",
+      "review_status": "active",
+      "candidate_symbol": "GE",
+      "candidate_name": "General Electric Company",
+      "candidate_score": 10.805,
+      "candidate_prevalence": 80.0,
+      "candidate_avg_weight": 10.805,
+      "previous_symbol": "GE",
+      "previous_name": "General Electric Company",
+      "previous_kind": "stock",
+      "pending_symbol": null,
+      "pending_name": null,
+      "pending_confirmations": 0,
+      "confirmation_required": 2,
+      "significant_change": false,
+      "rebalance_due": false,
+      "data_status": "fresh_cache",
+      "sector_freshness": {
+        "data_status": "fresh_cache",
+        "freshness": "fresh",
+        "coverage_ratio": "5/5",
+        "avg_age_hours": 67.0,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 0
+      },
+      "evidence": {
+        "leaders_considered": [
+          {
+            "symbol": "GE",
+            "name": "General Electric Company",
+            "times_held": 4,
+            "total_weight": 43.22,
+            "avg_weight": 10.805,
+            "prevalence": 80.0
+          },
+          {
+            "symbol": "RTX",
+            "name": "Raytheon Technologies Corporation",
+            "times_held": 5,
+            "total_weight": 47.56,
+            "avg_weight": 9.512,
+            "prevalence": 100.0
+          },
+          {
+            "symbol": "BA",
+            "name": "Boeing Company",
+            "times_held": 4,
+            "total_weight": 27.43,
+            "avg_weight": 6.8575,
+            "prevalence": 80.0
+          },
+          {
+            "symbol": "LMT",
+            "name": "Lockheed Martin Corporation",
+            "times_held": 5,
+            "total_weight": 28.04,
+            "avg_weight": 5.608,
+            "prevalence": 100.0
+          },
+          {
+            "symbol": "GD",
+            "name": "General Dynamics Corporation",
+            "times_held": 5,
+            "total_weight": 23.009999999999998,
+            "avg_weight": 4.601999999999999,
+            "prevalence": 100.0
+          }
+        ],
+        "selected_mode": "keep_active",
+        "etf_freshness": {
+          "ITA": {
+            "symbol": "ITA",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:24:48.651501",
+            "age_hours": 67.01,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 47
+          },
+          "XAR": {
+            "symbol": "XAR",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:25:00.985831",
+            "age_hours": 67.0,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 42
+          },
+          "PPA": {
+            "symbol": "PPA",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:25:13.450201",
+            "age_hours": 67.0,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 62
+          },
+          "SHLD": {
+            "symbol": "SHLD",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:25:25.823576",
+            "age_hours": 67.0,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 52
+          },
+          "DFEN": {
+            "symbol": "DFEN",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:24:36.288064",
+            "age_hours": 67.01,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 51
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    },
+    {
+      "sector": "Renewable Energy",
+      "action": "hold",
+      "action_reason": "Current active leader remains in force.",
+      "target_symbol": "BE",
+      "target_name": "BE",
+      "target_kind": "stock",
+      "review_status": "active",
+      "candidate_symbol": "BE",
+      "candidate_name": "BE",
+      "candidate_score": 8.24,
+      "candidate_prevalence": 60.0,
+      "candidate_avg_weight": 8.24,
+      "previous_symbol": "BE",
+      "previous_name": "BE",
+      "previous_kind": "stock",
+      "pending_symbol": null,
+      "pending_name": null,
+      "pending_confirmations": 0,
+      "confirmation_required": 2,
+      "significant_change": false,
+      "rebalance_due": false,
+      "data_status": "fresh_cache",
+      "sector_freshness": {
+        "data_status": "fresh_cache",
+        "freshness": "fresh",
+        "coverage_ratio": "5/5",
+        "avg_age_hours": 66.99,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 0
+      },
+      "evidence": {
+        "leaders_considered": [
+          {
+            "symbol": "BE",
+            "name": "BE",
+            "times_held": 3,
+            "total_weight": 24.72,
+            "avg_weight": 8.24,
+            "prevalence": 60.0
+          },
+          {
+            "symbol": "NXT",
+            "name": "NXT",
+            "times_held": 4,
+            "total_weight": 25.32,
+            "avg_weight": 6.33,
+            "prevalence": 80.0
+          },
+          {
+            "symbol": "FSLR",
+            "name": "First Solar Inc",
+            "times_held": 4,
+            "total_weight": 23.16,
+            "avg_weight": 5.79,
+            "prevalence": 80.0
+          },
+          {
+            "symbol": "ENPH",
+            "name": "Enphase Energy Inc",
+            "times_held": 4,
+            "total_weight": 12.76,
+            "avg_weight": 3.19,
+            "prevalence": 80.0
+          },
+          {
+            "symbol": "ORA",
+            "name": "ORA",
+            "times_held": 3,
+            "total_weight": 7.24,
+            "avg_weight": 2.4133333333333336,
+            "prevalence": 60.0
+          }
+        ],
+        "selected_mode": "keep_active",
+        "etf_freshness": {
+          "FAN": {
+            "symbol": "FAN",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:25:45.706297",
+            "age_hours": 66.99,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 52
+          },
+          "QCLN": {
+            "symbol": "QCLN",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:25:58.093249",
+            "age_hours": 66.99,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 51
+          },
+          "PBW": {
+            "symbol": "PBW",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:26:10.469685",
+            "age_hours": 66.99,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 69
+          },
+          "ICLN": {
+            "symbol": "ICLN",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:26:23.082987",
+            "age_hours": 66.98,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 123
+          },
+          "TAN": {
+            "symbol": "TAN",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:26:35.578372",
+            "age_hours": 66.98,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 42
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    },
+    {
+      "sector": "Healthcare & Biotech",
+      "action": "watch",
+      "action_reason": "Candidate leader changed, but confirmation/monthly switch rules are not fully met yet.",
+      "target_symbol": "ABBV",
+      "target_name": "AbbVie Inc",
+      "target_kind": "stock",
+      "review_status": "pending_confirmation",
+      "candidate_symbol": "ABT",
+      "candidate_name": "Abbott Laboratories",
+      "candidate_score": 7.7767,
+      "candidate_prevalence": 60.0,
+      "candidate_avg_weight": 7.7767,
+      "previous_symbol": "ABBV",
+      "previous_name": "AbbVie Inc",
+      "previous_kind": "stock",
+      "pending_symbol": "ABT",
+      "pending_name": "Abbott Laboratories",
+      "pending_confirmations": 1,
+      "confirmation_required": 2,
+      "significant_change": false,
+      "rebalance_due": false,
+      "data_status": "fresh_cache",
+      "sector_freshness": {
+        "data_status": "fresh_cache",
+        "freshness": "fresh",
+        "coverage_ratio": "5/5",
+        "avg_age_hours": 66.97,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 0
+      },
+      "evidence": {
+        "leaders_considered": [
+          {
+            "symbol": "ABT",
+            "name": "Abbott Laboratories",
+            "times_held": 3,
+            "total_weight": 23.33,
+            "avg_weight": 7.776666666666666,
+            "prevalence": 60.0
+          },
+          {
+            "symbol": "ISRG",
+            "name": "Intuitive Surgical Inc",
+            "times_held": 3,
+            "total_weight": 21.53,
+            "avg_weight": 7.176666666666667,
+            "prevalence": 60.0
+          },
+          {
+            "symbol": "SYK",
+            "name": "Stryker Corporation",
+            "times_held": 3,
+            "total_weight": 14.77,
+            "avg_weight": 4.923333333333333,
+            "prevalence": 60.0
+          },
+          {
+            "symbol": "ABBV",
+            "name": "AbbVie Inc",
+            "times_held": 3,
+            "total_weight": 14.34,
+            "avg_weight": 4.78,
+            "prevalence": 60.0
+          },
+          {
+            "symbol": "VRTX",
+            "name": "Vertex Pharmaceuticals Inc",
+            "times_held": 3,
+            "total_weight": 13.049999999999999,
+            "avg_weight": 4.35,
+            "prevalence": 60.0
+          }
+        ],
+        "selected_mode": "pending_confirmation",
+        "etf_freshness": {
+          "VHT": {
+            "symbol": "VHT",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:27:12.952152",
+            "age_hours": 66.97,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 416
+          },
+          "XLV": {
+            "symbol": "XLV",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:27:38.559463",
+            "age_hours": 66.97,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 62
+          },
+          "IHI": {
+            "symbol": "IHI",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:27:25.546392",
+            "age_hours": 66.97,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 51
+          },
+          "IBB": {
+            "symbol": "IBB",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:27:00.158272",
+            "age_hours": 66.98,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 258
+          },
+          "XBI": {
+            "symbol": "XBI",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:27:51.146360",
+            "age_hours": 66.96,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 156
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    },
+    {
+      "sector": "Automotive",
+      "action": "hold",
+      "action_reason": "Current active leader remains in force.",
+      "target_symbol": "ALB",
+      "target_name": "ALB",
+      "target_kind": "stock",
+      "review_status": "active",
+      "candidate_symbol": "ALB",
+      "candidate_name": "ALB",
+      "candidate_score": 4.745,
+      "candidate_prevalence": 80.0,
+      "candidate_avg_weight": 4.745,
+      "previous_symbol": "ALB",
+      "previous_name": "ALB",
+      "previous_kind": "stock",
+      "pending_symbol": null,
+      "pending_name": null,
+      "pending_confirmations": 0,
+      "confirmation_required": 2,
+      "significant_change": false,
+      "rebalance_due": false,
+      "data_status": "fresh_cache",
+      "sector_freshness": {
+        "data_status": "fresh_cache",
+        "freshness": "fresh",
+        "coverage_ratio": "5/5",
+        "avg_age_hours": 66.94,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 0
+      },
+      "evidence": {
+        "leaders_considered": [
+          {
+            "symbol": "ALB",
+            "name": "ALB",
+            "times_held": 4,
+            "total_weight": 18.98,
+            "avg_weight": 4.745,
+            "prevalence": 80.0
+          },
+          {
+            "symbol": "TSLA",
+            "name": "Tesla Inc",
+            "times_held": 5,
+            "total_weight": 16.42,
+            "avg_weight": 3.2840000000000003,
+            "prevalence": 100.0
+          }
+        ],
+        "selected_mode": "keep_active",
+        "etf_freshness": {
+          "DRIV": {
+            "symbol": "DRIV",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:28:59.431786",
+            "age_hours": 66.96,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 77
+          },
+          "IDRV": {
+            "symbol": "IDRV",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:29:11.840748",
+            "age_hours": 66.95,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 79
+          },
+          "CARZ": {
+            "symbol": "CARZ",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:28:47.056955",
+            "age_hours": 66.96,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 104
+          },
+          "LIT": {
+            "symbol": "LIT",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:29:24.200933",
+            "age_hours": 66.95,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 43
+          },
+          "KARS": {
+            "symbol": "KARS",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-14T07:32:45.862577",
+            "age_hours": 66.89,
+            "age_days": 2.79,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 85
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    },
+    {
+      "sector": "Consumer Staples",
+      "action": "hold",
+      "action_reason": "Current active leader remains in force.",
+      "target_symbol": "WMT",
+      "target_name": "Walmart Inc",
+      "target_kind": "stock",
+      "review_status": "active",
+      "candidate_symbol": "WMT",
+      "candidate_name": "Walmart Inc",
+      "candidate_score": 12.89,
+      "candidate_prevalence": 80.0,
+      "candidate_avg_weight": 12.89,
+      "previous_symbol": "WMT",
+      "previous_name": "Walmart Inc",
+      "previous_kind": "stock",
+      "pending_symbol": null,
+      "pending_name": null,
+      "pending_confirmations": 0,
+      "confirmation_required": 2,
+      "significant_change": false,
+      "rebalance_due": false,
+      "data_status": "fresh_cache",
+      "sector_freshness": {
+        "data_status": "fresh_cache",
+        "freshness": "fresh",
+        "coverage_ratio": "5/5",
+        "avg_age_hours": 26.33,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 0
+      },
+      "evidence": {
+        "leaders_considered": [
+          {
+            "symbol": "WMT",
+            "name": "Walmart Inc",
+            "times_held": 4,
+            "total_weight": 51.56,
+            "avg_weight": 12.89,
+            "prevalence": 80.0
+          },
+          {
+            "symbol": "COST",
+            "name": "Costco Wholesale Corporation",
+            "times_held": 4,
+            "total_weight": 41.730000000000004,
+            "avg_weight": 10.432500000000001,
+            "prevalence": 80.0
+          },
+          {
+            "symbol": "PG",
+            "name": "Procter & Gamble Company",
+            "times_held": 5,
+            "total_weight": 45.4,
+            "avg_weight": 9.08,
+            "prevalence": 100.0
+          },
+          {
+            "symbol": "KO",
+            "name": "Coca-Cola Company",
+            "times_held": 5,
+            "total_weight": 39.58,
+            "avg_weight": 7.9159999999999995,
+            "prevalence": 100.0
+          },
+          {
+            "symbol": "PM",
+            "name": "Philip Morris International Inc",
+            "times_held": 5,
+            "total_weight": 28.349999999999994,
+            "avg_weight": 5.669999999999999,
+            "prevalence": 100.0
+          }
+        ],
+        "selected_mode": "keep_active",
+        "etf_freshness": {
+          "XLP": {
+            "symbol": "XLP",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-16T00:06:25.552522",
+            "age_hours": 26.34,
+            "age_days": 1.1,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 38
+          },
+          "VDC": {
+            "symbol": "VDC",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-16T00:06:38.220136",
+            "age_hours": 26.33,
+            "age_days": 1.1,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 109
+          },
+          "FSTA": {
+            "symbol": "FSTA",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-16T00:06:51.041435",
+            "age_hours": 26.33,
+            "age_days": 1.1,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 96
+          },
+          "IYK": {
+            "symbol": "IYK",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-16T00:07:17.645075",
+            "age_hours": 26.32,
+            "age_days": 1.1,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 57
+          },
+          "KXI": {
+            "symbol": "KXI",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-16T00:07:05.228202",
+            "age_hours": 26.33,
+            "age_days": 1.1,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 118
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    },
+    {
+      "sector": "Tech & AI",
+      "action": "hold",
+      "action_reason": "Current active leader remains in force.",
+      "target_symbol": "NVDA",
+      "target_name": "NVIDIA Corporation",
+      "target_kind": "stock",
+      "review_status": "active",
+      "candidate_symbol": "NVDA",
+      "candidate_name": "NVIDIA Corporation",
+      "candidate_score": 12.2633,
+      "candidate_prevalence": 100.0,
+      "candidate_avg_weight": 12.2633,
+      "previous_symbol": "NVDA",
+      "previous_name": "NVIDIA Corporation",
+      "previous_kind": "stock",
+      "pending_symbol": null,
+      "pending_name": null,
+      "pending_confirmations": 0,
+      "confirmation_required": 2,
+      "significant_change": false,
+      "rebalance_due": false,
+      "data_status": "cache_miss",
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "3/5",
+        "avg_age_hours": 16.93,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 2
+      },
+      "evidence": {
+        "leaders_considered": [
+          {
+            "symbol": "NVDA",
+            "name": "NVIDIA Corporation",
+            "times_held": 3,
+            "total_weight": 36.79,
+            "avg_weight": 12.263333333333334,
+            "prevalence": 100.0
+          },
+          {
+            "symbol": "AAPL",
+            "name": "Apple Inc",
+            "times_held": 3,
+            "total_weight": 32.96,
+            "avg_weight": 10.986666666666666,
+            "prevalence": 100.0
+          },
+          {
+            "symbol": "MSFT",
+            "name": "Microsoft Corporation",
+            "times_held": 3,
+            "total_weight": 23.25,
+            "avg_weight": 7.75,
+            "prevalence": 100.0
+          },
+          {
+            "symbol": "AVGO",
+            "name": "Broadcom Inc",
+            "times_held": 3,
+            "total_weight": 12.969999999999999,
+            "avg_weight": 4.323333333333333,
+            "prevalence": 100.0
+          },
+          {
+            "symbol": "MU",
+            "name": "MU",
+            "times_held": 3,
+            "total_weight": 8.67,
+            "avg_weight": 2.89,
+            "prevalence": 100.0
+          }
+        ],
+        "selected_mode": "keep_active",
+        "etf_freshness": {
+          "VGT": {
+            "symbol": "VGT",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-17T02:13:49.036087",
+            "age_hours": 0.22,
+            "age_days": 0.01,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 323
+          },
+          "XLK": {
+            "symbol": "XLK",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-15T00:04:51.974935",
+            "age_hours": 50.37,
+            "age_days": 2.1,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 76
+          },
+          "SKYY": {
+            "symbol": "SKYY",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "AIQ": {
+            "symbol": "AIQ",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-17T02:14:01.952011",
+            "age_hours": 0.21,
+            "age_days": 0.01,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 87
+          },
+          "BOTZ": {
+            "symbol": "BOTZ",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    },
+    {
+      "sector": "Financial Services",
+      "action": "watch",
+      "action_reason": "Candidate leader changed, but confirmation/monthly switch rules are not fully met yet.",
+      "target_symbol": "XLF",
+      "target_name": "Financial Select Sector SPDR Fund",
+      "target_kind": "sector_etf",
+      "review_status": "pending_confirmation",
+      "candidate_symbol": "JPM",
+      "candidate_name": "JPMorgan Chase & Co",
+      "candidate_score": 7.0867,
+      "candidate_prevalence": 75.0,
+      "candidate_avg_weight": 7.0867,
+      "previous_symbol": "XLF",
+      "previous_name": "Financial Select Sector SPDR Fund",
+      "previous_kind": "sector_etf",
+      "pending_symbol": "JPM",
+      "pending_name": "JPMorgan Chase & Co",
+      "pending_confirmations": 1,
+      "confirmation_required": 2,
+      "significant_change": true,
+      "rebalance_due": false,
+      "data_status": "cache_miss",
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "4/5",
+        "avg_age_hours": 0.21,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 1
+      },
+      "evidence": {
+        "leaders_considered": [
+          {
+            "symbol": "JPM",
+            "name": "JPMorgan Chase & Co",
+            "times_held": 3,
+            "total_weight": 21.259999999999998,
+            "avg_weight": 7.086666666666666,
+            "prevalence": 75.0
+          },
+          {
+            "symbol": "C",
+            "name": "Citigroup Inc",
+            "times_held": 3,
+            "total_weight": 6.13,
+            "avg_weight": 2.0433333333333334,
+            "prevalence": 75.0
+          }
+        ],
+        "selected_mode": "pending_confirmation",
+        "etf_freshness": {
+          "XLF": {
+            "symbol": "XLF",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-17T02:14:31.021994",
+            "age_hours": 0.21,
+            "age_days": 0.01,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 80
+          },
+          "VFH": {
+            "symbol": "VFH",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-17T02:14:43.525668",
+            "age_hours": 0.21,
+            "age_days": 0.01,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 424
+          },
+          "FINX": {
+            "symbol": "FINX",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "KBE": {
+            "symbol": "KBE",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-17T02:14:56.003764",
+            "age_hours": 0.2,
+            "age_days": 0.01,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 100
+          },
+          "KRE": {
+            "symbol": "KRE",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-17T02:15:08.702955",
+            "age_hours": 0.2,
+            "age_days": 0.01,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 149
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    },
+    {
+      "sector": "Infrastructure",
+      "action": "hold",
+      "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+      "target_symbol": "PAVE",
+      "target_name": "Global X U.S. Infrastructure Development ETF",
+      "target_kind": "sector_etf",
+      "review_status": "fallback",
+      "candidate_symbol": null,
+      "candidate_name": null,
+      "candidate_score": null,
+      "candidate_prevalence": null,
+      "candidate_avg_weight": null,
+      "previous_symbol": "PAVE",
+      "previous_name": "Global X U.S. Infrastructure Development ETF",
+      "previous_kind": "sector_etf",
+      "pending_symbol": null,
+      "pending_name": null,
+      "pending_confirmations": 0,
+      "confirmation_required": 2,
+      "significant_change": false,
+      "rebalance_due": false,
+      "data_status": "cache_miss",
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "4/5",
+        "avg_age_hours": 0.18,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 1
+      },
+      "evidence": {
+        "leaders_considered": [],
+        "selected_mode": "fallback",
+        "etf_freshness": {
+          "PAVE": {
+            "symbol": "PAVE",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-17T02:16:20.565622",
+            "age_hours": 0.19,
+            "age_days": 0.01,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 101
+          },
+          "IFRA": {
+            "symbol": "IFRA",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-17T02:16:33.234569",
+            "age_hours": 0.18,
+            "age_days": 0.01,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 154
+          },
+          "PKB": {
+            "symbol": "PKB",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          },
+          "IGF": {
+            "symbol": "IGF",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-17T02:16:45.952257",
+            "age_hours": 0.18,
+            "age_days": 0.01,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 98
+          },
+          "NFRA": {
+            "symbol": "NFRA",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-17T02:16:07.832710",
+            "age_hours": 0.19,
+            "age_days": 0.01,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 209
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    },
+    {
+      "sector": "Real Estate",
+      "action": "watch",
+      "action_reason": "Candidate leader changed, but confirmation/monthly switch rules are not fully met yet.",
+      "target_symbol": "VNQ",
+      "target_name": "Vanguard Real Estate ETF",
+      "target_kind": "sector_etf",
+      "review_status": "pending_confirmation",
+      "candidate_symbol": "WELL",
+      "candidate_name": "Welltower Inc",
+      "candidate_score": 9.3675,
+      "candidate_prevalence": 100.0,
+      "candidate_avg_weight": 9.3675,
+      "previous_symbol": "VNQ",
+      "previous_name": "Vanguard Real Estate ETF",
+      "previous_kind": "sector_etf",
+      "pending_symbol": "WELL",
+      "pending_name": "Welltower Inc",
+      "pending_confirmations": 1,
+      "confirmation_required": 2,
+      "significant_change": true,
+      "rebalance_due": false,
+      "data_status": "cache_miss",
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "4/5",
+        "avg_age_hours": 0.17,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 1
+      },
+      "evidence": {
+        "leaders_considered": [
+          {
+            "symbol": "WELL",
+            "name": "Welltower Inc",
+            "times_held": 4,
+            "total_weight": 37.47,
+            "avg_weight": 9.3675,
+            "prevalence": 100.0
+          },
+          {
+            "symbol": "PLD",
+            "name": "Prologis Inc",
+            "times_held": 4,
+            "total_weight": 33.79,
+            "avg_weight": 8.4475,
+            "prevalence": 100.0
+          },
+          {
+            "symbol": "EQIX",
+            "name": "EQIX",
+            "times_held": 4,
+            "total_weight": 22.759999999999998,
+            "avg_weight": 5.6899999999999995,
+            "prevalence": 100.0
+          },
+          {
+            "symbol": "AMT",
+            "name": "American Tower Corporation",
+            "times_held": 4,
+            "total_weight": 19.56,
+            "avg_weight": 4.89,
+            "prevalence": 100.0
+          },
+          {
+            "symbol": "SPG",
+            "name": "SPG",
+            "times_held": 4,
+            "total_weight": 17.14,
+            "avg_weight": 4.285,
+            "prevalence": 100.0
+          }
+        ],
+        "selected_mode": "pending_confirmation",
+        "etf_freshness": {
+          "VNQ": {
+            "symbol": "VNQ",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-17T02:17:38.078060",
+            "age_hours": 0.17,
+            "age_days": 0.01,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 159
+          },
+          "IYR": {
+            "symbol": "IYR",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-17T02:18:15.979270",
+            "age_hours": 0.16,
+            "age_days": 0.01,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 64
+          },
+          "SCHH": {
+            "symbol": "SCHH",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-17T02:17:25.357607",
+            "age_hours": 0.17,
+            "age_days": 0.01,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 118
+          },
+          "XLRE": {
+            "symbol": "XLRE",
+            "source": "alpha_vantage_etf_profile",
+            "data_status": "fresh_cache",
+            "cached_at": "2026-04-17T02:18:03.549448",
+            "age_hours": 0.16,
+            "age_days": 0.01,
+            "freshness": "fresh",
+            "ttl_hours": 168,
+            "holdings_count": 34
+          },
+          "RWR": {
+            "symbol": "RWR",
+            "source": "none",
+            "data_status": "cache_miss",
+            "cached_at": null,
+            "age_hours": null,
+            "age_days": null,
+            "freshness": "unknown",
+            "ttl_hours": 168,
+            "holdings_count": 0
+          }
+        },
+        "fetch_mode": "cache_only"
+      }
+    }
+  ],
+  "results": {
+    "Aerospace & Defense": {
+      "funds": [
+        "ITA",
+        "XAR",
+        "PPA",
+        "SHLD",
+        "DFEN"
+      ],
+      "top_leader": {
+        "symbol": "GE",
+        "name": "General Electric Company",
+        "times_held": 4,
+        "total_weight": 43.22,
+        "avg_weight": 10.805,
+        "prevalence": 80.0
+      },
+      "leaders": [
+        {
+          "symbol": "GE",
+          "name": "General Electric Company",
+          "times_held": 4,
+          "total_weight": 43.22,
+          "avg_weight": 10.805,
+          "prevalence": 80.0
+        },
+        {
+          "symbol": "RTX",
+          "name": "Raytheon Technologies Corporation",
+          "times_held": 5,
+          "total_weight": 47.56,
+          "avg_weight": 9.512,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "BA",
+          "name": "Boeing Company",
+          "times_held": 4,
+          "total_weight": 27.43,
+          "avg_weight": 6.8575,
+          "prevalence": 80.0
+        },
+        {
+          "symbol": "LMT",
+          "name": "Lockheed Martin Corporation",
+          "times_held": 5,
+          "total_weight": 28.04,
+          "avg_weight": 5.608,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "GD",
+          "name": "General Dynamics Corporation",
+          "times_held": 5,
+          "total_weight": 23.009999999999998,
+          "avg_weight": 4.601999999999999,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "NOC",
+          "name": "Northrop Grumman Corporation",
+          "times_held": 5,
+          "total_weight": 20.910000000000004,
+          "avg_weight": 4.182,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "LHX",
+          "name": "LHX",
+          "times_held": 5,
+          "total_weight": 20.25,
+          "avg_weight": 4.05,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "HWM",
+          "name": "HWM",
+          "times_held": 4,
+          "total_weight": 14.84,
+          "avg_weight": 3.71,
+          "prevalence": 80.0
+        },
+        {
+          "symbol": "TDG",
+          "name": "TDG",
+          "times_held": 4,
+          "total_weight": 13.45,
+          "avg_weight": 3.3625,
+          "prevalence": 80.0
+        },
+        {
+          "symbol": "RKLB",
+          "name": "RKLB",
+          "times_held": 4,
+          "total_weight": 9.7,
+          "avg_weight": 2.425,
+          "prevalence": 80.0
+        }
+      ],
+      "decision": {
+        "sector": "Aerospace & Defense",
+        "action": "hold",
+        "action_reason": "Current active leader remains in force.",
+        "target_symbol": "GE",
+        "target_name": "General Electric Company",
+        "target_kind": "stock",
+        "review_status": "active",
+        "candidate_symbol": "GE",
+        "candidate_name": "General Electric Company",
+        "candidate_score": 10.805,
+        "candidate_prevalence": 80.0,
+        "candidate_avg_weight": 10.805,
+        "previous_symbol": "GE",
+        "previous_name": "General Electric Company",
+        "previous_kind": "stock",
+        "pending_symbol": null,
+        "pending_name": null,
+        "pending_confirmations": 0,
+        "confirmation_required": 2,
+        "significant_change": false,
+        "rebalance_due": false,
+        "data_status": "fresh_cache",
+        "sector_freshness": {
+          "data_status": "fresh_cache",
+          "freshness": "fresh",
+          "coverage_ratio": "5/5",
+          "avg_age_hours": 67.0,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 0
+        },
+        "evidence": {
+          "leaders_considered": [
+            {
+              "symbol": "GE",
+              "name": "General Electric Company",
+              "times_held": 4,
+              "total_weight": 43.22,
+              "avg_weight": 10.805,
+              "prevalence": 80.0
+            },
+            {
+              "symbol": "RTX",
+              "name": "Raytheon Technologies Corporation",
+              "times_held": 5,
+              "total_weight": 47.56,
+              "avg_weight": 9.512,
+              "prevalence": 100.0
+            },
+            {
+              "symbol": "BA",
+              "name": "Boeing Company",
+              "times_held": 4,
+              "total_weight": 27.43,
+              "avg_weight": 6.8575,
+              "prevalence": 80.0
+            },
+            {
+              "symbol": "LMT",
+              "name": "Lockheed Martin Corporation",
+              "times_held": 5,
+              "total_weight": 28.04,
+              "avg_weight": 5.608,
+              "prevalence": 100.0
+            },
+            {
+              "symbol": "GD",
+              "name": "General Dynamics Corporation",
+              "times_held": 5,
+              "total_weight": 23.009999999999998,
+              "avg_weight": 4.601999999999999,
+              "prevalence": 100.0
+            }
+          ],
+          "selected_mode": "keep_active",
+          "etf_freshness": {
+            "ITA": {
+              "symbol": "ITA",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:24:48.651501",
+              "age_hours": 67.01,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 47
+            },
+            "XAR": {
+              "symbol": "XAR",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:25:00.985831",
+              "age_hours": 67.0,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 42
+            },
+            "PPA": {
+              "symbol": "PPA",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:25:13.450201",
+              "age_hours": 67.0,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 62
+            },
+            "SHLD": {
+              "symbol": "SHLD",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:25:25.823576",
+              "age_hours": 67.0,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 52
+            },
+            "DFEN": {
+              "symbol": "DFEN",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:24:36.288064",
+              "age_hours": 67.01,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 51
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 254,
+      "etf_freshness": {
+        "ITA": {
+          "symbol": "ITA",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:24:48.651501",
+          "age_hours": 67.01,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 47
+        },
+        "XAR": {
+          "symbol": "XAR",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:25:00.985831",
+          "age_hours": 67.0,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 42
+        },
+        "PPA": {
+          "symbol": "PPA",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:25:13.450201",
+          "age_hours": 67.0,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 62
+        },
+        "SHLD": {
+          "symbol": "SHLD",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:25:25.823576",
+          "age_hours": 67.0,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 52
+        },
+        "DFEN": {
+          "symbol": "DFEN",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:24:36.288064",
+          "age_hours": 67.01,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 51
+        }
+      },
+      "sector_freshness": {
+        "data_status": "fresh_cache",
+        "freshness": "fresh",
+        "coverage_ratio": "5/5",
+        "avg_age_hours": 67.0,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 0
+      }
+    },
+    "Renewable Energy": {
+      "funds": [
+        "FAN",
+        "QCLN",
+        "PBW",
+        "ICLN",
+        "TAN"
+      ],
+      "top_leader": {
+        "symbol": "BE",
+        "name": "BE",
+        "times_held": 3,
+        "total_weight": 24.72,
+        "avg_weight": 8.24,
+        "prevalence": 60.0
+      },
+      "leaders": [
+        {
+          "symbol": "BE",
+          "name": "BE",
+          "times_held": 3,
+          "total_weight": 24.72,
+          "avg_weight": 8.24,
+          "prevalence": 60.0
+        },
+        {
+          "symbol": "NXT",
+          "name": "NXT",
+          "times_held": 4,
+          "total_weight": 25.32,
+          "avg_weight": 6.33,
+          "prevalence": 80.0
+        },
+        {
+          "symbol": "FSLR",
+          "name": "First Solar Inc",
+          "times_held": 4,
+          "total_weight": 23.16,
+          "avg_weight": 5.79,
+          "prevalence": 80.0
+        },
+        {
+          "symbol": "ENPH",
+          "name": "Enphase Energy Inc",
+          "times_held": 4,
+          "total_weight": 12.76,
+          "avg_weight": 3.19,
+          "prevalence": 80.0
+        },
+        {
+          "symbol": "ORA",
+          "name": "ORA",
+          "times_held": 3,
+          "total_weight": 7.24,
+          "avg_weight": 2.4133333333333336,
+          "prevalence": 60.0
+        },
+        {
+          "symbol": "RUN",
+          "name": "Sunrun Inc",
+          "times_held": 4,
+          "total_weight": 9.35,
+          "avg_weight": 2.3375,
+          "prevalence": 80.0
+        },
+        {
+          "symbol": "SEDG",
+          "name": "SolarEdge Technologies Inc",
+          "times_held": 4,
+          "total_weight": 8.99,
+          "avg_weight": 2.2475,
+          "prevalence": 80.0
+        },
+        {
+          "symbol": "CWEN",
+          "name": "CWEN",
+          "times_held": 4,
+          "total_weight": 8.67,
+          "avg_weight": 2.1675,
+          "prevalence": 80.0
+        },
+        {
+          "symbol": "PLUG",
+          "name": "PLUG",
+          "times_held": 3,
+          "total_weight": 4.49,
+          "avg_weight": 1.4966666666666668,
+          "prevalence": 60.0
+        }
+      ],
+      "decision": {
+        "sector": "Renewable Energy",
+        "action": "hold",
+        "action_reason": "Current active leader remains in force.",
+        "target_symbol": "BE",
+        "target_name": "BE",
+        "target_kind": "stock",
+        "review_status": "active",
+        "candidate_symbol": "BE",
+        "candidate_name": "BE",
+        "candidate_score": 8.24,
+        "candidate_prevalence": 60.0,
+        "candidate_avg_weight": 8.24,
+        "previous_symbol": "BE",
+        "previous_name": "BE",
+        "previous_kind": "stock",
+        "pending_symbol": null,
+        "pending_name": null,
+        "pending_confirmations": 0,
+        "confirmation_required": 2,
+        "significant_change": false,
+        "rebalance_due": false,
+        "data_status": "fresh_cache",
+        "sector_freshness": {
+          "data_status": "fresh_cache",
+          "freshness": "fresh",
+          "coverage_ratio": "5/5",
+          "avg_age_hours": 66.99,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 0
+        },
+        "evidence": {
+          "leaders_considered": [
+            {
+              "symbol": "BE",
+              "name": "BE",
+              "times_held": 3,
+              "total_weight": 24.72,
+              "avg_weight": 8.24,
+              "prevalence": 60.0
+            },
+            {
+              "symbol": "NXT",
+              "name": "NXT",
+              "times_held": 4,
+              "total_weight": 25.32,
+              "avg_weight": 6.33,
+              "prevalence": 80.0
+            },
+            {
+              "symbol": "FSLR",
+              "name": "First Solar Inc",
+              "times_held": 4,
+              "total_weight": 23.16,
+              "avg_weight": 5.79,
+              "prevalence": 80.0
+            },
+            {
+              "symbol": "ENPH",
+              "name": "Enphase Energy Inc",
+              "times_held": 4,
+              "total_weight": 12.76,
+              "avg_weight": 3.19,
+              "prevalence": 80.0
+            },
+            {
+              "symbol": "ORA",
+              "name": "ORA",
+              "times_held": 3,
+              "total_weight": 7.24,
+              "avg_weight": 2.4133333333333336,
+              "prevalence": 60.0
+            }
+          ],
+          "selected_mode": "keep_active",
+          "etf_freshness": {
+            "FAN": {
+              "symbol": "FAN",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:25:45.706297",
+              "age_hours": 66.99,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 52
+            },
+            "QCLN": {
+              "symbol": "QCLN",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:25:58.093249",
+              "age_hours": 66.99,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 51
+            },
+            "PBW": {
+              "symbol": "PBW",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:26:10.469685",
+              "age_hours": 66.99,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 69
+            },
+            "ICLN": {
+              "symbol": "ICLN",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:26:23.082987",
+              "age_hours": 66.98,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 123
+            },
+            "TAN": {
+              "symbol": "TAN",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:26:35.578372",
+              "age_hours": 66.98,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 42
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 337,
+      "etf_freshness": {
+        "FAN": {
+          "symbol": "FAN",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:25:45.706297",
+          "age_hours": 66.99,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 52
+        },
+        "QCLN": {
+          "symbol": "QCLN",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:25:58.093249",
+          "age_hours": 66.99,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 51
+        },
+        "PBW": {
+          "symbol": "PBW",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:26:10.469685",
+          "age_hours": 66.99,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 69
+        },
+        "ICLN": {
+          "symbol": "ICLN",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:26:23.082987",
+          "age_hours": 66.98,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 123
+        },
+        "TAN": {
+          "symbol": "TAN",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:26:35.578372",
+          "age_hours": 66.98,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 42
+        }
+      },
+      "sector_freshness": {
+        "data_status": "fresh_cache",
+        "freshness": "fresh",
+        "coverage_ratio": "5/5",
+        "avg_age_hours": 66.99,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 0
+      }
+    },
+    "Healthcare & Biotech": {
+      "funds": [
+        "VHT",
+        "XLV",
+        "IHI",
+        "IBB",
+        "XBI"
+      ],
+      "top_leader": {
+        "symbol": "ABT",
+        "name": "Abbott Laboratories",
+        "times_held": 3,
+        "total_weight": 23.33,
+        "avg_weight": 7.776666666666666,
+        "prevalence": 60.0
+      },
+      "leaders": [
+        {
+          "symbol": "ABT",
+          "name": "Abbott Laboratories",
+          "times_held": 3,
+          "total_weight": 23.33,
+          "avg_weight": 7.776666666666666,
+          "prevalence": 60.0
+        },
+        {
+          "symbol": "ISRG",
+          "name": "Intuitive Surgical Inc",
+          "times_held": 3,
+          "total_weight": 21.53,
+          "avg_weight": 7.176666666666667,
+          "prevalence": 60.0
+        },
+        {
+          "symbol": "SYK",
+          "name": "Stryker Corporation",
+          "times_held": 3,
+          "total_weight": 14.77,
+          "avg_weight": 4.923333333333333,
+          "prevalence": 60.0
+        },
+        {
+          "symbol": "ABBV",
+          "name": "AbbVie Inc",
+          "times_held": 3,
+          "total_weight": 14.34,
+          "avg_weight": 4.78,
+          "prevalence": 60.0
+        },
+        {
+          "symbol": "VRTX",
+          "name": "Vertex Pharmaceuticals Inc",
+          "times_held": 3,
+          "total_weight": 13.049999999999999,
+          "avg_weight": 4.35,
+          "prevalence": 60.0
+        },
+        {
+          "symbol": "GILD",
+          "name": "Gilead Sciences Inc",
+          "times_held": 4,
+          "total_weight": 16.77,
+          "avg_weight": 4.1925,
+          "prevalence": 80.0
+        },
+        {
+          "symbol": "AMGN",
+          "name": "Amgen Inc",
+          "times_held": 4,
+          "total_weight": 16.61,
+          "avg_weight": 4.1525,
+          "prevalence": 80.0
+        },
+        {
+          "symbol": "MDT",
+          "name": "MDT",
+          "times_held": 3,
+          "total_weight": 8.5,
+          "avg_weight": 2.8333333333333335,
+          "prevalence": 60.0
+        },
+        {
+          "symbol": "BSX",
+          "name": "BSX",
+          "times_held": 3,
+          "total_weight": 8.08,
+          "avg_weight": 2.6933333333333334,
+          "prevalence": 60.0
+        },
+        {
+          "symbol": "REGN",
+          "name": "Regeneron Pharmaceuticals Inc",
+          "times_held": 4,
+          "total_weight": 10.67,
+          "avg_weight": 2.6675,
+          "prevalence": 80.0
+        }
+      ],
+      "decision": {
+        "sector": "Healthcare & Biotech",
+        "action": "watch",
+        "action_reason": "Candidate leader changed, but confirmation/monthly switch rules are not fully met yet.",
+        "target_symbol": "ABBV",
+        "target_name": "AbbVie Inc",
+        "target_kind": "stock",
+        "review_status": "pending_confirmation",
+        "candidate_symbol": "ABT",
+        "candidate_name": "Abbott Laboratories",
+        "candidate_score": 7.7767,
+        "candidate_prevalence": 60.0,
+        "candidate_avg_weight": 7.7767,
+        "previous_symbol": "ABBV",
+        "previous_name": "AbbVie Inc",
+        "previous_kind": "stock",
+        "pending_symbol": "ABT",
+        "pending_name": "Abbott Laboratories",
+        "pending_confirmations": 1,
+        "confirmation_required": 2,
+        "significant_change": false,
+        "rebalance_due": false,
+        "data_status": "fresh_cache",
+        "sector_freshness": {
+          "data_status": "fresh_cache",
+          "freshness": "fresh",
+          "coverage_ratio": "5/5",
+          "avg_age_hours": 66.97,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 0
+        },
+        "evidence": {
+          "leaders_considered": [
+            {
+              "symbol": "ABT",
+              "name": "Abbott Laboratories",
+              "times_held": 3,
+              "total_weight": 23.33,
+              "avg_weight": 7.776666666666666,
+              "prevalence": 60.0
+            },
+            {
+              "symbol": "ISRG",
+              "name": "Intuitive Surgical Inc",
+              "times_held": 3,
+              "total_weight": 21.53,
+              "avg_weight": 7.176666666666667,
+              "prevalence": 60.0
+            },
+            {
+              "symbol": "SYK",
+              "name": "Stryker Corporation",
+              "times_held": 3,
+              "total_weight": 14.77,
+              "avg_weight": 4.923333333333333,
+              "prevalence": 60.0
+            },
+            {
+              "symbol": "ABBV",
+              "name": "AbbVie Inc",
+              "times_held": 3,
+              "total_weight": 14.34,
+              "avg_weight": 4.78,
+              "prevalence": 60.0
+            },
+            {
+              "symbol": "VRTX",
+              "name": "Vertex Pharmaceuticals Inc",
+              "times_held": 3,
+              "total_weight": 13.049999999999999,
+              "avg_weight": 4.35,
+              "prevalence": 60.0
+            }
+          ],
+          "selected_mode": "pending_confirmation",
+          "etf_freshness": {
+            "VHT": {
+              "symbol": "VHT",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:27:12.952152",
+              "age_hours": 66.97,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 416
+            },
+            "XLV": {
+              "symbol": "XLV",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:27:38.559463",
+              "age_hours": 66.97,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 62
+            },
+            "IHI": {
+              "symbol": "IHI",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:27:25.546392",
+              "age_hours": 66.97,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 51
+            },
+            "IBB": {
+              "symbol": "IBB",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:27:00.158272",
+              "age_hours": 66.98,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 258
+            },
+            "XBI": {
+              "symbol": "XBI",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:27:51.146360",
+              "age_hours": 66.96,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 156
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 943,
+      "etf_freshness": {
+        "VHT": {
+          "symbol": "VHT",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:27:12.952152",
+          "age_hours": 66.97,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 416
+        },
+        "XLV": {
+          "symbol": "XLV",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:27:38.559463",
+          "age_hours": 66.97,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 62
+        },
+        "IHI": {
+          "symbol": "IHI",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:27:25.546392",
+          "age_hours": 66.97,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 51
+        },
+        "IBB": {
+          "symbol": "IBB",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:27:00.158272",
+          "age_hours": 66.98,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 258
+        },
+        "XBI": {
+          "symbol": "XBI",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:27:51.146360",
+          "age_hours": 66.96,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 156
+        }
+      },
+      "sector_freshness": {
+        "data_status": "fresh_cache",
+        "freshness": "fresh",
+        "coverage_ratio": "5/5",
+        "avg_age_hours": 66.97,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 0
+      }
+    },
+    "Automotive": {
+      "funds": [
+        "DRIV",
+        "IDRV",
+        "CARZ",
+        "LIT",
+        "KARS"
+      ],
+      "top_leader": {
+        "symbol": "ALB",
+        "name": "ALB",
+        "times_held": 4,
+        "total_weight": 18.98,
+        "avg_weight": 4.745,
+        "prevalence": 80.0
+      },
+      "leaders": [
+        {
+          "symbol": "ALB",
+          "name": "ALB",
+          "times_held": 4,
+          "total_weight": 18.98,
+          "avg_weight": 4.745,
+          "prevalence": 80.0
+        },
+        {
+          "symbol": "TSLA",
+          "name": "Tesla Inc",
+          "times_held": 5,
+          "total_weight": 16.42,
+          "avg_weight": 3.2840000000000003,
+          "prevalence": 100.0
+        }
+      ],
+      "decision": {
+        "sector": "Automotive",
+        "action": "hold",
+        "action_reason": "Current active leader remains in force.",
+        "target_symbol": "ALB",
+        "target_name": "ALB",
+        "target_kind": "stock",
+        "review_status": "active",
+        "candidate_symbol": "ALB",
+        "candidate_name": "ALB",
+        "candidate_score": 4.745,
+        "candidate_prevalence": 80.0,
+        "candidate_avg_weight": 4.745,
+        "previous_symbol": "ALB",
+        "previous_name": "ALB",
+        "previous_kind": "stock",
+        "pending_symbol": null,
+        "pending_name": null,
+        "pending_confirmations": 0,
+        "confirmation_required": 2,
+        "significant_change": false,
+        "rebalance_due": false,
+        "data_status": "fresh_cache",
+        "sector_freshness": {
+          "data_status": "fresh_cache",
+          "freshness": "fresh",
+          "coverage_ratio": "5/5",
+          "avg_age_hours": 66.94,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 0
+        },
+        "evidence": {
+          "leaders_considered": [
+            {
+              "symbol": "ALB",
+              "name": "ALB",
+              "times_held": 4,
+              "total_weight": 18.98,
+              "avg_weight": 4.745,
+              "prevalence": 80.0
+            },
+            {
+              "symbol": "TSLA",
+              "name": "Tesla Inc",
+              "times_held": 5,
+              "total_weight": 16.42,
+              "avg_weight": 3.2840000000000003,
+              "prevalence": 100.0
+            }
+          ],
+          "selected_mode": "keep_active",
+          "etf_freshness": {
+            "DRIV": {
+              "symbol": "DRIV",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:28:59.431786",
+              "age_hours": 66.96,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 77
+            },
+            "IDRV": {
+              "symbol": "IDRV",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:29:11.840748",
+              "age_hours": 66.95,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 79
+            },
+            "CARZ": {
+              "symbol": "CARZ",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:28:47.056955",
+              "age_hours": 66.96,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 104
+            },
+            "LIT": {
+              "symbol": "LIT",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:29:24.200933",
+              "age_hours": 66.95,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 43
+            },
+            "KARS": {
+              "symbol": "KARS",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-14T07:32:45.862577",
+              "age_hours": 66.89,
+              "age_days": 2.79,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 85
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 388,
+      "etf_freshness": {
+        "DRIV": {
+          "symbol": "DRIV",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:28:59.431786",
+          "age_hours": 66.96,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 77
+        },
+        "IDRV": {
+          "symbol": "IDRV",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:29:11.840748",
+          "age_hours": 66.95,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 79
+        },
+        "CARZ": {
+          "symbol": "CARZ",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:28:47.056955",
+          "age_hours": 66.96,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 104
+        },
+        "LIT": {
+          "symbol": "LIT",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:29:24.200933",
+          "age_hours": 66.95,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 43
+        },
+        "KARS": {
+          "symbol": "KARS",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-14T07:32:45.862577",
+          "age_hours": 66.89,
+          "age_days": 2.79,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 85
+        }
+      },
+      "sector_freshness": {
+        "data_status": "fresh_cache",
+        "freshness": "fresh",
+        "coverage_ratio": "5/5",
+        "avg_age_hours": 66.94,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 0
+      }
+    },
+    "Consumer Staples": {
+      "funds": [
+        "XLP",
+        "VDC",
+        "FSTA",
+        "IYK",
+        "KXI"
+      ],
+      "top_leader": {
+        "symbol": "WMT",
+        "name": "Walmart Inc",
+        "times_held": 4,
+        "total_weight": 51.56,
+        "avg_weight": 12.89,
+        "prevalence": 80.0
+      },
+      "leaders": [
+        {
+          "symbol": "WMT",
+          "name": "Walmart Inc",
+          "times_held": 4,
+          "total_weight": 51.56,
+          "avg_weight": 12.89,
+          "prevalence": 80.0
+        },
+        {
+          "symbol": "COST",
+          "name": "Costco Wholesale Corporation",
+          "times_held": 4,
+          "total_weight": 41.730000000000004,
+          "avg_weight": 10.432500000000001,
+          "prevalence": 80.0
+        },
+        {
+          "symbol": "PG",
+          "name": "Procter & Gamble Company",
+          "times_held": 5,
+          "total_weight": 45.4,
+          "avg_weight": 9.08,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "KO",
+          "name": "Coca-Cola Company",
+          "times_held": 5,
+          "total_weight": 39.58,
+          "avg_weight": 7.9159999999999995,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "PM",
+          "name": "Philip Morris International Inc",
+          "times_held": 5,
+          "total_weight": 28.349999999999994,
+          "avg_weight": 5.669999999999999,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "PEP",
+          "name": "PepsiCo Inc",
+          "times_held": 5,
+          "total_weight": 27.050000000000004,
+          "avg_weight": 5.410000000000001,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "MO",
+          "name": "MO",
+          "times_held": 5,
+          "total_weight": 19.37,
+          "avg_weight": 3.874,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "MDLZ",
+          "name": "Mondelez International Inc",
+          "times_held": 5,
+          "total_weight": 15.190000000000001,
+          "avg_weight": 3.0380000000000003,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "CL",
+          "name": "Colgate-Palmolive Company",
+          "times_held": 5,
+          "total_weight": 13.849999999999998,
+          "avg_weight": 2.7699999999999996,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "MNST",
+          "name": "MNST",
+          "times_held": 5,
+          "total_weight": 11.24,
+          "avg_weight": 2.248,
+          "prevalence": 100.0
+        }
+      ],
+      "decision": {
+        "sector": "Consumer Staples",
+        "action": "hold",
+        "action_reason": "Current active leader remains in force.",
+        "target_symbol": "WMT",
+        "target_name": "Walmart Inc",
+        "target_kind": "stock",
+        "review_status": "active",
+        "candidate_symbol": "WMT",
+        "candidate_name": "Walmart Inc",
+        "candidate_score": 12.89,
+        "candidate_prevalence": 80.0,
+        "candidate_avg_weight": 12.89,
+        "previous_symbol": "WMT",
+        "previous_name": "Walmart Inc",
+        "previous_kind": "stock",
+        "pending_symbol": null,
+        "pending_name": null,
+        "pending_confirmations": 0,
+        "confirmation_required": 2,
+        "significant_change": false,
+        "rebalance_due": false,
+        "data_status": "fresh_cache",
+        "sector_freshness": {
+          "data_status": "fresh_cache",
+          "freshness": "fresh",
+          "coverage_ratio": "5/5",
+          "avg_age_hours": 26.33,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 0
+        },
+        "evidence": {
+          "leaders_considered": [
+            {
+              "symbol": "WMT",
+              "name": "Walmart Inc",
+              "times_held": 4,
+              "total_weight": 51.56,
+              "avg_weight": 12.89,
+              "prevalence": 80.0
+            },
+            {
+              "symbol": "COST",
+              "name": "Costco Wholesale Corporation",
+              "times_held": 4,
+              "total_weight": 41.730000000000004,
+              "avg_weight": 10.432500000000001,
+              "prevalence": 80.0
+            },
+            {
+              "symbol": "PG",
+              "name": "Procter & Gamble Company",
+              "times_held": 5,
+              "total_weight": 45.4,
+              "avg_weight": 9.08,
+              "prevalence": 100.0
+            },
+            {
+              "symbol": "KO",
+              "name": "Coca-Cola Company",
+              "times_held": 5,
+              "total_weight": 39.58,
+              "avg_weight": 7.9159999999999995,
+              "prevalence": 100.0
+            },
+            {
+              "symbol": "PM",
+              "name": "Philip Morris International Inc",
+              "times_held": 5,
+              "total_weight": 28.349999999999994,
+              "avg_weight": 5.669999999999999,
+              "prevalence": 100.0
+            }
+          ],
+          "selected_mode": "keep_active",
+          "etf_freshness": {
+            "XLP": {
+              "symbol": "XLP",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-16T00:06:25.552522",
+              "age_hours": 26.34,
+              "age_days": 1.1,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 38
+            },
+            "VDC": {
+              "symbol": "VDC",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-16T00:06:38.220136",
+              "age_hours": 26.33,
+              "age_days": 1.1,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 109
+            },
+            "FSTA": {
+              "symbol": "FSTA",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-16T00:06:51.041435",
+              "age_hours": 26.33,
+              "age_days": 1.1,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 96
+            },
+            "IYK": {
+              "symbol": "IYK",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-16T00:07:17.645075",
+              "age_hours": 26.32,
+              "age_days": 1.1,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 57
+            },
+            "KXI": {
+              "symbol": "KXI",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-16T00:07:05.228202",
+              "age_hours": 26.33,
+              "age_days": 1.1,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 118
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 418,
+      "etf_freshness": {
+        "XLP": {
+          "symbol": "XLP",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-16T00:06:25.552522",
+          "age_hours": 26.34,
+          "age_days": 1.1,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 38
+        },
+        "VDC": {
+          "symbol": "VDC",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-16T00:06:38.220136",
+          "age_hours": 26.33,
+          "age_days": 1.1,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 109
+        },
+        "FSTA": {
+          "symbol": "FSTA",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-16T00:06:51.041435",
+          "age_hours": 26.33,
+          "age_days": 1.1,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 96
+        },
+        "IYK": {
+          "symbol": "IYK",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-16T00:07:17.645075",
+          "age_hours": 26.32,
+          "age_days": 1.1,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 57
+        },
+        "KXI": {
+          "symbol": "KXI",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-16T00:07:05.228202",
+          "age_hours": 26.33,
+          "age_days": 1.1,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 118
+        }
+      },
+      "sector_freshness": {
+        "data_status": "fresh_cache",
+        "freshness": "fresh",
+        "coverage_ratio": "5/5",
+        "avg_age_hours": 26.33,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 0
+      }
+    },
+    "Tech & AI": {
+      "funds": [
+        "VGT",
+        "XLK",
+        "SKYY",
+        "AIQ",
+        "BOTZ"
+      ],
+      "top_leader": {
+        "symbol": "NVDA",
+        "name": "NVIDIA Corporation",
+        "times_held": 3,
+        "total_weight": 36.79,
+        "avg_weight": 12.263333333333334,
+        "prevalence": 100.0
+      },
+      "leaders": [
+        {
+          "symbol": "NVDA",
+          "name": "NVIDIA Corporation",
+          "times_held": 3,
+          "total_weight": 36.79,
+          "avg_weight": 12.263333333333334,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "AAPL",
+          "name": "Apple Inc",
+          "times_held": 3,
+          "total_weight": 32.96,
+          "avg_weight": 10.986666666666666,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "MSFT",
+          "name": "Microsoft Corporation",
+          "times_held": 3,
+          "total_weight": 23.25,
+          "avg_weight": 7.75,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "AVGO",
+          "name": "Broadcom Inc",
+          "times_held": 3,
+          "total_weight": 12.969999999999999,
+          "avg_weight": 4.323333333333333,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "MU",
+          "name": "MU",
+          "times_held": 3,
+          "total_weight": 8.67,
+          "avg_weight": 2.89,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "CSCO",
+          "name": "Cisco Systems Inc",
+          "times_held": 3,
+          "total_weight": 7.9399999999999995,
+          "avg_weight": 2.6466666666666665,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "PLTR",
+          "name": "PLTR",
+          "times_held": 3,
+          "total_weight": 7.57,
+          "avg_weight": 2.5233333333333334,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "AMD",
+          "name": "Advanced Micro Devices Inc",
+          "times_held": 3,
+          "total_weight": 7.35,
+          "avg_weight": 2.4499999999999997,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "ORCL",
+          "name": "Oracle Corporation",
+          "times_held": 3,
+          "total_weight": 6.300000000000001,
+          "avg_weight": 2.1,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "IBM",
+          "name": "International Business Machines Corp",
+          "times_held": 3,
+          "total_weight": 5.59,
+          "avg_weight": 1.8633333333333333,
+          "prevalence": 100.0
+        }
+      ],
+      "decision": {
+        "sector": "Tech & AI",
+        "action": "hold",
+        "action_reason": "Current active leader remains in force.",
+        "target_symbol": "NVDA",
+        "target_name": "NVIDIA Corporation",
+        "target_kind": "stock",
+        "review_status": "active",
+        "candidate_symbol": "NVDA",
+        "candidate_name": "NVIDIA Corporation",
+        "candidate_score": 12.2633,
+        "candidate_prevalence": 100.0,
+        "candidate_avg_weight": 12.2633,
+        "previous_symbol": "NVDA",
+        "previous_name": "NVIDIA Corporation",
+        "previous_kind": "stock",
+        "pending_symbol": null,
+        "pending_name": null,
+        "pending_confirmations": 0,
+        "confirmation_required": 2,
+        "significant_change": false,
+        "rebalance_due": false,
+        "data_status": "cache_miss",
+        "sector_freshness": {
+          "data_status": "cache_miss",
+          "freshness": "mixed",
+          "coverage_ratio": "3/5",
+          "avg_age_hours": 16.93,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 2
+        },
+        "evidence": {
+          "leaders_considered": [
+            {
+              "symbol": "NVDA",
+              "name": "NVIDIA Corporation",
+              "times_held": 3,
+              "total_weight": 36.79,
+              "avg_weight": 12.263333333333334,
+              "prevalence": 100.0
+            },
+            {
+              "symbol": "AAPL",
+              "name": "Apple Inc",
+              "times_held": 3,
+              "total_weight": 32.96,
+              "avg_weight": 10.986666666666666,
+              "prevalence": 100.0
+            },
+            {
+              "symbol": "MSFT",
+              "name": "Microsoft Corporation",
+              "times_held": 3,
+              "total_weight": 23.25,
+              "avg_weight": 7.75,
+              "prevalence": 100.0
+            },
+            {
+              "symbol": "AVGO",
+              "name": "Broadcom Inc",
+              "times_held": 3,
+              "total_weight": 12.969999999999999,
+              "avg_weight": 4.323333333333333,
+              "prevalence": 100.0
+            },
+            {
+              "symbol": "MU",
+              "name": "MU",
+              "times_held": 3,
+              "total_weight": 8.67,
+              "avg_weight": 2.89,
+              "prevalence": 100.0
+            }
+          ],
+          "selected_mode": "keep_active",
+          "etf_freshness": {
+            "VGT": {
+              "symbol": "VGT",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-17T02:13:49.036087",
+              "age_hours": 0.22,
+              "age_days": 0.01,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 323
+            },
+            "XLK": {
+              "symbol": "XLK",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-15T00:04:51.974935",
+              "age_hours": 50.37,
+              "age_days": 2.1,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 76
+            },
+            "SKYY": {
+              "symbol": "SKYY",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "AIQ": {
+              "symbol": "AIQ",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-17T02:14:01.952011",
+              "age_hours": 0.21,
+              "age_days": 0.01,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 87
+            },
+            "BOTZ": {
+              "symbol": "BOTZ",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 486,
+      "etf_freshness": {
+        "VGT": {
+          "symbol": "VGT",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-17T02:13:49.036087",
+          "age_hours": 0.22,
+          "age_days": 0.01,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 323
+        },
+        "XLK": {
+          "symbol": "XLK",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-15T00:04:51.974935",
+          "age_hours": 50.37,
+          "age_days": 2.1,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 76
+        },
+        "SKYY": {
+          "symbol": "SKYY",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "AIQ": {
+          "symbol": "AIQ",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-17T02:14:01.952011",
+          "age_hours": 0.21,
+          "age_days": 0.01,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 87
+        },
+        "BOTZ": {
+          "symbol": "BOTZ",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        }
+      },
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "3/5",
+        "avg_age_hours": 16.93,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 2
+      }
+    },
+    "Financial Services": {
+      "funds": [
+        "XLF",
+        "VFH",
+        "FINX",
+        "KBE",
+        "KRE"
+      ],
+      "top_leader": {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase & Co",
+        "times_held": 3,
+        "total_weight": 21.259999999999998,
+        "avg_weight": 7.086666666666666,
+        "prevalence": 75.0
+      },
+      "leaders": [
+        {
+          "symbol": "JPM",
+          "name": "JPMorgan Chase & Co",
+          "times_held": 3,
+          "total_weight": 21.259999999999998,
+          "avg_weight": 7.086666666666666,
+          "prevalence": 75.0
+        },
+        {
+          "symbol": "C",
+          "name": "Citigroup Inc",
+          "times_held": 3,
+          "total_weight": 6.13,
+          "avg_weight": 2.0433333333333334,
+          "prevalence": 75.0
+        }
+      ],
+      "decision": {
+        "sector": "Financial Services",
+        "action": "watch",
+        "action_reason": "Candidate leader changed, but confirmation/monthly switch rules are not fully met yet.",
+        "target_symbol": "XLF",
+        "target_name": "Financial Select Sector SPDR Fund",
+        "target_kind": "sector_etf",
+        "review_status": "pending_confirmation",
+        "candidate_symbol": "JPM",
+        "candidate_name": "JPMorgan Chase & Co",
+        "candidate_score": 7.0867,
+        "candidate_prevalence": 75.0,
+        "candidate_avg_weight": 7.0867,
+        "previous_symbol": "XLF",
+        "previous_name": "Financial Select Sector SPDR Fund",
+        "previous_kind": "sector_etf",
+        "pending_symbol": "JPM",
+        "pending_name": "JPMorgan Chase & Co",
+        "pending_confirmations": 1,
+        "confirmation_required": 2,
+        "significant_change": true,
+        "rebalance_due": false,
+        "data_status": "cache_miss",
+        "sector_freshness": {
+          "data_status": "cache_miss",
+          "freshness": "mixed",
+          "coverage_ratio": "4/5",
+          "avg_age_hours": 0.21,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 1
+        },
+        "evidence": {
+          "leaders_considered": [
+            {
+              "symbol": "JPM",
+              "name": "JPMorgan Chase & Co",
+              "times_held": 3,
+              "total_weight": 21.259999999999998,
+              "avg_weight": 7.086666666666666,
+              "prevalence": 75.0
+            },
+            {
+              "symbol": "C",
+              "name": "Citigroup Inc",
+              "times_held": 3,
+              "total_weight": 6.13,
+              "avg_weight": 2.0433333333333334,
+              "prevalence": 75.0
+            }
+          ],
+          "selected_mode": "pending_confirmation",
+          "etf_freshness": {
+            "XLF": {
+              "symbol": "XLF",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-17T02:14:31.021994",
+              "age_hours": 0.21,
+              "age_days": 0.01,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 80
+            },
+            "VFH": {
+              "symbol": "VFH",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-17T02:14:43.525668",
+              "age_hours": 0.21,
+              "age_days": 0.01,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 424
+            },
+            "FINX": {
+              "symbol": "FINX",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "KBE": {
+              "symbol": "KBE",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-17T02:14:56.003764",
+              "age_hours": 0.2,
+              "age_days": 0.01,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 100
+            },
+            "KRE": {
+              "symbol": "KRE",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-17T02:15:08.702955",
+              "age_hours": 0.2,
+              "age_days": 0.01,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 149
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 753,
+      "etf_freshness": {
+        "XLF": {
+          "symbol": "XLF",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-17T02:14:31.021994",
+          "age_hours": 0.21,
+          "age_days": 0.01,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 80
+        },
+        "VFH": {
+          "symbol": "VFH",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-17T02:14:43.525668",
+          "age_hours": 0.21,
+          "age_days": 0.01,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 424
+        },
+        "FINX": {
+          "symbol": "FINX",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "KBE": {
+          "symbol": "KBE",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-17T02:14:56.003764",
+          "age_hours": 0.2,
+          "age_days": 0.01,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 100
+        },
+        "KRE": {
+          "symbol": "KRE",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-17T02:15:08.702955",
+          "age_hours": 0.2,
+          "age_days": 0.01,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 149
+        }
+      },
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "4/5",
+        "avg_age_hours": 0.21,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 1
+      }
+    },
+    "Infrastructure": {
+      "funds": [
+        "PAVE",
+        "IFRA",
+        "PKB",
+        "IGF",
+        "NFRA"
+      ],
+      "top_leader": null,
+      "leaders": [],
+      "decision": {
+        "sector": "Infrastructure",
+        "action": "hold",
+        "action_reason": "No valid stock leader met the rules; use sector ETF fallback.",
+        "target_symbol": "PAVE",
+        "target_name": "Global X U.S. Infrastructure Development ETF",
+        "target_kind": "sector_etf",
+        "review_status": "fallback",
+        "candidate_symbol": null,
+        "candidate_name": null,
+        "candidate_score": null,
+        "candidate_prevalence": null,
+        "candidate_avg_weight": null,
+        "previous_symbol": "PAVE",
+        "previous_name": "Global X U.S. Infrastructure Development ETF",
+        "previous_kind": "sector_etf",
+        "pending_symbol": null,
+        "pending_name": null,
+        "pending_confirmations": 0,
+        "confirmation_required": 2,
+        "significant_change": false,
+        "rebalance_due": false,
+        "data_status": "cache_miss",
+        "sector_freshness": {
+          "data_status": "cache_miss",
+          "freshness": "mixed",
+          "coverage_ratio": "4/5",
+          "avg_age_hours": 0.18,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 1
+        },
+        "evidence": {
+          "leaders_considered": [],
+          "selected_mode": "fallback",
+          "etf_freshness": {
+            "PAVE": {
+              "symbol": "PAVE",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-17T02:16:20.565622",
+              "age_hours": 0.19,
+              "age_days": 0.01,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 101
+            },
+            "IFRA": {
+              "symbol": "IFRA",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-17T02:16:33.234569",
+              "age_hours": 0.18,
+              "age_days": 0.01,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 154
+            },
+            "PKB": {
+              "symbol": "PKB",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            },
+            "IGF": {
+              "symbol": "IGF",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-17T02:16:45.952257",
+              "age_hours": 0.18,
+              "age_days": 0.01,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 98
+            },
+            "NFRA": {
+              "symbol": "NFRA",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-17T02:16:07.832710",
+              "age_hours": 0.19,
+              "age_days": 0.01,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 209
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 562,
+      "etf_freshness": {
+        "PAVE": {
+          "symbol": "PAVE",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-17T02:16:20.565622",
+          "age_hours": 0.19,
+          "age_days": 0.01,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 101
+        },
+        "IFRA": {
+          "symbol": "IFRA",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-17T02:16:33.234569",
+          "age_hours": 0.18,
+          "age_days": 0.01,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 154
+        },
+        "PKB": {
+          "symbol": "PKB",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        },
+        "IGF": {
+          "symbol": "IGF",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-17T02:16:45.952257",
+          "age_hours": 0.18,
+          "age_days": 0.01,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 98
+        },
+        "NFRA": {
+          "symbol": "NFRA",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-17T02:16:07.832710",
+          "age_hours": 0.19,
+          "age_days": 0.01,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 209
+        }
+      },
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "4/5",
+        "avg_age_hours": 0.18,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 1
+      }
+    },
+    "Real Estate": {
+      "funds": [
+        "VNQ",
+        "IYR",
+        "SCHH",
+        "XLRE",
+        "RWR"
+      ],
+      "top_leader": {
+        "symbol": "WELL",
+        "name": "Welltower Inc",
+        "times_held": 4,
+        "total_weight": 37.47,
+        "avg_weight": 9.3675,
+        "prevalence": 100.0
+      },
+      "leaders": [
+        {
+          "symbol": "WELL",
+          "name": "Welltower Inc",
+          "times_held": 4,
+          "total_weight": 37.47,
+          "avg_weight": 9.3675,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "PLD",
+          "name": "Prologis Inc",
+          "times_held": 4,
+          "total_weight": 33.79,
+          "avg_weight": 8.4475,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "EQIX",
+          "name": "EQIX",
+          "times_held": 4,
+          "total_weight": 22.759999999999998,
+          "avg_weight": 5.6899999999999995,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "AMT",
+          "name": "American Tower Corporation",
+          "times_held": 4,
+          "total_weight": 19.56,
+          "avg_weight": 4.89,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "SPG",
+          "name": "SPG",
+          "times_held": 4,
+          "total_weight": 17.14,
+          "avg_weight": 4.285,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "DLR",
+          "name": "Digital Realty Trust Inc",
+          "times_held": 4,
+          "total_weight": 16.69,
+          "avg_weight": 4.1725,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "O",
+          "name": "Realty Income Corporation",
+          "times_held": 4,
+          "total_weight": 16.34,
+          "avg_weight": 4.085,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "PSA",
+          "name": "Public Storage",
+          "times_held": 4,
+          "total_weight": 13.61,
+          "avg_weight": 3.4025,
+          "prevalence": 100.0
+        },
+        {
+          "symbol": "CBRE",
+          "name": "CBRE",
+          "times_held": 3,
+          "total_weight": 9.879999999999999,
+          "avg_weight": 3.293333333333333,
+          "prevalence": 75.0
+        },
+        {
+          "symbol": "VTR",
+          "name": "VTR",
+          "times_held": 4,
+          "total_weight": 12.649999999999999,
+          "avg_weight": 3.1624999999999996,
+          "prevalence": 100.0
+        }
+      ],
+      "decision": {
+        "sector": "Real Estate",
+        "action": "watch",
+        "action_reason": "Candidate leader changed, but confirmation/monthly switch rules are not fully met yet.",
+        "target_symbol": "VNQ",
+        "target_name": "Vanguard Real Estate ETF",
+        "target_kind": "sector_etf",
+        "review_status": "pending_confirmation",
+        "candidate_symbol": "WELL",
+        "candidate_name": "Welltower Inc",
+        "candidate_score": 9.3675,
+        "candidate_prevalence": 100.0,
+        "candidate_avg_weight": 9.3675,
+        "previous_symbol": "VNQ",
+        "previous_name": "Vanguard Real Estate ETF",
+        "previous_kind": "sector_etf",
+        "pending_symbol": "WELL",
+        "pending_name": "Welltower Inc",
+        "pending_confirmations": 1,
+        "confirmation_required": 2,
+        "significant_change": true,
+        "rebalance_due": false,
+        "data_status": "cache_miss",
+        "sector_freshness": {
+          "data_status": "cache_miss",
+          "freshness": "mixed",
+          "coverage_ratio": "4/5",
+          "avg_age_hours": 0.17,
+          "stale_etfs": 0,
+          "live_etfs": 0,
+          "cache_miss_etfs": 1
+        },
+        "evidence": {
+          "leaders_considered": [
+            {
+              "symbol": "WELL",
+              "name": "Welltower Inc",
+              "times_held": 4,
+              "total_weight": 37.47,
+              "avg_weight": 9.3675,
+              "prevalence": 100.0
+            },
+            {
+              "symbol": "PLD",
+              "name": "Prologis Inc",
+              "times_held": 4,
+              "total_weight": 33.79,
+              "avg_weight": 8.4475,
+              "prevalence": 100.0
+            },
+            {
+              "symbol": "EQIX",
+              "name": "EQIX",
+              "times_held": 4,
+              "total_weight": 22.759999999999998,
+              "avg_weight": 5.6899999999999995,
+              "prevalence": 100.0
+            },
+            {
+              "symbol": "AMT",
+              "name": "American Tower Corporation",
+              "times_held": 4,
+              "total_weight": 19.56,
+              "avg_weight": 4.89,
+              "prevalence": 100.0
+            },
+            {
+              "symbol": "SPG",
+              "name": "SPG",
+              "times_held": 4,
+              "total_weight": 17.14,
+              "avg_weight": 4.285,
+              "prevalence": 100.0
+            }
+          ],
+          "selected_mode": "pending_confirmation",
+          "etf_freshness": {
+            "VNQ": {
+              "symbol": "VNQ",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-17T02:17:38.078060",
+              "age_hours": 0.17,
+              "age_days": 0.01,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 159
+            },
+            "IYR": {
+              "symbol": "IYR",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-17T02:18:15.979270",
+              "age_hours": 0.16,
+              "age_days": 0.01,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 64
+            },
+            "SCHH": {
+              "symbol": "SCHH",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-17T02:17:25.357607",
+              "age_hours": 0.17,
+              "age_days": 0.01,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 118
+            },
+            "XLRE": {
+              "symbol": "XLRE",
+              "source": "alpha_vantage_etf_profile",
+              "data_status": "fresh_cache",
+              "cached_at": "2026-04-17T02:18:03.549448",
+              "age_hours": 0.16,
+              "age_days": 0.01,
+              "freshness": "fresh",
+              "ttl_hours": 168,
+              "holdings_count": 34
+            },
+            "RWR": {
+              "symbol": "RWR",
+              "source": "none",
+              "data_status": "cache_miss",
+              "cached_at": null,
+              "age_hours": null,
+              "age_days": null,
+              "freshness": "unknown",
+              "ttl_hours": 168,
+              "holdings_count": 0
+            }
+          },
+          "fetch_mode": "cache_only"
+        }
+      },
+      "holdings_count": 375,
+      "etf_freshness": {
+        "VNQ": {
+          "symbol": "VNQ",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-17T02:17:38.078060",
+          "age_hours": 0.17,
+          "age_days": 0.01,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 159
+        },
+        "IYR": {
+          "symbol": "IYR",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-17T02:18:15.979270",
+          "age_hours": 0.16,
+          "age_days": 0.01,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 64
+        },
+        "SCHH": {
+          "symbol": "SCHH",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-17T02:17:25.357607",
+          "age_hours": 0.17,
+          "age_days": 0.01,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 118
+        },
+        "XLRE": {
+          "symbol": "XLRE",
+          "source": "alpha_vantage_etf_profile",
+          "data_status": "fresh_cache",
+          "cached_at": "2026-04-17T02:18:03.549448",
+          "age_hours": 0.16,
+          "age_days": 0.01,
+          "freshness": "fresh",
+          "ttl_hours": 168,
+          "holdings_count": 34
+        },
+        "RWR": {
+          "symbol": "RWR",
+          "source": "none",
+          "data_status": "cache_miss",
+          "cached_at": null,
+          "age_hours": null,
+          "age_days": null,
+          "freshness": "unknown",
+          "ttl_hours": 168,
+          "holdings_count": 0
+        }
+      },
+      "sector_freshness": {
+        "data_status": "cache_miss",
+        "freshness": "mixed",
+        "coverage_ratio": "4/5",
+        "avg_age_hours": 0.17,
+        "stale_etfs": 0,
+        "live_etfs": 0,
+        "cache_miss_etfs": 1
+      }
+    }
+  },
+  "report_paths": {}
+}

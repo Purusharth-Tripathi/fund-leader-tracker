@@ -1,0 +1,512 @@
+{
+  "symbol": "PAVE",
+  "cached_at": "2026-04-17T02:16:20.565622",
+  "source": "alpha_vantage_etf_profile",
+  "holdings": [
+    {
+      "symbol": "PWR",
+      "name": "PWR",
+      "weight": 3.75
+    },
+    {
+      "symbol": "ETN",
+      "name": "Eaton Corporation plc",
+      "weight": 3.4099999999999997
+    },
+    {
+      "symbol": "DE",
+      "name": "DE",
+      "weight": 3.39
+    },
+    {
+      "symbol": "SRE",
+      "name": "SRE",
+      "weight": 3.37
+    },
+    {
+      "symbol": "HWM",
+      "name": "HWM",
+      "weight": 3.35
+    },
+    {
+      "symbol": "TT",
+      "name": "TT",
+      "weight": 3.35
+    },
+    {
+      "symbol": "CSX",
+      "name": "CSX",
+      "weight": 3.3000000000000003
+    },
+    {
+      "symbol": "UNP",
+      "name": "UNP",
+      "weight": 3.15
+    },
+    {
+      "symbol": "FAST",
+      "name": "FAST",
+      "weight": 3.05
+    },
+    {
+      "symbol": "PH",
+      "name": "Parker-Hannifin Corporation",
+      "weight": 2.98
+    },
+    {
+      "symbol": "NSC",
+      "name": "NSC",
+      "weight": 2.98
+    },
+    {
+      "symbol": "EMR",
+      "name": "Emerson Electric Co",
+      "weight": 2.63
+    },
+    {
+      "symbol": "CRH",
+      "name": "CRH",
+      "weight": 2.6
+    },
+    {
+      "symbol": "ROK",
+      "name": "Rockwell Automation Inc",
+      "weight": 2.58
+    },
+    {
+      "symbol": "URI",
+      "name": "URI",
+      "weight": 2.3800000000000003
+    },
+    {
+      "symbol": "NUE",
+      "name": "NUE",
+      "weight": 2.23
+    },
+    {
+      "symbol": "VMC",
+      "name": "VMC",
+      "weight": 2.11
+    },
+    {
+      "symbol": "MLM",
+      "name": "MLM",
+      "weight": 2.07
+    },
+    {
+      "symbol": "EME",
+      "name": "EME",
+      "weight": 2.04
+    },
+    {
+      "symbol": "AMRZ",
+      "name": "AMRZ",
+      "weight": 1.83
+    },
+    {
+      "symbol": "HUBB",
+      "name": "HUBB",
+      "weight": 1.6099999999999999
+    },
+    {
+      "symbol": "MTZ",
+      "name": "MTZ",
+      "weight": 1.52
+    },
+    {
+      "symbol": "STLD",
+      "name": "STLD",
+      "weight": 1.48
+    },
+    {
+      "symbol": "WWD",
+      "name": "WWD",
+      "weight": 1.32
+    },
+    {
+      "symbol": "ATI",
+      "name": "ATI",
+      "weight": 1.22
+    },
+    {
+      "symbol": "CRS",
+      "name": "CRS",
+      "weight": 1.1900000000000002
+    },
+    {
+      "symbol": "FTV",
+      "name": "FTV",
+      "weight": 1.04
+    },
+    {
+      "symbol": "RBC",
+      "name": "RBC",
+      "weight": 1.04
+    },
+    {
+      "symbol": "RS",
+      "name": "RS",
+      "weight": 0.9400000000000001
+    },
+    {
+      "symbol": "TRMB",
+      "name": "TRMB",
+      "weight": 0.9299999999999999
+    },
+    {
+      "symbol": "J",
+      "name": "J",
+      "weight": 0.91
+    },
+    {
+      "symbol": "AA",
+      "name": "AA",
+      "weight": 0.88
+    },
+    {
+      "symbol": "WLK",
+      "name": "WLK",
+      "weight": 0.88
+    },
+    {
+      "symbol": "PNR",
+      "name": "PNR",
+      "weight": 0.86
+    },
+    {
+      "symbol": "IEX",
+      "name": "IEX",
+      "weight": 0.86
+    },
+    {
+      "symbol": "GGG",
+      "name": "GGG",
+      "weight": 0.8500000000000001
+    },
+    {
+      "symbol": "CSL",
+      "name": "CSL",
+      "weight": 0.8500000000000001
+    },
+    {
+      "symbol": "LECO",
+      "name": "LECO",
+      "weight": 0.84
+    },
+    {
+      "symbol": "STRL",
+      "name": "STRL",
+      "weight": 0.8200000000000001
+    },
+    {
+      "symbol": "WCC",
+      "name": "WCC",
+      "weight": 0.8
+    },
+    {
+      "symbol": "RRX",
+      "name": "RRX",
+      "weight": 0.75
+    },
+    {
+      "symbol": "MLI",
+      "name": "MLI",
+      "weight": 0.74
+    },
+    {
+      "symbol": "RPM",
+      "name": "RPM",
+      "weight": 0.74
+    },
+    {
+      "symbol": "ACM",
+      "name": "ACM",
+      "weight": 0.7000000000000001
+    },
+    {
+      "symbol": "WMS",
+      "name": "WMS",
+      "weight": 0.64
+    },
+    {
+      "symbol": "DY",
+      "name": "DY",
+      "weight": 0.61
+    },
+    {
+      "symbol": "SPXC",
+      "name": "SPXC",
+      "weight": 0.6
+    },
+    {
+      "symbol": "CR",
+      "name": "CR",
+      "weight": 0.6
+    },
+    {
+      "symbol": "BLD",
+      "name": "BLD",
+      "weight": 0.59
+    },
+    {
+      "symbol": "BLDR",
+      "name": "BLDR",
+      "weight": 0.5599999999999999
+    },
+    {
+      "symbol": "AYI",
+      "name": "AYI",
+      "weight": 0.52
+    },
+    {
+      "symbol": "TTEK",
+      "name": "TTEK",
+      "weight": 0.49
+    },
+    {
+      "symbol": "PRIM",
+      "name": "PRIM",
+      "weight": 0.48
+    },
+    {
+      "symbol": "VMI",
+      "name": "VMI",
+      "weight": 0.48
+    },
+    {
+      "symbol": "ZWS",
+      "name": "ZWS",
+      "weight": 0.44999999999999996
+    },
+    {
+      "symbol": "CMC",
+      "name": "CMC",
+      "weight": 0.42
+    },
+    {
+      "symbol": "POWL",
+      "name": "POWL",
+      "weight": 0.41000000000000003
+    },
+    {
+      "symbol": "ECG",
+      "name": "ECG",
+      "weight": 0.4
+    },
+    {
+      "symbol": "AGX",
+      "name": "AGX",
+      "weight": 0.37
+    },
+    {
+      "symbol": "EXP",
+      "name": "EXP",
+      "weight": 0.35000000000000003
+    },
+    {
+      "symbol": "MYRG",
+      "name": "MYRG",
+      "weight": 0.35000000000000003
+    },
+    {
+      "symbol": "GRC",
+      "name": "GRC",
+      "weight": 0.35000000000000003
+    },
+    {
+      "symbol": "KNF",
+      "name": "KNF",
+      "weight": 0.33999999999999997
+    },
+    {
+      "symbol": "TRN",
+      "name": "TRN",
+      "weight": 0.33999999999999997
+    },
+    {
+      "symbol": "PLPC",
+      "name": "PLPC",
+      "weight": 0.33999999999999997
+    },
+    {
+      "symbol": "NWPX",
+      "name": "NWPX",
+      "weight": 0.33999999999999997
+    },
+    {
+      "symbol": "LGN",
+      "name": "LGN",
+      "weight": 0.33
+    },
+    {
+      "symbol": "ASTE",
+      "name": "ASTE",
+      "weight": 0.33
+    },
+    {
+      "symbol": "CTRI",
+      "name": "CTRI",
+      "weight": 0.32
+    },
+    {
+      "symbol": "ROAD",
+      "name": "ROAD",
+      "weight": 0.32
+    },
+    {
+      "symbol": "DXPE",
+      "name": "DXPE",
+      "weight": 0.32
+    },
+    {
+      "symbol": "GVA",
+      "name": "GVA",
+      "weight": 0.32
+    },
+    {
+      "symbol": "CENX",
+      "name": "CENX",
+      "weight": 0.32
+    },
+    {
+      "symbol": "MWA",
+      "name": "MWA",
+      "weight": 0.32
+    },
+    {
+      "symbol": "GBX",
+      "name": "GBX",
+      "weight": 0.31
+    },
+    {
+      "symbol": "ACA",
+      "name": "ACA",
+      "weight": 0.31
+    },
+    {
+      "symbol": "LPX",
+      "name": "LPX",
+      "weight": 0.31
+    },
+    {
+      "symbol": "MTX",
+      "name": "MTX",
+      "weight": 0.3
+    },
+    {
+      "symbol": "CTOS",
+      "name": "CTOS",
+      "weight": 0.3
+    },
+    {
+      "symbol": "TEX",
+      "name": "TEX",
+      "weight": 0.3
+    },
+    {
+      "symbol": "TPC",
+      "name": "TPC",
+      "weight": 0.3
+    },
+    {
+      "symbol": "MDU",
+      "name": "MDU",
+      "weight": 0.3
+    },
+    {
+      "symbol": "IIIN",
+      "name": "IIIN",
+      "weight": 0.3
+    },
+    {
+      "symbol": "CALX",
+      "name": "CALX",
+      "weight": 0.29
+    },
+    {
+      "symbol": "MTRN",
+      "name": "MTRN",
+      "weight": 0.29
+    },
+    {
+      "symbol": "USLM",
+      "name": "USLM",
+      "weight": 0.29
+    },
+    {
+      "symbol": "TITN",
+      "name": "TITN",
+      "weight": 0.29
+    },
+    {
+      "symbol": "CLF",
+      "name": "CLF",
+      "weight": 0.27999999999999997
+    },
+    {
+      "symbol": "TTAM",
+      "name": "TTAM",
+      "weight": 0.27
+    },
+    {
+      "symbol": "CSW",
+      "name": "CSW",
+      "weight": 0.27
+    },
+    {
+      "symbol": "BMI",
+      "name": "BMI",
+      "weight": 0.27
+    },
+    {
+      "symbol": "EXPO",
+      "name": "EXPO",
+      "weight": 0.26
+    },
+    {
+      "symbol": "WNC",
+      "name": "WNC",
+      "weight": 0.26
+    },
+    {
+      "symbol": "ROCK",
+      "name": "ROCK",
+      "weight": 0.25
+    },
+    {
+      "symbol": "ATKR",
+      "name": "ATKR",
+      "weight": 0.25
+    },
+    {
+      "symbol": "DNOW",
+      "name": "DNOW",
+      "weight": 0.25
+    },
+    {
+      "symbol": "MTUS",
+      "name": "MTUS",
+      "weight": 0.24
+    },
+    {
+      "symbol": "RYZ",
+      "name": "RYZ",
+      "weight": 0.21
+    },
+    {
+      "symbol": "CMCO",
+      "name": "CMCO",
+      "weight": 0.21
+    },
+    {
+      "symbol": "HRI",
+      "name": "HRI",
+      "weight": 0.2
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.02
+    }
+  ]
+}

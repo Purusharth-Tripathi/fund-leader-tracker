@@ -1,5 +1,10 @@
-Sector,Symbol,Company,Times Held,Avg Weight %,Prevalence %
-Aerospace & Defense,GE,General Electric Company,4,10.81,80.0
-Renewable Energy,BE,BE,4,7.16,80.0
-Healthcare & Biotech,LLY,Eli Lilly and Company,3,12.11,60.0
-Automotive,ALB,ALB,5,3.90,100.0
+Sector,Top Leader,Leader Name,Recommendation,Recommendation Type,Action,Status,Sector Freshness,Data Status
+Aerospace & Defense,GE,General Electric Company,GE,stock,hold,active,very_stale,stale_cache
+Renewable Energy,BE,BE,BE,stock,hold,active,very_stale,stale_cache
+Healthcare & Biotech,LLY,Eli Lilly and Company,LLY,stock,switch,active,very_stale,stale_cache
+Automotive,ALB,ALB,ALB,stock,hold,active,very_stale,stale_cache
+Consumer Staples,WMT,Walmart Inc,WMT,stock,hold,active,very_stale,stale_cache
+Tech & AI,NVDA,NVIDIA Corporation,NVDA,stock,hold,active,very_stale,stale_cache
+Financial Services,BRK-B,Berkshire Hathaway Inc Class B,BRK-B,stock,hold,active,very_stale,stale_cache
+Infrastructure,,,PAVE,sector_etf,hold,fallback,very_stale,stale_cache
+Real Estate,WELL,Welltower Inc,WELL,stock,hold,active,very_stale,stale_cache

@@ -1,0 +1,262 @@
+{
+  "symbol": "QCLN",
+  "cached_at": "2026-04-14T07:25:58.093249",
+  "source": "alpha_vantage_etf_profile",
+  "holdings": [
+    {
+      "symbol": "BE",
+      "name": "BE",
+      "weight": 12.790000000000001
+    },
+    {
+      "symbol": "ON",
+      "name": "ON",
+      "weight": 8.790000000000001
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla Inc",
+      "weight": 7.71
+    },
+    {
+      "symbol": "RIVN",
+      "name": "RIVN",
+      "weight": 6.909999999999999
+    },
+    {
+      "symbol": "FSLR",
+      "name": "First Solar Inc",
+      "weight": 5.41
+    },
+    {
+      "symbol": "NXT",
+      "name": "NXT",
+      "weight": 4.89
+    },
+    {
+      "symbol": "ALB",
+      "name": "ALB",
+      "weight": 4.71
+    },
+    {
+      "symbol": "AEIS",
+      "name": "AEIS",
+      "weight": 4.6899999999999995
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 3.66
+    },
+    {
+      "symbol": "MP",
+      "name": "MP",
+      "weight": 3.52
+    },
+    {
+      "symbol": "AYI",
+      "name": "AYI",
+      "weight": 2.69
+    },
+    {
+      "symbol": "ORA",
+      "name": "ORA",
+      "weight": 2.58
+    },
+    {
+      "symbol": "VICR",
+      "name": "VICR",
+      "weight": 2.54
+    },
+    {
+      "symbol": "ENS",
+      "name": "ENS",
+      "weight": 2.39
+    },
+    {
+      "symbol": "ALGM",
+      "name": "ALGM",
+      "weight": 2.33
+    },
+    {
+      "symbol": "ENPH",
+      "name": "Enphase Energy Inc",
+      "weight": 2.3
+    },
+    {
+      "symbol": "HASI",
+      "name": "HASI",
+      "weight": 1.81
+    },
+    {
+      "symbol": "OLED",
+      "name": "OLED",
+      "weight": 1.76
+    },
+    {
+      "symbol": "ITRI",
+      "name": "ITRI",
+      "weight": 1.66
+    },
+    {
+      "symbol": "SQM",
+      "name": "SQM",
+      "weight": 1.5
+    },
+    {
+      "symbol": "CWEN",
+      "name": "CWEN",
+      "weight": 1.3299999999999998
+    },
+    {
+      "symbol": "LCID",
+      "name": "LCID",
+      "weight": 1.31
+    },
+    {
+      "symbol": "PLUG",
+      "name": "PLUG",
+      "weight": 1.27
+    },
+    {
+      "symbol": "RUN",
+      "name": "Sunrun Inc",
+      "weight": 1.21
+    },
+    {
+      "symbol": "POWI",
+      "name": "POWI",
+      "weight": 1.04
+    },
+    {
+      "symbol": "SEDG",
+      "name": "SolarEdge Technologies Inc",
+      "weight": 1.01
+    },
+    {
+      "symbol": "FLNC",
+      "name": "FLNC",
+      "weight": 0.8500000000000001
+    },
+    {
+      "symbol": "NVTS",
+      "name": "NVTS",
+      "weight": 0.83
+    },
+    {
+      "symbol": "EOSE",
+      "name": "EOSE",
+      "weight": 0.72
+    },
+    {
+      "symbol": "AMSC",
+      "name": "AMSC",
+      "weight": 0.5499999999999999
+    },
+    {
+      "symbol": "RNW",
+      "name": "RNW",
+      "weight": 0.51
+    },
+    {
+      "symbol": "SGML",
+      "name": "SGML",
+      "weight": 0.51
+    },
+    {
+      "symbol": "WLDN",
+      "name": "WLDN",
+      "weight": 0.44999999999999996
+    },
+    {
+      "symbol": "ENVX",
+      "name": "ENVX",
+      "weight": 0.43
+    },
+    {
+      "symbol": "ARRY",
+      "name": "ARRY",
+      "weight": 0.42
+    },
+    {
+      "symbol": "SHLS",
+      "name": "SHLS",
+      "weight": 0.41000000000000003
+    },
+    {
+      "symbol": "XIFR",
+      "name": "XIFR",
+      "weight": 0.38999999999999996
+    },
+    {
+      "symbol": "AMRC",
+      "name": "AMRC",
+      "weight": 0.36
+    },
+    {
+      "symbol": "BLDP",
+      "name": "BLDP",
+      "weight": 0.32
+    },
+    {
+      "symbol": "LYTS",
+      "name": "LYTS",
+      "weight": 0.24
+    },
+    {
+      "symbol": "GEVO",
+      "name": "GEVO",
+      "weight": 0.22
+    },
+    {
+      "symbol": "CLNE",
+      "name": "CLNE",
+      "weight": 0.19
+    },
+    {
+      "symbol": "WOLF",
+      "name": "WOLF",
+      "weight": 0.18
+    },
+    {
+      "symbol": "ELVA",
+      "name": "ELVA",
+      "weight": 0.15
+    },
+    {
+      "symbol": "EVGO",
+      "name": "EVGO",
+      "weight": 0.11
+    },
+    {
+      "symbol": "ASPN",
+      "name": "ASPN",
+      "weight": 0.11
+    },
+    {
+      "symbol": "PSNY",
+      "name": "PSNY",
+      "weight": 0.09
+    },
+    {
+      "symbol": "MNTK",
+      "name": "MNTK",
+      "weight": 0.06999999999999999
+    },
+    {
+      "symbol": "CHPT",
+      "name": "CHPT",
+      "weight": 0.05
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.02
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.0
+    }
+  ]
+}
