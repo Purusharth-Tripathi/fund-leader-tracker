@@ -1,172 +1,172 @@
 {
   "symbol": "AIQ",
-  "cached_at": "2026-04-17T02:14:01.952011",
+  "cached_at": "2026-05-05T07:21:14.244273",
   "source": "alpha_vantage_etf_profile",
   "holdings": [
     {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 4.46
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 4.14
+    },
+    {
       "symbol": "NFLX",
       "name": "NFLX",
-      "weight": 3.95
+      "weight": 3.92
     },
     {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 3.62
-    },
-    {
-      "symbol": "CSCO",
-      "name": "Cisco Systems Inc",
-      "weight": 3.58
-    },
-    {
-      "symbol": "TSM",
-      "name": "TSM",
-      "weight": 3.54
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 3.52
-    },
-    {
-      "symbol": "AAPL",
-      "name": "Apple Inc",
-      "weight": 3.51
+      "symbol": "MU",
+      "name": "MU",
+      "weight": 3.61
     },
     {
       "symbol": "AVGO",
       "name": "Broadcom Inc",
+      "weight": 3.5999999999999996
+    },
+    {
+      "symbol": "TSM",
+      "name": "TSM",
+      "weight": 3.5700000000000003
+    },
+    {
+      "symbol": "CSCO",
+      "name": "Cisco Systems Inc",
+      "weight": 3.42
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon.com Inc",
       "weight": 3.27
     },
     {
       "symbol": "NVDA",
       "name": "NVIDIA Corporation",
-      "weight": 3.2399999999999998
+      "weight": 3.27
     },
     {
-      "symbol": "AMZN",
-      "name": "Amazon.com Inc",
-      "weight": 3.05
+      "symbol": "AAPL",
+      "name": "Apple Inc",
+      "weight": 3.2099999999999995
     },
     {
       "symbol": "META",
       "name": "Meta Platforms Inc",
-      "weight": 3.0300000000000002
-    },
-    {
-      "symbol": "PLTR",
-      "name": "PLTR",
-      "weight": 3.0300000000000002
+      "weight": 3.15
     },
     {
       "symbol": "GOOGL",
       "name": "Alphabet Inc Class A",
-      "weight": 2.9899999999999998
-    },
-    {
-      "symbol": "MU",
-      "name": "MU",
-      "weight": 2.92
-    },
-    {
-      "symbol": "ORCL",
-      "name": "Oracle Corporation",
-      "weight": 2.8400000000000003
-    },
-    {
-      "symbol": "TSLA",
-      "name": "Tesla Inc",
-      "weight": 2.8400000000000003
-    },
-    {
-      "symbol": "MSFT",
-      "name": "Microsoft Corporation",
-      "weight": 2.82
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 2.77
+      "weight": 3.1
     },
     {
       "symbol": "AMD",
       "name": "Advanced Micro Devices Inc",
-      "weight": 2.75
-    },
-    {
-      "symbol": "BABA",
-      "name": "BABA",
-      "weight": 2.4299999999999997
-    },
-    {
-      "symbol": "IBM",
-      "name": "International Business Machines Corp",
-      "weight": 2.41
+      "weight": 3.09
     },
     {
       "symbol": "INTC",
       "name": "Intel Corporation",
-      "weight": 2.34
+      "weight": 3.0300000000000002
     },
     {
-      "symbol": "SAP",
-      "name": "SAP",
-      "weight": 2.07
+      "symbol": "ORCL",
+      "name": "Oracle Corporation",
+      "weight": 2.82
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft Corporation",
+      "weight": 2.68
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 2.01
+      "weight": 2.53
+    },
+    {
+      "symbol": "PLTR",
+      "name": "PLTR",
+      "weight": 2.52
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla Inc",
+      "weight": 2.4899999999999998
+    },
+    {
+      "symbol": "BABA",
+      "name": "BABA",
+      "weight": 2.2800000000000002
+    },
+    {
+      "symbol": "IBM",
+      "name": "International Business Machines Corp",
+      "weight": 2.1399999999999997
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 2.13
+    },
+    {
+      "symbol": "SAP",
+      "name": "SAP",
+      "weight": 1.82
     },
     {
       "symbol": "CRM",
       "name": "Salesforce Inc",
-      "weight": 1.8599999999999999
+      "weight": 1.53
     },
     {
       "symbol": "UBER",
       "name": "UBER",
-      "weight": 1.59
+      "weight": 1.44
     },
     {
       "symbol": "SHOP",
       "name": "SHOP",
-      "weight": 1.54
+      "weight": 1.37
     },
     {
       "symbol": "QCOM",
       "name": "QUALCOMM Inc",
-      "weight": 1.47
+      "weight": 1.3599999999999999
     },
     {
       "symbol": "APP",
       "name": "APP",
-      "weight": 1.3
+      "weight": 1.27
     },
     {
       "symbol": "ACN",
       "name": "Accenture plc",
-      "weight": 1.3
-    },
-    {
-      "symbol": "NOW",
-      "name": "ServiceNow Inc",
-      "weight": 1.15
-    },
-    {
-      "symbol": "ADBE",
-      "name": "Adobe Inc",
-      "weight": 1.06
+      "weight": 1.1199999999999999
     },
     {
       "symbol": "MRVL",
       "name": "MRVL",
-      "weight": 0.89
+      "weight": 1.08
     },
     {
       "symbol": "STX",
       "name": "STX",
-      "weight": 0.89
+      "weight": 1.08
+    },
+    {
+      "symbol": "ADBE",
+      "name": "Adobe Inc",
+      "weight": 0.9199999999999999
+    },
+    {
+      "symbol": "NOW",
+      "name": "ServiceNow Inc",
+      "weight": 0.8699999999999999
     },
     {
       "symbol": "n/a",
@@ -176,247 +176,247 @@
     {
       "symbol": "SNPS",
       "name": "SNPS",
-      "weight": 0.8099999999999999
+      "weight": 0.76
     },
     {
       "symbol": "CDNS",
       "name": "CDNS",
-      "weight": 0.8
+      "weight": 0.76
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.62
+      "weight": 0.65
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.6
+      "weight": 0.63
     },
     {
-      "symbol": "SNOW",
-      "name": "SNOW",
-      "weight": 0.5499999999999999
-    },
-    {
-      "symbol": "NXPI",
-      "name": "NXPI",
-      "weight": 0.52
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.5700000000000001
     },
     {
       "symbol": "NOK",
       "name": "NOK",
-      "weight": 0.49
+      "weight": 0.5599999999999999
     },
     {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.48
+      "symbol": "NXPI",
+      "name": "NXPI",
+      "weight": 0.5
     },
     {
-      "symbol": "n/a",
-      "name": "n/a",
+      "symbol": "SNOW",
+      "name": "SNOW",
       "weight": 0.44
-    },
-    {
-      "symbol": "TRI",
-      "name": "TRI",
-      "weight": 0.42
-    },
-    {
-      "symbol": "DDOG",
-      "name": "DDOG",
-      "weight": 0.41000000000000003
-    },
-    {
-      "symbol": "ERIC",
-      "name": "ERIC",
-      "weight": 0.4
-    },
-    {
-      "symbol": "HPE",
-      "name": "HPE",
-      "weight": 0.38
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.38
-    },
-    {
-      "symbol": "WIX",
-      "name": "WIX",
-      "weight": 0.36
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.35000000000000003
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.35000000000000003
-    },
-    {
-      "symbol": "GEHC",
-      "name": "GEHC",
-      "weight": 0.33999999999999997
-    },
-    {
-      "symbol": "CLS",
-      "name": "CLS",
-      "weight": 0.33999999999999997
-    },
-    {
-      "symbol": "TWLO",
-      "name": "TWLO",
-      "weight": 0.33999999999999997
-    },
-    {
-      "symbol": "BIDU",
-      "name": "BIDU",
-      "weight": 0.33
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.33
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.33
     },
     {
       "symbol": "CRWV",
       "name": "CRWV",
-      "weight": 0.32
-    },
-    {
-      "symbol": "DT",
-      "name": "DT",
-      "weight": 0.31
+      "weight": 0.43
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.31
+      "weight": 0.43
+    },
+    {
+      "symbol": "CLS",
+      "name": "CLS",
+      "weight": 0.42
     },
     {
       "symbol": "HUT",
       "name": "HUT",
-      "weight": 0.29
+      "weight": 0.4
     },
     {
-      "symbol": "OKTA",
-      "name": "OKTA",
-      "weight": 0.29
+      "symbol": "ERIC",
+      "name": "ERIC",
+      "weight": 0.38
     },
     {
-      "symbol": "PEGA",
-      "name": "PEGA",
-      "weight": 0.29
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.37
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.37
+    },
+    {
+      "symbol": "TRI",
+      "name": "TRI",
+      "weight": 0.37
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.36
+    },
+    {
+      "symbol": "HPE",
+      "name": "HPE",
+      "weight": 0.35000000000000003
+    },
+    {
+      "symbol": "DDOG",
+      "name": "DDOG",
+      "weight": 0.33999999999999997
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.33
+    },
+    {
+      "symbol": "GEHC",
+      "name": "GEHC",
+      "weight": 0.32
+    },
+    {
+      "symbol": "BIDU",
+      "name": "BIDU",
+      "weight": 0.31
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.31
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.31
+    },
+    {
+      "symbol": "TWLO",
+      "name": "TWLO",
+      "weight": 0.3
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.3
     },
     {
       "symbol": "ZBRA",
       "name": "ZBRA",
-      "weight": 0.29
-    },
-    {
-      "symbol": "WDAY",
-      "name": "WDAY",
-      "weight": 0.29
-    },
-    {
-      "symbol": "TDC",
-      "name": "TDC",
-      "weight": 0.29
+      "weight": 0.27999999999999997
     },
     {
       "symbol": "EFX",
       "name": "EFX",
-      "weight": 0.29
+      "weight": 0.27
     },
     {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.27999999999999997
-    },
-    {
-      "symbol": "G",
-      "name": "G",
-      "weight": 0.27999999999999997
-    },
-    {
-      "symbol": "DXC",
-      "name": "DXC",
-      "weight": 0.27999999999999997
-    },
-    {
-      "symbol": "AMBA",
-      "name": "AMBA",
+      "symbol": "TDC",
+      "name": "TDC",
       "weight": 0.26
-    },
-    {
-      "symbol": "CCC",
-      "name": "CCC",
-      "weight": 0.26
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.26
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.26
-    },
-    {
-      "symbol": "PATH",
-      "name": "PATH",
-      "weight": 0.25
     },
     {
       "symbol": "SMCI",
       "name": "SMCI",
-      "weight": 0.24
-    },
-    {
-      "symbol": "ZS",
-      "name": "ZS",
-      "weight": 0.24
-    },
-    {
-      "symbol": "GLOB",
-      "name": "GLOB",
-      "weight": 0.22999999999999998
+      "weight": 0.26
     },
     {
       "symbol": "n/a",
       "name": "n/a",
+      "weight": 0.25
+    },
+    {
+      "symbol": "PEGA",
+      "name": "PEGA",
+      "weight": 0.25
+    },
+    {
+      "symbol": "DXC",
+      "name": "DXC",
+      "weight": 0.25
+    },
+    {
+      "symbol": "AMBA",
+      "name": "AMBA",
+      "weight": 0.25
+    },
+    {
+      "symbol": "DT",
+      "name": "DT",
+      "weight": 0.25
+    },
+    {
+      "symbol": "G",
+      "name": "G",
+      "weight": 0.24
+    },
+    {
+      "symbol": "WDAY",
+      "name": "WDAY",
+      "weight": 0.24
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.24
+    },
+    {
+      "symbol": "WIX",
+      "name": "WIX",
       "weight": 0.22999999999999998
-    },
-    {
-      "symbol": "AI",
-      "name": "AI",
-      "weight": 0.22
-    },
-    {
-      "symbol": "SOUN",
-      "name": "SOUN",
-      "weight": 0.22
     },
     {
       "symbol": "SNAP",
       "name": "SNAP",
+      "weight": 0.22
+    },
+    {
+      "symbol": "GLOB",
+      "name": "GLOB",
+      "weight": 0.21
+    },
+    {
+      "symbol": "OKTA",
+      "name": "OKTA",
+      "weight": 0.21
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
       "weight": 0.21
     },
     {
       "symbol": "QUBT",
       "name": "QUBT",
+      "weight": 0.21
+    },
+    {
+      "symbol": "AI",
+      "name": "AI",
       "weight": 0.2
+    },
+    {
+      "symbol": "CCC",
+      "name": "CCC",
+      "weight": 0.2
+    },
+    {
+      "symbol": "PATH",
+      "name": "PATH",
+      "weight": 0.2
+    },
+    {
+      "symbol": "SOUN",
+      "name": "SOUN",
+      "weight": 0.2
+    },
+    {
+      "symbol": "ZS",
+      "name": "ZS",
+      "weight": 0.19
     },
     {
       "symbol": "PONY",
@@ -426,7 +426,12 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.1
+      "weight": 0.05
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.0
     },
     {
       "symbol": "n/a",
