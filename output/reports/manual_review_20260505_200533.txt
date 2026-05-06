@@ -1,0 +1,140 @@
+ETF SECTOR LEADERSHIP MANUAL REVIEW
+========================================
+Run timestamp: 2026-05-05T20:05:33.534104
+Review date: 2026-05-05
+Sectors reviewed: 9
+Actionable sectors: 0
+Target sector weight: 11.11%
+
+[Aerospace & Defense]
+Status: active | Action: hold
+Current recommendation: GE (stock) - General Electric Company
+Previous position: GE (stock)
+Reason: Current active leader remains in force.
+Data status: stale_cache
+Sector freshness: very_stale | coverage 5/5 | avg age hours 508.62
+ETF snapshot freshness:
+  - SHLD: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+  - DFEN: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+  - ITA: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+  - PPA: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+  - XAR: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+
+[Renewable Energy]
+Status: active | Action: hold
+Current recommendation: BE (stock) - BE
+Previous position: BE (stock)
+Reason: Current active leader remains in force.
+Data status: stale_cache
+Sector freshness: very_stale | coverage 5/5 | avg age hours 500.48
+ETF snapshot freshness:
+  - ICLN: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+  - PBW: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+  - TAN: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+  - QCLN: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+  - CNRG: status=stale_cache freshness=very_stale age_days=19.5 source=alpha_vantage_etf_profile
+
+[Healthcare & Biotech]
+Status: active | Action: hold
+Current recommendation: LLY (stock) - Eli Lilly and Company
+Previous position: LLY (stock)
+Reason: Current active leader remains in force.
+Data status: stale_cache
+Sector freshness: very_stale | coverage 5/5 | avg age hours 500.46
+ETF snapshot freshness:
+  - VHT: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+  - XBI: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+  - XLV: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+  - IBB: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+  - IXJ: status=stale_cache freshness=very_stale age_days=19.5 source=alpha_vantage_etf_profile
+
+[Automotive]
+Status: active | Action: hold
+Current recommendation: ALB (stock) - ALB
+Previous position: ALB (stock)
+Reason: Current active leader remains in force.
+Data status: stale_cache
+Sector freshness: very_stale | coverage 5/5 | avg age hours 508.56
+ETF snapshot freshness:
+  - KARS: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+  - IDRV: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+  - DRIV: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+  - LIT: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+  - CARZ: status=stale_cache freshness=very_stale age_days=21.19 source=alpha_vantage_etf_profile
+
+[Consumer Staples]
+Status: active | Action: hold
+Current recommendation: WMT (stock) - Walmart Inc
+Previous position: WMT (stock)
+Reason: Current active leader remains in force.
+Data status: stale_cache
+Sector freshness: very_stale | coverage 5/5 | avg age hours 467.95
+ETF snapshot freshness:
+  - XLP: status=stale_cache freshness=very_stale age_days=19.5 source=alpha_vantage_etf_profile
+  - VDC: status=stale_cache freshness=very_stale age_days=19.5 source=alpha_vantage_etf_profile
+  - FSTA: status=stale_cache freshness=very_stale age_days=19.5 source=alpha_vantage_etf_profile
+  - KXI: status=stale_cache freshness=very_stale age_days=19.5 source=alpha_vantage_etf_profile
+  - IYK: status=stale_cache freshness=very_stale age_days=19.5 source=alpha_vantage_etf_profile
+
+[Tech & AI]
+Status: active | Action: hold
+Current recommendation: NVDA (stock) - NVIDIA Corporation
+Previous position: NVDA (stock)
+Reason: Current active leader remains in force.
+Data status: fresh_cache
+Sector freshness: fresh | coverage 5/5 | avg age hours 4.72
+ETF snapshot freshness:
+  - QQQ: status=fresh_cache freshness=fresh age_days=0.2 source=alpha_vantage_etf_profile
+  - IYW: status=fresh_cache freshness=fresh age_days=0.2 source=alpha_vantage_etf_profile
+  - XLK: status=fresh_cache freshness=fresh age_days=0.2 source=alpha_vantage_etf_profile
+  - VGT: status=fresh_cache freshness=fresh age_days=0.2 source=alpha_vantage_etf_profile
+  - AIQ: status=fresh_cache freshness=fresh age_days=0.2 source=alpha_vantage_etf_profile
+
+[Financial Services]
+Status: active | Action: hold
+Current recommendation: BRK-B (stock) - Berkshire Hathaway Inc Class B
+Previous position: BRK-B (stock)
+Reason: Current active leader remains in force.
+Data status: fresh_cache
+Sector freshness: fresh | coverage 5/5 | avg age hours 4.7
+ETF snapshot freshness:
+  - XLF: status=fresh_cache freshness=fresh age_days=0.2 source=alpha_vantage_etf_profile
+  - VFH: status=fresh_cache freshness=fresh age_days=0.2 source=alpha_vantage_etf_profile
+  - KBE: status=fresh_cache freshness=fresh age_days=0.2 source=alpha_vantage_etf_profile
+  - KRE: status=fresh_cache freshness=fresh age_days=0.2 source=alpha_vantage_etf_profile
+  - FNCL: status=fresh_cache freshness=fresh age_days=0.2 source=alpha_vantage_etf_profile
+
+[Infrastructure]
+Status: pending_confirmation | Action: watch
+Current recommendation: PAVE (sector_etf) - Global X U.S. Infrastructure Development ETF
+Watching candidate: NEE | confirmations 1/2
+Previous position: PAVE (sector_etf)
+Reason: Candidate leader changed, but confirmation/monthly switch rules are not fully met yet.
+Data status: fresh_cache
+Sector freshness: fresh | coverage 5/5 | avg age hours 4.69
+ETF snapshot freshness:
+  - NFRA: status=fresh_cache freshness=fresh age_days=0.2 source=alpha_vantage_etf_profile
+  - PAVE: status=fresh_cache freshness=fresh age_days=0.2 source=alpha_vantage_etf_profile
+  - IFRA: status=fresh_cache freshness=fresh age_days=0.2 source=alpha_vantage_etf_profile
+  - IGF: status=fresh_cache freshness=fresh age_days=0.2 source=alpha_vantage_etf_profile
+  - ITB: status=fresh_cache freshness=fresh age_days=0.19 source=alpha_vantage_etf_profile
+
+[Real Estate]
+Status: active | Action: hold
+Current recommendation: WELL (stock) - Welltower Inc
+Previous position: WELL (stock)
+Reason: Current active leader remains in force.
+Data status: fresh_cache
+Sector freshness: fresh | coverage 5/5 | avg age hours 4.68
+ETF snapshot freshness:
+  - SCHH: status=fresh_cache freshness=fresh age_days=0.19 source=alpha_vantage_etf_profile
+  - VNQ: status=fresh_cache freshness=fresh age_days=0.19 source=alpha_vantage_etf_profile
+  - REET: status=fresh_cache freshness=fresh age_days=0.19 source=alpha_vantage_etf_profile
+  - XLRE: status=fresh_cache freshness=fresh age_days=0.19 source=alpha_vantage_etf_profile
+  - IYR: status=fresh_cache freshness=fresh age_days=0.19 source=alpha_vantage_etf_profile
+
+MANUAL TRADE LIST
+--------------------
+No trade changes suggested. Continue monitoring.
+
+Advisory only. Review liquidity, taxes, costs, and account suitability before placing any order manually.
