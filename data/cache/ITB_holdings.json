@@ -1,147 +1,147 @@
 {
   "symbol": "ITB",
-  "cached_at": "2026-05-13T06:03:46.848723",
+  "cached_at": "2026-05-21T06:03:33.206059",
   "source": "alpha_vantage_etf_profile",
   "holdings": [
     {
       "symbol": "DHI",
       "name": "DHI",
-      "weight": 15.909999999999998
+      "weight": 15.73
     },
     {
       "symbol": "PHM",
       "name": "PHM",
-      "weight": 9.139999999999999
+      "weight": 8.97
     },
     {
       "symbol": "LEN",
       "name": "LEN",
-      "weight": 7.46
+      "weight": 7.55
     },
     {
       "symbol": "NVR",
       "name": "NVR",
-      "weight": 6.710000000000001
+      "weight": 6.6000000000000005
     },
     {
       "symbol": "TOL",
       "name": "TOL",
-      "weight": 5.18
+      "weight": 5.19
     },
     {
       "symbol": "BLD",
       "name": "BLD",
-      "weight": 4.61
+      "weight": 4.74
     },
     {
       "symbol": "SHW",
       "name": "Sherwin-Williams Company",
-      "weight": 4.49
+      "weight": 4.569999999999999
     },
     {
       "symbol": "LOW",
       "name": "Lowe's Companies Inc",
-      "weight": 4.2299999999999995
+      "weight": 4.31
     },
     {
       "symbol": "HD",
       "name": "Home Depot Inc",
-      "weight": 4.08
+      "weight": 4.19
     },
     {
       "symbol": "LII",
       "name": "LII",
-      "weight": 3.26
+      "weight": 3.63
     },
     {
       "symbol": "MAS",
       "name": "MAS",
-      "weight": 3.0700000000000003
-    },
-    {
-      "symbol": "IBP",
-      "name": "IBP",
-      "weight": 2.5100000000000002
+      "weight": 3.18
     },
     {
       "symbol": "TMHC",
       "name": "TMHC",
-      "weight": 2.2800000000000002
+      "weight": 2.32
     },
     {
       "symbol": "OC",
       "name": "OC",
-      "weight": 2.1
+      "weight": 2.1999999999999997
+    },
+    {
+      "symbol": "IBP",
+      "name": "IBP",
+      "weight": 1.87
     },
     {
       "symbol": "BLDR",
       "name": "BLDR",
-      "weight": 2.02
-    },
-    {
-      "symbol": "MTH",
-      "name": "MTH",
-      "weight": 1.73
-    },
-    {
-      "symbol": "SKY",
-      "name": "SKY",
-      "weight": 1.66
+      "weight": 1.7999999999999998
     },
     {
       "symbol": "SSD",
       "name": "SSD",
-      "weight": 1.5699999999999998
+      "weight": 1.71
+    },
+    {
+      "symbol": "MTH",
+      "name": "MTH",
+      "weight": 1.7000000000000002
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 1.6199999999999999
+    },
+    {
+      "symbol": "SKY",
+      "name": "SKY",
+      "weight": 1.55
     },
     {
       "symbol": "CVCO",
       "name": "CVCO",
-      "weight": 1.55
-    },
-    {
-      "symbol": "TPH",
-      "name": "TPH",
-      "weight": 1.47
+      "weight": 1.51
     },
     {
       "symbol": "EXP",
       "name": "EXP",
-      "weight": 1.34
-    },
-    {
-      "symbol": "KBH",
-      "name": "KBH",
-      "weight": 1.3
+      "weight": 1.4200000000000002
     },
     {
       "symbol": "MHO",
       "name": "MHO",
-      "weight": 1.3
+      "weight": 1.3599999999999999
     },
     {
-      "symbol": "UFPI",
-      "name": "UFPI",
-      "weight": 1.1400000000000001
+      "symbol": "KBH",
+      "name": "KBH",
+      "weight": 1.21
     },
     {
       "symbol": "MHK",
       "name": "MHK",
-      "weight": 1.1400000000000001
+      "weight": 1.15
     },
     {
       "symbol": "FND",
       "name": "FND",
-      "weight": 1.09
+      "weight": 1.15
+    },
+    {
+      "symbol": "UFPI",
+      "name": "UFPI",
+      "weight": 1.0699999999999998
     },
     {
       "symbol": "FBIN",
       "name": "FBIN",
-      "weight": 1.02
+      "weight": 0.9900000000000001
     },
     {
       "symbol": "TREX",
       "name": "TREX",
-      "weight": 0.9299999999999999
+      "weight": 0.9400000000000001
     },
     {
       "symbol": "GRBK",
@@ -151,12 +151,12 @@
     {
       "symbol": "GFF",
       "name": "GFF",
-      "weight": 0.75
+      "weight": 0.73
     },
     {
       "symbol": "HAYW",
       "name": "HAYW",
-      "weight": 0.64
+      "weight": 0.62
     },
     {
       "symbol": "CCS",
@@ -166,12 +166,12 @@
     {
       "symbol": "LGIH",
       "name": "LGIH",
-      "weight": 0.33999999999999997
+      "weight": 0.38
     },
     {
-      "symbol": "LEG",
-      "name": "LEG",
-      "weight": 0.31
+      "symbol": "LZB",
+      "name": "LZB",
+      "weight": 0.33
     },
     {
       "symbol": "LEN-B",
@@ -179,24 +179,29 @@
       "weight": 0.31
     },
     {
-      "symbol": "LZB",
-      "name": "LZB",
-      "weight": 0.3
-    },
-    {
-      "symbol": "MBC",
-      "name": "MBC",
-      "weight": 0.24
-    },
-    {
-      "symbol": "ROCK",
-      "name": "ROCK",
-      "weight": 0.24
+      "symbol": "LEG",
+      "name": "LEG",
+      "weight": 0.29
     },
     {
       "symbol": "BZH",
       "name": "BZH",
-      "weight": 0.22
+      "weight": 0.26
+    },
+    {
+      "symbol": "ROCK",
+      "name": "ROCK",
+      "weight": 0.25
+    },
+    {
+      "symbol": "MBC",
+      "name": "MBC",
+      "weight": 0.2
+    },
+    {
+      "symbol": "NX",
+      "name": "NX",
+      "weight": 0.2
     },
     {
       "symbol": "HOV",
@@ -204,43 +209,38 @@
       "weight": 0.2
     },
     {
-      "symbol": "NX",
-      "name": "NX",
-      "weight": 0.19
-    },
-    {
       "symbol": "DFH",
       "name": "DFH",
-      "weight": 0.16
+      "weight": 0.15
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.13
     },
     {
       "symbol": "AMWD",
       "name": "AMWD",
-      "weight": 0.13
+      "weight": 0.12
     },
     {
       "symbol": "ETD",
       "name": "ETD",
-      "weight": 0.11
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.08
+      "weight": 0.1
     },
     {
       "symbol": "ARHS",
       "name": "ARHS",
-      "weight": 0.08
-    },
-    {
-      "symbol": "JELD",
-      "name": "JELD",
-      "weight": 0.03
+      "weight": 0.06999999999999999
     },
     {
       "symbol": "n/a",
       "name": "n/a",
+      "weight": 0.04
+    },
+    {
+      "symbol": "JELD",
+      "name": "JELD",
       "weight": 0.03
     },
     {
