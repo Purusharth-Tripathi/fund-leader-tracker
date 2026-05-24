@@ -1,32 +1,32 @@
 {
   "symbol": "QCLN",
-  "cached_at": "2026-05-16T06:00:51.032729",
+  "cached_at": "2026-05-24T06:00:51.435939",
   "source": "alpha_vantage_etf_profile",
   "holdings": [
     {
       "symbol": "BE",
       "name": "BE",
-      "weight": 12.25
+      "weight": 11.469999999999999
     },
     {
       "symbol": "ON",
       "name": "ON",
-      "weight": 9.98
+      "weight": 9.959999999999999
     },
     {
       "symbol": "MPWR",
       "name": "MPWR",
-      "weight": 8.98
+      "weight": 8.9
     },
     {
       "symbol": "TSLA",
       "name": "Tesla Inc",
-      "weight": 6.25
+      "weight": 6.8500000000000005
     },
     {
       "symbol": "FSLR",
       "name": "First Solar Inc",
-      "weight": 6.15
+      "weight": 6.3
     },
     {
       "symbol": "NXT",
@@ -34,64 +34,69 @@
       "weight": 3.7900000000000005
     },
     {
-      "symbol": "MP",
-      "name": "MP",
-      "weight": 3.65
-    },
-    {
       "symbol": "ALB",
       "name": "ALB",
-      "weight": 3.52
+      "weight": 3.66
+    },
+    {
+      "symbol": "MP",
+      "name": "MP",
+      "weight": 3.47
     },
     {
       "symbol": "AEIS",
       "name": "AEIS",
-      "weight": 3.3300000000000005
+      "weight": 3.2199999999999998
     },
     {
       "symbol": "BEP",
       "name": "BEP",
-      "weight": 3.11
+      "weight": 3.1199999999999997
     },
     {
       "symbol": "RIVN",
       "name": "RIVN",
-      "weight": 3.08
-    },
-    {
-      "symbol": "ALGM",
-      "name": "ALGM",
-      "weight": 2.78
-    },
-    {
-      "symbol": "AYI",
-      "name": "AYI",
-      "weight": 2.7
+      "weight": 2.8899999999999997
     },
     {
       "symbol": "VICR",
       "name": "VICR",
-      "weight": 2.65
+      "weight": 2.87
+    },
+    {
+      "symbol": "AYI",
+      "name": "AYI",
+      "weight": 2.63
     },
     {
       "symbol": "ENS",
       "name": "ENS",
-      "weight": 2.45
+      "weight": 2.55
+    },
+    {
+      "symbol": "ALGM",
+      "name": "ALGM",
+      "weight": 2.53
     },
     {
       "symbol": "ORA",
       "name": "ORA",
-      "weight": 2.12
+      "weight": 2.2800000000000002
     },
     {
       "symbol": "HASI",
       "name": "HASI",
-      "weight": 1.66
+      "weight": 1.5599999999999998
+    },
+    {
+      "symbol": "PLUG",
+      "name": "PLUG",
+      "weight": 1.47
     },
     {
       "symbol": "ENPH",
       "name": "Enphase Energy Inc",
-      "weight": 1.43
+      "weight": 1.46
     },
     {
       "symbol": "SQM",
@@ -99,79 +104,79 @@
       "weight": 1.41
     },
     {
-      "symbol": "PLUG",
-      "name": "PLUG",
-      "weight": 1.4000000000000001
+      "symbol": "NVTS",
+      "name": "NVTS",
+      "weight": 1.32
     },
     {
       "symbol": "OLED",
       "name": "OLED",
-      "weight": 1.4000000000000001
+      "weight": 1.29
     },
     {
       "symbol": "POWI",
       "name": "POWI",
-      "weight": 1.29
-    },
-    {
-      "symbol": "NVTS",
-      "name": "NVTS",
-      "weight": 1.22
+      "weight": 1.17
     },
     {
       "symbol": "ITRI",
       "name": "ITRI",
-      "weight": 1.15
-    },
-    {
-      "symbol": "CWEN",
-      "name": "CWEN",
-      "weight": 1.01
+      "weight": 1.09
     },
     {
       "symbol": "RUN",
       "name": "Sunrun Inc",
-      "weight": 0.95
+      "weight": 0.98
     },
     {
-      "symbol": "AMPX",
-      "name": "AMPX",
-      "weight": 0.84
-    },
-    {
-      "symbol": "SEDG",
-      "name": "SolarEdge Technologies Inc",
-      "weight": 0.8099999999999999
-    },
-    {
-      "symbol": "AMSC",
-      "name": "AMSC",
-      "weight": 0.79
-    },
-    {
-      "symbol": "SGML",
-      "name": "SGML",
-      "weight": 0.76
-    },
-    {
-      "symbol": "LCID",
-      "name": "LCID",
-      "weight": 0.69
-    },
-    {
-      "symbol": "EOSE",
-      "name": "EOSE",
-      "weight": 0.64
+      "symbol": "CWEN",
+      "name": "CWEN",
+      "weight": 0.97
     },
     {
       "symbol": "FLNC",
       "name": "FLNC",
-      "weight": 0.51
+      "weight": 0.84
+    },
+    {
+      "symbol": "EOSE",
+      "name": "EOSE",
+      "weight": 0.8200000000000001
+    },
+    {
+      "symbol": "AMSC",
+      "name": "AMSC",
+      "weight": 0.77
+    },
+    {
+      "symbol": "SEDG",
+      "name": "SolarEdge Technologies Inc",
+      "weight": 0.73
+    },
+    {
+      "symbol": "AMPX",
+      "name": "AMPX",
+      "weight": 0.73
     },
     {
       "symbol": "WOLF",
       "name": "WOLF",
-      "weight": 0.5
+      "weight": 0.72
+    },
+    {
+      "symbol": "SGML",
+      "name": "SGML",
+      "weight": 0.69
+    },
+    {
+      "symbol": "LCID",
+      "name": "LCID",
+      "weight": 0.65
+    },
+    {
+      "symbol": "TE",
+      "name": "TE",
+      "weight": 0.49
     },
     {
       "symbol": "ENVX",
@@ -179,13 +184,13 @@
       "weight": 0.44999999999999996
     },
     {
-      "symbol": "TE",
-      "name": "TE",
-      "weight": 0.44999999999999996
-    },
-    {
       "symbol": "SHLS",
       "name": "SHLS",
+      "weight": 0.43
+    },
+    {
+      "symbol": "WLDN",
+      "name": "WLDN",
       "weight": 0.41000000000000003
     },
     {
@@ -196,27 +201,27 @@
     {
       "symbol": "BLDP",
       "name": "BLDP",
-      "weight": 0.38999999999999996
+      "weight": 0.37
     },
     {
       "symbol": "ARRY",
       "name": "ARRY",
-      "weight": 0.38
-    },
-    {
-      "symbol": "WLDN",
-      "name": "WLDN",
-      "weight": 0.33999999999999997
-    },
-    {
-      "symbol": "AMRC",
-      "name": "AMRC",
-      "weight": 0.32
+      "weight": 0.37
     },
     {
       "symbol": "XIFR",
       "name": "XIFR",
-      "weight": 0.31
+      "weight": 0.33
+    },
+    {
+      "symbol": "AMRC",
+      "name": "AMRC",
+      "weight": 0.3
+    },
+    {
+      "symbol": "FCEL",
+      "name": "FCEL",
+      "weight": 0.27
     },
     {
       "symbol": "LYTS",
@@ -224,34 +229,29 @@
       "weight": 0.26
     },
     {
-      "symbol": "FCEL",
-      "name": "FCEL",
-      "weight": 0.22
-    },
-    {
-      "symbol": "CLNE",
-      "name": "CLNE",
-      "weight": 0.16
-    },
-    {
-      "symbol": "GEVO",
-      "name": "GEVO",
-      "weight": 0.15
-    },
-    {
       "symbol": "ELVA",
       "name": "ELVA",
       "weight": 0.15
     },
     {
+      "symbol": "CLNE",
+      "name": "CLNE",
+      "weight": 0.13
+    },
+    {
+      "symbol": "GEVO",
+      "name": "GEVO",
+      "weight": 0.12
+    },
+    {
       "symbol": "ASPN",
       "name": "ASPN",
-      "weight": 0.1
+      "weight": 0.12
     },
     {
       "symbol": "EVGO",
       "name": "EVGO",
-      "weight": 0.09
+      "weight": 0.08
     },
     {
       "symbol": "PSNY",
@@ -261,17 +261,17 @@
     {
       "symbol": "MNTK",
       "name": "MNTK",
-      "weight": 0.06999999999999999
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.04
+      "weight": 0.06
     },
     {
       "symbol": "n/a",
       "name": "n/a",
       "weight": 0.0
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": -0.01
     }
   ]
 }
