@@ -1,167 +1,172 @@
 {
   "symbol": "IBB",
-  "cached_at": "2026-05-24T06:01:54.639381",
+  "cached_at": "2026-06-01T06:02:02.309677",
   "source": "alpha_vantage_etf_profile",
   "holdings": [
     {
       "symbol": "GILD",
       "name": "Gilead Sciences Inc",
-      "weight": 7.46
-    },
-    {
-      "symbol": "VRTX",
-      "name": "Vertex Pharmaceuticals Inc",
-      "weight": 7.430000000000001
+      "weight": 7.6
     },
     {
       "symbol": "AMGN",
       "name": "Amgen Inc",
-      "weight": 7.13
+      "weight": 7.37
+    },
+    {
+      "symbol": "VRTX",
+      "name": "Vertex Pharmaceuticals Inc",
+      "weight": 7.37
     },
     {
       "symbol": "REGN",
       "name": "Regeneron Pharmaceuticals Inc",
-      "weight": 6.710000000000001
+      "weight": 6.069999999999999
     },
     {
       "symbol": "ALNY",
       "name": "ALNY",
-      "weight": 3.5000000000000004
+      "weight": 3.65
     },
     {
       "symbol": "ARGX",
       "name": "ARGX",
-      "weight": 3.4000000000000004
+      "weight": 3.45
     },
     {
       "symbol": "BIIB",
       "name": "BIIB",
-      "weight": 2.6599999999999997
+      "weight": 2.65
     },
     {
       "symbol": "NTRA",
       "name": "NTRA",
-      "weight": 2.45
+      "weight": 2.5
     },
     {
       "symbol": "RVMD",
       "name": "RVMD",
-      "weight": 2.29
-    },
-    {
-      "symbol": "INSM",
-      "name": "INSM",
-      "weight": 2.25
+      "weight": 2.44
     },
     {
       "symbol": "UTHR",
       "name": "UTHR",
-      "weight": 2.2399999999999998
+      "weight": 2.25
+    },
+    {
+      "symbol": "INSM",
+      "name": "INSM",
+      "weight": 2.11
     },
     {
       "symbol": "ONC",
       "name": "ONC",
-      "weight": 2.04
+      "weight": 2.06
     },
     {
       "symbol": "ILMN",
       "name": "ILMN",
-      "weight": 1.97
+      "weight": 2.0
     },
     {
       "symbol": "INCY",
       "name": "INCY",
-      "weight": 1.78
+      "weight": 1.79
     },
     {
       "symbol": "MRNA",
       "name": "MRNA",
-      "weight": 1.7500000000000002
+      "weight": 1.58
     },
     {
       "symbol": "NBIX",
       "name": "NBIX",
-      "weight": 1.39
+      "weight": 1.43
     },
     {
       "symbol": "ROIV",
       "name": "ROIV",
-      "weight": 1.31
+      "weight": 1.37
     },
     {
       "symbol": "GMAB",
       "name": "GMAB",
-      "weight": 1.18
+      "weight": 1.2
     },
     {
       "symbol": "EXEL",
       "name": "EXEL",
-      "weight": 1.13
+      "weight": 1.18
     },
     {
       "symbol": "IONS",
       "name": "IONS",
-      "weight": 1.1199999999999999
+      "weight": 1.1400000000000001
     },
     {
       "symbol": "BBIO",
       "name": "BBIO",
-      "weight": 1.0
+      "weight": 1.0699999999999998
     },
     {
       "symbol": "ASND",
       "name": "ASND",
-      "weight": 0.9900000000000001
+      "weight": 1.05
     },
     {
       "symbol": "MDGL",
       "name": "MDGL",
-      "weight": 0.97
-    },
-    {
-      "symbol": "ARWR",
-      "name": "ARWR",
-      "weight": 0.9400000000000001
+      "weight": 1.01
     },
     {
       "symbol": "BMRN",
       "name": "BMRN",
-      "weight": 0.91
+      "weight": 0.96
     },
     {
       "symbol": "AXSM",
       "name": "AXSM",
-      "weight": 0.8699999999999999
+      "weight": 0.9400000000000001
+    },
+    {
+      "symbol": "ARWR",
+      "name": "ARWR",
+      "weight": 0.9199999999999999
     },
     {
       "symbol": "MEDP",
       "name": "MEDP",
-      "weight": 0.8699999999999999
-    },
-    {
-      "symbol": "PRAX",
-      "name": "PRAX",
-      "weight": 0.8200000000000001
+      "weight": 0.9199999999999999
     },
     {
       "symbol": "CYTK",
       "name": "CYTK",
-      "weight": 0.8200000000000001
+      "weight": 0.86
     },
     {
-      "symbol": "CRL",
-      "name": "CRL",
-      "weight": 0.75
+      "symbol": "PRAX",
+      "name": "PRAX",
+      "weight": 0.84
     },
     {
       "symbol": "HALO",
       "name": "HALO",
-      "weight": 0.75
+      "weight": 0.74
+    },
+    {
+      "symbol": "CRL",
+      "name": "CRL",
+      "weight": 0.73
     },
     {
       "symbol": "KRYS",
       "name": "KRYS",
-      "weight": 0.72
+      "weight": 0.7100000000000001
+    },
+    {
+      "symbol": "TECH",
+      "name": "TECH",
+      "weight": 0.7000000000000001
     },
     {
       "symbol": "BNTX",
@@ -171,57 +176,52 @@
     {
       "symbol": "PCVX",
       "name": "PCVX",
-      "weight": 0.69
+      "weight": 0.62
     },
     {
-      "symbol": "TECH",
-      "name": "TECH",
-      "weight": 0.67
-    },
-    {
-      "symbol": "ALKS",
-      "name": "ALKS",
+      "symbol": "RGEN",
+      "name": "RGEN",
       "weight": 0.5700000000000001
     },
     {
       "symbol": "PTGX",
       "name": "PTGX",
-      "weight": 0.5499999999999999
+      "weight": 0.5599999999999999
     },
     {
-      "symbol": "RGEN",
-      "name": "RGEN",
-      "weight": 0.5499999999999999
+      "symbol": "ALKS",
+      "name": "ALKS",
+      "weight": 0.5599999999999999
     },
     {
       "symbol": "ABVX",
       "name": "ABVX",
-      "weight": 0.5499999999999999
-    },
-    {
-      "symbol": "PTCT",
-      "name": "PTCT",
-      "weight": 0.54
+      "weight": 0.5599999999999999
     },
     {
       "symbol": "RYTM",
       "name": "RYTM",
-      "weight": 0.53
+      "weight": 0.52
     },
     {
       "symbol": "KYMR",
       "name": "KYMR",
-      "weight": 0.53
+      "weight": 0.51
+    },
+    {
+      "symbol": "PTCT",
+      "name": "PTCT",
+      "weight": 0.51
     },
     {
       "symbol": "MIRM",
       "name": "MIRM",
-      "weight": 0.51
+      "weight": 0.49
     },
     {
       "symbol": "XENE",
       "name": "XENE",
-      "weight": 0.45999999999999996
+      "weight": 0.47000000000000003
     },
     {
       "symbol": "NUVL",
@@ -231,7 +231,7 @@
     {
       "symbol": "TEM",
       "name": "TEM",
-      "weight": 0.44
+      "weight": 0.44999999999999996
     },
     {
       "symbol": "SYRE",
@@ -239,24 +239,34 @@
       "weight": 0.44
     },
     {
-      "symbol": "CRSP",
-      "name": "CRSP",
-      "weight": 0.43
-    },
-    {
-      "symbol": "COGT",
-      "name": "COGT",
-      "weight": 0.43
-    },
-    {
       "symbol": "BRKR",
       "name": "BRKR",
+      "weight": 0.44
+    },
+    {
+      "symbol": "CRSP",
+      "name": "CRSP",
       "weight": 0.42
     },
     {
       "symbol": "SRRK",
       "name": "SRRK",
+      "weight": 0.42
+    },
+    {
+      "symbol": "COGT",
+      "name": "COGT",
       "weight": 0.41000000000000003
+    },
+    {
+      "symbol": "TVTX",
+      "name": "TVTX",
+      "weight": 0.38
+    },
+    {
+      "symbol": "LEGN",
+      "name": "LEGN",
+      "weight": 0.36
     },
     {
       "symbol": "APGE",
@@ -264,28 +274,8 @@
       "weight": 0.36
     },
     {
-      "symbol": "TVTX",
-      "name": "TVTX",
-      "weight": 0.35000000000000003
-    },
-    {
-      "symbol": "LEGN",
-      "name": "LEGN",
-      "weight": 0.33999999999999997
-    },
-    {
-      "symbol": "CGON",
-      "name": "CGON",
-      "weight": 0.33
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.33
-    },
-    {
-      "symbol": "ACAD",
-      "name": "ACAD",
+      "symbol": "VCYT",
+      "name": "VCYT",
       "weight": 0.33
     },
     {
@@ -294,33 +284,33 @@
       "weight": 0.33
     },
     {
+      "symbol": "ACAD",
+      "name": "ACAD",
+      "weight": 0.33
+    },
+    {
       "symbol": "TWST",
       "name": "TWST",
-      "weight": 0.3
+      "weight": 0.33
     },
     {
-      "symbol": "VCYT",
-      "name": "VCYT",
-      "weight": 0.27999999999999997
+      "symbol": "CGON",
+      "name": "CGON",
+      "weight": 0.31
     },
     {
-      "symbol": "BEAM",
-      "name": "BEAM",
+      "symbol": "IMVT",
+      "name": "IMVT",
       "weight": 0.27
-    },
-    {
-      "symbol": "IBRX",
-      "name": "IBRX",
-      "weight": 0.26
     },
     {
       "symbol": "CNTA",
       "name": "CNTA",
-      "weight": 0.25
+      "weight": 0.26
     },
     {
-      "symbol": "NAMS",
-      "name": "NAMS",
+      "symbol": "BEAM",
+      "name": "BEAM",
       "weight": 0.25
     },
     {
@@ -329,44 +319,44 @@
       "weight": 0.25
     },
     {
-      "symbol": "EWTX",
-      "name": "EWTX",
+      "symbol": "TXG",
+      "name": "TXG",
+      "weight": 0.25
+    },
+    {
+      "symbol": "NAMS",
+      "name": "NAMS",
       "weight": 0.24
     },
     {
       "symbol": "ORKA",
       "name": "ORKA",
-      "weight": 0.24
+      "weight": 0.22999999999999998
     },
     {
       "symbol": "TARS",
       "name": "TARS",
-      "weight": 0.22
+      "weight": 0.22999999999999998
     },
     {
-      "symbol": "TXG",
-      "name": "TXG",
-      "weight": 0.22
+      "symbol": "IBRX",
+      "name": "IBRX",
+      "weight": 0.22999999999999998
     },
     {
-      "symbol": "IMVT",
-      "name": "IMVT",
-      "weight": 0.22
-    },
-    {
-      "symbol": "RARE",
-      "name": "RARE",
-      "weight": 0.22
-    },
-    {
-      "symbol": "DYN",
-      "name": "DYN",
-      "weight": 0.21
+      "symbol": "EWTX",
+      "name": "EWTX",
+      "weight": 0.22999999999999998
     },
     {
       "symbol": "IDYA",
       "name": "IDYA",
-      "weight": 0.21
+      "weight": 0.22
+    },
+    {
+      "symbol": "GRAL",
+      "name": "GRAL",
+      "weight": 0.22
     },
     {
       "symbol": "ARQT",
@@ -374,33 +364,38 @@
       "weight": 0.21
     },
     {
-      "symbol": "GRAL",
-      "name": "GRAL",
+      "symbol": "DFTX",
+      "name": "DFTX",
       "weight": 0.2
+    },
+    {
+      "symbol": "DYN",
+      "name": "DYN",
+      "weight": 0.2
+    },
+    {
+      "symbol": "RARE",
+      "name": "RARE",
+      "weight": 0.2
+    },
+    {
+      "symbol": "ADPT",
+      "name": "ADPT",
+      "weight": 0.19
+    },
+    {
+      "symbol": "GPCR",
+      "name": "GPCR",
+      "weight": 0.19
     },
     {
       "symbol": "KOD",
       "name": "KOD",
-      "weight": 0.2
-    },
-    {
-      "symbol": "TNGX",
-      "name": "TNGX",
-      "weight": 0.2
-    },
-    {
-      "symbol": "SMMT",
-      "name": "SMMT",
       "weight": 0.19
     },
     {
-      "symbol": "RCUS",
-      "name": "RCUS",
-      "weight": 0.19
-    },
-    {
-      "symbol": "VERA",
-      "name": "VERA",
+      "symbol": "ERAS",
+      "name": "ERAS",
       "weight": 0.19
     },
     {
@@ -409,28 +404,13 @@
       "weight": 0.18
     },
     {
+      "symbol": "RCUS",
+      "name": "RCUS",
+      "weight": 0.18
+    },
+    {
       "symbol": "BCRX",
       "name": "BCRX",
-      "weight": 0.18
-    },
-    {
-      "symbol": "ADPT",
-      "name": "ADPT",
-      "weight": 0.18
-    },
-    {
-      "symbol": "DFTX",
-      "name": "DFTX",
-      "weight": 0.18
-    },
-    {
-      "symbol": "IRON",
-      "name": "IRON",
-      "weight": 0.18
-    },
-    {
-      "symbol": "ERAS",
-      "name": "ERAS",
       "weight": 0.18
     },
     {
@@ -439,18 +419,18 @@
       "weight": 0.18
     },
     {
-      "symbol": "GPCR",
-      "name": "GPCR",
+      "symbol": "VERA",
+      "name": "VERA",
       "weight": 0.18
     },
     {
-      "symbol": "SRPT",
-      "name": "SRPT",
-      "weight": 0.16999999999999998
+      "symbol": "IRON",
+      "name": "IRON",
+      "weight": 0.18
     },
     {
-      "symbol": "NVCR",
-      "name": "NVCR",
+      "symbol": "ELVN",
+      "name": "ELVN",
       "weight": 0.16999999999999998
     },
     {
@@ -459,8 +439,28 @@
       "weight": 0.16999999999999998
     },
     {
-      "symbol": "ELVN",
-      "name": "ELVN",
+      "symbol": "ZYME",
+      "name": "ZYME",
+      "weight": 0.16999999999999998
+    },
+    {
+      "symbol": "RLAY",
+      "name": "RLAY",
+      "weight": 0.16999999999999998
+    },
+    {
+      "symbol": "NVCR",
+      "name": "NVCR",
+      "weight": 0.16999999999999998
+    },
+    {
+      "symbol": "SMMT",
+      "name": "SMMT",
+      "weight": 0.16999999999999998
+    },
+    {
+      "symbol": "TNGX",
+      "name": "TNGX",
       "weight": 0.16999999999999998
     },
     {
@@ -469,8 +469,13 @@
       "weight": 0.16
     },
     {
-      "symbol": "ZYME",
-      "name": "ZYME",
+      "symbol": "VCEL",
+      "name": "VCEL",
+      "weight": 0.16
+    },
+    {
+      "symbol": "NRIX",
+      "name": "NRIX",
       "weight": 0.16
     },
     {
@@ -479,24 +484,9 @@
       "weight": 0.16
     },
     {
-      "symbol": "RLAY",
-      "name": "RLAY",
+      "symbol": "SRPT",
+      "name": "SRPT",
       "weight": 0.16
-    },
-    {
-      "symbol": "QURE",
-      "name": "QURE",
-      "weight": 0.15
-    },
-    {
-      "symbol": "VCEL",
-      "name": "VCEL",
-      "weight": 0.15
-    },
-    {
-      "symbol": "ZLAB",
-      "name": "ZLAB",
-      "weight": 0.15
     },
     {
       "symbol": "ALMS",
@@ -504,13 +494,8 @@
       "weight": 0.15
     },
     {
-      "symbol": "ANAB",
-      "name": "ANAB",
-      "weight": 0.15
-    },
-    {
-      "symbol": "TSHA",
-      "name": "TSHA",
+      "symbol": "ZLAB",
+      "name": "ZLAB",
       "weight": 0.13999999999999999
     },
     {
@@ -519,28 +504,18 @@
       "weight": 0.13999999999999999
     },
     {
-      "symbol": "n/a",
-      "name": "n/a",
+      "symbol": "ANAB",
+      "name": "ANAB",
       "weight": 0.13999999999999999
     },
     {
-      "symbol": "NTLA",
-      "name": "NTLA",
-      "weight": 0.13999999999999999
+      "symbol": "QURE",
+      "name": "QURE",
+      "weight": 0.13
     },
     {
-      "symbol": "NVAX",
-      "name": "NVAX",
-      "weight": 0.13999999999999999
-    },
-    {
-      "symbol": "NRIX",
-      "name": "NRIX",
-      "weight": 0.13999999999999999
-    },
-    {
-      "symbol": "STOK",
-      "name": "STOK",
+      "symbol": "IOVA",
+      "name": "IOVA",
       "weight": 0.13
     },
     {
@@ -549,13 +524,23 @@
       "weight": 0.13
     },
     {
-      "symbol": "TYRA",
-      "name": "TYRA",
+      "symbol": "NTLA",
+      "name": "NTLA",
+      "weight": 0.13
+    },
+    {
+      "symbol": "NVAX",
+      "name": "NVAX",
+      "weight": 0.13
+    },
+    {
+      "symbol": "STOK",
+      "name": "STOK",
       "weight": 0.12
     },
     {
-      "symbol": "FTRE",
-      "name": "FTRE",
+      "symbol": "ATAI",
+      "name": "ATAI",
       "weight": 0.12
     },
     {
@@ -564,18 +549,8 @@
       "weight": 0.12
     },
     {
-      "symbol": "NUVB",
-      "name": "NUVB",
-      "weight": 0.11
-    },
-    {
-      "symbol": "IOVA",
-      "name": "IOVA",
-      "weight": 0.11
-    },
-    {
-      "symbol": "ATAI",
-      "name": "ATAI",
+      "symbol": "TSHA",
+      "name": "TSHA",
       "weight": 0.11
     },
     {
@@ -584,13 +559,48 @@
       "weight": 0.11
     },
     {
-      "symbol": "WVE",
-      "name": "WVE",
+      "symbol": "NUVB",
+      "name": "NUVB",
+      "weight": 0.11
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.11
+    },
+    {
+      "symbol": "BHVN",
+      "name": "BHVN",
+      "weight": 0.11
+    },
+    {
+      "symbol": "ABCL",
+      "name": "ABCL",
+      "weight": 0.11
+    },
+    {
+      "symbol": "CMPS",
+      "name": "CMPS",
+      "weight": 0.11
+    },
+    {
+      "symbol": "FTRE",
+      "name": "FTRE",
+      "weight": 0.11
+    },
+    {
+      "symbol": "TYRA",
+      "name": "TYRA",
+      "weight": 0.11
+    },
+    {
+      "symbol": "SION",
+      "name": "SION",
       "weight": 0.1
     },
     {
-      "symbol": "URGN",
-      "name": "URGN",
+      "symbol": "GRFS",
+      "name": "GRFS",
       "weight": 0.1
     },
     {
@@ -604,24 +614,14 @@
       "weight": 0.1
     },
     {
-      "symbol": "ABCL",
-      "name": "ABCL",
-      "weight": 0.1
-    },
-    {
-      "symbol": "BHVN",
-      "name": "BHVN",
-      "weight": 0.1
-    },
-    {
       "symbol": "INBX",
       "name": "INBX",
       "weight": 0.1
     },
     {
-      "symbol": "GHRS",
-      "name": "GHRS",
-      "weight": 0.09
+      "symbol": "URGN",
+      "name": "URGN",
+      "weight": 0.1
     },
     {
       "symbol": "CDNA",
@@ -629,13 +629,18 @@
       "weight": 0.09
     },
     {
-      "symbol": "CRVS",
-      "name": "CRVS",
+      "symbol": "GHRS",
+      "name": "GHRS",
       "weight": 0.09
     },
     {
-      "symbol": "GRFS",
-      "name": "GRFS",
+      "symbol": "MESO",
+      "name": "MESO",
+      "weight": 0.09
+    },
+    {
+      "symbol": "WVE",
+      "name": "WVE",
       "weight": 0.09
     },
     {
@@ -644,18 +649,18 @@
       "weight": 0.09
     },
     {
-      "symbol": "SION",
-      "name": "SION",
-      "weight": 0.09
-    },
-    {
       "symbol": "KALV",
       "name": "KALV",
       "weight": 0.09
     },
     {
-      "symbol": "OLMA",
-      "name": "OLMA",
+      "symbol": "KURA",
+      "name": "KURA",
+      "weight": 0.09
+    },
+    {
+      "symbol": "MNKD",
+      "name": "MNKD",
       "weight": 0.09
     },
     {
@@ -664,14 +669,19 @@
       "weight": 0.09
     },
     {
-      "symbol": "MBX",
-      "name": "MBX",
+      "symbol": "OLMA",
+      "name": "OLMA",
       "weight": 0.09
     },
     {
-      "symbol": "MNKD",
-      "name": "MNKD",
-      "weight": 0.09
+      "symbol": "MBX",
+      "name": "MBX",
+      "weight": 0.08
+    },
+    {
+      "symbol": "CRVS",
+      "name": "CRVS",
+      "weight": 0.08
     },
     {
       "symbol": "GLUE",
@@ -684,48 +694,18 @@
       "weight": 0.08
     },
     {
-      "symbol": "MESO",
-      "name": "MESO",
-      "weight": 0.08
-    },
-    {
-      "symbol": "CMPS",
-      "name": "CMPS",
-      "weight": 0.08
-    },
-    {
-      "symbol": "GERN",
-      "name": "GERN",
+      "symbol": "MAZE",
+      "name": "MAZE",
       "weight": 0.08
     },
     {
       "symbol": "XNCR",
       "name": "XNCR",
-      "weight": 0.08
-    },
-    {
-      "symbol": "JANX",
-      "name": "JANX",
       "weight": 0.06999999999999999
     },
     {
-      "symbol": "TBPH",
-      "name": "TBPH",
-      "weight": 0.06999999999999999
-    },
-    {
-      "symbol": "KURA",
-      "name": "KURA",
-      "weight": 0.06999999999999999
-    },
-    {
-      "symbol": "AVBP",
-      "name": "AVBP",
-      "weight": 0.06999999999999999
-    },
-    {
-      "symbol": "BCAX",
-      "name": "BCAX",
+      "symbol": "SEPN",
+      "name": "SEPN",
       "weight": 0.06999999999999999
     },
     {
@@ -734,8 +714,18 @@
       "weight": 0.06999999999999999
     },
     {
-      "symbol": "MAZE",
-      "name": "MAZE",
+      "symbol": "TBPH",
+      "name": "TBPH",
+      "weight": 0.06999999999999999
+    },
+    {
+      "symbol": "AVBP",
+      "name": "AVBP",
+      "weight": 0.06999999999999999
+    },
+    {
+      "symbol": "GERN",
+      "name": "GERN",
       "weight": 0.06999999999999999
     },
     {
@@ -744,13 +734,18 @@
       "weight": 0.06999999999999999
     },
     {
-      "symbol": "CGEM",
-      "name": "CGEM",
-      "weight": 0.06
+      "symbol": "BCAX",
+      "name": "BCAX",
+      "weight": 0.06999999999999999
     },
     {
-      "symbol": "ANRO",
-      "name": "ANRO",
+      "symbol": "JANX",
+      "name": "JANX",
+      "weight": 0.06999999999999999
+    },
+    {
+      "symbol": "ABSI",
+      "name": "ABSI",
       "weight": 0.06
     },
     {
@@ -759,23 +754,13 @@
       "weight": 0.06
     },
     {
-      "symbol": "MGTX",
-      "name": "MGTX",
+      "symbol": "ANRO",
+      "name": "ANRO",
       "weight": 0.06
     },
     {
-      "symbol": "PGEN",
-      "name": "PGEN",
-      "weight": 0.06
-    },
-    {
-      "symbol": "ABSI",
-      "name": "ABSI",
-      "weight": 0.06
-    },
-    {
-      "symbol": "CTMX",
-      "name": "CTMX",
+      "symbol": "CGEM",
+      "name": "CGEM",
       "weight": 0.06
     },
     {
@@ -784,38 +769,23 @@
       "weight": 0.06
     },
     {
-      "symbol": "SEPN",
-      "name": "SEPN",
+      "symbol": "MGTX",
+      "name": "MGTX",
       "weight": 0.06
     },
     {
-      "symbol": "SLDB",
-      "name": "SLDB",
+      "symbol": "CTMX",
+      "name": "CTMX",
       "weight": 0.06
     },
     {
-      "symbol": "ZVRA",
-      "name": "ZVRA",
+      "symbol": "PGEN",
+      "name": "PGEN",
       "weight": 0.06
     },
     {
-      "symbol": "DSGN",
-      "name": "DSGN",
-      "weight": 0.05
-    },
-    {
-      "symbol": "CSTL",
-      "name": "CSTL",
-      "weight": 0.05
-    },
-    {
-      "symbol": "ORIC",
-      "name": "ORIC",
-      "weight": 0.05
-    },
-    {
-      "symbol": "PHAT",
-      "name": "PHAT",
+      "symbol": "PSNL",
+      "name": "PSNL",
       "weight": 0.05
     },
     {
@@ -824,18 +794,8 @@
       "weight": 0.05
     },
     {
-      "symbol": "RIGL",
-      "name": "RIGL",
-      "weight": 0.05
-    },
-    {
-      "symbol": "SANA",
-      "name": "SANA",
-      "weight": 0.05
-    },
-    {
-      "symbol": "ACRS",
-      "name": "ACRS",
+      "symbol": "PHAT",
+      "name": "PHAT",
       "weight": 0.05
     },
     {
@@ -849,13 +809,33 @@
       "weight": 0.05
     },
     {
-      "symbol": "ALLO",
-      "name": "ALLO",
+      "symbol": "CSTL",
+      "name": "CSTL",
       "weight": 0.05
     },
     {
-      "symbol": "BIOA",
-      "name": "BIOA",
+      "symbol": "SANA",
+      "name": "SANA",
+      "weight": 0.05
+    },
+    {
+      "symbol": "SLDB",
+      "name": "SLDB",
+      "weight": 0.05
+    },
+    {
+      "symbol": "RIGL",
+      "name": "RIGL",
+      "weight": 0.05
+    },
+    {
+      "symbol": "ZVRA",
+      "name": "ZVRA",
+      "weight": 0.05
+    },
+    {
+      "symbol": "OPK",
+      "name": "OPK",
       "weight": 0.05
     },
     {
@@ -864,8 +844,28 @@
       "weight": 0.04
     },
     {
-      "symbol": "ALVO",
-      "name": "ALVO",
+      "symbol": "ENTA",
+      "name": "ENTA",
+      "weight": 0.04
+    },
+    {
+      "symbol": "BBOT",
+      "name": "BBOT",
+      "weight": 0.04
+    },
+    {
+      "symbol": "ACRS",
+      "name": "ACRS",
+      "weight": 0.04
+    },
+    {
+      "symbol": "ALLO",
+      "name": "ALLO",
+      "weight": 0.04
+    },
+    {
+      "symbol": "BIOA",
+      "name": "BIOA",
       "weight": 0.04
     },
     {
@@ -874,8 +874,8 @@
       "weight": 0.04
     },
     {
-      "symbol": "FULC",
-      "name": "FULC",
+      "symbol": "CTNM",
+      "name": "CTNM",
       "weight": 0.04
     },
     {
@@ -884,33 +884,8 @@
       "weight": 0.04
     },
     {
-      "symbol": "NGNE",
-      "name": "NGNE",
-      "weight": 0.04
-    },
-    {
-      "symbol": "OPK",
-      "name": "OPK",
-      "weight": 0.04
-    },
-    {
-      "symbol": "RGNX",
-      "name": "RGNX",
-      "weight": 0.04
-    },
-    {
-      "symbol": "CADL",
-      "name": "CADL",
-      "weight": 0.04
-    },
-    {
-      "symbol": "CTKB",
-      "name": "CTKB",
-      "weight": 0.04
-    },
-    {
-      "symbol": "ENTA",
-      "name": "ENTA",
+      "symbol": "n/a",
+      "name": "n/a",
       "weight": 0.04
     },
     {
@@ -919,13 +894,33 @@
       "weight": 0.04
     },
     {
+      "symbol": "LAB",
+      "name": "LAB",
+      "weight": 0.04
+    },
+    {
       "symbol": "PRTA",
       "name": "PRTA",
       "weight": 0.04
     },
     {
-      "symbol": "BBOT",
-      "name": "BBOT",
+      "symbol": "ORIC",
+      "name": "ORIC",
+      "weight": 0.04
+    },
+    {
+      "symbol": "CTKB",
+      "name": "CTKB",
+      "weight": 0.04
+    },
+    {
+      "symbol": "CADL",
+      "name": "CADL",
+      "weight": 0.04
+    },
+    {
+      "symbol": "ALT",
+      "name": "ALT",
       "weight": 0.03
     },
     {
@@ -934,13 +929,18 @@
       "weight": 0.03
     },
     {
+      "symbol": "AVIR",
+      "name": "AVIR",
+      "weight": 0.03
+    },
+    {
       "symbol": "AURA",
       "name": "AURA",
       "weight": 0.03
     },
     {
-      "symbol": "AVIR",
-      "name": "AVIR",
+      "symbol": "CCCC",
+      "name": "CCCC",
       "weight": 0.03
     },
     {
@@ -949,18 +949,23 @@
       "weight": 0.03
     },
     {
-      "symbol": "CTNM",
-      "name": "CTNM",
+      "symbol": "FLGT",
+      "name": "FLGT",
       "weight": 0.03
     },
     {
-      "symbol": "DNA",
-      "name": "DNA",
+      "symbol": "IMRX",
+      "name": "IMRX",
       "weight": 0.03
     },
     {
       "symbol": "LXEO",
       "name": "LXEO",
+      "weight": 0.03
+    },
+    {
+      "symbol": "LCTX",
+      "name": "LCTX",
       "weight": 0.03
     },
     {
@@ -974,8 +979,8 @@
       "weight": 0.03
     },
     {
-      "symbol": "RCKT",
-      "name": "RCKT",
+      "symbol": "RGNX",
+      "name": "RGNX",
       "weight": 0.03
     },
     {
@@ -984,53 +989,8 @@
       "weight": 0.03
     },
     {
-      "symbol": "LAB",
-      "name": "LAB",
-      "weight": 0.03
-    },
-    {
-      "symbol": "MYGN",
-      "name": "MYGN",
-      "weight": 0.03
-    },
-    {
-      "symbol": "CATX",
-      "name": "CATX",
-      "weight": 0.03
-    },
-    {
-      "symbol": "PACB",
-      "name": "PACB",
-      "weight": 0.03
-    },
-    {
-      "symbol": "PSNL",
-      "name": "PSNL",
-      "weight": 0.03
-    },
-    {
-      "symbol": "FLGT",
-      "name": "FLGT",
-      "weight": 0.03
-    },
-    {
-      "symbol": "CABA",
-      "name": "CABA",
-      "weight": 0.03
-    },
-    {
-      "symbol": "ALT",
-      "name": "ALT",
-      "weight": 0.03
-    },
-    {
-      "symbol": "LCTX",
-      "name": "LCTX",
-      "weight": 0.03
-    },
-    {
-      "symbol": "KYTX",
-      "name": "KYTX",
+      "symbol": "RCKT",
+      "name": "RCKT",
       "weight": 0.03
     },
     {
@@ -1039,18 +999,63 @@
       "weight": 0.03
     },
     {
-      "symbol": "EDIT",
-      "name": "EDIT",
+      "symbol": "PACB",
+      "name": "PACB",
       "weight": 0.03
     },
     {
-      "symbol": "ARCT",
-      "name": "ARCT",
-      "weight": 0.02
+      "symbol": "OABI",
+      "name": "OABI",
+      "weight": 0.03
     },
     {
-      "symbol": "CLLS",
-      "name": "CLLS",
+      "symbol": "CATX",
+      "name": "CATX",
+      "weight": 0.03
+    },
+    {
+      "symbol": "MYGN",
+      "name": "MYGN",
+      "weight": 0.03
+    },
+    {
+      "symbol": "CABA",
+      "name": "CABA",
+      "weight": 0.03
+    },
+    {
+      "symbol": "ALVO",
+      "name": "ALVO",
+      "weight": 0.03
+    },
+    {
+      "symbol": "KYTX",
+      "name": "KYTX",
+      "weight": 0.03
+    },
+    {
+      "symbol": "NGNE",
+      "name": "NGNE",
+      "weight": 0.03
+    },
+    {
+      "symbol": "DNA",
+      "name": "DNA",
+      "weight": 0.03
+    },
+    {
+      "symbol": "FULC",
+      "name": "FULC",
+      "weight": 0.03
+    },
+    {
+      "symbol": "DSGN",
+      "name": "DSGN",
+      "weight": 0.03
+    },
+    {
+      "symbol": "UPB",
+      "name": "UPB",
       "weight": 0.02
     },
     {
@@ -1059,18 +1064,8 @@
       "weight": 0.02
     },
     {
-      "symbol": "CCCC",
-      "name": "CCCC",
-      "weight": 0.02
-    },
-    {
-      "symbol": "HUMA",
-      "name": "HUMA",
-      "weight": 0.02
-    },
-    {
-      "symbol": "ACIU",
-      "name": "ACIU",
+      "symbol": "CRBU",
+      "name": "CRBU",
       "weight": 0.02
     },
     {
@@ -1079,23 +1074,28 @@
       "weight": 0.02
     },
     {
-      "symbol": "IMRX",
-      "name": "IMRX",
+      "symbol": "ACIU",
+      "name": "ACIU",
       "weight": 0.02
     },
     {
-      "symbol": "CRBU",
-      "name": "CRBU",
+      "symbol": "HUMA",
+      "name": "HUMA",
       "weight": 0.02
     },
     {
-      "symbol": "OABI",
-      "name": "OABI",
+      "symbol": "VYGR",
+      "name": "VYGR",
       "weight": 0.02
     },
     {
-      "symbol": "KROS",
-      "name": "KROS",
+      "symbol": "ARCT",
+      "name": "ARCT",
+      "weight": 0.02
+    },
+    {
+      "symbol": "EDIT",
+      "name": "EDIT",
       "weight": 0.02
     },
     {
@@ -1109,28 +1109,28 @@
       "weight": 0.02
     },
     {
+      "symbol": "KROS",
+      "name": "KROS",
+      "weight": 0.02
+    },
+    {
       "symbol": "SGMT",
       "name": "SGMT",
       "weight": 0.02
     },
     {
-      "symbol": "UPB",
-      "name": "UPB",
+      "symbol": "QSI",
+      "name": "QSI",
       "weight": 0.02
     },
     {
-      "symbol": "VYGR",
-      "name": "VYGR",
-      "weight": 0.02
-    },
-    {
-      "symbol": "SLN",
-      "name": "SLN",
+      "symbol": "AARD",
+      "name": "AARD",
       "weight": 0.01
     },
     {
-      "symbol": "PYXS",
-      "name": "PYXS",
+      "symbol": "BCYC",
+      "name": "BCYC",
       "weight": 0.01
     },
     {
@@ -1164,18 +1164,18 @@
       "weight": 0.01
     },
     {
+      "symbol": "SLN",
+      "name": "SLN",
+      "weight": 0.01
+    },
+    {
+      "symbol": "PYXS",
+      "name": "PYXS",
+      "weight": 0.01
+    },
+    {
       "symbol": "QTRX",
       "name": "QTRX",
-      "weight": 0.01
-    },
-    {
-      "symbol": "BDTX",
-      "name": "BDTX",
-      "weight": 0.01
-    },
-    {
-      "symbol": "AARD",
-      "name": "AARD",
       "weight": 0.01
     },
     {
@@ -1184,24 +1184,29 @@
       "weight": 0.01
     },
     {
-      "symbol": "BCYC",
-      "name": "BCYC",
-      "weight": 0.01
-    },
-    {
       "symbol": "FHTX",
       "name": "FHTX",
       "weight": 0.01
     },
     {
-      "symbol": "GOSS",
-      "name": "GOSS",
+      "symbol": "CLLS",
+      "name": "CLLS",
       "weight": 0.01
     },
     {
-      "symbol": "QSI",
-      "name": "QSI",
+      "symbol": "BDTX",
+      "name": "BDTX",
       "weight": 0.01
+    },
+    {
+      "symbol": "IMMP",
+      "name": "IMMP",
+      "weight": 0.0
+    },
+    {
+      "symbol": "GOSS",
+      "name": "GOSS",
+      "weight": 0.0
     },
     {
       "symbol": "n/a",
@@ -1209,8 +1214,8 @@
       "weight": 0.0
     },
     {
-      "symbol": "IMMP",
-      "name": "IMMP",
+      "symbol": "n/a",
+      "name": "n/a",
       "weight": 0.0
     },
     {
@@ -1241,11 +1246,6 @@
     {
       "symbol": "TKNO",
       "name": "TKNO",
-      "weight": 0.0
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
       "weight": 0.0
     },
     {
