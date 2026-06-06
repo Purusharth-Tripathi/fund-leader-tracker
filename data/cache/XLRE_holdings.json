@@ -1,92 +1,92 @@
 {
   "symbol": "XLRE",
-  "cached_at": "2026-05-29T06:04:53.017913",
+  "cached_at": "2026-06-06T18:04:04.562296",
   "source": "alpha_vantage_etf_profile",
   "holdings": [
     {
       "symbol": "WELL",
       "name": "Welltower Inc",
-      "weight": 10.47
+      "weight": 10.299999999999999
     },
     {
       "symbol": "PLD",
       "name": "Prologis Inc",
-      "weight": 9.11
+      "weight": 9.25
     },
     {
       "symbol": "EQIX",
       "name": "EQIX",
-      "weight": 7.090000000000001
+      "weight": 7.17
     },
     {
       "symbol": "AMT",
       "name": "American Tower Corporation",
-      "weight": 5.8999999999999995
+      "weight": 5.86
     },
     {
       "symbol": "SPG",
       "name": "SPG",
-      "weight": 4.590000000000001
+      "weight": 4.65
     },
     {
       "symbol": "DLR",
       "name": "Digital Realty Trust Inc",
-      "weight": 4.47
+      "weight": 4.569999999999999
     },
     {
       "symbol": "VTR",
       "name": "VTR",
-      "weight": 4.43
+      "weight": 4.36
     },
     {
       "symbol": "PSA",
       "name": "Public Storage",
-      "weight": 4.29
-    },
-    {
-      "symbol": "CCI",
-      "name": "CCI",
-      "weight": 4.25
+      "weight": 4.32
     },
     {
       "symbol": "O",
       "name": "Realty Income Corporation",
-      "weight": 4.15
+      "weight": 4.109999999999999
     },
     {
-      "symbol": "CBRE",
-      "name": "CBRE",
-      "weight": 3.93
+      "symbol": "CCI",
+      "name": "CCI",
+      "weight": 4.1000000000000005
     },
     {
       "symbol": "IRM",
       "name": "IRM",
-      "weight": 3.8600000000000003
+      "weight": 3.95
+    },
+    {
+      "symbol": "CBRE",
+      "name": "CBRE",
+      "weight": 3.92
     },
     {
       "symbol": "VICI",
       "name": "VICI",
-      "weight": 3.27
+      "weight": 3.25
     },
     {
       "symbol": "EXR",
       "name": "EXR",
-      "weight": 3.15
+      "weight": 3.18
     },
     {
       "symbol": "AVB",
       "name": "AvalonBay Communities Inc",
-      "weight": 2.77
+      "weight": 2.7199999999999998
     },
     {
       "symbol": "EQR",
       "name": "Equity Residential",
-      "weight": 2.39
+      "weight": 2.36
     },
     {
       "symbol": "SBAC",
       "name": "SBAC",
-      "weight": 2.34
+      "weight": 2.23
     },
     {
       "symbol": "ESS",
@@ -96,37 +96,37 @@
     {
       "symbol": "WY",
       "name": "WY",
-      "weight": 1.7399999999999998
-    },
-    {
-      "symbol": "INVH",
-      "name": "INVH",
-      "weight": 1.71
+      "weight": 1.78
     },
     {
       "symbol": "KIM",
       "name": "KIM",
-      "weight": 1.66
+      "weight": 1.72
+    },
+    {
+      "symbol": "INVH",
+      "name": "INVH",
+      "weight": 1.72
     },
     {
       "symbol": "MAA",
       "name": "MAA",
-      "weight": 1.59
-    },
-    {
-      "symbol": "CSGP",
-      "name": "CSGP",
-      "weight": 1.51
+      "weight": 1.58
     },
     {
       "symbol": "HST",
       "name": "HST",
-      "weight": 1.47
+      "weight": 1.53
     },
     {
       "symbol": "DOC",
       "name": "DOC",
-      "weight": 1.4200000000000002
+      "weight": 1.4500000000000002
+    },
+    {
+      "symbol": "CSGP",
+      "name": "CSGP",
+      "weight": 1.43
     },
     {
       "symbol": "REG",
@@ -141,22 +141,22 @@
     {
       "symbol": "CPT",
       "name": "CPT",
-      "weight": 1.15
+      "weight": 1.16
     },
     {
       "symbol": "FRT",
       "name": "FRT",
-      "weight": 0.95
+      "weight": 0.98
     },
     {
       "symbol": "BXP",
       "name": "BXP",
-      "weight": 0.91
+      "weight": 0.9299999999999999
     },
     {
       "symbol": "ARE",
       "name": "ARE",
-      "weight": 0.76
+      "weight": 0.79
     },
     {
       "symbol": "n/a",
@@ -166,7 +166,7 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.12
+      "weight": 0.11
     },
     {
       "symbol": "n/a",
