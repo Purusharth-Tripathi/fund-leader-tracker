@@ -1,9 +1,9 @@
 Sector,Top Leader,Leader Name,Recommendation,Recommendation Type,Action,Status,Sector Freshness,Data Status
-Aerospace & Defense,GE,General Electric Company,GE,stock,hold,active,stale,stale_cache
-Renewable Energy,BE,BE,BE,stock,hold,active,fresh,fresh_cache
-Healthcare & Biotech,LLY,Eli Lilly and Company,LLY,stock,hold,active,fresh,fresh_cache
-Automotive,ALB,ALB,ALB,stock,hold,active,fresh,fresh_cache
-Consumer Staples,WMT,Walmart Inc,WMT,stock,hold,active,fresh,fresh_cache
+Aerospace & Defense,GE,General Electric Company,GE,stock,hold,active,fresh,fresh_cache
+Renewable Energy,BE,BE,BE,stock,hold,active,stale,stale_cache
+Healthcare & Biotech,LLY,Eli Lilly and Company,LLY,stock,hold,active,stale,stale_cache
+Automotive,ALB,ALB,ALB,stock,hold,active,stale,stale_cache
+Consumer Staples,WMT,Walmart Inc,WMT,stock,hold,active,stale,stale_cache
 Tech & AI,NVDA,NVIDIA Corporation,NVDA,stock,hold,active,fresh,fresh_cache
 Financial Services,JPM,JPMorgan Chase & Co,BRK-B,stock,watch,pending_confirmation,fresh,fresh_cache
 Infrastructure,NEE,NextEra Energy Inc,NEE,stock,hold,active,fresh,fresh_cache
