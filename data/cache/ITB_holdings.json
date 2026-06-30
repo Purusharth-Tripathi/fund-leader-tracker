@@ -1,172 +1,177 @@
 {
   "symbol": "ITB",
-  "cached_at": "2026-06-22T06:03:35.783695",
+  "cached_at": "2026-06-30T06:03:58.703058",
   "source": "alpha_vantage_etf_profile",
   "holdings": [
     {
       "symbol": "DHI",
       "name": "DHI",
-      "weight": 15.73
+      "weight": 16.16
     },
     {
       "symbol": "PHM",
       "name": "PHM",
-      "weight": 8.97
+      "weight": 9.46
     },
     {
       "symbol": "LEN",
       "name": "LEN",
-      "weight": 7.55
+      "weight": 7.380000000000001
     },
     {
       "symbol": "NVR",
       "name": "NVR",
-      "weight": 6.6000000000000005
+      "weight": 6.77
     },
     {
       "symbol": "TOL",
       "name": "TOL",
-      "weight": 5.19
-    },
-    {
-      "symbol": "BLD",
-      "name": "BLD",
-      "weight": 4.74
+      "weight": 4.9399999999999995
     },
     {
       "symbol": "SHW",
       "name": "Sherwin-Williams Company",
-      "weight": 4.569999999999999
+      "weight": 4.5600000000000005
     },
     {
-      "symbol": "LOW",
-      "name": "Lowe's Companies Inc",
-      "weight": 4.31
+      "symbol": "BLD",
+      "name": "BLD",
+      "weight": 4.47
     },
     {
       "symbol": "HD",
       "name": "Home Depot Inc",
-      "weight": 4.19
+      "weight": 4.37
+    },
+    {
+      "symbol": "LOW",
+      "name": "Lowe's Companies Inc",
+      "weight": 4.24
     },
     {
       "symbol": "LII",
       "name": "LII",
-      "weight": 3.63
+      "weight": 3.2800000000000002
     },
     {
       "symbol": "MAS",
       "name": "MAS",
-      "weight": 3.18
+      "weight": 2.92
     },
     {
       "symbol": "TMHC",
       "name": "TMHC",
-      "weight": 2.32
-    },
-    {
-      "symbol": "OC",
-      "name": "OC",
-      "weight": 2.1999999999999997
-    },
-    {
-      "symbol": "IBP",
-      "name": "IBP",
-      "weight": 1.87
-    },
-    {
-      "symbol": "BLDR",
-      "name": "BLDR",
-      "weight": 1.7999999999999998
-    },
-    {
-      "symbol": "SSD",
-      "name": "SSD",
-      "weight": 1.71
+      "weight": 2.67
     },
     {
       "symbol": "MTH",
       "name": "MTH",
-      "weight": 1.7000000000000002
+      "weight": 2.01
     },
     {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 1.6199999999999999
+      "symbol": "OC",
+      "name": "OC",
+      "weight": 1.97
+    },
+    {
+      "symbol": "IBP",
+      "name": "IBP",
+      "weight": 1.8900000000000001
     },
     {
       "symbol": "SKY",
       "name": "SKY",
-      "weight": 1.55
+      "weight": 1.8499999999999999
     },
     {
       "symbol": "CVCO",
       "name": "CVCO",
-      "weight": 1.51
+      "weight": 1.81
     },
     {
-      "symbol": "EXP",
-      "name": "EXP",
-      "weight": 1.4200000000000002
+      "symbol": "BLDR",
+      "name": "BLDR",
+      "weight": 1.63
+    },
+    {
+      "symbol": "SSD",
+      "name": "SSD",
+      "weight": 1.6099999999999999
     },
     {
       "symbol": "MHO",
       "name": "MHO",
-      "weight": 1.3599999999999999
+      "weight": 1.52
+    },
+    {
+      "symbol": "EXP",
+      "name": "EXP",
+      "weight": 1.37
     },
     {
       "symbol": "KBH",
       "name": "KBH",
-      "weight": 1.21
-    },
-    {
-      "symbol": "MHK",
-      "name": "MHK",
-      "weight": 1.15
+      "weight": 1.32
     },
     {
       "symbol": "FND",
       "name": "FND",
-      "weight": 1.15
+      "weight": 1.0999999999999999
     },
     {
-      "symbol": "UFPI",
-      "name": "UFPI",
-      "weight": 1.0699999999999998
+      "symbol": "MHK",
+      "name": "MHK",
+      "weight": 1.0999999999999999
     },
     {
       "symbol": "FBIN",
       "name": "FBIN",
-      "weight": 0.9900000000000001
+      "weight": 0.96
+    },
+    {
+      "symbol": "UFPI",
+      "name": "UFPI",
+      "weight": 0.9400000000000001
     },
     {
       "symbol": "TREX",
       "name": "TREX",
-      "weight": 0.9400000000000001
+      "weight": 0.9299999999999999
+    },
+    {
+      "symbol": "LPX",
+      "name": "LPX",
+      "weight": 0.9299999999999999
     },
     {
       "symbol": "GRBK",
       "name": "GRBK",
-      "weight": 0.8
+      "weight": 0.8999999999999999
     },
     {
       "symbol": "GFF",
       "name": "GFF",
-      "weight": 0.73
-    },
-    {
-      "symbol": "HAYW",
-      "name": "HAYW",
-      "weight": 0.62
+      "weight": 0.69
     },
     {
       "symbol": "CCS",
       "name": "CCS",
-      "weight": 0.5499999999999999
+      "weight": 0.63
+    },
+    {
+      "symbol": "HAYW",
+      "name": "HAYW",
+      "weight": 0.58
     },
     {
       "symbol": "LGIH",
       "name": "LGIH",
-      "weight": 0.38
+      "weight": 0.45999999999999996
+    },
+    {
+      "symbol": "MBC",
+      "name": "MBC",
+      "weight": 0.33999999999999997
     },
     {
       "symbol": "LZB",
@@ -176,7 +181,7 @@
     {
       "symbol": "LEN-B",
       "name": "LEN-B",
-      "weight": 0.31
+      "weight": 0.3
     },
     {
       "symbol": "LEG",
@@ -189,39 +194,24 @@
       "weight": 0.26
     },
     {
-      "symbol": "ROCK",
-      "name": "ROCK",
-      "weight": 0.25
-    },
-    {
-      "symbol": "MBC",
-      "name": "MBC",
-      "weight": 0.2
-    },
-    {
-      "symbol": "NX",
-      "name": "NX",
-      "weight": 0.2
-    },
-    {
       "symbol": "HOV",
       "name": "HOV",
-      "weight": 0.2
+      "weight": 0.24
+    },
+    {
+      "symbol": "ROCK",
+      "name": "ROCK",
+      "weight": 0.22999999999999998
     },
     {
       "symbol": "DFH",
       "name": "DFH",
+      "weight": 0.16
+    },
+    {
+      "symbol": "NX",
+      "name": "NX",
       "weight": 0.15
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.13
-    },
-    {
-      "symbol": "AMWD",
-      "name": "AMWD",
-      "weight": 0.12
     },
     {
       "symbol": "ETD",
@@ -229,19 +219,24 @@
       "weight": 0.1
     },
     {
-      "symbol": "ARHS",
-      "name": "ARHS",
-      "weight": 0.06999999999999999
-    },
-    {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.04
+      "weight": 0.09
+    },
+    {
+      "symbol": "ARHS",
+      "name": "ARHS",
+      "weight": 0.08
     },
     {
       "symbol": "JELD",
       "name": "JELD",
       "weight": 0.03
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.01
     },
     {
       "symbol": "n/a",
