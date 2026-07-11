@@ -1,167 +1,162 @@
 {
   "symbol": "XLV",
-  "cached_at": "2026-07-03T06:01:41.454674",
+  "cached_at": "2026-07-11T06:01:40.483088",
   "source": "alpha_vantage_etf_profile",
   "holdings": [
     {
       "symbol": "LLY",
       "name": "Eli Lilly and Company",
-      "weight": 15.9
+      "weight": 16.48
     },
     {
       "symbol": "JNJ",
       "name": "Johnson & Johnson",
-      "weight": 10.43
+      "weight": 10.620000000000001
     },
     {
       "symbol": "ABBV",
       "name": "AbbVie Inc",
-      "weight": 7.46
+      "weight": 7.720000000000001
     },
     {
       "symbol": "UNH",
       "name": "UnitedHealth Group Inc",
-      "weight": 6.63
+      "weight": 6.5600000000000005
     },
     {
       "symbol": "MRK",
       "name": "Merck & Co Inc",
-      "weight": 5.36
+      "weight": 5.510000000000001
     },
     {
       "symbol": "AMGN",
       "name": "Amgen Inc",
-      "weight": 3.4099999999999997
+      "weight": 3.4000000000000004
     },
     {
       "symbol": "TMO",
       "name": "Thermo Fisher Scientific Inc",
-      "weight": 3.29
+      "weight": 3.2399999999999998
     },
     {
       "symbol": "ABT",
       "name": "Abbott Laboratories",
-      "weight": 2.83
+      "weight": 2.75
     },
     {
       "symbol": "GILD",
       "name": "Gilead Sciences Inc",
-      "weight": 2.79
+      "weight": 2.73
     },
     {
       "symbol": "ISRG",
       "name": "Intuitive Surgical Inc",
-      "weight": 2.56
+      "weight": 2.45
     },
     {
       "symbol": "PFE",
       "name": "Pfizer Inc",
-      "weight": 2.46
+      "weight": 2.3800000000000003
     },
     {
       "symbol": "CVS",
       "name": "CVS Health Corporation",
-      "weight": 2.34
+      "weight": 2.29
     },
     {
       "symbol": "VRTX",
       "name": "Vertex Pharmaceuticals Inc",
-      "weight": 2.17
+      "weight": 2.19
     },
     {
       "symbol": "DHR",
       "name": "Danaher Corporation",
-      "weight": 2.1399999999999997
+      "weight": 2.08
     },
     {
       "symbol": "BMY",
       "name": "Bristol-Myers Squibb Company",
-      "weight": 2.02
+      "weight": 2.04
     },
     {
       "symbol": "SYK",
       "name": "Stryker Corporation",
-      "weight": 1.95
+      "weight": 1.8900000000000001
     },
     {
       "symbol": "MDT",
       "name": "MDT",
-      "weight": 1.8499999999999999
+      "weight": 1.7399999999999998
     },
     {
       "symbol": "MCK",
       "name": "MCK",
-      "weight": 1.66
+      "weight": 1.58
     },
     {
       "symbol": "ELV",
       "name": "ELV",
-      "weight": 1.5
+      "weight": 1.46
     },
     {
       "symbol": "CI",
       "name": "Cigna Corporation",
-      "weight": 1.3299999999999998
+      "weight": 1.27
     },
     {
       "symbol": "BSX",
       "name": "BSX",
-      "weight": 1.1900000000000002
+      "weight": 1.0999999999999999
     },
     {
       "symbol": "REGN",
       "name": "Regeneron Pharmaceuticals Inc",
-      "weight": 1.1199999999999999
+      "weight": 1.08
     },
     {
       "symbol": "HCA",
       "name": "HCA",
-      "weight": 1.08
-    },
-    {
-      "symbol": "COR",
-      "name": "COR",
-      "weight": 1.0
+      "weight": 1.05
     },
     {
       "symbol": "CAH",
       "name": "CAH",
-      "weight": 0.98
+      "weight": 0.97
+    },
+    {
+      "symbol": "COR",
+      "name": "COR",
+      "weight": 0.96
     },
     {
       "symbol": "EW",
       "name": "EW",
-      "weight": 0.9299999999999999
-    },
-    {
-      "symbol": "IDXX",
-      "name": "IDXX",
-      "weight": 0.7799999999999999
+      "weight": 0.8999999999999999
     },
     {
       "symbol": "HUM",
       "name": "HUM",
-      "weight": 0.7799999999999999
+      "weight": 0.83
+    },
+    {
+      "symbol": "IDXX",
+      "name": "IDXX",
+      "weight": 0.72
     },
     {
       "symbol": "BDX",
       "name": "Becton Dickinson and Company",
-      "weight": 0.73
+      "weight": 0.72
     },
     {
       "symbol": "A",
       "name": "A",
-      "weight": 0.67
+      "weight": 0.65
     },
     {
       "symbol": "WAT",
       "name": "WAT",
-      "weight": 0.65
-    },
-    {
-      "symbol": "ZTS",
-      "name": "Zoetis Inc",
-      "weight": 0.59
+      "weight": 0.64
     },
     {
       "symbol": "IQV",
@@ -169,64 +164,69 @@
       "weight": 0.5599999999999999
     },
     {
-      "symbol": "GEHC",
-      "name": "GEHC",
-      "weight": 0.53
-    },
-    {
       "symbol": "BIIB",
       "name": "BIIB",
-      "weight": 0.53
+      "weight": 0.5499999999999999
+    },
+    {
+      "symbol": "ZTS",
+      "name": "Zoetis Inc",
+      "weight": 0.52
     },
     {
       "symbol": "CNC",
       "name": "CNC",
-      "weight": 0.53
+      "weight": 0.52
+    },
+    {
+      "symbol": "GEHC",
+      "name": "GEHC",
+      "weight": 0.51
     },
     {
       "symbol": "RMD",
       "name": "RMD",
-      "weight": 0.51
-    },
-    {
-      "symbol": "DXCM",
-      "name": "DXCM",
-      "weight": 0.48
-    },
-    {
-      "symbol": "MTD",
-      "name": "MTD",
-      "weight": 0.44
+      "weight": 0.49
     },
     {
       "symbol": "VEEV",
       "name": "VEEV",
-      "weight": 0.44
+      "weight": 0.45999999999999996
+    },
+    {
+      "symbol": "MTD",
+      "name": "MTD",
+      "weight": 0.44999999999999996
+    },
+    {
+      "symbol": "DXCM",
+      "name": "DXCM",
+      "weight": 0.44999999999999996
     },
     {
       "symbol": "WST",
       "name": "WST",
+      "weight": 0.44
+    },
+    {
+      "symbol": "MRNA",
+      "name": "MRNA",
       "weight": 0.43
     },
     {
       "symbol": "DGX",
       "name": "DGX",
-      "weight": 0.4
+      "weight": 0.41000000000000003
     },
     {
       "symbol": "LH",
       "name": "LH",
-      "weight": 0.38999999999999996
-    },
-    {
-      "symbol": "MRNA",
-      "name": "MRNA",
-      "weight": 0.38
+      "weight": 0.4
     },
     {
       "symbol": "STE",
       "name": "STE",
-      "weight": 0.37
+      "weight": 0.36
     },
     {
       "symbol": "INCY",
@@ -236,12 +236,17 @@
     {
       "symbol": "VTRS",
       "name": "VTRS",
-      "weight": 0.33
+      "weight": 0.32
     },
     {
       "symbol": "ZBH",
       "name": "ZBH",
-      "weight": 0.32
+      "weight": 0.29
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.25
     },
     {
       "symbol": "COO",
@@ -254,23 +259,13 @@
       "weight": 0.22999999999999998
     },
     {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.22
-    },
-    {
       "symbol": "RVTY",
       "name": "RVTY",
-      "weight": 0.21
+      "weight": 0.22
     },
     {
       "symbol": "SOLV",
       "name": "SOLV",
-      "weight": 0.2
-    },
-    {
-      "symbol": "BAX",
-      "name": "BAX",
       "weight": 0.2
     },
     {
@@ -279,19 +274,24 @@
       "weight": 0.2
     },
     {
-      "symbol": "PODD",
-      "name": "PODD",
-      "weight": 0.19
-    },
-    {
       "symbol": "CRL",
       "name": "CRL",
-      "weight": 0.18
+      "weight": 0.19
     },
     {
       "symbol": "TECH",
       "name": "TECH",
-      "weight": 0.16999999999999998
+      "weight": 0.19
+    },
+    {
+      "symbol": "BAX",
+      "name": "BAX",
+      "weight": 0.19
+    },
+    {
+      "symbol": "PODD",
+      "name": "PODD",
+      "weight": 0.18
     },
     {
       "symbol": "HSIC",
@@ -311,7 +311,7 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.01
+      "weight": 0.0
     },
     {
       "symbol": "n/a",
