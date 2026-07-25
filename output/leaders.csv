@@ -1,5 +1,5 @@
 Sector,Top Leader,Leader Name,Recommendation,Recommendation Type,Action,Status,Sector Freshness,Data Status
-Aerospace & Defense,GE,General Electric Company,GE,stock,hold,active,fresh,fresh_cache
+Aerospace & Defense,GE,General Electric Company,GE,stock,hold,active,stale,stale_cache
 Renewable Energy,BE,BE,BE,stock,hold,active,fresh,fresh_cache
 Healthcare & Biotech,LLY,Eli Lilly and Company,LLY,stock,hold,active,fresh,fresh_cache
 Automotive,TSLA,Tesla Inc,ALB,stock,watch,pending_confirmation,fresh,fresh_cache
