@@ -1,10 +1,10 @@
 Sector,Top Leader,Leader Name,Recommendation,Recommendation Type,Action,Status,Sector Freshness,Data Status
 Aerospace & Defense,GE,General Electric Company,GE,stock,hold,active,fresh,fresh_cache
-Renewable Energy,BE,BE,BE,stock,hold,active,fresh,fresh_cache
-Healthcare & Biotech,LLY,Eli Lilly and Company,LLY,stock,hold,active,fresh,fresh_cache
-Automotive,TSLA,Tesla Inc,ALB,stock,watch,pending_confirmation,fresh,fresh_cache
-Consumer Staples,WMT,Walmart Inc,WMT,stock,hold,active,fresh,fresh_cache
-Tech & AI,NVDA,NVIDIA Corporation,NVDA,stock,hold,active,stale,stale_cache
-Financial Services,JPM,JPMorgan Chase & Co,JPM,stock,hold,active,stale,stale_cache
-Infrastructure,NEE,NextEra Energy Inc,NEE,stock,hold,active,stale,stale_cache
-Real Estate,WELL,Welltower Inc,WELL,stock,hold,active,stale,stale_cache
+Renewable Energy,BE,BE,BE,stock,hold,active,stale,stale_cache
+Healthcare & Biotech,LLY,Eli Lilly and Company,LLY,stock,hold,active,stale,stale_cache
+Automotive,TSLA,Tesla Inc,ALB,stock,watch,pending_confirmation,stale,stale_cache
+Consumer Staples,WMT,Walmart Inc,WMT,stock,hold,active,stale,stale_cache
+Tech & AI,NVDA,NVIDIA Corporation,NVDA,stock,hold,active,fresh,fresh_cache
+Financial Services,BRK-B,Berkshire Hathaway Inc Class B,JPM,stock,watch,pending_confirmation,fresh,fresh_cache
+Infrastructure,NEE,NextEra Energy Inc,NEE,stock,hold,active,fresh,fresh_cache
+Real Estate,WELL,Welltower Inc,WELL,stock,hold,active,fresh,fresh_cache

@@ -1,77 +1,77 @@
 {
   "symbol": "XLP",
-  "cached_at": "2026-07-19T06:03:26.605448",
+  "cached_at": "2026-07-27T06:03:46.721192",
   "source": "alpha_vantage_etf_profile",
   "holdings": [
     {
       "symbol": "WMT",
       "name": "Walmart Inc",
-      "weight": 10.7
+      "weight": 10.489999999999998
     },
     {
       "symbol": "COST",
       "name": "Costco Wholesale Corporation",
-      "weight": 8.82
+      "weight": 8.85
     },
     {
       "symbol": "PG",
       "name": "Procter & Gamble Company",
-      "weight": 7.470000000000001
+      "weight": 7.41
     },
     {
       "symbol": "KO",
       "name": "Coca-Cola Company",
-      "weight": 6.92
+      "weight": 6.78
     },
     {
       "symbol": "PM",
       "name": "Philip Morris International Inc",
-      "weight": 6.11
+      "weight": 6.41
     },
     {
       "symbol": "CL",
       "name": "Colgate-Palmolive Company",
-      "weight": 4.67
-    },
-    {
-      "symbol": "MNST",
-      "name": "MNST",
-      "weight": 4.51
+      "weight": 4.62
     },
     {
       "symbol": "MO",
       "name": "MO",
-      "weight": 4.43
+      "weight": 4.61
     },
     {
-      "symbol": "PEP",
-      "name": "PepsiCo Inc",
-      "weight": 4.31
+      "symbol": "MNST",
+      "name": "MNST",
+      "weight": 4.34
     },
     {
       "symbol": "MDLZ",
       "name": "Mondelez International Inc",
-      "weight": 4.2
+      "weight": 4.24
+    },
+    {
+      "symbol": "PEP",
+      "name": "PepsiCo Inc",
+      "weight": 4.24
     },
     {
       "symbol": "TGT",
       "name": "Target Corporation",
-      "weight": 4.06
+      "weight": 4.03
     },
     {
       "symbol": "KDP",
       "name": "KDP",
-      "weight": 2.6599999999999997
+      "weight": 2.64
     },
     {
       "symbol": "ADM",
       "name": "ADM",
-      "weight": 2.5700000000000003
+      "weight": 2.63
     },
     {
       "symbol": "SYY",
       "name": "SYY",
-      "weight": 2.5
+      "weight": 2.46
     },
     {
       "symbol": "KVUE",
@@ -86,37 +86,37 @@
     {
       "symbol": "KR",
       "name": "KR",
-      "weight": 2.08
+      "weight": 2.11
     },
     {
       "symbol": "CASY",
       "name": "CASY",
-      "weight": 1.9300000000000002
+      "weight": 2.04
     },
     {
       "symbol": "DG",
       "name": "DG",
-      "weight": 1.73
+      "weight": 1.7500000000000002
     },
     {
       "symbol": "HSY",
       "name": "HSY",
-      "weight": 1.63
+      "weight": 1.6199999999999999
     },
     {
       "symbol": "CHD",
       "name": "CHD",
-      "weight": 1.49
+      "weight": 1.47
     },
     {
       "symbol": "DLTR",
       "name": "DLTR",
-      "weight": 1.49
+      "weight": 1.46
     },
     {
       "symbol": "KHC",
       "name": "KHC",
-      "weight": 1.41
+      "weight": 1.4000000000000001
     },
     {
       "symbol": "EL",
@@ -136,12 +136,12 @@
     {
       "symbol": "TSN",
       "name": "TSN",
-      "weight": 1.05
+      "weight": 1.04
     },
     {
       "symbol": "BG",
       "name": "BG",
-      "weight": 1.02
+      "weight": 1.04
     },
     {
       "symbol": "MKC",
@@ -149,14 +149,14 @@
       "weight": 0.84
     },
     {
-      "symbol": "CLX",
-      "name": "CLX",
+      "symbol": "SJM",
+      "name": "SJM",
       "weight": 0.76
     },
     {
-      "symbol": "SJM",
-      "name": "SJM",
-      "weight": 0.75
+      "symbol": "CLX",
+      "name": "CLX",
+      "weight": 0.74
     },
     {
       "symbol": "HRL",
@@ -166,12 +166,12 @@
     {
       "symbol": "TAP",
       "name": "TAP",
-      "weight": 0.41000000000000003
+      "weight": 0.42
     },
     {
       "symbol": "BF-B",
       "name": "BF-B",
-      "weight": 0.27
+      "weight": 0.27999999999999997
     },
     {
       "symbol": "n/a",
@@ -181,12 +181,12 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.11
+      "weight": 0.16999999999999998
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.02
+      "weight": 0.01
     },
     {
       "symbol": "n/a",
