@@ -1,122 +1,127 @@
 {
   "symbol": "LIT",
-  "cached_at": "2026-08-06T13:11:55.860406",
+  "cached_at": "2026-08-14T06:03:18.466467",
   "source": "alpha_vantage_etf_profile",
   "holdings": [
     {
       "symbol": "RIO",
       "name": "RIO",
-      "weight": 21.709999999999997
+      "weight": 22.720000000000002
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 7.5600000000000005
+      "weight": 6.87
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 6.35
+      "weight": 6.4399999999999995
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 5.65
-    },
-    {
-      "symbol": "TSLA",
-      "name": "Tesla Inc",
-      "weight": 4.66
+      "weight": 5.8500000000000005
     },
     {
       "symbol": "ALB",
       "name": "ALB",
-      "weight": 4.64
+      "weight": 4.58
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 4.16
+      "weight": 4.14
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 4.06
+      "weight": 3.9699999999999998
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 3.7800000000000002
+      "weight": 3.95
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla Inc",
+      "weight": 3.91
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 3.5700000000000003
+      "weight": 3.55
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 3.37
+      "weight": 3.4299999999999997
     },
     {
       "symbol": "SQM",
       "name": "SQM",
-      "weight": 3.26
+      "weight": 3.1300000000000003
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 2.82
+      "weight": 2.75
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 2.4899999999999998
+      "weight": 2.6100000000000003
     },
     {
       "symbol": "ENS",
       "name": "ENS",
-      "weight": 2.4299999999999997
+      "weight": 2.26
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 2.22
+      "weight": 2.26
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 2.09
+      "weight": 2.19
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 2.07
+      "weight": 2.1399999999999997
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 1.67
+      "weight": 1.71
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 1.32
+      "weight": 1.41
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 1.3
+      "weight": 1.37
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 1.27
+      "weight": 1.21
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 1.1199999999999999
+      "weight": 1.18
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 1.0999999999999999
     },
     {
       "symbol": "n/a",
@@ -126,47 +131,42 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 1.02
+      "weight": 0.59
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.58
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.53
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.51
+      "weight": 0.48
     },
     {
       "symbol": "LCID",
       "name": "LCID",
-      "weight": 0.44
+      "weight": 0.45999999999999996
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.37
+      "weight": 0.45999999999999996
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.38
     },
     {
       "symbol": "LAC",
       "name": "LAC",
-      "weight": 0.33
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.29
+      "weight": 0.3
     },
     {
       "symbol": "n/a",
       "name": "n/a",
       "weight": 0.27
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.25
     },
     {
       "symbol": "n/a",
@@ -181,16 +181,16 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.16
-    },
-    {
-      "symbol": "SLI",
-      "name": "SLI",
-      "weight": 0.16
+      "weight": 0.15
     },
     {
       "symbol": "n/a",
       "name": "n/a",
+      "weight": 0.13999999999999999
+    },
+    {
+      "symbol": "SLI",
+      "name": "SLI",
       "weight": 0.13999999999999999
     },
     {
@@ -206,7 +206,12 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.03
+      "weight": 0.04
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.02
     },
     {
       "symbol": "n/a",
