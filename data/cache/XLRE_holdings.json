@@ -1,97 +1,87 @@
 {
   "symbol": "XLRE",
-  "cached_at": "2026-08-19T06:05:45.347032",
+  "cached_at": "2026-08-27T06:05:14.201480",
   "source": "alpha_vantage_etf_profile",
   "holdings": [
     {
       "symbol": "WELL",
       "name": "Welltower Inc",
-      "weight": 11.200000000000001
+      "weight": 11.17
     },
     {
       "symbol": "PLD",
       "name": "Prologis Inc",
-      "weight": 8.780000000000001
+      "weight": 8.99
     },
     {
       "symbol": "EQIX",
       "name": "EQIX",
-      "weight": 6.97
+      "weight": 7.13
     },
     {
       "symbol": "AMT",
       "name": "American Tower Corporation",
-      "weight": 5.24
+      "weight": 5.46
     },
     {
       "symbol": "DLR",
       "name": "Digital Realty Trust Inc",
-      "weight": 5.04
+      "weight": 4.99
     },
     {
       "symbol": "SPG",
       "name": "SPG",
-      "weight": 4.88
+      "weight": 4.859999999999999
+    },
+    {
+      "symbol": "VMRK",
+      "name": "VMRK",
+      "weight": 4.78
     },
     {
       "symbol": "PSA",
       "name": "Public Storage",
-      "weight": 4.760000000000001
-    },
-    {
-      "symbol": "VTR",
-      "name": "VTR",
-      "weight": 4.54
-    },
-    {
-      "symbol": "O",
-      "name": "Realty Income Corporation",
-      "weight": 4.4799999999999995
+      "weight": 4.75
     },
     {
       "symbol": "CBRE",
       "name": "CBRE",
-      "weight": 4.46
+      "weight": 4.6
+    },
+    {
+      "symbol": "VTR",
+      "name": "VTR",
+      "weight": 4.52
+    },
+    {
+      "symbol": "O",
+      "name": "Realty Income Corporation",
+      "weight": 4.52
     },
     {
       "symbol": "IRM",
       "name": "IRM",
-      "weight": 3.81
+      "weight": 3.6799999999999997
     },
     {
       "symbol": "CCI",
       "name": "CCI",
-      "weight": 3.25
+      "weight": 3.3000000000000003
     },
     {
       "symbol": "EXR",
       "name": "EXR",
-      "weight": 3.2
+      "weight": 3.16
     },
     {
       "symbol": "VICI",
       "name": "VICI",
-      "weight": 2.91
-    },
-    {
-      "symbol": "AVB",
-      "name": "AvalonBay Communities Inc",
-      "weight": 2.6599999999999997
-    },
-    {
-      "symbol": "EQR",
-      "name": "Equity Residential",
-      "weight": 2.33
+      "weight": 2.92
     },
     {
       "symbol": "SBAC",
       "name": "SBAC",
-      "weight": 1.91
-    },
-    {
-      "symbol": "WY",
-      "name": "WY",
-      "weight": 1.8800000000000001
+      "weight": 1.96
     },
     {
       "symbol": "ESS",
@@ -99,64 +89,69 @@
       "weight": 1.87
     },
     {
-      "symbol": "KIM",
-      "name": "KIM",
-      "weight": 1.69
+      "symbol": "WY",
+      "name": "WY",
+      "weight": 1.7999999999999998
     },
     {
       "symbol": "INVH",
       "name": "INVH",
-      "weight": 1.68
+      "weight": 1.67
     },
     {
-      "symbol": "HST",
-      "name": "HST",
-      "weight": 1.6099999999999999
+      "symbol": "KIM",
+      "name": "KIM",
+      "weight": 1.66
     },
     {
       "symbol": "MAA",
       "name": "MAA",
-      "weight": 1.58
+      "weight": 1.55
+    },
+    {
+      "symbol": "HST",
+      "name": "HST",
+      "weight": 1.49
     },
     {
       "symbol": "DOC",
       "name": "DOC",
-      "weight": 1.51
-    },
-    {
-      "symbol": "REG",
-      "name": "REG",
-      "weight": 1.31
+      "weight": 1.4500000000000002
     },
     {
       "symbol": "CSGP",
       "name": "CSGP",
-      "weight": 1.24
+      "weight": 1.39
+    },
+    {
+      "symbol": "REG",
+      "name": "REG",
+      "weight": 1.27
     },
     {
       "symbol": "UDR",
       "name": "UDR",
-      "weight": 1.15
+      "weight": 1.1199999999999999
     },
     {
       "symbol": "CPT",
       "name": "CPT",
-      "weight": 1.13
+      "weight": 1.0999999999999999
     },
     {
       "symbol": "BXP",
       "name": "BXP",
-      "weight": 1.05
+      "weight": 1.01
     },
     {
       "symbol": "FRT",
       "name": "FRT",
-      "weight": 0.97
+      "weight": 0.9400000000000001
     },
     {
       "symbol": "ARE",
       "name": "ARE",
-      "weight": 0.79
+      "weight": 0.8
     },
     {
       "symbol": "n/a",
@@ -166,7 +161,7 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.06
+      "weight": 0.02
     },
     {
       "symbol": "n/a",

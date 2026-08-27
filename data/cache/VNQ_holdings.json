@@ -1,72 +1,72 @@
 {
   "symbol": "VNQ",
-  "cached_at": "2026-08-19T06:05:17.552351",
+  "cached_at": "2026-08-27T06:04:46.398464",
   "source": "alpha_vantage_etf_profile",
   "holdings": [
     {
       "symbol": "VRTPX",
       "name": "VRTPX",
-      "weight": 14.360000000000001
+      "weight": 14.41
     },
     {
       "symbol": "WELL",
       "name": "Welltower Inc",
-      "weight": 8.37
+      "weight": 8.459999999999999
     },
     {
       "symbol": "PLD",
       "name": "Prologis Inc",
-      "weight": 6.68
+      "weight": 6.97
     },
     {
       "symbol": "EQIX",
       "name": "EQIX",
-      "weight": 5.43
+      "weight": 5.2
     },
     {
       "symbol": "AMT",
       "name": "American Tower Corporation",
-      "weight": 4.03
+      "weight": 4.18
     },
     {
       "symbol": "SPG",
       "name": "SPG",
-      "weight": 3.84
+      "weight": 3.85
     },
     {
       "symbol": "DLR",
       "name": "Digital Realty Trust Inc",
-      "weight": 3.26
+      "weight": 3.35
     },
     {
       "symbol": "O",
       "name": "Realty Income Corporation",
-      "weight": 3.0300000000000002
+      "weight": 3.06
     },
     {
       "symbol": "PSA",
       "name": "Public Storage",
-      "weight": 2.6599999999999997
+      "weight": 2.81
     },
     {
       "symbol": "VTR",
       "name": "VTR",
-      "weight": 2.23
+      "weight": 2.3
     },
     {
       "symbol": "CBRE",
       "name": "CBRE",
-      "weight": 2.1
+      "weight": 2.2399999999999998
     },
     {
       "symbol": "IRM",
       "name": "IRM",
-      "weight": 1.9900000000000002
+      "weight": 1.8800000000000001
     },
     {
       "symbol": "CCI",
       "name": "CCI",
-      "weight": 1.7500000000000002
+      "weight": 1.72
     },
     {
       "symbol": "EXR",
@@ -76,17 +76,17 @@
     {
       "symbol": "VICI",
       "name": "VICI",
-      "weight": 1.41
+      "weight": 1.3599999999999999
     },
     {
-      "symbol": "AVB",
-      "name": "AvalonBay Communities Inc",
-      "weight": 1.39
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 1.34
     },
     {
-      "symbol": "EQR",
-      "name": "Equity Residential",
-      "weight": 1.21
+      "symbol": "VMRK",
+      "name": "VMRK",
+      "weight": 1.16
     },
     {
       "symbol": "SBAC",
@@ -96,37 +96,42 @@
     {
       "symbol": "ESS",
       "name": "ESS",
-      "weight": 0.9900000000000001
+      "weight": 0.95
     },
     {
       "symbol": "WY",
       "name": "WY",
-      "weight": 0.91
-    },
-    {
-      "symbol": "KIM",
-      "name": "KIM",
-      "weight": 0.8999999999999999
+      "weight": 0.9299999999999999
     },
     {
       "symbol": "HST",
       "name": "HST",
+      "weight": 0.89
+    },
+    {
+      "symbol": "KIM",
+      "name": "KIM",
+      "weight": 0.89
+    },
+    {
+      "symbol": "JLL",
+      "name": "JLL",
       "weight": 0.86
     },
     {
       "symbol": "INVH",
       "name": "INVH",
-      "weight": 0.86
-    },
-    {
-      "symbol": "MAA",
-      "name": "MAA",
-      "weight": 0.8500000000000001
+      "weight": 0.83
     },
     {
       "symbol": "WPC",
       "name": "WPC",
       "weight": 0.83
+    },
+    {
+      "symbol": "MAA",
+      "name": "MAA",
+      "weight": 0.8
     },
     {
       "symbol": "DOC",
@@ -136,17 +141,12 @@
     {
       "symbol": "SUI",
       "name": "SUI",
-      "weight": 0.7799999999999999
-    },
-    {
-      "symbol": "JLL",
-      "name": "JLL",
-      "weight": 0.77
+      "weight": 0.79
     },
     {
       "symbol": "OHI",
       "name": "OHI",
-      "weight": 0.74
+      "weight": 0.77
     },
     {
       "symbol": "LAMR",
@@ -156,32 +156,27 @@
     {
       "symbol": "REG",
       "name": "REG",
-      "weight": 0.69
+      "weight": 0.6799999999999999
     },
     {
       "symbol": "GLPI",
       "name": "GLPI",
-      "weight": 0.63
+      "weight": 0.62
     },
     {
       "symbol": "CSGP",
       "name": "CSGP",
-      "weight": 0.63
+      "weight": 0.62
     },
     {
       "symbol": "ELS",
       "name": "ELS",
-      "weight": 0.63
+      "weight": 0.62
     },
     {
       "symbol": "UDR",
       "name": "UDR",
-      "weight": 0.62
-    },
-    {
-      "symbol": "CPT",
-      "name": "CPT",
-      "weight": 0.59
+      "weight": 0.58
     },
     {
       "symbol": "EGP",
@@ -189,33 +184,38 @@
       "weight": 0.58
     },
     {
+      "symbol": "CPT",
+      "name": "CPT",
+      "weight": 0.5599999999999999
+    },
+    {
       "symbol": "AMH",
       "name": "AMH",
-      "weight": 0.5599999999999999
+      "weight": 0.5499999999999999
     },
     {
       "symbol": "AHR",
       "name": "AHR",
-      "weight": 0.53
+      "weight": 0.5499999999999999
     },
     {
       "symbol": "BXP",
       "name": "BXP",
-      "weight": 0.52
+      "weight": 0.54
     },
     {
       "symbol": "FRT",
       "name": "FRT",
-      "weight": 0.51
+      "weight": 0.5
+    },
+    {
+      "symbol": "CUBE",
+      "name": "CUBE",
+      "weight": 0.48
     },
     {
       "symbol": "BRX",
       "name": "BRX",
-      "weight": 0.49
-    },
-    {
-      "symbol": "ADC",
-      "name": "ADC",
       "weight": 0.48
     },
     {
@@ -224,34 +224,24 @@
       "weight": 0.48
     },
     {
+      "symbol": "ADC",
+      "name": "ADC",
+      "weight": 0.48
+    },
+    {
       "symbol": "NNN",
       "name": "NNN",
       "weight": 0.47000000000000003
     },
     {
-      "symbol": "CUBE",
-      "name": "CUBE",
-      "weight": 0.47000000000000003
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.45999999999999996
-    },
-    {
-      "symbol": "ARE",
-      "name": "ARE",
-      "weight": 0.44
-    },
-    {
-      "symbol": "COMP",
-      "name": "COMP",
-      "weight": 0.44
-    },
-    {
       "symbol": "FR",
       "name": "FR",
-      "weight": 0.43
+      "weight": 0.44999999999999996
+    },
+    {
+      "symbol": "REXR",
+      "name": "REXR",
+      "weight": 0.44
     },
     {
       "symbol": "RHP",
@@ -259,9 +249,19 @@
       "weight": 0.41000000000000003
     },
     {
-      "symbol": "REXR",
-      "name": "REXR",
+      "symbol": "ARE",
+      "name": "ARE",
+      "weight": 0.41000000000000003
+    },
+    {
+      "symbol": "COMP",
+      "name": "COMP",
       "weight": 0.4
+    },
+    {
+      "symbol": "TRNO",
+      "name": "TRNO",
+      "weight": 0.38999999999999996
     },
     {
       "symbol": "STAG",
@@ -269,14 +269,14 @@
       "weight": 0.38
     },
     {
-      "symbol": "TRNO",
-      "name": "TRNO",
+      "symbol": "HR",
+      "name": "HR",
       "weight": 0.36
     },
     {
-      "symbol": "HR",
-      "name": "HR",
-      "weight": 0.35000000000000003
+      "symbol": "EPRT",
+      "name": "EPRT",
+      "weight": 0.33999999999999997
     },
     {
       "symbol": "MAC",
@@ -286,11 +286,6 @@
     {
       "symbol": "VNO",
       "name": "VNO",
-      "weight": 0.33
-    },
-    {
-      "symbol": "EPRT",
-      "name": "EPRT",
       "weight": 0.33
     },
     {
@@ -304,29 +299,44 @@
       "weight": 0.3
     },
     {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.3
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.29
+    },
+    {
+      "symbol": "SBRA",
+      "name": "SBRA",
+      "weight": 0.27999999999999997
+    },
+    {
       "symbol": "PECO",
       "name": "PECO",
       "weight": 0.27999999999999997
     },
     {
-      "symbol": "OUT",
-      "name": "OUT",
+      "symbol": "Z",
+      "name": "Z",
       "weight": 0.27
     },
     {
       "symbol": "CUZ",
       "name": "CUZ",
-      "weight": 0.26
+      "weight": 0.27
     },
     {
-      "symbol": "SBRA",
-      "name": "SBRA",
-      "weight": 0.26
+      "symbol": "EPR",
+      "name": "EPR",
+      "weight": 0.25
     },
     {
-      "symbol": "Z",
-      "name": "Z",
-      "weight": 0.26
+      "symbol": "OUT",
+      "name": "OUT",
+      "weight": 0.25
     },
     {
       "symbol": "SKT",
@@ -336,17 +346,7 @@
     {
       "symbol": "MRP",
       "name": "MRP",
-      "weight": 0.24
-    },
-    {
-      "symbol": "COLD",
-      "name": "COLD",
-      "weight": 0.24
-    },
-    {
-      "symbol": "EPR",
-      "name": "EPR",
-      "weight": 0.22999999999999998
+      "weight": 0.22
     },
     {
       "symbol": "CDP",
@@ -354,13 +354,13 @@
       "weight": 0.22
     },
     {
-      "symbol": "OPEN",
-      "name": "OPEN",
-      "weight": 0.22
+      "symbol": "BNL",
+      "name": "BNL",
+      "weight": 0.21
     },
     {
-      "symbol": "IRT",
-      "name": "IRT",
+      "symbol": "COLD",
+      "name": "COLD",
       "weight": 0.21
     },
     {
@@ -369,14 +369,19 @@
       "weight": 0.21
     },
     {
-      "symbol": "BNL",
-      "name": "BNL",
-      "weight": 0.21
+      "symbol": "IRT",
+      "name": "IRT",
+      "weight": 0.2
     },
     {
       "symbol": "APLE",
       "name": "APLE",
-      "weight": 0.2
+      "weight": 0.19
+    },
+    {
+      "symbol": "HIW",
+      "name": "HIW",
+      "weight": 0.19
     },
     {
       "symbol": "SLG",
@@ -386,32 +391,17 @@
     {
       "symbol": "NHI",
       "name": "NHI",
-      "weight": 0.19
-    },
-    {
-      "symbol": "HIW",
-      "name": "HIW",
       "weight": 0.18
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.16999999999999998
     },
     {
       "symbol": "LXP",
       "name": "LXP",
-      "weight": 0.16999999999999998
+      "weight": 0.18
     },
     {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.16
-    },
-    {
-      "symbol": "LINE",
-      "name": "LINE",
-      "weight": 0.16
+      "symbol": "OPEN",
+      "name": "OPEN",
+      "weight": 0.18
     },
     {
       "symbol": "CWK",
@@ -419,23 +409,8 @@
       "weight": 0.16
     },
     {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.16
-    },
-    {
-      "symbol": "IVT",
-      "name": "IVT",
-      "weight": 0.15
-    },
-    {
-      "symbol": "UE",
-      "name": "UE",
-      "weight": 0.15
-    },
-    {
-      "symbol": "PK",
-      "name": "PK",
+      "symbol": "FCPT",
+      "name": "FCPT",
       "weight": 0.15
     },
     {
@@ -444,34 +419,34 @@
       "weight": 0.15
     },
     {
-      "symbol": "AKR",
-      "name": "AKR",
-      "weight": 0.13999999999999999
+      "symbol": "LINE",
+      "name": "LINE",
+      "weight": 0.15
     },
     {
-      "symbol": "FCPT",
-      "name": "FCPT",
+      "symbol": "PK",
+      "name": "PK",
+      "weight": 0.15
+    },
+    {
+      "symbol": "AKR",
+      "name": "AKR",
+      "weight": 0.15
+    },
+    {
+      "symbol": "UE",
+      "name": "UE",
+      "weight": 0.15
+    },
+    {
+      "symbol": "IVT",
+      "name": "IVT",
       "weight": 0.13999999999999999
     },
     {
       "symbol": "DRH",
       "name": "DRH",
-      "weight": 0.13
-    },
-    {
-      "symbol": "PEB",
-      "name": "PEB",
-      "weight": 0.12
-    },
-    {
-      "symbol": "JOE",
-      "name": "JOE",
-      "weight": 0.12
-    },
-    {
-      "symbol": "LB",
-      "name": "LB",
-      "weight": 0.12
+      "weight": 0.13999999999999999
     },
     {
       "symbol": "NMRK",
@@ -479,8 +454,13 @@
       "weight": 0.12
     },
     {
-      "symbol": "HHH",
-      "name": "HHH",
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.12
+    },
+    {
+      "symbol": "JOE",
+      "name": "JOE",
       "weight": 0.12
     },
     {
@@ -494,23 +474,28 @@
       "weight": 0.11
     },
     {
-      "symbol": "n/a",
-      "name": "n/a",
+      "symbol": "LB",
+      "name": "LB",
       "weight": 0.11
     },
     {
-      "symbol": "GTY",
-      "name": "GTY",
-      "weight": 0.1
+      "symbol": "PEB",
+      "name": "PEB",
+      "weight": 0.11
     },
     {
-      "symbol": "DHC",
-      "name": "DHC",
+      "symbol": "DEI",
+      "name": "DEI",
       "weight": 0.1
     },
     {
       "symbol": "LTC",
       "name": "LTC",
+      "weight": 0.1
+    },
+    {
+      "symbol": "HHH",
+      "name": "HHH",
       "weight": 0.1
     },
     {
@@ -524,14 +509,14 @@
       "weight": 0.1
     },
     {
-      "symbol": "DEI",
-      "name": "DEI",
+      "symbol": "GTY",
+      "name": "GTY",
       "weight": 0.1
     },
     {
-      "symbol": "MPT",
-      "name": "MPT",
-      "weight": 0.1
+      "symbol": "DHC",
+      "name": "DHC",
+      "weight": 0.09
     },
     {
       "symbol": "IIPR",
@@ -539,8 +524,8 @@
       "weight": 0.09
     },
     {
-      "symbol": "n/a",
-      "name": "n/a",
+      "symbol": "MPT",
+      "name": "MPT",
       "weight": 0.09
     },
     {
@@ -549,13 +534,13 @@
       "weight": 0.09
     },
     {
-      "symbol": "n/a",
-      "name": "n/a",
+      "symbol": "RLJ",
+      "name": "RLJ",
       "weight": 0.08
     },
     {
-      "symbol": "RLJ",
-      "name": "RLJ",
+      "symbol": "n/a",
+      "name": "n/a",
       "weight": 0.08
     },
     {
@@ -569,11 +554,6 @@
       "weight": 0.06
     },
     {
-      "symbol": "PDM",
-      "name": "PDM",
-      "weight": 0.06
-    },
-    {
       "symbol": "UMH",
       "name": "UMH",
       "weight": 0.06
@@ -584,13 +564,18 @@
       "weight": 0.06
     },
     {
+      "symbol": "PDM",
+      "name": "PDM",
+      "weight": 0.06
+    },
+    {
       "symbol": "SVC",
       "name": "SVC",
       "weight": 0.05
     },
     {
-      "symbol": "JBGS",
-      "name": "JBGS",
+      "symbol": "CBL",
+      "name": "CBL",
       "weight": 0.05
     },
     {
@@ -599,18 +584,8 @@
       "weight": 0.05
     },
     {
-      "symbol": "CBL",
-      "name": "CBL",
-      "weight": 0.04
-    },
-    {
       "symbol": "ESRT",
       "name": "ESRT",
-      "weight": 0.04
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
       "weight": 0.04
     },
     {
@@ -619,8 +594,18 @@
       "weight": 0.04
     },
     {
+      "symbol": "HPP",
+      "name": "HPP",
+      "weight": 0.04
+    },
+    {
       "symbol": "SAFE",
       "name": "SAFE",
+      "weight": 0.04
+    },
+    {
+      "symbol": "JBGS",
+      "name": "JBGS",
       "weight": 0.04
     },
     {
@@ -629,33 +614,18 @@
       "weight": 0.04
     },
     {
-      "symbol": "HPP",
-      "name": "HPP",
-      "weight": 0.04
-    },
-    {
       "symbol": "INN",
       "name": "INN",
       "weight": 0.04
     },
     {
-      "symbol": "CHCT",
-      "name": "CHCT",
+      "symbol": "UHT",
+      "name": "UHT",
       "weight": 0.03
     },
     {
-      "symbol": "XRN",
-      "name": "XRN",
-      "weight": 0.03
-    },
-    {
-      "symbol": "AHRT",
-      "name": "AHRT",
-      "weight": 0.03
-    },
-    {
-      "symbol": "ALX",
-      "name": "ALX",
+      "symbol": "n/a",
+      "name": "n/a",
       "weight": 0.03
     },
     {
@@ -669,6 +639,21 @@
       "weight": 0.03
     },
     {
+      "symbol": "ALX",
+      "name": "ALX",
+      "weight": 0.03
+    },
+    {
+      "symbol": "AHRT",
+      "name": "AHRT",
+      "weight": 0.03
+    },
+    {
+      "symbol": "CHCT",
+      "name": "CHCT",
+      "weight": 0.03
+    },
+    {
       "symbol": "GOOD",
       "name": "GOOD",
       "weight": 0.03
@@ -676,21 +661,6 @@
     {
       "symbol": "FOR",
       "name": "FOR",
-      "weight": 0.03
-    },
-    {
-      "symbol": "BFS",
-      "name": "BFS",
-      "weight": 0.03
-    },
-    {
-      "symbol": "UHT",
-      "name": "UHT",
-      "weight": 0.03
-    },
-    {
-      "symbol": "ILPT",
-      "name": "ILPT",
       "weight": 0.03
     },
     {
@@ -704,18 +674,13 @@
       "weight": 0.02
     },
     {
+      "symbol": "XRN",
+      "name": "XRN",
+      "weight": 0.02
+    },
+    {
       "symbol": "AIV",
       "name": "AIV",
-      "weight": 0.02
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.02
-    },
-    {
-      "symbol": "LAND",
-      "name": "LAND",
       "weight": 0.02
     },
     {
@@ -724,13 +689,8 @@
       "weight": 0.02
     },
     {
-      "symbol": "OLP",
-      "name": "OLP",
-      "weight": 0.02
-    },
-    {
-      "symbol": "RMR",
-      "name": "RMR",
+      "symbol": "LAND",
+      "name": "LAND",
       "weight": 0.02
     },
     {
@@ -739,8 +699,33 @@
       "weight": 0.02
     },
     {
+      "symbol": "ILPT",
+      "name": "ILPT",
+      "weight": 0.02
+    },
+    {
+      "symbol": "BFS",
+      "name": "BFS",
+      "weight": 0.02
+    },
+    {
+      "symbol": "OLP",
+      "name": "OLP",
+      "weight": 0.02
+    },
+    {
       "symbol": "TRC",
       "name": "TRC",
+      "weight": 0.02
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.02
+    },
+    {
+      "symbol": "RMR",
+      "name": "RMR",
       "weight": 0.02
     },
     {
