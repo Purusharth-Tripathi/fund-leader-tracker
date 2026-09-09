@@ -1,37 +1,37 @@
 {
   "symbol": "KXI",
-  "cached_at": "2026-09-01T06:04:15.036661",
+  "cached_at": "2026-09-09T06:04:08.202385",
   "source": "alpha_vantage_etf_profile",
   "holdings": [
     {
       "symbol": "WMT",
       "name": "Walmart Inc",
-      "weight": 7.8
+      "weight": 7.870000000000001
     },
     {
       "symbol": "COST",
       "name": "Costco Wholesale Corporation",
-      "weight": 7.19
+      "weight": 7.17
     },
     {
       "symbol": "PG",
       "name": "Procter & Gamble Company",
-      "weight": 5.72
+      "weight": 5.79
     },
     {
       "symbol": "KO",
       "name": "Coca-Cola Company",
-      "weight": 4.859999999999999
+      "weight": 4.77
     },
     {
       "symbol": "PM",
       "name": "Philip Morris International Inc",
-      "weight": 4.7
+      "weight": 4.6
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 4.41
+      "weight": 4.390000000000001
     },
     {
       "symbol": "PEP",
@@ -41,17 +41,17 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 3.6900000000000004
+      "weight": 3.73
     },
     {
       "symbol": "MO",
       "name": "MO",
-      "weight": 2.96
+      "weight": 3.0300000000000002
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 2.9000000000000004
+      "weight": 2.92
     },
     {
       "symbol": "n/a",
@@ -66,7 +66,7 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 2.03
+      "weight": 2.07
     },
     {
       "symbol": "TGT",
@@ -81,7 +81,7 @@
     {
       "symbol": "MNST",
       "name": "MNST",
-      "weight": 1.81
+      "weight": 1.73
     },
     {
       "symbol": "n/a",
@@ -91,7 +91,7 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 1.29
+      "weight": 1.28
     },
     {
       "symbol": "n/a",
@@ -101,7 +101,7 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 1.2
+      "weight": 1.1900000000000002
     },
     {
       "symbol": "n/a",
@@ -111,37 +111,37 @@
     {
       "symbol": "KDP",
       "name": "KDP",
-      "weight": 1.13
+      "weight": 1.15
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 1.05
-    },
-    {
-      "symbol": "SYY",
-      "name": "SYY",
       "weight": 1.04
     },
     {
       "symbol": "ADM",
       "name": "ADM",
-      "weight": 0.9900000000000001
+      "weight": 1.03
+    },
+    {
+      "symbol": "SYY",
+      "name": "SYY",
+      "weight": 1.03
     },
     {
       "symbol": "KVUE",
       "name": "KVUE",
-      "weight": 0.97
+      "weight": 0.96
     },
     {
       "symbol": "KMB",
       "name": "KMB",
-      "weight": 0.96
+      "weight": 0.95
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.88
+      "weight": 0.9199999999999999
     },
     {
       "symbol": "KR",
@@ -151,12 +151,7 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.84
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.8099999999999999
+      "weight": 0.83
     },
     {
       "symbol": "n/a",
@@ -164,24 +159,34 @@
       "weight": 0.8
     },
     {
-      "symbol": "CASY",
-      "name": "CASY",
-      "weight": 0.79
-    },
-    {
-      "symbol": "HSY",
-      "name": "HSY",
-      "weight": 0.72
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.8
     },
     {
       "symbol": "DG",
       "name": "DG",
-      "weight": 0.7000000000000001
+      "weight": 0.74
+    },
+    {
+      "symbol": "CASY",
+      "name": "CASY",
+      "weight": 0.73
+    },
+    {
+      "symbol": "HSY",
+      "name": "HSY",
+      "weight": 0.69
     },
     {
       "symbol": "EL",
       "name": "EL",
-      "weight": 0.6799999999999999
+      "weight": 0.67
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.66
     },
     {
       "symbol": "n/a",
@@ -189,24 +194,14 @@
       "weight": 0.65
     },
     {
-      "symbol": "DLTR",
-      "name": "DLTR",
-      "weight": 0.64
-    },
-    {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.64
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.64
+      "weight": 0.63
     },
     {
       "symbol": "CHD",
       "name": "CHD",
-      "weight": 0.63
+      "weight": 0.62
     },
     {
       "symbol": "n/a",
@@ -216,17 +211,22 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.59
+      "weight": 0.61
+    },
+    {
+      "symbol": "DLTR",
+      "name": "DLTR",
+      "weight": 0.61
     },
     {
       "symbol": "KHC",
       "name": "KHC",
-      "weight": 0.5599999999999999
+      "weight": 0.58
     },
     {
       "symbol": "GIS",
       "name": "GIS",
-      "weight": 0.5499999999999999
+      "weight": 0.58
     },
     {
       "symbol": "n/a",
@@ -241,7 +241,7 @@
     {
       "symbol": "STZ",
       "name": "STZ",
-      "weight": 0.49
+      "weight": 0.48
     },
     {
       "symbol": "n/a",
@@ -254,13 +254,13 @@
       "weight": 0.42
     },
     {
-      "symbol": "TSN",
-      "name": "TSN",
+      "symbol": "BG",
+      "name": "BG",
       "weight": 0.42
     },
     {
-      "symbol": "n/a",
-      "name": "n/a",
+      "symbol": "TSN",
+      "name": "TSN",
       "weight": 0.41000000000000003
     },
     {
@@ -274,13 +274,18 @@
       "weight": 0.41000000000000003
     },
     {
-      "symbol": "BG",
-      "name": "BG",
-      "weight": 0.38999999999999996
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.4
     },
     {
       "symbol": "n/a",
       "name": "n/a",
+      "weight": 0.38
+    },
+    {
+      "symbol": "SJM",
+      "name": "SJM",
       "weight": 0.37
     },
     {
@@ -294,39 +299,34 @@
       "weight": 0.36
     },
     {
-      "symbol": "SJM",
-      "name": "SJM",
-      "weight": 0.35000000000000003
-    },
-    {
       "symbol": "ABEV",
       "name": "ABEV",
       "weight": 0.33
     },
     {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.33
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.32
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.32
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.32
+    },
+    {
       "symbol": "CLX",
       "name": "CLX",
-      "weight": 0.33
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.33
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.32
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.32
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.32
+      "weight": 0.31
     },
     {
       "symbol": "n/a",
@@ -346,7 +346,12 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.29
+      "weight": 0.27999999999999997
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.27
     },
     {
       "symbol": "n/a",
@@ -361,17 +366,12 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.26
+      "weight": 0.25
     },
     {
       "symbol": "n/a",
       "name": "n/a",
       "weight": 0.24
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.22999999999999998
     },
     {
       "symbol": "n/a",
@@ -406,7 +406,7 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.19
+      "weight": 0.2
     },
     {
       "symbol": "n/a",
@@ -421,12 +421,17 @@
     {
       "symbol": "HRL",
       "name": "HRL",
-      "weight": 0.18
+      "weight": 0.16999999999999998
     },
     {
       "symbol": "TAP",
       "name": "TAP",
       "weight": 0.16999999999999998
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.16
     },
     {
       "symbol": "n/a",
@@ -442,11 +447,6 @@
       "symbol": "n/a",
       "name": "n/a",
       "weight": 0.13999999999999999
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.13
     },
     {
       "symbol": "n/a",
@@ -481,7 +481,7 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.04
+      "weight": 0.06
     },
     {
       "symbol": "n/a",
@@ -491,7 +491,7 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.04
+      "weight": 0.03
     },
     {
       "symbol": "n/a",
@@ -506,7 +506,7 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.0
+      "weight": 0.01
     },
     {
       "symbol": "n/a",
