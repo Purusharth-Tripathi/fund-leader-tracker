@@ -1,42 +1,42 @@
 {
   "symbol": "XLF",
-  "cached_at": "2026-09-04T06:01:14.517155",
+  "cached_at": "2026-09-12T06:01:18.397487",
   "source": "alpha_vantage_etf_profile",
   "holdings": [
     {
       "symbol": "JPM",
       "name": "JPMorgan Chase & Co",
-      "weight": 11.600000000000001
+      "weight": 11.72
     },
     {
       "symbol": "BRK-B",
       "name": "Berkshire Hathaway Inc Class B",
-      "weight": 11.24
+      "weight": 11.37
     },
     {
       "symbol": "V",
       "name": "Visa Inc",
-      "weight": 7.739999999999999
+      "weight": 7.71
     },
     {
       "symbol": "MA",
       "name": "Mastercard Inc",
-      "weight": 5.86
+      "weight": 5.82
     },
     {
       "symbol": "BAC",
       "name": "Bank of America Corp",
-      "weight": 4.93
+      "weight": 5.0200000000000005
     },
     {
       "symbol": "GS",
       "name": "Goldman Sachs Group Inc",
-      "weight": 3.73
+      "weight": 3.64
     },
     {
       "symbol": "WFC",
       "name": "Wells Fargo & Company",
-      "weight": 3.17
+      "weight": 3.35
     },
     {
       "symbol": "MS",
@@ -46,7 +46,7 @@
     {
       "symbol": "C",
       "name": "Citigroup Inc",
-      "weight": 2.77
+      "weight": 2.81
     },
     {
       "symbol": "SCHW",
@@ -56,17 +56,17 @@
     {
       "symbol": "AXP",
       "name": "American Express Company",
-      "weight": 2.17
+      "weight": 2.16
     },
     {
       "symbol": "BLK",
       "name": "BlackRock Inc",
-      "weight": 2.06
+      "weight": 1.96
     },
     {
       "symbol": "COF",
       "name": "COF",
-      "weight": 1.6400000000000001
+      "weight": 1.6500000000000001
     },
     {
       "symbol": "SPGI",
@@ -76,22 +76,22 @@
     {
       "symbol": "PGR",
       "name": "PGR",
-      "weight": 1.58
+      "weight": 1.59
     },
     {
       "symbol": "CB",
       "name": "Chubb Limited",
-      "weight": 1.51
+      "weight": 1.5
     },
     {
       "symbol": "BNY",
       "name": "BNY",
-      "weight": 1.3599999999999999
+      "weight": 1.37
     },
     {
       "symbol": "BX",
       "name": "BX",
-      "weight": 1.29
+      "weight": 1.25
     },
     {
       "symbol": "CME",
@@ -101,22 +101,22 @@
     {
       "symbol": "PNC",
       "name": "PNC",
-      "weight": 1.1900000000000002
+      "weight": 1.2
     },
     {
       "symbol": "USB",
       "name": "USB",
-      "weight": 1.18
+      "weight": 1.2
     },
     {
       "symbol": "MRSH",
       "name": "MRSH",
-      "weight": 1.13
+      "weight": 1.11
     },
     {
       "symbol": "ICE",
       "name": "Intercontinental Exchange Inc",
-      "weight": 1.11
+      "weight": 1.0999999999999999
     },
     {
       "symbol": "HOOD",
@@ -129,19 +129,19 @@
       "weight": 0.96
     },
     {
+      "symbol": "KKR",
+      "name": "KKR",
+      "weight": 0.8999999999999999
+    },
+    {
       "symbol": "MCO",
       "name": "Moody's Corporation",
-      "weight": 0.9400000000000001
+      "weight": 0.8999999999999999
     },
     {
       "symbol": "AON",
       "name": "Aon plc",
-      "weight": 0.9199999999999999
-    },
-    {
-      "symbol": "KKR",
-      "name": "KKR",
-      "weight": 0.91
+      "weight": 0.8699999999999999
     },
     {
       "symbol": "AJG",
@@ -156,7 +156,7 @@
     {
       "symbol": "TFC",
       "name": "TFC",
-      "weight": 0.77
+      "weight": 0.7799999999999999
     },
     {
       "symbol": "APO",
@@ -164,14 +164,9 @@
       "weight": 0.75
     },
     {
-      "symbol": "PYPL",
-      "name": "PayPal Holdings Inc",
-      "weight": 0.66
-    },
-    {
       "symbol": "AFL",
       "name": "AFL",
-      "weight": 0.65
+      "weight": 0.66
     },
     {
       "symbol": "STT",
@@ -181,7 +176,12 @@
     {
       "symbol": "MET",
       "name": "MET",
-      "weight": 0.63
+      "weight": 0.64
+    },
+    {
+      "symbol": "FITB",
+      "name": "FITB",
+      "weight": 0.61
     },
     {
       "symbol": "AMP",
@@ -189,9 +189,9 @@
       "weight": 0.61
     },
     {
-      "symbol": "FITB",
-      "name": "FITB",
-      "weight": 0.61
+      "symbol": "PYPL",
+      "name": "PayPal Holdings Inc",
+      "weight": 0.59
     },
     {
       "symbol": "XYZ",
@@ -201,11 +201,6 @@
     {
       "symbol": "NDAQ",
       "name": "NDAQ",
-      "weight": 0.54
-    },
-    {
-      "symbol": "IBKR",
-      "name": "IBKR",
       "weight": 0.52
     },
     {
@@ -224,28 +219,33 @@
       "weight": 0.5
     },
     {
+      "symbol": "IBKR",
+      "name": "IBKR",
+      "weight": 0.49
+    },
+    {
       "symbol": "COIN",
       "name": "Coinbase Global Inc",
-      "weight": 0.49
+      "weight": 0.48
     },
     {
       "symbol": "HIG",
       "name": "HIG",
-      "weight": 0.47000000000000003
+      "weight": 0.45999999999999996
     },
     {
       "symbol": "ACGL",
       "name": "ACGL",
-      "weight": 0.43
-    },
-    {
-      "symbol": "MTB",
-      "name": "MTB",
-      "weight": 0.43
+      "weight": 0.42
     },
     {
       "symbol": "NTRS",
       "name": "NTRS",
+      "weight": 0.42
+    },
+    {
+      "symbol": "MTB",
+      "name": "MTB",
       "weight": 0.42
     },
     {
@@ -254,14 +254,14 @@
       "weight": 0.42
     },
     {
-      "symbol": "CBOE",
-      "name": "CBOE",
-      "weight": 0.4
-    },
-    {
       "symbol": "WTW",
       "name": "WTW",
       "weight": 0.38999999999999996
+    },
+    {
+      "symbol": "CBOE",
+      "name": "CBOE",
+      "weight": 0.38
     },
     {
       "symbol": "RJF",
@@ -284,24 +284,24 @@
       "weight": 0.33999999999999997
     },
     {
-      "symbol": "SYF",
-      "name": "SYF",
+      "symbol": "CPAY",
+      "name": "CPAY",
       "weight": 0.33
     },
     {
-      "symbol": "CPAY",
-      "name": "CPAY",
+      "symbol": "CINF",
+      "name": "CINF",
+      "weight": 0.33
+    },
+    {
+      "symbol": "SYF",
+      "name": "SYF",
       "weight": 0.32
     },
     {
       "symbol": "RF",
       "name": "RF",
-      "weight": 0.32
-    },
-    {
-      "symbol": "CINF",
-      "name": "CINF",
-      "weight": 0.32
+      "weight": 0.31
     },
     {
       "symbol": "TROW",
@@ -314,6 +314,11 @@
       "weight": 0.27
     },
     {
+      "symbol": "FIS",
+      "name": "Fidelity National Information Services",
+      "weight": 0.27
+    },
+    {
       "symbol": "GPN",
       "name": "GPN",
       "weight": 0.26
@@ -321,11 +326,6 @@
     {
       "symbol": "BRO",
       "name": "BRO",
-      "weight": 0.26
-    },
-    {
-      "symbol": "FIS",
-      "name": "Fidelity National Information Services",
       "weight": 0.26
     },
     {
@@ -349,11 +349,6 @@
       "weight": 0.2
     },
     {
-      "symbol": "IVZ",
-      "name": "IVZ",
-      "weight": 0.18
-    },
-    {
       "symbol": "EG",
       "name": "EG",
       "weight": 0.18
@@ -364,13 +359,13 @@
       "weight": 0.16999999999999998
     },
     {
-      "symbol": "GL",
-      "name": "GL",
+      "symbol": "IVZ",
+      "name": "IVZ",
       "weight": 0.16999999999999998
     },
     {
-      "symbol": "n/a",
-      "name": "n/a",
+      "symbol": "GL",
+      "name": "GL",
       "weight": 0.16999999999999998
     },
     {
@@ -381,12 +376,17 @@
     {
       "symbol": "FDS",
       "name": "FDS",
-      "weight": 0.13
+      "weight": 0.13999999999999999
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.13999999999999999
     },
     {
       "symbol": "BEN",
       "name": "BEN",
-      "weight": 0.13
+      "weight": 0.12
     },
     {
       "symbol": "ERIE",
