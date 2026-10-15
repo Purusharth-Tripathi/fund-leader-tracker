@@ -1,192 +1,192 @@
 {
   "symbol": "CNRG",
-  "cached_at": "2026-10-07T06:01:54.584278",
+  "cached_at": "2026-10-15T06:01:51.957378",
   "source": "alpha_vantage_etf_profile",
   "holdings": [
     {
-      "symbol": "ACA",
-      "name": "ACA",
-      "weight": 4.22
-    },
-    {
       "symbol": "BE",
       "name": "BE",
-      "weight": 4.19
-    },
-    {
-      "symbol": "GEV",
-      "name": "GEV",
-      "weight": 3.9
+      "weight": 4.3
     },
     {
       "symbol": "CEG",
       "name": "CEG",
-      "weight": 3.7199999999999998
+      "weight": 4.2700000000000005
     },
     {
-      "symbol": "CIG",
-      "name": "CIG",
-      "weight": 3.63
+      "symbol": "ACA",
+      "name": "ACA",
+      "weight": 4.12
     },
     {
-      "symbol": "AES",
-      "name": "AES",
-      "weight": 3.61
+      "symbol": "GEV",
+      "name": "GEV",
+      "weight": 3.9899999999999998
     },
     {
       "symbol": "FCEL",
       "name": "FCEL",
-      "weight": 3.5900000000000003
+      "weight": 3.92
+    },
+    {
+      "symbol": "CIG",
+      "name": "CIG",
+      "weight": 3.91
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 3.46
+      "weight": 3.5999999999999996
     },
     {
-      "symbol": "NRGV",
-      "name": "NRGV",
-      "weight": 3.26
-    },
-    {
-      "symbol": "NEE",
-      "name": "NextEra Energy Inc",
-      "weight": 3.16
-    },
-    {
-      "symbol": "SHLS",
-      "name": "SHLS",
-      "weight": 3.11
+      "symbol": "AES",
+      "name": "AES",
+      "weight": 3.53
     },
     {
       "symbol": "GNRC",
       "name": "GNRC",
-      "weight": 3.0700000000000003
+      "weight": 3.2
     },
     {
-      "symbol": "AVA",
-      "name": "AVA",
-      "weight": 2.94
+      "symbol": "NEE",
+      "name": "NextEra Energy Inc",
+      "weight": 3.1300000000000003
+    },
+    {
+      "symbol": "SHLS",
+      "name": "SHLS",
+      "weight": 3.1300000000000003
     },
     {
       "symbol": "AMRC",
       "name": "AMRC",
-      "weight": 2.85
+      "weight": 2.94
     },
     {
-      "symbol": "DQ",
-      "name": "DQ",
-      "weight": 2.8000000000000003
+      "symbol": "NRGV",
+      "name": "NRGV",
+      "weight": 2.93
     },
     {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 2.74
-    },
-    {
-      "symbol": "CSIQ",
-      "name": "CSIQ",
-      "weight": 2.68
+      "symbol": "AVA",
+      "name": "AVA",
+      "weight": 2.87
     },
     {
       "symbol": "TSLA",
       "name": "Tesla Inc",
-      "weight": 2.6100000000000003
-    },
-    {
-      "symbol": "GLW",
-      "name": "GLW",
-      "weight": 2.56
-    },
-    {
-      "symbol": "VMI",
-      "name": "VMI",
-      "weight": 2.54
-    },
-    {
-      "symbol": "TS",
-      "name": "TS",
-      "weight": 2.53
-    },
-    {
-      "symbol": "FSLR",
-      "name": "First Solar Inc",
-      "weight": 2.4899999999999998
+      "weight": 2.71
     },
     {
       "symbol": "NXT",
       "name": "NXT",
+      "weight": 2.67
+    },
+    {
+      "symbol": "GLW",
+      "name": "GLW",
+      "weight": 2.65
+    },
+    {
+      "symbol": "DQ",
+      "name": "DQ",
+      "weight": 2.6100000000000003
+    },
+    {
+      "symbol": "CSIQ",
+      "name": "CSIQ",
+      "weight": 2.55
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 2.54
+    },
+    {
+      "symbol": "FSLR",
+      "name": "First Solar Inc",
+      "weight": 2.5
+    },
+    {
+      "symbol": "TS",
+      "name": "TS",
       "weight": 2.48
     },
     {
-      "symbol": "PLUG",
-      "name": "PLUG",
-      "weight": 2.41
-    },
-    {
-      "symbol": "ORA",
-      "name": "ORA",
-      "weight": 2.37
-    },
-    {
-      "symbol": "RUN",
-      "name": "Sunrun Inc",
-      "weight": 2.31
-    },
-    {
-      "symbol": "ENPH",
-      "name": "Enphase Energy Inc",
-      "weight": 2.31
+      "symbol": "VMI",
+      "name": "VMI",
+      "weight": 2.48
     },
     {
       "symbol": "AMSC",
       "name": "AMSC",
-      "weight": 2.23
+      "weight": 2.37
     },
     {
-      "symbol": "ARRY",
-      "name": "ARRY",
-      "weight": 2.09
+      "symbol": "ENPH",
+      "name": "Enphase Energy Inc",
+      "weight": 2.29
+    },
+    {
+      "symbol": "ORA",
+      "name": "ORA",
+      "weight": 2.27
+    },
+    {
+      "symbol": "RUN",
+      "name": "Sunrun Inc",
+      "weight": 2.21
+    },
+    {
+      "symbol": "PLUG",
+      "name": "PLUG",
+      "weight": 2.16
     },
     {
       "symbol": "SEDG",
       "name": "SolarEdge Technologies Inc",
-      "weight": 2.08
+      "weight": 2.11
     },
     {
-      "symbol": "JKS",
-      "name": "JKS",
+      "symbol": "ARRY",
+      "name": "ARRY",
       "weight": 1.9300000000000002
     },
     {
       "symbol": "EOSE",
       "name": "EOSE",
-      "weight": 1.7999999999999998
+      "weight": 1.77
+    },
+    {
+      "symbol": "JKS",
+      "name": "JKS",
+      "weight": 1.76
     },
     {
       "symbol": "RNW",
       "name": "RNW",
-      "weight": 1.78
+      "weight": 1.7500000000000002
     },
     {
       "symbol": "TE",
       "name": "TE",
-      "weight": 1.78
+      "weight": 1.67
     },
     {
       "symbol": "BLDP",
       "name": "BLDP",
-      "weight": 1.66
+      "weight": 1.58
     },
     {
       "symbol": "FLNC",
       "name": "FLNC",
-      "weight": 1.0
+      "weight": 0.97
     },
     {
       "symbol": "HY",
       "name": "HY",
-      "weight": 0.9400000000000001
+      "weight": 0.96
     },
     {
       "symbol": "ENIC",

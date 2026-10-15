@@ -1,36 +1,41 @@
 {
   "symbol": "XAR",
-  "cached_at": "2026-10-07T06:00:59.224123",
+  "cached_at": "2026-10-15T06:00:58.312985",
   "source": "alpha_vantage_etf_profile",
   "holdings": [
     {
       "symbol": "RKLB",
       "name": "RKLB",
-      "weight": 3.3000000000000003
-    },
-    {
-      "symbol": "MOG-A",
-      "name": "MOG-A",
-      "weight": 3.15
+      "weight": 3.5000000000000004
     },
     {
       "symbol": "HONA",
       "name": "HONA",
-      "weight": 3.06
+      "weight": 3.1
+    },
+    {
+      "symbol": "MOG-A",
+      "name": "MOG-A",
+      "weight": 3.01
+    },
+    {
+      "symbol": "TDG",
+      "name": "TDG",
+      "weight": 2.9899999999999998
     },
     {
       "symbol": "AVAV",
       "name": "AVAV",
-      "weight": 2.9899999999999998
+      "weight": 2.98
+    },
+    {
+      "symbol": "WWD",
+      "name": "WWD",
+      "weight": 2.9499999999999997
     },
     {
       "symbol": "HWM",
       "name": "HWM",
-      "weight": 2.97
-    },
-    {
-      "symbol": "HEI",
-      "name": "HEI",
       "weight": 2.94
     },
     {
@@ -39,134 +44,124 @@
       "weight": 2.92
     },
     {
-      "symbol": "NOC",
-      "name": "Northrop Grumman Corporation",
-      "weight": 2.92
-    },
-    {
-      "symbol": "TDG",
-      "name": "TDG",
-      "weight": 2.92
-    },
-    {
-      "symbol": "GE",
-      "name": "General Electric Company",
-      "weight": 2.92
-    },
-    {
-      "symbol": "WWD",
-      "name": "WWD",
-      "weight": 2.92
-    },
-    {
-      "symbol": "TXT",
-      "name": "TXT",
-      "weight": 2.9000000000000004
-    },
-    {
-      "symbol": "RTX",
-      "name": "Raytheon Technologies Corporation",
-      "weight": 2.83
-    },
-    {
-      "symbol": "LHX",
-      "name": "LHX",
-      "weight": 2.82
-    },
-    {
-      "symbol": "CW",
-      "name": "CW",
-      "weight": 2.82
-    },
-    {
-      "symbol": "GD",
-      "name": "General Dynamics Corporation",
-      "weight": 2.81
-    },
-    {
-      "symbol": "HII",
-      "name": "Huntington Ingalls Industries Inc",
-      "weight": 2.76
-    },
-    {
-      "symbol": "KTOS",
-      "name": "KTOS",
-      "weight": 2.75
-    },
-    {
-      "symbol": "ATI",
-      "name": "ATI",
-      "weight": 2.73
-    },
-    {
-      "symbol": "BA",
-      "name": "Boeing Company",
-      "weight": 2.7199999999999998
+      "symbol": "HEI",
+      "name": "HEI",
+      "weight": 2.91
     },
     {
       "symbol": "FTAI",
       "name": "FTAI",
-      "weight": 2.7199999999999998
+      "weight": 2.9000000000000004
     },
     {
-      "symbol": "HXL",
-      "name": "HXL",
-      "weight": 2.63
+      "symbol": "LHX",
+      "name": "LHX",
+      "weight": 2.87
+    },
+    {
+      "symbol": "GE",
+      "name": "General Electric Company",
+      "weight": 2.87
+    },
+    {
+      "symbol": "GD",
+      "name": "General Dynamics Corporation",
+      "weight": 2.85
+    },
+    {
+      "symbol": "HII",
+      "name": "Huntington Ingalls Industries Inc",
+      "weight": 2.85
+    },
+    {
+      "symbol": "NOC",
+      "name": "Northrop Grumman Corporation",
+      "weight": 2.82
+    },
+    {
+      "symbol": "TXT",
+      "name": "TXT",
+      "weight": 2.81
+    },
+    {
+      "symbol": "ATI",
+      "name": "ATI",
+      "weight": 2.81
+    },
+    {
+      "symbol": "BA",
+      "name": "Boeing Company",
+      "weight": 2.8000000000000003
+    },
+    {
+      "symbol": "RTX",
+      "name": "Raytheon Technologies Corporation",
+      "weight": 2.8000000000000003
     },
     {
       "symbol": "BWXT",
       "name": "BWXT",
-      "weight": 2.63
+      "weight": 2.78
     },
     {
-      "symbol": "AXON",
-      "name": "AXON",
-      "weight": 2.56
+      "symbol": "CW",
+      "name": "CW",
+      "weight": 2.77
+    },
+    {
+      "symbol": "KTOS",
+      "name": "KTOS",
+      "weight": 2.76
+    },
+    {
+      "symbol": "HXL",
+      "name": "HXL",
+      "weight": 2.69
     },
     {
       "symbol": "CRS",
       "name": "CRS",
+      "weight": 2.62
+    },
+    {
+      "symbol": "AXON",
+      "name": "AXON",
       "weight": 2.55
-    },
-    {
-      "symbol": "SARO",
-      "name": "SARO",
-      "weight": 2.54
-    },
-    {
-      "symbol": "KRMN",
-      "name": "KRMN",
-      "weight": 2.52
     },
     {
       "symbol": "VSEC",
       "name": "VSEC",
-      "weight": 2.4699999999999998
+      "weight": 2.48
+    },
+    {
+      "symbol": "KRMN",
+      "name": "KRMN",
+      "weight": 2.48
+    },
+    {
+      "symbol": "SARO",
+      "name": "SARO",
+      "weight": 2.44
     },
     {
       "symbol": "MRCY",
       "name": "MRCY",
-      "weight": 2.1999999999999997
+      "weight": 2.19
     },
     {
       "symbol": "ACHR",
       "name": "ACHR",
-      "weight": 1.82
-    },
-    {
-      "symbol": "AIR",
-      "name": "AIR",
-      "weight": 1.4200000000000002
+      "weight": 1.73
     },
     {
       "symbol": "RDW",
       "name": "RDW",
-      "weight": 1.4000000000000001
+      "weight": 1.38
     },
     {
-      "symbol": "VVX",
-      "name": "VVX",
-      "weight": 1.28
+      "symbol": "AIR",
+      "name": "AIR",
+      "weight": 1.37
     },
     {
       "symbol": "DCO",
@@ -174,74 +169,79 @@
       "weight": 1.28
     },
     {
-      "symbol": "LOAR",
-      "name": "LOAR",
-      "weight": 1.26
-    },
-    {
       "symbol": "DRS",
       "name": "DRS",
-      "weight": 1.24
-    },
-    {
-      "symbol": "ATRO",
-      "name": "ATRO",
-      "weight": 1.24
+      "weight": 1.25
     },
     {
       "symbol": "LUNR",
       "name": "LUNR",
-      "weight": 1.22
+      "weight": 1.24
     },
     {
-      "symbol": "FLY",
-      "name": "FLY",
-      "weight": 1.0699999999999998
+      "symbol": "LOAR",
+      "name": "LOAR",
+      "weight": 1.24
+    },
+    {
+      "symbol": "VVX",
+      "name": "VVX",
+      "weight": 1.23
+    },
+    {
+      "symbol": "ATRO",
+      "name": "ATRO",
+      "weight": 1.22
     },
     {
       "symbol": "ARXS",
       "name": "ARXS",
-      "weight": 1.0699999999999998
+      "weight": 1.05
+    },
+    {
+      "symbol": "FLY",
+      "name": "FLY",
+      "weight": 1.03
     },
     {
       "symbol": "BETA",
       "name": "BETA",
-      "weight": 0.98
+      "weight": 0.91
     },
     {
       "symbol": "VOYG",
       "name": "VOYG",
-      "weight": 0.89
+      "weight": 0.8500000000000001
     },
     {
       "symbol": "RCAT",
       "name": "RCAT",
-      "weight": 0.5
-    },
-    {
-      "symbol": "YSS",
-      "name": "YSS",
-      "weight": 0.45999999999999996
+      "weight": 0.49
     },
     {
       "symbol": "NPK",
       "name": "NPK",
+      "weight": 0.42
+    },
+    {
+      "symbol": "YSS",
+      "name": "YSS",
       "weight": 0.4
     },
     {
       "symbol": "SATL",
       "name": "SATL",
-      "weight": 0.37
+      "weight": 0.35000000000000003
     },
     {
       "symbol": "CDRE",
       "name": "CDRE",
-      "weight": 0.3
+      "weight": 0.31
     },
     {
       "symbol": "PKE",
       "name": "PKE",
-      "weight": 0.29
+      "weight": 0.3
     },
     {
       "symbol": "SPCE",
@@ -251,7 +251,7 @@
     {
       "symbol": "AVEX",
       "name": "AVEX",
-      "weight": 0.21
+      "weight": 0.2
     },
     {
       "symbol": "n/a",
