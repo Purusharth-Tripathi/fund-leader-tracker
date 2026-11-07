@@ -1,232 +1,242 @@
 {
   "symbol": "QQQ",
-  "cached_at": "2026-10-26T06:00:07.048893",
+  "cached_at": "2026-11-07T06:00:05.455011",
   "source": "alpha_vantage_etf_profile",
   "holdings": [
     {
       "symbol": "NVDA",
       "name": "NVIDIA Corporation",
-      "weight": 8.42
+      "weight": 8.02
     },
     {
       "symbol": "AAPL",
       "name": "Apple Inc",
-      "weight": 7.2700000000000005
+      "weight": 7.75
     },
     {
       "symbol": "MSFT",
       "name": "Microsoft Corporation",
-      "weight": 5.74
+      "weight": 6.09
     },
     {
       "symbol": "MU",
       "name": "MU",
-      "weight": 5.0
-    },
-    {
-      "symbol": "AMD",
-      "name": "Advanced Micro Devices Inc",
-      "weight": 4.2700000000000005
+      "weight": 4.74
     },
     {
       "symbol": "AMZN",
       "name": "Amazon.com Inc",
-      "weight": 4.05
+      "weight": 4.24
     },
     {
-      "symbol": "META",
-      "name": "Meta Platforms Inc",
-      "weight": 3.2300000000000004
-    },
-    {
-      "symbol": "GOOGL",
-      "name": "Alphabet Inc Class A",
-      "weight": 3.01
+      "symbol": "AMD",
+      "name": "Advanced Micro Devices Inc",
+      "weight": 4.03
     },
     {
       "symbol": "TSLA",
       "name": "Tesla Inc",
-      "weight": 2.91
+      "weight": 3.2800000000000002
     },
     {
-      "symbol": "SPCX",
-      "name": "SPCX",
+      "symbol": "GOOGL",
+      "name": "Alphabet Inc Class A",
+      "weight": 2.94
+    },
+    {
+      "symbol": "META",
+      "name": "Meta Platforms Inc",
       "weight": 2.81
     },
     {
       "symbol": "GOOG",
       "name": "Alphabet Inc Class C",
-      "weight": 2.81
+      "weight": 2.75
     },
     {
-      "symbol": "INTC",
-      "name": "Intel Corporation",
-      "weight": 2.58
+      "symbol": "SPCX",
+      "name": "SPCX",
+      "weight": 2.6599999999999997
     },
     {
       "symbol": "AVGO",
       "name": "Broadcom Inc",
-      "weight": 2.52
+      "weight": 2.59
     },
     {
       "symbol": "WMT",
       "name": "Walmart Inc",
-      "weight": 2.09
+      "weight": 2.46
     },
     {
-      "symbol": "CSCO",
-      "name": "Cisco Systems Inc",
-      "weight": 1.82
-    },
-    {
-      "symbol": "LRCX",
-      "name": "LRCX",
-      "weight": 1.79
+      "symbol": "INTC",
+      "name": "Intel Corporation",
+      "weight": 2.1399999999999997
     },
     {
       "symbol": "PLTR",
       "name": "PLTR",
-      "weight": 1.79
-    },
-    {
-      "symbol": "AMAT",
-      "name": "AMAT",
-      "weight": 1.77
+      "weight": 1.9300000000000002
     },
     {
       "symbol": "COST",
       "name": "Costco Wholesale Corporation",
-      "weight": 1.68
+      "weight": 1.8599999999999999
+    },
+    {
+      "symbol": "CSCO",
+      "name": "Cisco Systems Inc",
+      "weight": 1.8499999999999999
+    },
+    {
+      "symbol": "AMAT",
+      "name": "AMAT",
+      "weight": 1.41
     },
     {
       "symbol": "PANW",
       "name": "PANW",
+      "weight": 1.37
+    },
+    {
+      "symbol": "LRCX",
+      "name": "LRCX",
       "weight": 1.35
-    },
-    {
-      "symbol": "NFLX",
-      "name": "NFLX",
-      "weight": 1.15
-    },
-    {
-      "symbol": "CRWD",
-      "name": "CRWD",
-      "weight": 1.1400000000000001
     },
     {
       "symbol": "TXN",
       "name": "Texas Instruments Inc",
-      "weight": 1.11
+      "weight": 1.21
     },
     {
-      "symbol": "KLAC",
-      "name": "KLAC",
-      "weight": 1.11
+      "symbol": "CRWD",
+      "name": "CRWD",
+      "weight": 1.16
     },
     {
-      "symbol": "SNDK",
-      "name": "SNDK",
-      "weight": 1.04
-    },
-    {
-      "symbol": "MRVL",
-      "name": "MRVL",
-      "weight": 0.98
-    },
-    {
-      "symbol": "LIN",
-      "name": "Linde plc",
-      "weight": 0.91
+      "symbol": "NFLX",
+      "name": "NFLX",
+      "weight": 1.0999999999999999
     },
     {
       "symbol": "AMGN",
       "name": "Amgen Inc",
-      "weight": 0.8999999999999999
+      "weight": 1.04
+    },
+    {
+      "symbol": "LIN",
+      "name": "Linde plc",
+      "weight": 1.0
+    },
+    {
+      "symbol": "MRVL",
+      "name": "MRVL",
+      "weight": 0.9400000000000001
+    },
+    {
+      "symbol": "KLAC",
+      "name": "KLAC",
+      "weight": 0.88
     },
     {
       "symbol": "ADI",
       "name": "Analog Devices Inc",
-      "weight": 0.83
+      "weight": 0.88
     },
     {
-      "symbol": "QCOM",
-      "name": "QUALCOMM Inc",
-      "weight": 0.8
-    },
-    {
-      "symbol": "STX",
-      "name": "STX",
-      "weight": 0.79
+      "symbol": "SNDK",
+      "name": "SNDK",
+      "weight": 0.88
     },
     {
       "symbol": "SHOP",
       "name": "SHOP",
-      "weight": 0.75
+      "weight": 0.8699999999999999
     },
     {
       "symbol": "GILD",
       "name": "Gilead Sciences Inc",
-      "weight": 0.74
+      "weight": 0.84
     },
     {
-      "symbol": "TMUS",
-      "name": "TMUS",
-      "weight": 0.72
-    },
-    {
-      "symbol": "ASML",
-      "name": "ASML",
-      "weight": 0.72
+      "symbol": "QCOM",
+      "name": "QUALCOMM Inc",
+      "weight": 0.8200000000000001
     },
     {
       "symbol": "PEP",
       "name": "PepsiCo Inc",
-      "weight": 0.7100000000000001
+      "weight": 0.77
     },
     {
-      "symbol": "WDC",
-      "name": "WDC",
-      "weight": 0.62
+      "symbol": "TMUS",
+      "name": "TMUS",
+      "weight": 0.6799999999999999
+    },
+    {
+      "symbol": "STX",
+      "name": "STX",
+      "weight": 0.67
     },
     {
       "symbol": "ISRG",
       "name": "Intuitive Surgical Inc",
-      "weight": 0.5700000000000001
+      "weight": 0.67
     },
     {
-      "symbol": "ARM",
-      "name": "ARM",
-      "weight": 0.5499999999999999
+      "symbol": "ASML",
+      "name": "ASML",
+      "weight": 0.67
     },
     {
-      "symbol": "FTNT",
-      "name": "FTNT",
-      "weight": 0.5499999999999999
+      "symbol": "WDC",
+      "name": "WDC",
+      "weight": 0.61
     },
     {
       "symbol": "VRTX",
       "name": "Vertex Pharmaceuticals Inc",
-      "weight": 0.53
+      "weight": 0.5700000000000001
     },
     {
-      "symbol": "BKNG",
-      "name": "Booking Holdings Inc",
-      "weight": 0.49
+      "symbol": "FTNT",
+      "name": "FTNT",
+      "weight": 0.54
     },
     {
       "symbol": "SBUX",
       "name": "SBUX",
-      "weight": 0.44999999999999996
+      "weight": 0.5
     },
     {
       "symbol": "ADP",
       "name": "ADP",
+      "weight": 0.48
+    },
+    {
+      "symbol": "BKNG",
+      "name": "Booking Holdings Inc",
+      "weight": 0.47000000000000003
+    },
+    {
+      "symbol": "MAR",
+      "name": "MAR",
+      "weight": 0.44
+    },
+    {
+      "symbol": "ARM",
+      "name": "ARM",
+      "weight": 0.44
+    },
+    {
+      "symbol": "ADBE",
+      "name": "Adobe Inc",
       "weight": 0.42
     },
     {
-      "symbol": "LITE",
-      "name": "LITE",
-      "weight": 0.4
+      "symbol": "CSX",
+      "name": "CSX",
+      "weight": 0.41000000000000003
     },
     {
       "symbol": "CDNS",
@@ -234,13 +244,13 @@
       "weight": 0.4
     },
     {
-      "symbol": "ADBE",
-      "name": "Adobe Inc",
-      "weight": 0.38999999999999996
+      "symbol": "DDOG",
+      "name": "DDOG",
+      "weight": 0.4
     },
     {
-      "symbol": "MAR",
-      "name": "MAR",
+      "symbol": "CEG",
+      "name": "CEG",
       "weight": 0.38999999999999996
     },
     {
@@ -249,28 +259,38 @@
       "weight": 0.38999999999999996
     },
     {
-      "symbol": "CEG",
-      "name": "CEG",
-      "weight": 0.38
-    },
-    {
-      "symbol": "DDOG",
-      "name": "DDOG",
-      "weight": 0.38
-    },
-    {
-      "symbol": "CSX",
-      "name": "CSX",
-      "weight": 0.36
-    },
-    {
       "symbol": "MNST",
       "name": "MNST",
-      "weight": 0.35000000000000003
+      "weight": 0.38
+    },
+    {
+      "symbol": "INTU",
+      "name": "Intuit Inc",
+      "weight": 0.38
+    },
+    {
+      "symbol": "MRNA",
+      "name": "MRNA",
+      "weight": 0.36
     },
     {
       "symbol": "MELI",
       "name": "MELI",
+      "weight": 0.36
+    },
+    {
+      "symbol": "CTAS",
+      "name": "CTAS",
+      "weight": 0.36
+    },
+    {
+      "symbol": "REGN",
+      "name": "Regeneron Pharmaceuticals Inc",
+      "weight": 0.35000000000000003
+    },
+    {
+      "symbol": "LITE",
+      "name": "LITE",
       "weight": 0.35000000000000003
     },
     {
@@ -279,109 +299,74 @@
       "weight": 0.33999999999999997
     },
     {
-      "symbol": "CTAS",
-      "name": "CTAS",
-      "weight": 0.32
-    },
-    {
-      "symbol": "WBD",
-      "name": "WBD",
-      "weight": 0.32
-    },
-    {
-      "symbol": "INTU",
-      "name": "Intuit Inc",
-      "weight": 0.32
-    },
-    {
-      "symbol": "DASH",
-      "name": "DASH",
-      "weight": 0.32
-    },
-    {
       "symbol": "MDLZ",
       "name": "Mondelez International Inc",
-      "weight": 0.31
-    },
-    {
-      "symbol": "REGN",
-      "name": "Regeneron Pharmaceuticals Inc",
-      "weight": 0.31
+      "weight": 0.33999999999999997
     },
     {
       "symbol": "CMCSA",
       "name": "CMCSA",
-      "weight": 0.31
+      "weight": 0.33
     },
     {
       "symbol": "ROST",
       "name": "ROST",
-      "weight": 0.3
-    },
-    {
-      "symbol": "MPWR",
-      "name": "MPWR",
-      "weight": 0.29
-    },
-    {
-      "symbol": "TER",
-      "name": "TER",
-      "weight": 0.29
-    },
-    {
-      "symbol": "HON",
-      "name": "Honeywell International Inc",
-      "weight": 0.27999999999999997
+      "weight": 0.31
     },
     {
       "symbol": "ORLY",
       "name": "ORLY",
-      "weight": 0.27999999999999997
+      "weight": 0.31
     },
     {
-      "symbol": "ABNB",
-      "name": "ABNB",
-      "weight": 0.27999999999999997
+      "symbol": "DASH",
+      "name": "DASH",
+      "weight": 0.3
     },
     {
       "symbol": "AEP",
       "name": "AEP",
-      "weight": 0.27
+      "weight": 0.3
+    },
+    {
+      "symbol": "ABNB",
+      "name": "ABNB",
+      "weight": 0.3
+    },
+    {
+      "symbol": "HON",
+      "name": "Honeywell International Inc",
+      "weight": 0.3
     },
     {
       "symbol": "NXPI",
       "name": "NXPI",
-      "weight": 0.25
-    },
-    {
-      "symbol": "ALAB",
-      "name": "ALAB",
-      "weight": 0.25
-    },
-    {
-      "symbol": "PCAR",
-      "name": "PCAR",
-      "weight": 0.24
-    },
-    {
-      "symbol": "MSTR",
-      "name": "MSTR",
-      "weight": 0.24
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.24
+      "weight": 0.27
     },
     {
       "symbol": "FAST",
       "name": "FAST",
+      "weight": 0.25
+    },
+    {
+      "symbol": "MPWR",
+      "name": "MPWR",
+      "weight": 0.25
+    },
+    {
+      "symbol": "FANG",
+      "name": "FANG",
+      "weight": 0.25
+    },
+    {
+      "symbol": "HONA",
+      "name": "HONA",
       "weight": 0.24
     },
     {
-      "symbol": "NBIS",
-      "name": "NBIS",
-      "weight": 0.24
+      "symbol": "PCAR",
+      "name": "PCAR",
+      "weight": 0.22999999999999998
     },
     {
       "symbol": "BKR",
@@ -389,34 +374,74 @@
       "weight": 0.22999999999999998
     },
     {
-      "symbol": "FANG",
-      "name": "FANG",
-      "weight": 0.21
+      "symbol": "MSTR",
+      "name": "MSTR",
+      "weight": 0.22999999999999998
+    },
+    {
+      "symbol": "ALAB",
+      "name": "ALAB",
+      "weight": 0.22
+    },
+    {
+      "symbol": "ADSK",
+      "name": "ADSK",
+      "weight": 0.22
     },
     {
       "symbol": "PDD",
       "name": "PDD",
+      "weight": 0.22
+    },
+    {
+      "symbol": "CCEP",
+      "name": "CCEP",
       "weight": 0.21
-    },
-    {
-      "symbol": "HONA",
-      "name": "HONA",
-      "weight": 0.2
-    },
-    {
-      "symbol": "PYPL",
-      "name": "PayPal Holdings Inc",
-      "weight": 0.19
     },
     {
       "symbol": "XEL",
       "name": "XEL",
-      "weight": 0.18
+      "weight": 0.21
     },
     {
-      "symbol": "RKLB",
-      "name": "RKLB",
-      "weight": 0.18
+      "symbol": "TER",
+      "name": "TER",
+      "weight": 0.21
+    },
+    {
+      "symbol": "PYPL",
+      "name": "PayPal Holdings Inc",
+      "weight": 0.21
+    },
+    {
+      "symbol": "EXC",
+      "name": "EXC",
+      "weight": 0.2
+    },
+    {
+      "symbol": "KDP",
+      "name": "KDP",
+      "weight": 0.2
+    },
+    {
+      "symbol": "IDXX",
+      "name": "IDXX",
+      "weight": 0.19
+    },
+    {
+      "symbol": "ROP",
+      "name": "ROP",
+      "weight": 0.19
+    },
+    {
+      "symbol": "TRI",
+      "name": "TRI",
+      "weight": 0.19
+    },
+    {
+      "symbol": "NBIS",
+      "name": "NBIS",
+      "weight": 0.19
     },
     {
       "symbol": "MCHP",
@@ -424,33 +449,13 @@
       "weight": 0.18
     },
     {
-      "symbol": "CCEP",
-      "name": "CCEP",
-      "weight": 0.18
-    },
-    {
-      "symbol": "ADSK",
-      "name": "ADSK",
-      "weight": 0.18
-    },
-    {
-      "symbol": "CRWV",
-      "name": "CRWV",
+      "symbol": "WDAY",
+      "name": "WDAY",
       "weight": 0.16999999999999998
     },
     {
-      "symbol": "IDXX",
-      "name": "IDXX",
-      "weight": 0.16999999999999998
-    },
-    {
-      "symbol": "EXC",
-      "name": "EXC",
-      "weight": 0.16999999999999998
-    },
-    {
-      "symbol": "KDP",
-      "name": "KDP",
+      "symbol": "n/a",
+      "name": "n/a",
       "weight": 0.16999999999999998
     },
     {
@@ -459,18 +464,23 @@
       "weight": 0.16
     },
     {
-      "symbol": "n/a",
-      "name": "n/a",
+      "symbol": "PAYX",
+      "name": "PAYX",
       "weight": 0.16
     },
     {
-      "symbol": "WDAY",
-      "name": "WDAY",
+      "symbol": "AXON",
+      "name": "AXON",
       "weight": 0.15
     },
     {
-      "symbol": "TRI",
-      "name": "TRI",
+      "symbol": "GEHC",
+      "name": "GEHC",
+      "weight": 0.15
+    },
+    {
+      "symbol": "RKLB",
+      "name": "RKLB",
       "weight": 0.15
     },
     {
@@ -479,24 +489,19 @@
       "weight": 0.15
     },
     {
-      "symbol": "PAYX",
-      "name": "PAYX",
-      "weight": 0.15
-    },
-    {
-      "symbol": "AXON",
-      "name": "AXON",
-      "weight": 0.13999999999999999
-    },
-    {
-      "symbol": "ROP",
-      "name": "ROP",
+      "symbol": "n/a",
+      "name": "n/a",
       "weight": 0.13999999999999999
     },
     {
       "symbol": "n/a",
       "name": "n/a",
       "weight": 0.13999999999999999
+    },
+    {
+      "symbol": "CRWV",
+      "name": "CRWV",
+      "weight": 0.13
     },
     {
       "symbol": "DXCM",
@@ -506,17 +511,12 @@
     {
       "symbol": "ALNY",
       "name": "ALNY",
-      "weight": 0.12
-    },
-    {
-      "symbol": "GEHC",
-      "name": "GEHC",
-      "weight": 0.12
+      "weight": 0.13
     },
     {
       "symbol": "CPRT",
       "name": "CPRT",
-      "weight": 0.1
+      "weight": 0.11
     }
   ]
 }
