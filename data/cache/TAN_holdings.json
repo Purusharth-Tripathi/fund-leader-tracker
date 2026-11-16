@@ -1,142 +1,142 @@
 {
   "symbol": "TAN",
-  "cached_at": "2026-11-04T12:39:08.603431",
+  "cached_at": "2026-11-16T06:01:32.996459",
   "source": "alpha_vantage_etf_profile",
   "holdings": [
     {
       "symbol": "NXT",
       "name": "NXT",
-      "weight": 11.360000000000001
+      "weight": 12.950000000000001
     },
     {
       "symbol": "FSLR",
       "name": "First Solar Inc",
-      "weight": 9.67
+      "weight": 9.09
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 8.36
+      "weight": 7.85
     },
     {
       "symbol": "ENPH",
       "name": "Enphase Energy Inc",
-      "weight": 5.800000000000001
+      "weight": 6.11
     },
     {
       "symbol": "HASI",
       "name": "HASI",
-      "weight": 5.27
+      "weight": 5.29
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 4.87
+      "weight": 5.029999999999999
     },
     {
       "symbol": "CWEN",
       "name": "CWEN",
-      "weight": 4.52
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 4.02
+      "weight": 4.3999999999999995
     },
     {
       "symbol": "RUN",
       "name": "Sunrun Inc",
-      "weight": 3.85
-    },
-    {
-      "symbol": "SEDG",
-      "name": "SolarEdge Technologies Inc",
-      "weight": 3.75
+      "weight": 4.38
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 3.3300000000000005
+      "weight": 3.9600000000000004
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 3.32
     },
     {
       "symbol": "SHLS",
       "name": "SHLS",
-      "weight": 2.94
+      "weight": 3.18
+    },
+    {
+      "symbol": "SEDG",
+      "name": "SolarEdge Technologies Inc",
+      "weight": 3.16
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 2.79
+      "weight": 2.85
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 2.76
+      "weight": 2.52
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 2.2399999999999998
+      "weight": 2.1399999999999997
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 2.21
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 2.13
-    },
-    {
-      "symbol": "DQ",
-      "name": "DQ",
-      "weight": 1.82
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 1.7399999999999998
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 1.67
+      "weight": 2.09
     },
     {
       "symbol": "ARRY",
       "name": "ARRY",
-      "weight": 1.46
+      "weight": 1.9800000000000002
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 1.92
+    },
+    {
+      "symbol": "DQ",
+      "name": "DQ",
+      "weight": 1.81
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 1.7999999999999998
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 1.6400000000000001
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 1.4000000000000001
     },
     {
       "symbol": "RNW",
       "name": "RNW",
-      "weight": 1.4000000000000001
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 1.39
-    },
-    {
-      "symbol": "TE",
-      "name": "TE",
-      "weight": 1.3599999999999999
+      "weight": 1.31
     },
     {
       "symbol": "CSIQ",
       "name": "CSIQ",
-      "weight": 1.28
+      "weight": 1.26
+    },
+    {
+      "symbol": "TE",
+      "name": "TE",
+      "weight": 1.02
+    },
+    {
+      "symbol": "JKS",
+      "name": "JKS",
+      "weight": 1.01
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 1.1400000000000001
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 1.11
+      "weight": 0.9900000000000001
     },
     {
       "symbol": "n/a",
@@ -146,27 +146,27 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.95
+      "weight": 0.9299999999999999
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.9199999999999999
-    },
-    {
-      "symbol": "JKS",
-      "name": "JKS",
-      "weight": 0.88
+      "weight": 0.91
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.72
+      "weight": 0.84
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.51
+      "weight": 0.7000000000000001
+    },
+    {
+      "symbol": "n/a",
+      "name": "n/a",
+      "weight": 0.47000000000000003
     },
     {
       "symbol": "n/a",
@@ -176,27 +176,22 @@
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.31
+      "weight": 0.26
     },
     {
       "symbol": "AGPXX",
       "name": "AGPXX",
-      "weight": 0.12
+      "weight": 0.09
     },
     {
       "symbol": "n/a",
       "name": "n/a",
-      "weight": 0.06
+      "weight": 0.02
     },
     {
       "symbol": "n/a",
       "name": "n/a",
       "weight": 0.01
-    },
-    {
-      "symbol": "n/a",
-      "name": "n/a",
-      "weight": 0.0
     },
     {
       "symbol": "n/a",
